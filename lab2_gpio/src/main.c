@@ -18,10 +18,10 @@ int main(void)
   }*/
   
   DDRB |= (1 << 0) | (1 << 5);
-  //PORTD |= (1 << 2);
+  PORTD |= (1 << 2);
   while(1)
   {
-    //if(PIND & (1 << 2))
+    if(PIND & (1 << 2))
       PORTB ^= ((1 << 0) | (1 << 5));
     for(long i=0; i < 1000000; i++) asm("NOP");
   }
