@@ -1,0 +1,50 @@
+#include <Arduino.h>
+#include <EEPROM.h>
+
+//inspirováno z této stránky: https://docs.arduino.cc/learn/programming/eeprom-guide, upraveno + přebrány části ze cvik a dalších zdrojů
+
+// Structure for storing sensor data in EEPROM
+typedef struct {
+  uint8_t soilMoistmeter;  // Soil moisture value
+  uint8_t airHumidity;   // Air humidity value
+} Databank;
+
+int addr = 0;
+
+void setup() {
+  Serial.begin(9600);   // nějak to háže furt syntax error, nevím co s tím
+}
+
+void loop() {
+  int soilMoistmeter = analogRead(0) / 4;
+  int airHumidity = analogRead(1) / 4;
+
+  // Create a SensorData object
+  Databank sensorValue;
+  sensorValue.soilMoistmeter = (uint8_t)soilMoistmeter;
+  sensorValue.airHumidity = (uint8_t)airHumidity;
+  // Write the sensor data to EEPROM
+  writeDataToEEPROM(addr, &sensorValue);
+
+  // Advance to the next address. When at the end, restart from the beginning.
+  addr = addr + 1;
+  if (addr == EEPROM.length()) {
+    addr = 0;
+  }
+
+  delay(100);
+}
+
+// Writing data to EEPROM
+void writeDataToEEPROM(uint16_t address, const Databank * data) 
+{
+  EEPROM.write(address, data->soilMoistmeter);
+  EEPROM.write(address + sizeof(data->soilMoistmeter), data->airHumidity);
+}
+
+// Reading data from EEPROM
+void readDataFromEEPROM(uint16_t address, Databank * data) 
+{
+  data->soilMoistmeter = EEPROM.read(address);
+  data->airHumidity = EEPROM.read(address + sizeof(data->soilMoistmeter));
+}
