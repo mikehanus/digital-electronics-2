@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "interrupt.h": "c",
-        "timer.h": "c"
+        "timer.h": "c",
+        "time.h": "c",
+        "gpio.h": "c"
     }
 }
