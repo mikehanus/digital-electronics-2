@@ -45,7 +45,7 @@ int main(void)
 		//ptr = localtime(&t);
 		uart_puts(ctime(&t));
 
-		//strftime(str, 100, "Ted je %d.%m.%Y a %H:%M:%D den je %A", &t);
+		//strftime(str, 100, "Ted je %d.%m.%Y a %H:%M:%D den je %A", &localtime(t));
 		//uart_putc(str);
 		uart_puts("\n");
 		//_delay_ms(1000);
