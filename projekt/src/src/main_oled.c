@@ -22,20 +22,10 @@
 #include <avr/io.h>         // AVR device-specific IO definitions
 #include <avr/interrupt.h>  // Interrupts standard C library for AVR-GCC
 #include "timer.h"          // Timer library for AVR-GCC
-#include <twi.h>            // I2C/TWI library for AVR-GCC
-#include <uart.h>           // Peter Fleury's UART library
-#include <stdlib.h>         // C library. Needed for number conversions
-#include <oled.h>           // OLED
 
 
 /* Global variables --------------------------------------------------*/
 // Declaration of "dht12" variable with structure "DHT_values_structure"
-typedef struct  {
-   uint32_t time;
-   uint8_t temp_air;
-   uint8_t hum_air;
-   uint8_t hum_soil;
-} dataset_t;
 
 dataset_t actual_data;
 
@@ -60,7 +50,7 @@ int main(void)
     char string[10];  // String for converting numbers by itoa()
 
     // TWI
-    twi_init();
+	twi_init();
 
     // UART
     uart_init(UART_BAUD_SELECT(115200, F_CPU));
@@ -76,25 +66,6 @@ int main(void)
     }
 
 
-    //OLED
-
-    oled_init(OLED_DISP_ON);
-    oled_clrscr();
-
-    oled_charMode(DOUBLESIZE);
-    // oled_puts("OLED disp.");
-
-    oled_charMode(NORMALSIZE);
-
-    oled_gotoxy(0, 1);
-    oled_puts("Podminky v kvetinaci");
-
-    oled_gotoxy(0, 2);
-    // oled_drawLine(x1, y1, x2, y2, color)
-    oled_drawLine(0, 25, 120, 25, WHITE);
-
-    // Copy buffer to display RAM
-    oled_display();
 
 
     // Timer1
@@ -107,35 +78,19 @@ int main(void)
         if (new_sensor_data == 1) {
 
             // Temperatura
-            uart_puts("Teplota vzduchu");
-            uart_puts("\t");
-            itoa(actual_data.temp_air, string, 10);
-            uart_puts(string);
-            uart_puts(" °C");
-            uart_puts(" \r\n");
+			uart_puts("Teplota vzduchu");
+			uart_puts("\t");
+			uart_puts(string);
+			uart_puts(" °C");
+			uart_puts(" \r\n");
 
-            oled_gotoxy(0, 4);
-            oled_puts("Teplota vzduchu");
-            oled_puts("\t");
-            oled_puts(string);
-            oled_puts(" °C");
-            oled_display();
+			// Humidity
+			uart_puts("Vlhkost vzduchu");
+			uart_puts("\t");
+			uart_puts(string);
+			uart_puts(" %");
+			uart_puts(" \r\n");
 
-            // Humidity
-            uart_puts("Vlhkost vzduchu");
-            uart_puts("\t");
-            itoa(actual_data.hum_air, string, 10);
-            uart_puts(string);
-            uart_puts(" %");
-            uart_puts(" \r\n");
-
-            oled_gotoxy(0, 5);
-            oled_puts("Vlhkost vzduchu");
-            oled_puts("\t");
-            oled_puts(string);
-            oled_puts(" %");
-
-            oled_display();
 
             // Do not print it again and wait for the new data
             new_sensor_data = 0;
