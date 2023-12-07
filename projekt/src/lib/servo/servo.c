@@ -18,7 +18,7 @@ void servo_set_value(servo_t *servo, uint8_t value)
     servo->value = value;
 }
 
-void servo_tim0_interrupt_handler(servo_t *servo)
+void servo_50us_interrupt_handler(servo_t *servo)
 {
 	static uint16_t tick = 0;
 	if (tick == servo->value/3+14) GPIO_write_low(servo->reg, servo->pin);
@@ -30,3 +30,4 @@ void servo_tim0_interrupt_handler(servo_t *servo)
 	}
 	else tick++;
 }
+

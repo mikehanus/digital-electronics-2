@@ -35,10 +35,6 @@ volatile uint8_t new_sensor_data = 0;
 
 // Slave and internal addresses of temperature/humidity sensor DHT12
 #define SENSOR_ADR 0x5c
-#define SENSOR_HUM_MEM 0
-#define SENSOR_TEMP_MEM 2
-#define SENSOR_CHECKSUM 4
-
 
 /** Function definitions **********************************************
 ** Function: Main function where the program execution begins

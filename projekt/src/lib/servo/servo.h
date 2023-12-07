@@ -15,7 +15,7 @@ typedef struct
 
 void servo_init(servo_t *servo, volatile uint8_t *reg, uint8_t pin);
 void servo_set_value(servo_t *servo, uint8_t value);
-void servo_tim0_interrupt_handler(servo_t *servo);
+void servo_50us_interrupt_handler(servo_t *servo);
 
 #endif
 

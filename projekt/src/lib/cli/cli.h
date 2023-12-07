@@ -1,13 +1,11 @@
 #ifndef CLI_H
 #define CLI_H
 
-typedef struct {
-	time_t set_time;
-	bool time_was_set;
-} cli_t;
+#include <uart.h>
+#include <uart.h>
 
-void cli_init(cli_t *cli);
-void cli_handle();
+void cli_init();
+void cli_handle(dataset_t *data);
 
 #endif
 

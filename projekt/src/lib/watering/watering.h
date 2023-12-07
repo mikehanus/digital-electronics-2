@@ -12,7 +12,7 @@ typedef struct
 
 void watering_init(watering_t watering, servo_t *servo);
 void watering_set_limit(watering_t watering, uint16_t min, uint16_t max);
-void watering_handler(watering_t *watering);
+void watering_handler(watering_t *watering, dataset_t *data);
 
 #endif
 
