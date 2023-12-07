@@ -70,7 +70,7 @@ int main(void)
 ISR(TIMER0_OVF_vect)
 {
 	TCNT0 = 156;
-	servo_tim0_interrupt_handler(&water_servo);
+	servo_50us_interrupt_handler(&water_servo);
 }
 
 // 1s overflow

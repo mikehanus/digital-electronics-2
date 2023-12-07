@@ -1,3 +1,4 @@
+#if 0
 /***********************************************************************
  *
  * The I2C (TWI) bus scanner tests all addresses and detects devices
@@ -126,3 +127,4 @@ ISR(TIMER1_OVF_vect)
     twi_stop();
 }
 
+#endif
