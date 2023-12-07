@@ -35,8 +35,8 @@ void moist_sens_init(void){
 *****************************************************************************/
 
 
-unsigned short get_moist(void){
-
+uint16_t get_moist(void)
+{
     // Start ADC conversion
     ADCSRA = ADCSRA | (1<<ADSC);
 

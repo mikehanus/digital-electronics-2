@@ -14,6 +14,9 @@
 /* Includes ----------------------------------------------------------*/
 #include <twi.h>
 
+#ifndef TWI_TIMEOUT
+#define TWI_TIMEOUT 10000
+#endif
 
 /* Functions ---------------------------------------------------------*/
 /**********************************************************************
@@ -43,7 +46,7 @@ void twi_start(void)
 {
     /* Send Start condition */
     TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
-    while ((TWCR & (1<<TWINT)) == 0);
+    for(uint32_t i = 0; i < TWI_TIMEOUT && ((TWCR & (1<<TWINT)) == 0); i++) asm("NOP");
 }
 
 
@@ -60,7 +63,7 @@ uint8_t twi_write(uint8_t data)
     /* Send SLA+R, SLA+W, or data byte on I2C/TWI bus */
     TWDR = data;
     TWCR = (1<<TWINT) | (1<<TWEN);
-    while ((TWCR & (1<<TWINT)) == 0);
+    for(uint32_t i = 0; i < TWI_TIMEOUT && ((TWCR & (1<<TWINT)) == 0); i++) asm("NOP");
 
     /* Check value of TWI status register */
     twi_status = TWSR & 0xf8;
@@ -90,7 +93,7 @@ uint8_t twi_read(uint8_t ack)
         TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWEA);
     else
         TWCR = (1<<TWINT) | (1<<TWEN);
-    while ((TWCR & (1<<TWINT)) == 0);
+    for(uint32_t i = 0; i < TWI_TIMEOUT && ((TWCR & (1<<TWINT)) == 0); i++) asm("NOP");
 
     return (TWDR);
 }

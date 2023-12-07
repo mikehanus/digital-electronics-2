@@ -7,7 +7,7 @@
  *  @param  None
  *  @return None
 ***********************************************************************************/
-extern void moist_sens_init(void);
+void moist_sens_init(void);
 
 /**********************************************************************************
  *  @brief Starts the ADC conversion on pin PC0 (A0) and returns converted value
@@ -15,7 +15,7 @@ extern void moist_sens_init(void);
  *  @param  None
  *  @return None
 ***********************************************************************************/
-extern unsigned short get_moist(void);
+uint16_t get_moist(void);
 
 
 
