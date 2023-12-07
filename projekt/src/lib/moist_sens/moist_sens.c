@@ -41,18 +41,25 @@ uint16_t get_moist(void)
     ADCSRA = ADCSRA | (1<<ADSC);
 
     uint16_t moisture;
-    uint16_t zero_moist;
-    uint16_t max_moist;
+    uint16_t zero_moist = 800;
+    uint16_t max_moist = 680;
     uint16_t moist_constant;
 
-    moisture = ADC;
-    /* zero_moist = 300;
-    max_moist = 600;
-    moist_constant = (max_moist - zero_moist)/100;
-    
-    moisture = moisture - zero_moist;
-    moisture = moisture/moist_constant; */
-    moisture = moisture - 2;
+    while(ADCSRA & (1<<ADSC));
 
+    moisture = ADC;
+    moisture = moisture - max_moist;
+    moist_constant = zero_moist - max_moist;
+    moisture = moisture*100;
+    moisture = moisture/moist_constant;
+    moisture = 100 - moisture;
+    
     return moisture;
+
+
+}
+
+ISR(ADC_vect)
+{
+    asm("NOP");
 }
