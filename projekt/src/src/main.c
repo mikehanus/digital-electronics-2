@@ -12,6 +12,7 @@
 #include <uart.h>
 #include <dataset.h>
 #include <cmd.h>
+#include <moist_sens.h>
 
 servo_t water_servo;
 
@@ -22,6 +23,7 @@ dataset_t actual_data;
 int main(void)
 {
 	sei();
+	moist_sens_init();
 	uart_init(UART_BAUD_SELECT(9600, F_CPU));
 
 	time_t t = 1701343534;
@@ -46,7 +48,7 @@ int main(void)
 		cmd_handler(&actual_data);
 		_delay_ms(1000);
 		actual_data.time++;
-		actual_data.hum_soil = actual_data.time % 60;
+		actual_data.hum_soil = get_moist() / 4;
 		actual_data.hum_air = actual_data.time % 100;
 		actual_data.temp_air = actual_data.time % 127;
 		//for(long i=0; i < 0x2ffff0; i++) asm("NOP");
