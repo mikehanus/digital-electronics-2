@@ -1,8 +1,4 @@
-#include <avr/io.h>
-#include <avr/interrupt.h>
-#include <time.h>
-#include <uart.h>
-#include <moist_sens.h>
+#include "cmd.h"
 // #include <air_temperature.h>
 // #include <air_humidity.h>
 
@@ -16,13 +12,13 @@
  * Returns: None
 ******************************************************/
 
-void cmd_comm(void){
-    
+void cmd_handler(dataset_t *data)
+{
     // By typing different letters into command line this finction shows help menu or data form sensors
     uint8_t value;          // Selected letter is saved into this variable
-    uint16_t moisture = 50;      // Soil Moisture is saved here
-    uint8_t humidity = 60;       // Air humidity is saved here
-    uint8_t temperature = 25;    // Air temperature is saved here
+    //uint16_t moisture = 50;      // Soil Moisture is saved here
+    //uint8_t humidity = 60;       // Air humidity is saved here
+    //uint8_t temperature = 25;    // Air temperature is saved here
     char string[8];  // String for converted numbers by itoa()
 
     struct tm* local; 
@@ -48,8 +44,8 @@ void cmd_comm(void){
 
         case 109:   // By typing 'm' program will give you current soil moisture
             uart_puts("\nSoil moisture: ");
-            moisture = get_moist();
-            itoa(moisture, string, 10);
+            //moisture = get_moist();
+            itoa(data->hum_soil, string, 10);
             uart_puts(string);
             uart_puts("%\n");
             break;
@@ -57,7 +53,7 @@ void cmd_comm(void){
         case 116:   // By typing 't' program will give you current air temperature
             uart_puts("\nAir temperature: ");
             // temperature = get_temperature();
-            itoa(temperature, string, 10);
+            itoa(data->temp_air, string, 10);
             uart_puts(string);
             uart_puts("°C\n");
             break;
@@ -65,14 +61,14 @@ void cmd_comm(void){
         case 104:   // By typing 'h' program will give you current air humidity
             uart_puts("\nAir humidity: ");
             // humidity = get_humidity();
-            itoa(humidity, string, 10);
+            itoa(data->hum_air, string, 10);
             uart_puts(string);
             uart_puts("%\n");
             break;
 
         case 99:    // By typing 'c' program will give you current time
             uart_puts("\nCurrent time and date: ");
-            uart_puts(asctime(local));
+            uart_puts(asctime(localtime(data->time)));
             uart_puts("\n");
             break;
 
@@ -85,21 +81,21 @@ void cmd_comm(void){
             // Temperature
             uart_puts("Air temperature: ");
             // temperature = get_temperature();
-            itoa(temperature, string, 10);
+            itoa(data->temp_air, string, 10);
             uart_puts(string);
             uart_puts("°C\n");
 
             // Humidity
             uart_puts("Air humidity: ");
             // humidity = get_humidity();
-            itoa(humidity, string, 10);
+            itoa(data->hum_air, string, 10);
             uart_puts(string);
             uart_puts("%\n");
             
             // Moisture
             uart_puts("Soil moisture: ");
             // moisture = get_moist();
-            itoa(moisture, string, 10);
+            itoa(data->hum_soil, string, 10);
             uart_puts(string);
             uart_puts("%\n");
             break;
@@ -110,7 +106,6 @@ void cmd_comm(void){
         }
 
         // uart_putc('\n');
-
     }
 
 }
