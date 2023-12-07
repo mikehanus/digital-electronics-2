@@ -1,5 +1,19 @@
+#include "sensors.h"
+
+void watering_init(sensors_t *sensors, uint8_t dht22_addr, uint8_t hum_adc, volatile uint8_t *water_source_reg, uint8_t water_source_pin)
+{
+    sensors->dht22_addr = dht22_addr;
+    sensors->hum_adc = hum_adc;
+    sensors->water_source_reg = water_source_reg;
+    sensors->water_source_pin = water_source_pin;
+    twi_init();
+}
+
+
+void watering_update_dataset(sensors_t *sensors, dataset_t *data)
+{
     twi_start();
-    if (twi_write((SENSOR_ADR<<1) | TWI_WRITE) == 0)
+    if (twi_write((sensors->dht22_addr<<1) | TWI_WRITE) == 0)
 	{
 
         // Set internal memory location
@@ -8,12 +22,9 @@
 
         // Read data from internal memory
         twi_start();
-        twi_write((SENSOR_ADR<<1) | TWI_READ);
-        actual_data.temp_air = twi_read(TWI_ACK);
-        actual_data.hum_air = twi_read(TWI_ACK);
-        twi_stop();
-
-        new_sensor_data = 1;
+        twi_write((sensors->dht22_addr<<1) | TWI_READ);
+        data->temp_air = twi_read(TWI_ACK);
+        data->hum_air = twi_read(TWI_ACK);
     }
     twi_stop();
-
+}

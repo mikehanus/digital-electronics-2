@@ -23,13 +23,9 @@ int main(void)
 	sei();
 	uart_init(UART_BAUD_SELECT(9600, F_CPU));
 
-
 	time_t t = 1701343534;
-	struct tm* ptr;
+	set_zone(+1*ONE_HOUR);
 
-
-	//set_system_time(t);
-	//set_zone(+1*ONE_HOUR);
 	char str[100];
 
 	t = 1701344319 - AVRTIME_TO_UNIXTIME;
