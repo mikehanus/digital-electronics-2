@@ -15,7 +15,6 @@ void watering_update_dataset(sensors_t *sensors, dataset_t *data)
     twi_start();
     if (twi_write((sensors->dht22_addr<<1) | TWI_WRITE) == 0)
 	{
-
         // Set internal memory location
         twi_write(SENSOR_TEMP_MEM);
         twi_stop();

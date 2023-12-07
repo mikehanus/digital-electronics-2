@@ -9,7 +9,6 @@ typedef struct
     servo_t *servo;
     uint16_t min;
     uint16_t max;
-    int8_t direction;
 } watering_t;
 
 void watering_init(watering_t *watering, servo_t *servo);
