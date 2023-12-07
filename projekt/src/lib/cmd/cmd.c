@@ -22,7 +22,7 @@ void cmd_handler(dataset_t *data)
     char string[8];  // String for converted numbers by itoa()
 
     struct tm* local; 
-    time_t t = time(NULL); 
+    time_t t = data->time; 
   
     // Get the localtime 
     local = localtime(&t); 
@@ -68,7 +68,7 @@ void cmd_handler(dataset_t *data)
 
         case 99:    // By typing 'c' program will give you current time
             uart_puts("\nCurrent time and date: ");
-            uart_puts(asctime(localtime(data->time)));
+            uart_puts(asctime(local));
             uart_puts("\n");
             break;
 

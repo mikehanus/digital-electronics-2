@@ -22,7 +22,7 @@ dataset_t actual_data;
 int main(void)
 {
 	sei();
-	uart_init(UART_BAUD_SELECT(115200, F_CPU));
+	uart_init(UART_BAUD_SELECT(9600, F_CPU));
 
 	time_t t = 1701343534;
 	set_zone(+1*ONE_HOUR);
@@ -33,6 +33,7 @@ int main(void)
 	GPIO_mode_output(&DDRB, 0);
 	servo_init(&water_servo, &PORTB, 0);
 	servo_set_value(&water_servo, 45);
+	uart_putc('a');
 
 	while(1)
 	{
@@ -45,7 +46,7 @@ int main(void)
 		cmd_handler(&actual_data);
 		_delay_ms(1000);
 		actual_data.time++;
-		actual_data.hum_air = actual_data.time % 60;
+		actual_data.hum_soil = actual_data.time % 60;
 		actual_data.hum_air = actual_data.time % 100;
 		actual_data.temp_air = actual_data.time % 127;
 		//for(long i=0; i < 0x2ffff0; i++) asm("NOP");
