@@ -7,15 +7,18 @@
 #include <uart.h>
 #include <moist_sens.h>
 #include <dataset.h>
+#include <watering.h>
+#include <storage.h>
 
 /****************************************************
- *  @brief  Enables communication 
+ *  @brief  Enables communication
  *          between user and program via command line
  *  @param  None
  *  @return None
 *****************************************************/
 
-void cmd_handler(dataset_t *data);
+void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage);
 
 
 #endif
+
