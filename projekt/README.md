@@ -89,7 +89,7 @@ Insert descriptive text and schematic(s) of your implementation.
 ## Manuál k použití
 
 <p>Ke správnému fungování celého systému umistěte senzory do květináče. Senzor vlhkosti do půdy a senzor snímající teplotu a vlhkost vzduchu DHT12 na vnější okraj květináče. Při manipulování dbejte doporučení výrobce. Dále umistěte v blízkosti květináče nádobu s vodou a servo, a to tak, aby při spuštění serva vytékala voda z nádoby do květináče.
-<p>Po spuštění programu monitoruje tento stav v květináči a dává příkazy k zavlažování, pakliže je potřeba. Servo povolí zalévání pokud vlhkost půdy klesne pod určitou hodnotu a skončí zalévání pokud se hodnota vlhkosti půdy dostane nad určitou hodnotu. Uživatel může upravit hodnoty dle náročnosti pěstované květiny, a to pomocí příkazové řádky. Systém monitoruje teplotu a vlhkost ovzduší, a pomocí <p>příkazové řádky lze vypsat aktuální data. Dále je možné vyvolat pomocné menu, ve kterém jsou napsány všechny příkazy.
+<p>Po spuštění programu monitoruje tento stav v květináči a dává příkazy k zavlažování, pakliže je potřeba. Servo povolí zalévání pokud vlhkost půdy klesne pod určitou hodnotu a skončí zalévání pokud se hodnota vlhkosti půdy dostane nad určitou hodnotu. Uživatel může upravit hodnoty dle náročnosti pěstované květiny, a to pomocí příkazové řádky. Systém monitoruje teplotu a vlhkost ovzduší, a pomocí příkazové řádky lze vypsat aktuální data. Dále je možné vyvolat pomocné menu, ve kterém jsou napsány všechny příkazy.
 <p>Každou minutu ukládá program data ze senzorů do paměti EEPROM. Tyto hodnoty lze uložit do CSV souboru a nebo zobrazit v příkazové řádce.
 
 ## Zdroje
