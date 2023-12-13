@@ -14,12 +14,13 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
     char string[8];  // String for converted numbers by itoa()
 
     struct tm* local;
-    time_t t = data->time;
+    time_t t;
 
 	int limit_tmp, data_n = 0;
 	dataset_t mydata;
 
     // Get the localtime
+	t = data->time;
     local = localtime(&t);
 
 
@@ -123,30 +124,27 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 				}
 
 			case 'a':    // By typing 'a' program will give every current information
+				uart_puts("\nDate\tTemp [˚C]\tHum [%]\tMoist\n");
 				while(1)
 				{
 					// Time
-					uart_puts("\nTime: ");
 					uart_puts(asctime(local));
 					uart_puts("\t");
 
 					// Temperature
-					uart_puts("Temperature: ");
 					itoa(data->temp, string, 10);
 					uart_puts(string);
-					uart_puts("°C\t");
+					uart_puts("\t");
 
 					// Humidity
-					uart_puts("Humidity: ");
 					itoa(data->hum, string, 10);
 					uart_puts(string);
-					uart_puts("%\t");
+					uart_puts("\t");
 
 					// Moisture
-					uart_puts("Moisture: ");
 					itoa(data->moist, string, 10);
 					uart_puts(string);
-					uart_puts("%\n");
+					uart_puts("\n");
 
 					if(data_n > 0)
 					{
@@ -154,6 +152,8 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 
 						data_n--;
 						storage_read(storage, data, data_n);
+						t = data->time;
+						local = localtime(&t);
 					}
 					else break;
 
