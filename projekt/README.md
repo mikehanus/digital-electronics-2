@@ -5,7 +5,7 @@
 * Martin Mihulka (Odpovědný za funkci senzoru vlhkosti a příkazů pro ovládání programu)
 * Vít Walach (Odpovědný za funkce LCD a senzoru teploty a vlhkosti vzduchu)
 
-## Toretický popis a vysvětlení problematiky
+## Teoretický popis a vysvětlení problematiky
 
 !!!!!!!!!!!!!Enter a description of the problem and how to solve it.!!!!!!!!!!!!!!!!
 
@@ -14,9 +14,9 @@
 Insert descriptive text and schematic(s) of your implementation.
 
 ## Popis programu
-#### main.c
+#### Kód main.c
 [main.c](src/src/main.c)
-![main.c](images/mainfile.png)
+![main.c](images/mainfile.PNG)
 
 
 Put flowchats of your algorithm(s) and direct links to source files in `src` or `lib` folders.
