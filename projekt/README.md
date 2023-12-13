@@ -21,12 +21,17 @@ Insert descriptive text and schematic(s) of your implementation.
 #### Kód cmd.c
 [cmd.c](src/lib/cmd/cmd.c)
 [cmd.h](src/lib/cmd/cmd.h)
-![cmd.c](images/CMD.PNG)
+![cmd.c](images/cmd.PNG)
 
 #### Kód display.c
 [display.c](src/lib/display/display.c)
 [display.h](src/lib/display/display.h)
 ![display.c](images/display.PNG)
+
+#### Kód gpio.c
+[gpio.c](src/lib/gpio/gpio.c)
+[gpio.h](src/lib/gpio/gpio.h)
+![gpio.c](images/gpio.PNG)
 
 #### Kód moist_sens.c
 [moist_sens.c](src/lib/moist_sens/moist_sens.c)
@@ -69,12 +74,17 @@ Insert descriptive text and schematic(s) of your implementation.
 [watering.h](src/lib/watering/watering.h)
 ![watering.c](images/water.PNG)
 
+#### Kód dataset.h
+[dataset.h](src/lib/dataset/dataset.h)
 
-## Instructions
+#### Kód timer.h
+[timer.h](src/lib/timer/timer.h)
+
+## Manuál k puzití
 
 Write an instruction manual for your application, including photos and a link to a short app video.
 
-## References
+## Zdroje
 
 1. Write your text here.
 2. ...
