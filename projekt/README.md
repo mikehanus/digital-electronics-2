@@ -7,11 +7,14 @@
 
 ## Teoretický popis a vysvětlení problematiky
 
-!!!!!!!!!!!!!Enter a description of the problem and how to solve it.!!!!!!!!!!!!!!!!
+Enter a description of the problem and how to solve it.
 
 ## Hardware description of demo application
 
 Insert descriptive text and schematic(s) of your implementation.
+
+##### Schéma zapojení
+![Schematic](images/schematic.png)
 
 ## Popis programu
 #### Kód main.c
