@@ -7,7 +7,10 @@
 
 ## Teoretický popis a vysvětlení problematiky
 
-Enter a description of the problem and how to solve it.
+Program řeší automatické zalévání květin. Pomocí kapacitního senzoru je měřena vlhkost půdy. Pomocí teploměru a vlhkoměru DHT12 je měřena teplota a vlhkost vzduchu.
+Pomocí serva je otáčena trubička s vodu, která po otočení začne zalévat květinu. Servo povolí zalévání pokud vlhkost půdy klesne pod určitou hodnotu a skončí zalévání pokud se hodnota vlhkosti půdy dostane nad určitou hodnotu. Tyto hodnoty lze definovat pomocí příkazové řádky.
+Pomocí příkazové řádky lze vypsat teplota a vlhkost ovzduší, vlhkost půdy a čas. Také lze pomocí příkazu vyvolat pomocné menu, ve kterém jsou napsány všechny příkazy. 
+Každou minutu ukládá program data ze senzorů do paměti EEPROM. Tyto hodnoty lze uložit do CSV souboru a nebo zobrazit v příkazové řádce.
 
 ## Hardware description of demo application
 
