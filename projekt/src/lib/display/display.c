@@ -23,7 +23,7 @@ void display_init()
 
 void display_show_data(dataset_t *data)
 {
-	char tmp_str[100];
+	char tmp_str[20];
 
 	itoa(data->temp, tmp_str, 10);
 	oled_gotoxy(0, 4);

@@ -11,9 +11,6 @@
 #define SENSOR_TEMP_MEM 2
 #define SENSOR_CHECKSUM 4
 
-typedef struct
-{
-} sensors_t;
 
 void sensors_init();
 void sensors_update_dataset(dataset_t *data);

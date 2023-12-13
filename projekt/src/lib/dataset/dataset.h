@@ -3,6 +3,8 @@
 
 #include <avr/io.h>
 
+#define AVRTIME_TO_UNIXTIME 946681200
+
    /** @struct dataset_t
    *  Structure used for saving of measurements and reading them
    *

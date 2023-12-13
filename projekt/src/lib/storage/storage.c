@@ -2,7 +2,7 @@
 
 // see https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf
 
-void EEPROM_write(uint32_t addr, uint8_t val)
+void EEPROM_write(uint16_t addr, uint8_t val)
 {
 	/* Wait for completion of previous write */
 	while(EECR & (1<<EEPE)) ;
@@ -16,7 +16,7 @@ void EEPROM_write(uint32_t addr, uint8_t val)
 }
 
 
-uint8_t EEPROM_read(uint32_t addr)
+uint8_t EEPROM_read(uint16_t addr)
 {
 	/* Wait for completion of previous write */
 	while(EECR & (1<<EEPE));
@@ -29,10 +29,13 @@ uint8_t EEPROM_read(uint32_t addr)
 }
 
 
-void storage_read(storage_t *storage, dataset_t *data, uint32_t pos)
+void storage_read(storage_t *storage, dataset_t *data, uint8_t pos)
 {
 	uint8_t *iter = ((uint8_t *)data);
-	for(uint32_t i = 0; i < sizeof(dataset_t); i++)
+	while(pos > storage->buffer_start)
+		pos -= 1000 / sizeof(dataset_t);
+		
+	for(uint8_t i = 0; i < sizeof(dataset_t); i++)
 	{
 		iter[i] = EEPROM_read(i + storage->buffer_start - pos*sizeof(dataset_t));
 	}
@@ -41,7 +44,7 @@ void storage_read(storage_t *storage, dataset_t *data, uint32_t pos)
 void storage_write(storage_t *storage, dataset_t *data)
 {
 	uint8_t *iter = ((uint8_t *)data);
-	for(uint32_t i = 0; i < sizeof(dataset_t); i++)
+	for(uint8_t i = 0; i < sizeof(dataset_t); i++)
 	{
 		EEPROM_write(i + storage->buffer_start, iter[i]);
 	}
@@ -55,22 +58,6 @@ void storage_write(storage_t *storage, dataset_t *data)
 
 void storage_init(storage_t *storage)
 {
-	dataset_t data;
-	time_t last_time = 0;
 	storage->buffer_start = 0;
-	storage_read(storage, &data, 0);
-	last_time = data.time;
-
-	while(data.time >= last_time)
-	{
-		storage->buffer_start += sizeof(dataset_t);
-		storage_read(storage, &data, 0);
-
-		if(storage->buffer_start + sizeof(dataset_t) > 1000)
-		{
-			storage->buffer_start = 0;
-			break;
-		}
-	}
 }
 
