@@ -80,7 +80,7 @@ Insert descriptive text and schematic(s) of your implementation.
 #### Kód timer.h
 [timer.h](src/lib/timer/timer.h)
 
-## Manuál k puzití
+## Manuál k použití
 
 Write an instruction manual for your application, including photos and a link to a short app video.
 
