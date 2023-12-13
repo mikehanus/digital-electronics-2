@@ -1,7 +1,7 @@
 ### Členové týmu
 
 * Michal Hanus (Odpovědný za funkci serva a EEPROM a za spojení jednotlivých kódů do sebe)
-* Erik Maděránek (Odpovědný za EEPROM)
+* Erik Maděránek (Odpovědný za EEPROM a za vývojové diagramy)
 * Martin Mihulka (Odpovědný za funkci senzoru vlhkosti a příkazů pro ovládání programu)
 * Vít Walach (Odpovědný za funkce LCD a senzoru teploty a vlhkosti vzduchu)
 
