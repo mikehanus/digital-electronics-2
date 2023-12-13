@@ -93,5 +93,5 @@ Write an instruction manual for your application, including photos and a link to
 ## Zdroje
 
 1. Learning material from Digital electronics 2 course.
-2. Libraries from Digital-Electronics-2 GitHub repository created by doc. Ing. Tomáš Frýza Ph.D.
+2. Libraries from [Digital-Electronics-2](https://github.com/tomas-fryza/digital-electronics-2) GitHub repository created by doc. Ing. Tomáš Frýza Ph.D.
 3. OLED displays with SSD1306 or SH1106 controler created by [Sylaina](https://github.com/Sylaina/oled-display) and slightly modified by Tomas Fryza
