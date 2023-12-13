@@ -4,14 +4,6 @@
 
 
 
-
-/*****************************************************
- * Function: cmd_comm()
- * Purpose: Communication between user and program
- * Input: None
- * Returns: None
-******************************************************/
-
 void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 {
     // By typing different letters into command line this finction shows help menu or data form sensors
@@ -53,7 +45,7 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 			case 'm':   // By typing 'm' program will give you current soil moisture
 				uart_puts("\nSoil moisture: ");
 				//moisture = get_moist();
-				itoa(data->hum_soil, string, 10);
+				itoa(data->moist, string, 10);
 				uart_puts(string);
 				uart_puts("%\n");
 				break;
@@ -61,7 +53,7 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 			case 't':   // By typing 't' program will give you current air temperature
 				uart_puts("\nAir temperature: ");
 				// temperature = get_temperature();
-				itoa(data->temp_air, string, 10);
+				itoa(data->temp, string, 10);
 				uart_puts(string);
 				uart_puts("°C\n");
 				break;
@@ -69,7 +61,7 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 			case 'h':   // By typing 'h' program will give you current air humidity
 				uart_puts("\nAir humidity: ");
 				// humidity = get_humidity();
-				itoa(data->hum_air, string, 10);
+				itoa(data->hum, string, 10);
 				uart_puts(string);
 				uart_puts("%\n");
 				break;
@@ -78,6 +70,7 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 				limit_tmp = 0;
 				while((tmp = uart_getc()) != '\n' && tmp != ' ') // TEST THIS
 				{
+					uart_putc(tmp);
 					if(tmp == UART_NO_DATA || tmp < '0' || tmp > '9') continue;
 					limit_tmp = (limit_tmp * 10) + tmp - '0';
 				}
@@ -85,6 +78,7 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 				limit_tmp = 0;
 				while((tmp = uart_getc()) != '\n')
 				{
+					uart_putc(tmp);
 					if(tmp == UART_NO_DATA || tmp < '0' || tmp > '9') continue;
 					limit_tmp = (limit_tmp * 10) + tmp - '0';
 				}
@@ -106,9 +100,11 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 				t = 0;
 				while((tmp = uart_getc()) != '\n')
 				{
+					uart_putc(tmp);
 					if(tmp == UART_NO_DATA || tmp < '0' || tmp > '9') continue;
 					t = (t * 10) + tmp - '0';
 				}
+				data->time = t;
 				uart_puts("Time was set");
 
 			case 'c':    // By typing 'c' program will give you current time
@@ -135,19 +131,19 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 
 					// Temperature
 					uart_puts("Temperature: ");
-					itoa(data->temp_air, string, 10);
+					itoa(data->temp, string, 10);
 					uart_puts(string);
 					uart_puts("°C\t");
 
 					// Humidity
 					uart_puts("Humidity: ");
-					itoa(data->hum_air, string, 10);
+					itoa(data->hum, string, 10);
 					uart_puts(string);
 					uart_puts("%\t");
 
 					// Moisture
 					uart_puts("Moisture: ");
-					itoa(data->hum_soil, string, 10);
+					itoa(data->moist, string, 10);
 					uart_puts(string);
 					uart_puts("%\n");
 
@@ -158,6 +154,7 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 						data_n--;
 						storage_read(storage, data, data_n);
 					}
+					else break;
 
 				}
 				break;

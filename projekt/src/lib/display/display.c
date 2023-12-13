@@ -1,3 +1,5 @@
+#include "display.h"
+
 void display_init()
 {
     oled_init(OLED_DISP_ON);
@@ -23,14 +25,14 @@ void display_show_data(dataset_t *data)
 {
 	char tmp_str[100];
 
-	itoa(actual_data->temp_air, tmp_str, 10);
+	itoa(data->temp, tmp_str, 10);
 	oled_gotoxy(0, 4);
 	oled_puts("Teplota vzduchu\t");
 	oled_puts(tmp_str);
 	oled_puts(" °C");
 	oled_display();
 
-	itoa(actual_data->hum_air, tmp_str, 10);
+	itoa(data->hum, tmp_str, 10);
 
 	oled_gotoxy(0, 5);
 	oled_puts("Vlhkost vzduchu\t");

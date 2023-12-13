@@ -13,7 +13,9 @@
 /****************************************************
  *  @brief  Enables communication
  *          between user and program via command line
- *  @param  None
+ *  @param  data Actual measured data
+ *  @param  watering Watering setup
+ *  @param  storage Storage setup
  *  @return None
 *****************************************************/
 

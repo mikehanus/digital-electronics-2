@@ -48,13 +48,13 @@ uint16_t get_moist(void)
     while(ADCSRA & (1<<ADSC));
 
     moisture = ADC;
-    moisture = moisture - max_moist;
+    /*moisture = moisture - max_moist;
     moist_constant = zero_moist - max_moist;
     moisture = moisture*100;
     moisture = moisture/moist_constant;
-    moisture = 100 - moisture;
+    moisture = 100 - moisture;*/
     
-    return moisture;
+    return 255 - (moisture/4);
 
 
 }

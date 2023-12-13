@@ -2,6 +2,8 @@
 #define STORAGE_H
 
 #include <dataset.h>
+#include <avr/io.h>
+#include <time.h>
 
 typedef struct {
 	uint32_t buffer_start;

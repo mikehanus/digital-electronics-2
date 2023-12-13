@@ -118,8 +118,8 @@ ISR(TIMER1_OVF_vect)
         // Read data from internal memory
         twi_start();
         twi_write((SENSOR_ADR<<1) | TWI_READ);
-        actual_data.temp_air = twi_read(TWI_ACK);
-        actual_data.hum_air = twi_read(TWI_ACK);
+        actual_data.temp = twi_read(TWI_ACK);
+        actual_data.hum = twi_read(TWI_ACK);
         twi_stop();
 
         new_sensor_data = 1;

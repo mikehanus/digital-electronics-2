@@ -17,8 +17,8 @@ void watering_handler(watering_t *watering, dataset_t *data)
     if(watering->servo->value != 90 && watering->servo->value != 0)
         servo_set_value(watering->servo, 0);
 
-    if(watering->servo->value == 0 && data->hum_soil < watering->min)
+    if(watering->servo->value == 0 && data->moist < watering->min)
         servo_set_value(watering->servo, 90);
-    if(watering->servo->value != 0 && data->hum_soil < watering->min)
+    if(watering->servo->value != 0 && data->moist < watering->min)
         servo_set_value(watering->servo, 0);
 }

@@ -13,18 +13,28 @@
 #include <dataset.h>
 #include <cmd.h>
 #include <moist_sens.h>
+#include <sensors.h>
+#include <display.h>
 
 servo_t water_servo;
 
 #define AVRTIME_TO_UNIXTIME 946681200
 time_t time_now;
+
 dataset_t actual_data;
+watering_t watering;
+storage_t storage;
 
 int main(void)
 {
 	sei();
 	moist_sens_init();
 	uart_init(UART_BAUD_SELECT(9600, F_CPU));
+
+	storage_init(&storage);
+	watering_init(&watering, &water_servo);
+
+	sensors_init();
 
 	time_t t = 1701343534;
 	set_zone(+1*ONE_HOUR);
@@ -45,13 +55,15 @@ int main(void)
 		//strftime(str, 100, "Ted je %d.%m.%Y a %H:%M:%D den je %A", &localtime(t));
 		//uart_putc(str);
 		//uart_puts("\n");
-		cmd_handler(&actual_data);
+		cmd_handler(&actual_data, &watering, &storage);
 		_delay_ms(1000);
-		actual_data.time++;
-		actual_data.hum_soil = get_moist() / 4;
-		actual_data.hum_air = actual_data.time % 100;
-		actual_data.temp_air = actual_data.time % 127;
+		actual_data.time++;/*
+		actual_data.moist = get_moist() / 4;
+		actual_data.hum = actual_data.time % 100;
+		actual_data.temp = actual_data.time % 127;*/
 		//for(long i=0; i < 0x2ffff0; i++) asm("NOP");
+		sensors_update_dataset(&actual_data);
+		//disp
 	}
 
 
