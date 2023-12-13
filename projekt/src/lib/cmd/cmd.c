@@ -122,6 +122,13 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 					uart_putc(tmp);
 					data_n = (data_n * 10) + tmp - '0';
 				}
+				data = &mydata;
+
+				storage_read(storage, data, data_n);
+				t = data->time;
+				local = localtime(&t);
+
+				data_n--;
 
 			case 'a':    // By typing 'a' program will give every current information
 				uart_puts("\nDate\tTemp [˚C]\tHum [%]\tMoist\n");
@@ -146,9 +153,8 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 					uart_puts(string);
 					uart_puts("\n");
 
-					if(data_n > 0)
+					if(data_n >= 0)
 					{
-						data = &mydata;
 
 						data_n--;
 						storage_read(storage, data, data_n);
