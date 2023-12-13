@@ -14,12 +14,13 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
     char string[8];  // String for converted numbers by itoa()
 
     struct tm* local;
-    time_t t = data->time;
+    time_t t;
 
 	int limit_tmp, data_n = 0;
 	dataset_t mydata;
 
     // Get the localtime
+	t = data->time;
     local = localtime(&t);
 
 
@@ -151,6 +152,8 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 
 						data_n--;
 						storage_read(storage, data, data_n);
+						t = data->time;
+						local = localtime(&t);
 					}
 					else break;
 
