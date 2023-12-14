@@ -12,7 +12,20 @@
 #define SENSOR_CHECKSUM 4
 
 
+/***************************************************
+ *  @brief  Inicialization of all sensors
+ *  @param  None
+ *  @return None
+****************************************************/
 void sensors_init();
+
+
+/***************************************************
+ *  @brief  Updates dataset with current 
+ *          data from sensors
+ *  @param  dataset Actual measured data
+ *  @return None
+****************************************************/
 void sensors_update_dataset(dataset_t *data);
 
 #endif

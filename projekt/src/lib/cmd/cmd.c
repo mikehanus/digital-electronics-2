@@ -71,8 +71,8 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 				limit_tmp = 0;
 				while((tmp = uart_getc()) != '\n' && tmp != ' ') // TEST THIS
 				{
-					uart_putc(tmp);
 					if(tmp == UART_NO_DATA || tmp < '0' || tmp > '9') continue;
+					uart_putc(tmp);
 					limit_tmp = (limit_tmp * 10) + tmp - '0';
 				}
 				watering->min = limit_tmp;
@@ -101,8 +101,8 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 				t = 0;
 				while((tmp = uart_getc()) != '\n')
 				{
-					uart_putc(tmp);
 					if(tmp == UART_NO_DATA || tmp < '0' || tmp > '9') continue;
+					uart_putc(tmp);
 					t = (t * 10) + tmp - '0';
 				}
 				data->time = t - AVRTIME_TO_UNIXTIME;
