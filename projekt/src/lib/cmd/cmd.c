@@ -75,17 +75,18 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 					uart_putc(tmp);
 					limit_tmp = (limit_tmp * 10) + tmp - '0';
 				}
+				uart_puts(" - ");
 				watering->min = limit_tmp;
 				limit_tmp = 0;
 				while((tmp = uart_getc()) != '\n')
 				{
-					uart_putc(tmp);
 					if(tmp == UART_NO_DATA || tmp < '0' || tmp > '9') continue;
+					uart_putc(tmp);
 					limit_tmp = (limit_tmp * 10) + tmp - '0';
 				}
 				watering->max = limit_tmp;
 
-				uart_puts("Limits were set");
+				uart_puts("\nLimits were set");
 
 			case 'l':   // By typing 's' program will give you current moisture limis
 				uart_puts("\nMoisture limits: from ");
@@ -124,14 +125,14 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 				}
 				data = &mydata;
 
-				storage_read(storage, data, data_n);
+				storage_read(storage, data, data_n+1);
 				t = data->time;
 				local = localtime(&t);
 
-				data_n--;
+				//data_n--;
 
 			case 'a':    // By typing 'a' program will give every current information
-				uart_puts("\nDate\tTemp [˚C]\tHum [1/255]\tMoist\n");
+				uart_puts("\nDate\tTemp [˚C]\tHum [%]\tMoist [1/255]\n");
 				while(1)
 				{
 					// Time
@@ -153,7 +154,7 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 					uart_puts(string);
 					uart_puts("\n");
 
-					if(data_n >= 0)
+					if(data_n > 1)
 					{
 
 						data_n--;

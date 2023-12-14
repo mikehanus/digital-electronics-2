@@ -37,13 +37,13 @@ int main(void)
 	storage_init(&storage);
 	watering_init(&watering, &water_servo);
 	watering_set_limit(&watering, 0, 255);
-	sensors_init();
-	display_init();
+	//sensors_init();
+	//display_init();
 
 	TIM1_OVF_1SEC();
 	TIM1_OVF_ENABLE();
 
-	set_zone(+1*ONE_HOUR);
+	//set_zone(+1*ONE_HOUR);
 	actual_data.time = 1701344319 - AVRTIME_TO_UNIXTIME;
 
 	uart_puts("Watering system terminal (pres ? for help):");
@@ -67,8 +67,8 @@ int main(void)
 		{
 			last_measurement_time = actual_data.time;
 
-			sensors_update_dataset(&actual_data);
-			display_show_data(&actual_data);
+			//sensors_update_dataset(&actual_data);
+			//display_show_data(&actual_data);
 			storage_write(&storage, &actual_data);
 		}
 	}
