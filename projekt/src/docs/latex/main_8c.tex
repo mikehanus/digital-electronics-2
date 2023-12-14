@@ -12,8 +12,7 @@
 {\ttfamily \#include $<$moist\+\_\+sens.\+h$>$}\newline
 {\ttfamily \#include $<$sensors.\+h$>$}\newline
 {\ttfamily \#include $<$display.\+h$>$}\newline
-Include dependency graph for main.\+c\+:
-\nopagebreak
+Include dependency graph for main.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -37,9 +36,9 @@ int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structservo__t}{servo\+\_\+t}} \mbox{\hyperlink{main_8c_a1511e5db1ccf63e2d4813c5cce6cc8b3}{water\+\_\+servo}}
-\item 
 time\+\_\+t \mbox{\hyperlink{main_8c_a1740f7ae289223cfdf6ae61e4a959f8f}{last\+\_\+measurement\+\_\+time}}
+\item 
+\mbox{\hyperlink{structservo__t}{servo\+\_\+t}} \mbox{\hyperlink{main_8c_a1511e5db1ccf63e2d4813c5cce6cc8b3}{water\+\_\+servo}}
 \item 
 \mbox{\hyperlink{structdataset__t}{dataset\+\_\+t}} \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\+\_\+data}}
 \item 
@@ -67,14 +66,13 @@ time\+\_\+t \mbox{\hyperlink{main_8c_a1740f7ae289223cfdf6ae61e4a959f8f}{last\+\_
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{97 \{}
-\DoxyCodeLine{98     TCNT0 = 156;}
-\DoxyCodeLine{99     \mbox{\hyperlink{servo_8c_a6e27a0da014d4197e9b84c628460a5e1}{servo\_50us\_interrupt\_handler}}(\&\mbox{\hyperlink{main_8c_a1511e5db1ccf63e2d4813c5cce6cc8b3}{water\_servo}});}
-\DoxyCodeLine{100 \}}
+\DoxyCodeLine{80 \{}
+\DoxyCodeLine{81     TCNT0 = 156;}
+\DoxyCodeLine{82     \mbox{\hyperlink{servo_8c_a6e27a0da014d4197e9b84c628460a5e1}{servo\_50us\_interrupt\_handler}}(\&\mbox{\hyperlink{main_8c_a1511e5db1ccf63e2d4813c5cce6cc8b3}{water\_servo}});}
+\DoxyCodeLine{83 \}}
 
 \end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -89,9 +87,9 @@ Here is the call graph for this function\+:
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{103 \{}
-\DoxyCodeLine{104     \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_ab683739d9494eb0091f2f17e1707787b}{time}}++;}
-\DoxyCodeLine{105 \}}
+\DoxyCodeLine{86 \{}
+\DoxyCodeLine{87     \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_ab683739d9494eb0091f2f17e1707787b}{time}}++;}
+\DoxyCodeLine{88 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
@@ -106,67 +104,50 @@ Here is the call graph for this function\+:
 \DoxyCodeLine{30     sei();}
 \DoxyCodeLine{31     \mbox{\hyperlink{group__pfleury__uart_gac19a76bb7d446125734a67f9f4b68991}{uart\_init}}(\mbox{\hyperlink{group__pfleury__uart_ga367ff7b5de225ed936a63239ad4adb0b}{UART\_BAUD\_SELECT}}(9600, \mbox{\hyperlink{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\_CPU}}));}
 \DoxyCodeLine{32 }
-\DoxyCodeLine{33     \mbox{\hyperlink{servo_8c_af2901abc08a7acebca8b6a14fbb0239d}{servo\_init}}(\&\mbox{\hyperlink{main_8c_a1511e5db1ccf63e2d4813c5cce6cc8b3}{water\_servo}}, \&PORTB, 0);}
-\DoxyCodeLine{34     \mbox{\hyperlink{servo_8c_ab915767fa085801feff281f341eebeec}{servo\_set\_value}}(\&\mbox{\hyperlink{main_8c_a1511e5db1ccf63e2d4813c5cce6cc8b3}{water\_servo}}, 45);}
-\DoxyCodeLine{35     }
-\DoxyCodeLine{36     \mbox{\hyperlink{storage_8c_a954cfff4c51e8e59d9ee27102fadf443}{storage\_init}}(\&\mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}});}
-\DoxyCodeLine{37     \mbox{\hyperlink{watering_8c_a19f0ee5e2ed5f2b96c770e741a40de54}{watering\_init}}(\&\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}, \&\mbox{\hyperlink{main_8c_a1511e5db1ccf63e2d4813c5cce6cc8b3}{water\_servo}});}
-\DoxyCodeLine{38     \textcolor{comment}{//sensors\_init();}}
-\DoxyCodeLine{39     \textcolor{comment}{//display\_init();}}
-\DoxyCodeLine{40 }
-\DoxyCodeLine{41     \mbox{\hyperlink{group__fryza__timer_ga9adba4b16f5f7202ce116d8cb5a79f40}{TIM1\_OVF\_1SEC}}();}
-\DoxyCodeLine{42     \mbox{\hyperlink{group__fryza__timer_ga30b4af52b710f0dbf4923665221de476}{TIM1\_OVF\_ENABLE}}();}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{44     set\_zone(+1*ONE\_HOUR);}
-\DoxyCodeLine{45     \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_ab683739d9494eb0091f2f17e1707787b}{time}} = 1701344319 -\/ \mbox{\hyperlink{dataset_8h_a77f98302b0a72bf38287a9308b799514}{AVRTIME\_TO\_UNIXTIME}};}
-\DoxyCodeLine{46     \mbox{\hyperlink{group__fryza__gpio_gae4c211fcf0878fc6617e21dcfe7a4513}{GPIO\_mode\_output}}(\&DDRB, 0);}
-\DoxyCodeLine{47 }
-\DoxyCodeLine{48     \mbox{\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\_putc}}(\textcolor{charliteral}{'a'});}
-\DoxyCodeLine{49 }
-\DoxyCodeLine{50     \textcolor{keywordflow}{for}(uint8\_t i = 0; i < 20; i++)}
-\DoxyCodeLine{51     \{}
-\DoxyCodeLine{52         \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_ab683739d9494eb0091f2f17e1707787b}{time}} += 10;}
-\DoxyCodeLine{53         \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_a04e3f3b9c3ca4ba60557dc955f85c079}{temp}} = 12 + \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_ab683739d9494eb0091f2f17e1707787b}{time}} \% 15;}
-\DoxyCodeLine{54         \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_a1d9e3ae15eeb26d8d4080277792e012a}{hum}} = \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_ab683739d9494eb0091f2f17e1707787b}{time}} \% 100;}
-\DoxyCodeLine{55         \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_ac5288672cb5db5939847aeee878ebcd0}{moist}} = \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_ab683739d9494eb0091f2f17e1707787b}{time}} \% 255;}
-\DoxyCodeLine{56         \mbox{\hyperlink{storage_8c_abbf8a4d949d03f1f91a08b610f035fad}{storage\_write}}(\&\mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}}, \&\mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}});}
-\DoxyCodeLine{57     \}}
-\DoxyCodeLine{58 }
-\DoxyCodeLine{59     \textcolor{keywordflow}{while}(1)}
-\DoxyCodeLine{60     \{}
-\DoxyCodeLine{61         \textcolor{comment}{//ptr = localtime(\&t);}}
-\DoxyCodeLine{62         \textcolor{comment}{//uart\_puts(ctime(\&t));}}
-\DoxyCodeLine{63 }
-\DoxyCodeLine{64         \textcolor{comment}{//strftime(str, 100, "{}Ted je \%d.\%m.\%Y a \%H:\%M:\%D den je \%A"{}, \&localtime(t));}}
-\DoxyCodeLine{65         \textcolor{comment}{//uart\_putc(str);}}
-\DoxyCodeLine{66         \textcolor{comment}{//uart\_puts("{}\(\backslash\)n"{});}}
-\DoxyCodeLine{67         \mbox{\hyperlink{cmd_8c_a851fcc941c3f1d77e581e6f7dce8552d}{cmd\_handler}}(\&\mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}, \&\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}, \&\mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}});}
-\DoxyCodeLine{68         \_delay\_ms(100);}
+\DoxyCodeLine{33     \mbox{\hyperlink{group__fryza__gpio_gae4c211fcf0878fc6617e21dcfe7a4513}{GPIO\_mode\_output}}(\&DDRB, 0);}
+\DoxyCodeLine{34     \mbox{\hyperlink{servo_8c_af2901abc08a7acebca8b6a14fbb0239d}{servo\_init}}(\&\mbox{\hyperlink{main_8c_a1511e5db1ccf63e2d4813c5cce6cc8b3}{water\_servo}}, \&PORTB, 0);}
+\DoxyCodeLine{35     \mbox{\hyperlink{servo_8c_ab915767fa085801feff281f341eebeec}{servo\_set\_value}}(\&\mbox{\hyperlink{main_8c_a1511e5db1ccf63e2d4813c5cce6cc8b3}{water\_servo}}, 45);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \mbox{\hyperlink{storage_8c_a954cfff4c51e8e59d9ee27102fadf443}{storage\_init}}(\&\mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}});}
+\DoxyCodeLine{38     \mbox{\hyperlink{watering_8c_a19f0ee5e2ed5f2b96c770e741a40de54}{watering\_init}}(\&\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}, \&\mbox{\hyperlink{main_8c_a1511e5db1ccf63e2d4813c5cce6cc8b3}{water\_servo}});}
+\DoxyCodeLine{39     \mbox{\hyperlink{watering_8c_a0c62a16721b62527d74111250d1e179b}{watering\_set\_limit}}(\&\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}, 0, 255);}
+\DoxyCodeLine{40     \textcolor{comment}{//sensors\_init();}}
+\DoxyCodeLine{41     \textcolor{comment}{//display\_init();}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \mbox{\hyperlink{group__fryza__timer_ga9adba4b16f5f7202ce116d8cb5a79f40}{TIM1\_OVF\_1SEC}}();}
+\DoxyCodeLine{44     \mbox{\hyperlink{group__fryza__timer_ga30b4af52b710f0dbf4923665221de476}{TIM1\_OVF\_ENABLE}}();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{comment}{//set\_zone(+1*ONE\_HOUR);}}
+\DoxyCodeLine{47     \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_ab683739d9494eb0091f2f17e1707787b}{time}} = 1701344319 -\/ \mbox{\hyperlink{dataset_8h_a77f98302b0a72bf38287a9308b799514}{AVRTIME\_TO\_UNIXTIME}};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}Watering system terminal (pres ? for help):"{}});}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{keywordflow}{for}(uint8\_t i = 0; i < 20; i++)}
+\DoxyCodeLine{52     \{}
+\DoxyCodeLine{53         \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_ab683739d9494eb0091f2f17e1707787b}{time}} += 10;}
+\DoxyCodeLine{54         \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_a04e3f3b9c3ca4ba60557dc955f85c079}{temp}} = 12 + \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_ab683739d9494eb0091f2f17e1707787b}{time}} \% 15;}
+\DoxyCodeLine{55         \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_a1d9e3ae15eeb26d8d4080277792e012a}{hum}} = \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_ab683739d9494eb0091f2f17e1707787b}{time}} \% 100;}
+\DoxyCodeLine{56         \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_ac5288672cb5db5939847aeee878ebcd0}{moist}} = \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_ab683739d9494eb0091f2f17e1707787b}{time}} \% 255;}
+\DoxyCodeLine{57         \mbox{\hyperlink{storage_8c_abbf8a4d949d03f1f91a08b610f035fad}{storage\_write}}(\&\mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}}, \&\mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}});}
+\DoxyCodeLine{58     \}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keywordflow}{while}(1)}
+\DoxyCodeLine{61     \{}
+\DoxyCodeLine{62         \mbox{\hyperlink{cmd_8c_a851fcc941c3f1d77e581e6f7dce8552d}{cmd\_handler}}(\&\mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}, \&\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}, \&\mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}});}
+\DoxyCodeLine{63         \_delay\_ms(1000);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65         \textcolor{comment}{// Every 10 s make measurement}}
+\DoxyCodeLine{66         \textcolor{keywordflow}{if}(\mbox{\hyperlink{main_8c_a1740f7ae289223cfdf6ae61e4a959f8f}{last\_measurement\_time}} + 10 < \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_ab683739d9494eb0091f2f17e1707787b}{time}})}
+\DoxyCodeLine{67         \{}
+\DoxyCodeLine{68             \mbox{\hyperlink{main_8c_a1740f7ae289223cfdf6ae61e4a959f8f}{last\_measurement\_time}} = \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_ab683739d9494eb0091f2f17e1707787b}{time}};}
 \DoxyCodeLine{69 }
-\DoxyCodeLine{70         \textcolor{keywordflow}{if}(\mbox{\hyperlink{main_8c_a1740f7ae289223cfdf6ae61e4a959f8f}{last\_measurement\_time}} + 30 < \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_ab683739d9494eb0091f2f17e1707787b}{time}})}
-\DoxyCodeLine{71         \{}
-\DoxyCodeLine{72             \mbox{\hyperlink{main_8c_a1740f7ae289223cfdf6ae61e4a959f8f}{last\_measurement\_time}} = \mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}}.\mbox{\hyperlink{structdataset__t_ab683739d9494eb0091f2f17e1707787b}{time}};}
-\DoxyCodeLine{73 }
-\DoxyCodeLine{74             \textcolor{comment}{//sensors\_update\_dataset(\&actual\_data);}}
-\DoxyCodeLine{75             \textcolor{comment}{//display\_show\_data(\&actual\_data);}}
-\DoxyCodeLine{76             \textcolor{comment}{//storage\_write(\&storage, \&actual\_data);}}
-\DoxyCodeLine{77         \}}
-\DoxyCodeLine{78     \}}
-\DoxyCodeLine{79 }
-\DoxyCodeLine{80 }
-\DoxyCodeLine{81 }
-\DoxyCodeLine{82     \textcolor{keywordflow}{while}(1)}
-\DoxyCodeLine{83     \{}
-\DoxyCodeLine{84         \textcolor{comment}{//GPIO\_write(\&PORTB, 5, 0);}}
-\DoxyCodeLine{85         \mbox{\hyperlink{servo_8c_ab915767fa085801feff281f341eebeec}{servo\_set\_value}}(\&\mbox{\hyperlink{main_8c_a1511e5db1ccf63e2d4813c5cce6cc8b3}{water\_servo}}, 0);}
-\DoxyCodeLine{86         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{long} i=0; i < 0x2ffff0; i++) \textcolor{keyword}{asm}(\textcolor{stringliteral}{"{}NOP"{}});}
-\DoxyCodeLine{87         \textcolor{comment}{//GPIO\_write(\&PORTB, 5, 1);}}
-\DoxyCodeLine{88         \mbox{\hyperlink{servo_8c_ab915767fa085801feff281f341eebeec}{servo\_set\_value}}(\&\mbox{\hyperlink{main_8c_a1511e5db1ccf63e2d4813c5cce6cc8b3}{water\_servo}}, 90);}
-\DoxyCodeLine{89         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{long} i=0; i < 0x2ffff0; i++) \textcolor{keyword}{asm}(\textcolor{stringliteral}{"{}NOP"{}});}
-\DoxyCodeLine{90     \}}
-\DoxyCodeLine{91 }
-\DoxyCodeLine{92     \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{93 \}}
+\DoxyCodeLine{70             \textcolor{comment}{//sensors\_update\_dataset(\&actual\_data);}}
+\DoxyCodeLine{71             \textcolor{comment}{//display\_show\_data(\&actual\_data);}}
+\DoxyCodeLine{72             \mbox{\hyperlink{storage_8c_abbf8a4d949d03f1f91a08b610f035fad}{storage\_write}}(\&\mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}}, \&\mbox{\hyperlink{main_8c_abbad3791e16b019dbf1aa5b8878ca1d0}{actual\_data}});}
+\DoxyCodeLine{73         \}}
+\DoxyCodeLine{74     \}}
+\DoxyCodeLine{75     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{76 \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:

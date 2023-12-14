@@ -1,8 +1,7 @@
 \hypertarget{cmd_8c}{}\doxysection{lib/cmd/cmd.c File Reference}
 \label{cmd_8c}\index{lib/cmd/cmd.c@{lib/cmd/cmd.c}}
 {\ttfamily \#include \char`\"{}cmd.\+h\char`\"{}}\newline
-Include dependency graph for cmd.\+c\+:
-\nopagebreak
+Include dependency graph for cmd.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -68,7 +67,7 @@ void \mbox{\hyperlink{cmd_8c_a851fcc941c3f1d77e581e6f7dce8552d}{cmd\+\_\+handler
 \DoxyCodeLine{48                 \textcolor{comment}{//moisture = get\_moist();}}
 \DoxyCodeLine{49                 itoa(\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>moist, \textcolor{keywordtype}{string}, 10);}
 \DoxyCodeLine{50                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{keywordtype}{string});}
-\DoxyCodeLine{51                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\%\(\backslash\)n"{}});}
+\DoxyCodeLine{51                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}/255\(\backslash\)n"{}});}
 \DoxyCodeLine{52                 \textcolor{keywordflow}{break};}
 \DoxyCodeLine{53 }
 \DoxyCodeLine{54             \textcolor{keywordflow}{case} \textcolor{charliteral}{'t'}:   \textcolor{comment}{// By typing 't' program will give you current air temperature}}
@@ -95,123 +94,122 @@ void \mbox{\hyperlink{cmd_8c_a851fcc941c3f1d77e581e6f7dce8552d}{cmd\+\_\+handler
 \DoxyCodeLine{75                     \mbox{\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\_putc}}(tmp);}
 \DoxyCodeLine{76                     limit\_tmp = (limit\_tmp * 10) + tmp -\/ \textcolor{charliteral}{'0'};}
 \DoxyCodeLine{77                 \}}
-\DoxyCodeLine{78                 \mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_a72c2c2ddab355cc8d4002fc737b38cc9}{min}} = limit\_tmp;}
-\DoxyCodeLine{79                 limit\_tmp = 0;}
-\DoxyCodeLine{80                 \textcolor{keywordflow}{while}((tmp = \mbox{\hyperlink{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}{uart\_getc}}()) != \textcolor{charliteral}{'\(\backslash\)n'})}
-\DoxyCodeLine{81                 \{}
-\DoxyCodeLine{82                     \mbox{\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\_putc}}(tmp);}
+\DoxyCodeLine{78                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{} -\/ "{}});}
+\DoxyCodeLine{79                 \mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_a72c2c2ddab355cc8d4002fc737b38cc9}{min}} = limit\_tmp;}
+\DoxyCodeLine{80                 limit\_tmp = 0;}
+\DoxyCodeLine{81                 \textcolor{keywordflow}{while}((tmp = \mbox{\hyperlink{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}{uart\_getc}}()) != \textcolor{charliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{82                 \{}
 \DoxyCodeLine{83                     \textcolor{keywordflow}{if}(tmp == \mbox{\hyperlink{group__pfleury__uart_ga77ba544d423ff42d400220a05303f268}{UART\_NO\_DATA}} || tmp < '0' || tmp > \textcolor{charliteral}{'9'}) \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{84                     limit\_tmp = (limit\_tmp * 10) + tmp -\/ \textcolor{charliteral}{'0'};}
-\DoxyCodeLine{85                 \}}
-\DoxyCodeLine{86                 \mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_a92daff01df74ea4a107364606d04b190}{max}} = limit\_tmp;}
-\DoxyCodeLine{87 }
-\DoxyCodeLine{88                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}Limits were set"{}});}
-\DoxyCodeLine{89 }
-\DoxyCodeLine{90             \textcolor{keywordflow}{case} \textcolor{charliteral}{'l'}:   \textcolor{comment}{// By typing 's' program will give you current moisture limis}}
-\DoxyCodeLine{91                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\(\backslash\)nMoisture limits: from "{}});}
-\DoxyCodeLine{92                 itoa(\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_a72c2c2ddab355cc8d4002fc737b38cc9}{min}}, \textcolor{keywordtype}{string}, 10);}
-\DoxyCodeLine{93                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{keywordtype}{string});}
-\DoxyCodeLine{94                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\% to "{}});}
-\DoxyCodeLine{95                 itoa(\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_a92daff01df74ea4a107364606d04b190}{max}}, \textcolor{keywordtype}{string}, 10);}
-\DoxyCodeLine{96                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{keywordtype}{string});}
-\DoxyCodeLine{97                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\%\(\backslash\)n"{}});}
-\DoxyCodeLine{98                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{99 }
-\DoxyCodeLine{100             \textcolor{keywordflow}{case} \textcolor{charliteral}{'C'}:}
-\DoxyCodeLine{101                 t = 0;}
-\DoxyCodeLine{102                 \textcolor{keywordflow}{while}((tmp = \mbox{\hyperlink{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}{uart\_getc}}()) != \textcolor{charliteral}{'\(\backslash\)n'})}
-\DoxyCodeLine{103                 \{}
-\DoxyCodeLine{104                     \textcolor{keywordflow}{if}(tmp == \mbox{\hyperlink{group__pfleury__uart_ga77ba544d423ff42d400220a05303f268}{UART\_NO\_DATA}} || tmp < '0' || tmp > \textcolor{charliteral}{'9'}) \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{105                     \mbox{\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\_putc}}(tmp);}
-\DoxyCodeLine{106                     t = (t * 10) + tmp -\/ \textcolor{charliteral}{'0'};}
-\DoxyCodeLine{107                 \}}
-\DoxyCodeLine{108                 \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>time = t -\/ \mbox{\hyperlink{dataset_8h_a77f98302b0a72bf38287a9308b799514}{AVRTIME\_TO\_UNIXTIME}};}
-\DoxyCodeLine{109                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}Time was set"{}});}
-\DoxyCodeLine{110 }
-\DoxyCodeLine{111             \textcolor{keywordflow}{case} \textcolor{charliteral}{'c'}:    \textcolor{comment}{// By typing 'c' program will give you current time}}
-\DoxyCodeLine{112                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\(\backslash\)nCurrent time and date: "{}});}
-\DoxyCodeLine{113                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(asctime(local));}
-\DoxyCodeLine{114                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{115                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{116 }
-\DoxyCodeLine{117             \textcolor{keywordflow}{case} \textcolor{charliteral}{'A'}:}
-\DoxyCodeLine{118                 data\_n = 0;}
-\DoxyCodeLine{119                 \textcolor{keywordflow}{while}((tmp = \mbox{\hyperlink{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}{uart\_getc}}()) != \textcolor{charliteral}{'\(\backslash\)n'})}
-\DoxyCodeLine{120                 \{}
-\DoxyCodeLine{121                     \textcolor{keywordflow}{if}(tmp == \mbox{\hyperlink{group__pfleury__uart_ga77ba544d423ff42d400220a05303f268}{UART\_NO\_DATA}} || tmp < '0' || tmp > \textcolor{charliteral}{'9'}) \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{122                     \mbox{\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\_putc}}(tmp);}
-\DoxyCodeLine{123                     data\_n = (data\_n * 10) + tmp -\/ \textcolor{charliteral}{'0'};}
-\DoxyCodeLine{124                 \}}
-\DoxyCodeLine{125                 \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}} = \&mydata;}
-\DoxyCodeLine{126 }
-\DoxyCodeLine{127                 \mbox{\hyperlink{storage_8c_a3c2aca3e3798396df9ddb34244de0ba6}{storage\_read}}(\mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}}, \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}, data\_n);}
-\DoxyCodeLine{128                 t = \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>time;}
-\DoxyCodeLine{129                 local = localtime(\&t);}
-\DoxyCodeLine{130 }
-\DoxyCodeLine{131                 data\_n-\/-\/;}
-\DoxyCodeLine{132 }
-\DoxyCodeLine{133             \textcolor{keywordflow}{case} \textcolor{charliteral}{'a'}:    \textcolor{comment}{// By typing 'a' program will give every current information}}
-\DoxyCodeLine{134                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\(\backslash\)nDate\(\backslash\)tTemp [˚C]\(\backslash\)tHum [\%]\(\backslash\)tMoist\(\backslash\)n"{}});}
-\DoxyCodeLine{135                 \textcolor{keywordflow}{while}(1)}
-\DoxyCodeLine{136                 \{}
-\DoxyCodeLine{137                     \textcolor{comment}{// Time}}
-\DoxyCodeLine{138                     \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(asctime(local));}
-\DoxyCodeLine{139                     \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\(\backslash\)t"{}});}
-\DoxyCodeLine{140 }
-\DoxyCodeLine{141                     \textcolor{comment}{// Temperature}}
-\DoxyCodeLine{142                     itoa(\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>temp, \textcolor{keywordtype}{string}, 10);}
-\DoxyCodeLine{143                     \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{keywordtype}{string});}
-\DoxyCodeLine{144                     \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\(\backslash\)t"{}});}
-\DoxyCodeLine{145 }
-\DoxyCodeLine{146                     \textcolor{comment}{// Humidity}}
-\DoxyCodeLine{147                     itoa(\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>hum, \textcolor{keywordtype}{string}, 10);}
-\DoxyCodeLine{148                     \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{keywordtype}{string});}
-\DoxyCodeLine{149                     \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\(\backslash\)t"{}});}
-\DoxyCodeLine{150 }
-\DoxyCodeLine{151                     \textcolor{comment}{// Moisture}}
-\DoxyCodeLine{152                     itoa(\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>moist, \textcolor{keywordtype}{string}, 10);}
-\DoxyCodeLine{153                     \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{keywordtype}{string});}
-\DoxyCodeLine{154                     \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{155 }
-\DoxyCodeLine{156                     \textcolor{keywordflow}{if}(data\_n >= 0)}
-\DoxyCodeLine{157                     \{}
-\DoxyCodeLine{158 }
-\DoxyCodeLine{159                         data\_n-\/-\/;}
-\DoxyCodeLine{160                         \mbox{\hyperlink{storage_8c_a3c2aca3e3798396df9ddb34244de0ba6}{storage\_read}}(\mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}}, \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}, data\_n);}
-\DoxyCodeLine{161                         t = \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>time;}
-\DoxyCodeLine{162                         local = localtime(\&t);}
-\DoxyCodeLine{163                     \}}
-\DoxyCodeLine{164                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{break};}
-\DoxyCodeLine{165 }
-\DoxyCodeLine{166                 \}}
-\DoxyCodeLine{167                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{168 }
+\DoxyCodeLine{84                     \mbox{\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\_putc}}(tmp);}
+\DoxyCodeLine{85                     limit\_tmp = (limit\_tmp * 10) + tmp -\/ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{86                 \}}
+\DoxyCodeLine{87                 \mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_a92daff01df74ea4a107364606d04b190}{max}} = limit\_tmp;}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\(\backslash\)nLimits were set"{}});}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91             \textcolor{keywordflow}{case} \textcolor{charliteral}{'l'}:   \textcolor{comment}{// By typing 's' program will give you current moisture limis}}
+\DoxyCodeLine{92                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\(\backslash\)nMoisture limits: from "{}});}
+\DoxyCodeLine{93                 itoa(\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_a72c2c2ddab355cc8d4002fc737b38cc9}{min}}, \textcolor{keywordtype}{string}, 10);}
+\DoxyCodeLine{94                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{95                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{} to "{}});}
+\DoxyCodeLine{96                 itoa(\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_a92daff01df74ea4a107364606d04b190}{max}}, \textcolor{keywordtype}{string}, 10);}
+\DoxyCodeLine{97                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{98                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{99                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101             \textcolor{keywordflow}{case} \textcolor{charliteral}{'C'}:}
+\DoxyCodeLine{102                 t = 0;}
+\DoxyCodeLine{103                 \textcolor{keywordflow}{while}((tmp = \mbox{\hyperlink{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}{uart\_getc}}()) != \textcolor{charliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{104                 \{}
+\DoxyCodeLine{105                     \textcolor{keywordflow}{if}(tmp == \mbox{\hyperlink{group__pfleury__uart_ga77ba544d423ff42d400220a05303f268}{UART\_NO\_DATA}} || tmp < '0' || tmp > \textcolor{charliteral}{'9'}) \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{106                     \mbox{\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\_putc}}(tmp);}
+\DoxyCodeLine{107                     t = (t * 10) + tmp -\/ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{108                 \}}
+\DoxyCodeLine{109                 \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>time = t -\/ \mbox{\hyperlink{dataset_8h_a77f98302b0a72bf38287a9308b799514}{AVRTIME\_TO\_UNIXTIME}};}
+\DoxyCodeLine{110                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}Time was set"{}});}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112             \textcolor{keywordflow}{case} \textcolor{charliteral}{'c'}:    \textcolor{comment}{// By typing 'c' program will give you current time}}
+\DoxyCodeLine{113                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\(\backslash\)nCurrent time and date: "{}});}
+\DoxyCodeLine{114                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(asctime(local));}
+\DoxyCodeLine{115                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{116                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118             \textcolor{keywordflow}{case} \textcolor{charliteral}{'A'}:}
+\DoxyCodeLine{119                 data\_n = 0;}
+\DoxyCodeLine{120                 \textcolor{keywordflow}{while}((tmp = \mbox{\hyperlink{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}{uart\_getc}}()) != \textcolor{charliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{121                 \{}
+\DoxyCodeLine{122                     \textcolor{keywordflow}{if}(tmp == \mbox{\hyperlink{group__pfleury__uart_ga77ba544d423ff42d400220a05303f268}{UART\_NO\_DATA}} || tmp < '0' || tmp > \textcolor{charliteral}{'9'}) \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{123                     \mbox{\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\_putc}}(tmp);}
+\DoxyCodeLine{124                     data\_n = (data\_n * 10) + tmp -\/ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{125                 \}}
+\DoxyCodeLine{126                 \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}} = \&mydata;}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128                 \mbox{\hyperlink{storage_8c_a3c2aca3e3798396df9ddb34244de0ba6}{storage\_read}}(\mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}}, \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}, data\_n+1);}
+\DoxyCodeLine{129                 t = \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>time;}
+\DoxyCodeLine{130                 local = localtime(\&t);}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132                 \textcolor{comment}{//data\_n-\/-\/;}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134             \textcolor{keywordflow}{case} \textcolor{charliteral}{'a'}:    \textcolor{comment}{// By typing 'a' program will give every current information}}
+\DoxyCodeLine{135                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\(\backslash\)nDate\(\backslash\)tTemp [˚C]\(\backslash\)tHum [\%]\(\backslash\)tMoist [1/255]\(\backslash\)n"{}});}
+\DoxyCodeLine{136                 \textcolor{keywordflow}{while}(1)}
+\DoxyCodeLine{137                 \{}
+\DoxyCodeLine{138                     \textcolor{comment}{// Time}}
+\DoxyCodeLine{139                     \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(asctime(local));}
+\DoxyCodeLine{140                     \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\(\backslash\)t"{}});}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142                     \textcolor{comment}{// Temperature}}
+\DoxyCodeLine{143                     itoa(\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>temp, \textcolor{keywordtype}{string}, 10);}
+\DoxyCodeLine{144                     \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{145                     \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\(\backslash\)t"{}});}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147                     \textcolor{comment}{// Humidity}}
+\DoxyCodeLine{148                     itoa(\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>hum, \textcolor{keywordtype}{string}, 10);}
+\DoxyCodeLine{149                     \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{150                     \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\(\backslash\)t"{}});}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152                     \textcolor{comment}{// Moisture}}
+\DoxyCodeLine{153                     itoa(\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>moist, \textcolor{keywordtype}{string}, 10);}
+\DoxyCodeLine{154                     \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{155                     \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157                     \textcolor{keywordflow}{if}(data\_n > 1)}
+\DoxyCodeLine{158                     \{}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160                         data\_n-\/-\/;}
+\DoxyCodeLine{161                         \mbox{\hyperlink{storage_8c_a3c2aca3e3798396df9ddb34244de0ba6}{storage\_read}}(\mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}}, \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}, data\_n);}
+\DoxyCodeLine{162                         t = \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>time;}
+\DoxyCodeLine{163                         local = localtime(\&t);}
+\DoxyCodeLine{164                     \}}
+\DoxyCodeLine{165                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167                 \}}
+\DoxyCodeLine{168                 \textcolor{keywordflow}{break};}
 \DoxyCodeLine{169 }
-\DoxyCodeLine{170             \textcolor{keywordflow}{default}:    \textcolor{comment}{// When you type different letter the program will try to help you}}
-\DoxyCodeLine{171                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\(\backslash\)nWrong letter was typed. Type \(\backslash\)x27?\(\backslash\)x27 for help\(\backslash\)n"{}});}
-\DoxyCodeLine{172                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{173         \}}
-\DoxyCodeLine{174 }
-\DoxyCodeLine{175         \textcolor{comment}{// uart\_putc('\(\backslash\)n');}}
-\DoxyCodeLine{176     \}}
-\DoxyCodeLine{177 }
-\DoxyCodeLine{178 \}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171             \textcolor{keywordflow}{default}:    \textcolor{comment}{// When you type different letter the program will try to help you}}
+\DoxyCodeLine{172                 \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}\(\backslash\)nWrong letter was typed. Type \(\backslash\)x27?\(\backslash\)x27 for help\(\backslash\)n"{}});}
+\DoxyCodeLine{173                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{174         \}}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176         \textcolor{comment}{// uart\_putc('\(\backslash\)n');}}
+\DoxyCodeLine{177     \}}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 \}}
 
 \end{DoxyCode}
 
 
 Referenced by \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}}.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{cmd_8c_a851fcc941c3f1d77e581e6f7dce8552d_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
