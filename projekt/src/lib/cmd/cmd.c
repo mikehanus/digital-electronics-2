@@ -48,7 +48,7 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 				//moisture = get_moist();
 				itoa(data->moist, string, 10);
 				uart_puts(string);
-				uart_puts("%\n");
+				uart_puts("/255\n");
 				break;
 
 			case 't':   // By typing 't' program will give you current air temperature
@@ -91,10 +91,10 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 				uart_puts("\nMoisture limits: from ");
 				itoa(watering->min, string, 10);
 				uart_puts(string);
-				uart_puts("% to ");
+				uart_puts(" to ");
 				itoa(watering->max, string, 10);
 				uart_puts(string);
-				uart_puts("%\n");
+				uart_puts("\n");
 				break;
 
 			case 'C':
@@ -131,7 +131,7 @@ void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)
 				data_n--;
 
 			case 'a':    // By typing 'a' program will give every current information
-				uart_puts("\nDate\tTemp [˚C]\tHum [%]\tMoist\n");
+				uart_puts("\nDate\tTemp [˚C]\tHum [1/255]\tMoist\n");
 				while(1)
 				{
 					// Time
