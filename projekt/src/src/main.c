@@ -30,11 +30,13 @@ int main(void)
 	sei();
 	uart_init(UART_BAUD_SELECT(9600, F_CPU));
 
+	GPIO_mode_output(&DDRB, 0);
 	servo_init(&water_servo, &PORTB, 0);
 	servo_set_value(&water_servo, 45);
 
 	storage_init(&storage);
 	watering_init(&watering, &water_servo);
+	watering_set_limit(&watering, 0, 255);
 	sensors_init();
 	display_init();
 
@@ -43,7 +45,6 @@ int main(void)
 
 	set_zone(+1*ONE_HOUR);
 	actual_data.time = 1701344319 - AVRTIME_TO_UNIXTIME;
-	GPIO_mode_output(&DDRB, 0);
 
 	uart_puts("Watering system terminal (pres ? for help):");
 
