@@ -20,6 +20,9 @@
 ![Schematic](images/schematic.png)
 
 ## Popis programu
+
+![Graf programu](src/docs/html/main_8c__incl.png)
+
 #### Kód main.c
 [main.c](src/src/main.c)
 ![main.c](images/mainfile.PNG)
