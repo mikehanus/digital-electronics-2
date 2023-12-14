@@ -15,7 +15,7 @@
 #include <twi.h>
 
 #ifndef TWI_TIMEOUT
-#define TWI_TIMEOUT 10000
+#define TWI_TIMEOUT 100000
 #endif
 
 /* Functions ---------------------------------------------------------*/

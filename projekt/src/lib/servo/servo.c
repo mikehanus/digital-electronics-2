@@ -21,10 +21,10 @@ void servo_set_value(servo_t *servo, uint8_t value)
 void servo_50us_interrupt_handler(servo_t *servo)
 {
 	static uint16_t tick = 0;
-	if (tick == servo->value/3+14) GPIO_write_low(servo->reg, servo->pin);
+	if (tick == servo->value/6+14) GPIO_write_low(servo->reg, servo->pin);
 	if (tick >= 387)
 	{
-		PORTB |= (1 << 0);
+		//PORTB |= (1 << 0);
         GPIO_write_high(servo->reg, servo->pin);
 		tick=0;
 	}

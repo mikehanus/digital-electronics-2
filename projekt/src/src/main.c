@@ -30,44 +30,37 @@ int main(void)
 	sei();
 	uart_init(UART_BAUD_SELECT(9600, F_CPU));
 
+	//display_init();
+
 	GPIO_mode_output(&DDRB, 0);
 	servo_init(&water_servo, &PORTB, 0);
-	servo_set_value(&water_servo, 45);
+	servo_set_value(&water_servo, 0);
 
 	storage_init(&storage);
 	watering_init(&watering, &water_servo);
 	watering_set_limit(&watering, 0, 255);
-	//sensors_init();
-	//display_init();
+	sensors_init();
 
 	TIM1_OVF_1SEC();
 	TIM1_OVF_ENABLE();
 
 	//set_zone(+1*ONE_HOUR);
-	actual_data.time = 1701344319 - AVRTIME_TO_UNIXTIME;
+	actual_data.time = 0; //1701344319 - AVRTIME_TO_UNIXTIME;
 
 	uart_puts("Watering system terminal (pres ? for help):");
-
-	for(uint8_t i = 0; i < 20; i++)
-	{
-		actual_data.time += 10;
-		actual_data.temp = 12 + actual_data.time % 15;
-		actual_data.hum = actual_data.time % 100;
-		actual_data.moist = actual_data.time % 255;
-		storage_write(&storage, &actual_data);
-	}
-
+	
 	while(1)
 	{
 		cmd_handler(&actual_data, &watering, &storage);
 		_delay_ms(1000);
+		watering_handler(&watering, &actual_data);
+		sensors_update_dataset(&actual_data);
+		//servo_set_value(&water_servo, actual_data.time%90);
 
-		// Every 10 s make measurement
+		// Every save and display measurement
 		if(last_measurement_time + 10 < actual_data.time)
 		{
 			last_measurement_time = actual_data.time;
-
-			//sensors_update_dataset(&actual_data);
 			//display_show_data(&actual_data);
 			storage_write(&storage, &actual_data);
 		}
@@ -78,7 +71,7 @@ int main(void)
 // 50us overflow
 ISR(TIMER0_OVF_vect)
 {
-	TCNT0 = 156;
+	TCNT0 = 158;
 	servo_50us_interrupt_handler(&water_servo);
 }
 
