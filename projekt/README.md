@@ -12,9 +12,9 @@
 <p>Pomocí příkazové řádky lze vypsat teplota a vlhkost ovzduší, vlhkost půdy a čas. Také lze pomocí příkazu vyvolat pomocné menu, ve kterém jsou napsány všechny příkazy.</p>
 <p>Každou minutu ukládá program data ze senzorů do paměti EEPROM. Tyto hodnoty lze uložit do CSV souboru a nebo zobrazit v příkazové řádce.</p>
 
-## Hardware description of demo application
+## Popis zapojení Arduina se senzory
 
-Insert descriptive text and schematic(s) of your implementation.
+<p>Na analogový pin A0 je připojen senzor vlhkosti půdy. Přes sběrnici I2C tedy piny SDA/A4 a SCL/A5 je připojen OLED displej a senzor teploty a vlhkosti vzduchu. Pomocí digitálního pinu D8 je připojeno servo pro ovládání zalévání. Počítač je k Arduinu připojen pomocí pinů D0/RX a D1/TX, které zajišťují komunikaci s Arduinem pomocí příkazové řádky.
 
 ##### Schéma zapojení
 ![Schematic](images/schematic.png)
