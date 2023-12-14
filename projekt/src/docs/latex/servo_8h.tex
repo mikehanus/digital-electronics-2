@@ -1,0 +1,146 @@
+\hypertarget{servo_8h}{}\doxysection{lib/servo/servo.h File Reference}
+\label{servo_8h}\index{lib/servo/servo.h@{lib/servo/servo.h}}
+{\ttfamily \#include $<$timer.\+h$>$}\newline
+{\ttfamily \#include $<$gpio.\+h$>$}\newline
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$avr/interrupt.\+h$>$}\newline
+Include dependency graph for servo.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{servo_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{servo_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structservo__t}{servo\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{servo_8h_af2901abc08a7acebca8b6a14fbb0239d}{servo\+\_\+init}} (\mbox{\hyperlink{structservo__t}{servo\+\_\+t}} $\ast$servo, volatile uint8\+\_\+t $\ast$reg, uint8\+\_\+t pin)
+\item 
+void \mbox{\hyperlink{servo_8h_ab915767fa085801feff281f341eebeec}{servo\+\_\+set\+\_\+value}} (\mbox{\hyperlink{structservo__t}{servo\+\_\+t}} $\ast$servo, uint8\+\_\+t value)
+\item 
+void \mbox{\hyperlink{servo_8h_a6e27a0da014d4197e9b84c628460a5e1}{servo\+\_\+50us\+\_\+interrupt\+\_\+handler}} (\mbox{\hyperlink{structservo__t}{servo\+\_\+t}} $\ast$servo)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{servo_8h_a6e27a0da014d4197e9b84c628460a5e1}\label{servo_8h_a6e27a0da014d4197e9b84c628460a5e1}} 
+\index{servo.h@{servo.h}!servo\_50us\_interrupt\_handler@{servo\_50us\_interrupt\_handler}}
+\index{servo\_50us\_interrupt\_handler@{servo\_50us\_interrupt\_handler}!servo.h@{servo.h}}
+\doxysubsubsection{\texorpdfstring{servo\_50us\_interrupt\_handler()}{servo\_50us\_interrupt\_handler()}}
+{\footnotesize\ttfamily void servo\+\_\+50us\+\_\+interrupt\+\_\+handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structservo__t}{servo\+\_\+t}} $\ast$}]{servo }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23     \textcolor{keyword}{static} uint16\_t tick = 0;}
+\DoxyCodeLine{24     \textcolor{keywordflow}{if} (tick == servo-\/>\mbox{\hyperlink{structservo__t_a8f9429a848536d7b7aa533ca539afa55}{value}}/3+14) \mbox{\hyperlink{group__fryza__gpio_gacea0f20416113eb2286b6bd730e22daa}{GPIO\_write\_low}}(servo-\/>\mbox{\hyperlink{structservo__t_a8a450f2ca08066ed18538b1a22011154}{reg}}, servo-\/>\mbox{\hyperlink{structservo__t_ac7cd8ac434e7f7426abe1fed6d686c0e}{pin}});}
+\DoxyCodeLine{25     \textcolor{keywordflow}{if} (tick >= 387)}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         PORTB |= (1 << 0);}
+\DoxyCodeLine{28         \mbox{\hyperlink{group__fryza__gpio_gabd54283301ad4e85b31c126f2fc316c7}{GPIO\_write\_high}}(servo-\/>\mbox{\hyperlink{structservo__t_a8a450f2ca08066ed18538b1a22011154}{reg}}, servo-\/>\mbox{\hyperlink{structservo__t_ac7cd8ac434e7f7426abe1fed6d686c0e}{pin}});}
+\DoxyCodeLine{29         tick=0;}
+\DoxyCodeLine{30     \}}
+\DoxyCodeLine{31     \textcolor{keywordflow}{else} tick++;}
+\DoxyCodeLine{32 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{main_8c_add2d7cdddfb682dcc0391e60cf42c7d6}{ISR()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{servo_8h_a6e27a0da014d4197e9b84c628460a5e1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{servo_8h_a6e27a0da014d4197e9b84c628460a5e1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{servo_8h_af2901abc08a7acebca8b6a14fbb0239d}\label{servo_8h_af2901abc08a7acebca8b6a14fbb0239d}} 
+\index{servo.h@{servo.h}!servo\_init@{servo\_init}}
+\index{servo\_init@{servo\_init}!servo.h@{servo.h}}
+\doxysubsubsection{\texorpdfstring{servo\_init()}{servo\_init()}}
+{\footnotesize\ttfamily void servo\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structservo__t}{servo\+\_\+t}} $\ast$}]{servo,  }\item[{volatile uint8\+\_\+t $\ast$}]{reg,  }\item[{uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     servo-\/>\mbox{\hyperlink{structservo__t_a8a450f2ca08066ed18538b1a22011154}{reg}} = reg;}
+\DoxyCodeLine{6     servo-\/>\mbox{\hyperlink{structservo__t_ac7cd8ac434e7f7426abe1fed6d686c0e}{pin}} = pin;}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8     \mbox{\hyperlink{group__fryza__timer_gac67ef124d63c45e6d3fc57fc758063e2}{TIM0\_OVF\_128US}}();}
+\DoxyCodeLine{9     \mbox{\hyperlink{group__fryza__timer_ga2e9d1736340c1d735c1a3bd98734e80a}{TIM0\_OVF\_ENABLE}}();}
+\DoxyCodeLine{10     sei();}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12     \textcolor{comment}{//GPIO\_mode\_output(servo-\/>reg, servo-\/>pin);}}
+\DoxyCodeLine{13     \mbox{\hyperlink{group__fryza__gpio_gacea0f20416113eb2286b6bd730e22daa}{GPIO\_write\_low}}(servo-\/>\mbox{\hyperlink{structservo__t_a8a450f2ca08066ed18538b1a22011154}{reg}}, servo-\/>\mbox{\hyperlink{structservo__t_ac7cd8ac434e7f7426abe1fed6d686c0e}{pin}});}
+\DoxyCodeLine{14 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{servo_8h_af2901abc08a7acebca8b6a14fbb0239d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{servo_8h_af2901abc08a7acebca8b6a14fbb0239d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{servo_8h_ab915767fa085801feff281f341eebeec}\label{servo_8h_ab915767fa085801feff281f341eebeec}} 
+\index{servo.h@{servo.h}!servo\_set\_value@{servo\_set\_value}}
+\index{servo\_set\_value@{servo\_set\_value}!servo.h@{servo.h}}
+\doxysubsubsection{\texorpdfstring{servo\_set\_value()}{servo\_set\_value()}}
+{\footnotesize\ttfamily void servo\+\_\+set\+\_\+value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structservo__t}{servo\+\_\+t}} $\ast$}]{servo,  }\item[{uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     servo-\/>\mbox{\hyperlink{structservo__t_a8f9429a848536d7b7aa533ca539afa55}{value}} = value;}
+\DoxyCodeLine{19 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}}, \mbox{\hyperlink{watering_8c_a2771d1fd0080d7ee739c77936b341c03}{watering\+\_\+handler()}}, and \mbox{\hyperlink{watering_8c_a19f0ee5e2ed5f2b96c770e741a40de54}{watering\+\_\+init()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{servo_8h_ab915767fa085801feff281f341eebeec_icgraph}
+\end{center}
+\end{figure}

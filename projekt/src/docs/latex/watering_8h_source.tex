@@ -1,0 +1,46 @@
+\hypertarget{watering_8h_source}{}\doxysection{watering.\+h}
+\label{watering_8h_source}\index{lib/watering/watering.h@{lib/watering/watering.h}}
+\mbox{\hyperlink{watering_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef WATERING\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define WATERING\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{servo_8h}{servo.h}}>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{dataset_8h}{dataset.h}}>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{17 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19     \mbox{\hyperlink{structservo__t}{servo\_t}} *\mbox{\hyperlink{structwatering__t_af4b9e7439c3b899efe40f0162f2c79b6}{servo}};}
+\DoxyCodeLine{20     uint16\_t \mbox{\hyperlink{structwatering__t_a72c2c2ddab355cc8d4002fc737b38cc9}{min}};}
+\DoxyCodeLine{21     uint16\_t \mbox{\hyperlink{structwatering__t_a92daff01df74ea4a107364606d04b190}{max}};}
+\DoxyCodeLine{22 \} \mbox{\hyperlink{structwatering__t}{watering\_t}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{25 \textcolor{comment}{ *  @brief  -\/-\/-\/}}
+\DoxyCodeLine{26 \textcolor{comment}{ *  @param  watering -\/-\/-\/}}
+\DoxyCodeLine{27 \textcolor{comment}{ *  @param  servo -\/-\/-\/}}
+\DoxyCodeLine{28 \textcolor{comment}{ *  @return None}}
+\DoxyCodeLine{29 \textcolor{comment}{****************************************************/}}
+\DoxyCodeLine{30 \textcolor{keywordtype}{void} \mbox{\hyperlink{watering_8h_a19f0ee5e2ed5f2b96c770e741a40de54}{watering\_init}}(\mbox{\hyperlink{structwatering__t}{watering\_t}} *\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}, \mbox{\hyperlink{structservo__t}{servo\_t}} *servo);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{33 \textcolor{comment}{ *  @brief  -\/-\/-\/}}
+\DoxyCodeLine{34 \textcolor{comment}{ *  @param  watering -\/-\/-\/}}
+\DoxyCodeLine{35 \textcolor{comment}{ *  @param  min -\/-\/-\/}}
+\DoxyCodeLine{36 \textcolor{comment}{ *  @param  max -\/-\/-\/}}
+\DoxyCodeLine{37 \textcolor{comment}{ *  @return None}}
+\DoxyCodeLine{38 \textcolor{comment}{****************************************************/}}
+\DoxyCodeLine{39 \textcolor{keywordtype}{void} \mbox{\hyperlink{watering_8h_a0c62a16721b62527d74111250d1e179b}{watering\_set\_limit}}(\mbox{\hyperlink{structwatering__t}{watering\_t}} *\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}, uint16\_t min, uint16\_t max);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{42 \textcolor{comment}{ *  @brief  -\/-\/-\/}}
+\DoxyCodeLine{43 \textcolor{comment}{ *  @param  watering -\/-\/-\/}}
+\DoxyCodeLine{44 \textcolor{comment}{ *  @param  data -\/-\/-\/ Current measurements}}
+\DoxyCodeLine{45 \textcolor{comment}{ *  @return None}}
+\DoxyCodeLine{46 \textcolor{comment}{****************************************************/}}
+\DoxyCodeLine{47 \textcolor{keywordtype}{void} \mbox{\hyperlink{watering_8h_a2771d1fd0080d7ee739c77936b341c03}{watering\_handler}}(\mbox{\hyperlink{structwatering__t}{watering\_t}} *\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}, \mbox{\hyperlink{structdataset__t}{dataset\_t}} *\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}});}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{50 }
+
+\end{DoxyCode}

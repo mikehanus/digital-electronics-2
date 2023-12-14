@@ -1,0 +1,109 @@
+\hypertarget{display_8h}{}\doxysection{lib/display/display.h File Reference}
+\label{display_8h}\index{lib/display/display.h@{lib/display/display.h}}
+{\ttfamily \#include $<$twi.\+h$>$}\newline
+{\ttfamily \#include $<$uart.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$oled.\+h$>$}\newline
+{\ttfamily \#include $<$dataset.\+h$>$}\newline
+Include dependency graph for display.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{display_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{display_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{display_8h_a8d41c12af4f6e6faad84e1f21f99b3e1}{display\+\_\+init}} ()
+\item 
+void \mbox{\hyperlink{display_8h_af6002a9b15fd411e61bc74a7ace0d457}{display\+\_\+show\+\_\+data}} (\mbox{\hyperlink{structdataset__t}{dataset\+\_\+t}} $\ast$\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{display_8h_a8d41c12af4f6e6faad84e1f21f99b3e1}\label{display_8h_a8d41c12af4f6e6faad84e1f21f99b3e1}} 
+\index{display.h@{display.h}!display\_init@{display\_init}}
+\index{display\_init@{display\_init}!display.h@{display.h}}
+\doxysubsubsection{\texorpdfstring{display\_init()}{display\_init()}}
+{\footnotesize\ttfamily void display\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \mbox{\hyperlink{oled_8c_adf4cfb5ed444b0ab8cd162456c017934}{oled\_init}}(\mbox{\hyperlink{oled_8h_ad0b0c811ef4558ec795f2adc26d00b32}{OLED\_DISP\_ON}});}
+\DoxyCodeLine{6     \mbox{\hyperlink{oled_8c_a87e32cd0efcfb14bfa3c71e386498df6}{oled\_clrscr}}();}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8     \mbox{\hyperlink{oled_8c_af5493f2f933481c8ec122f5ba33391aa}{oled\_charMode}}(\mbox{\hyperlink{oled_8h_aac475f984d2fd89965461afbf3cf8dd4}{DOUBLESIZE}});}
+\DoxyCodeLine{9     \textcolor{comment}{// oled\_puts("{}OLED disp."{});}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \mbox{\hyperlink{oled_8c_af5493f2f933481c8ec122f5ba33391aa}{oled\_charMode}}(\mbox{\hyperlink{oled_8h_a2e939114bcc66ec9bcc8f9b0d17a0d79}{NORMALSIZE}});}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \mbox{\hyperlink{oled_8c_a89aa3a9a7daa84a50f00399d32d9dfa2}{oled\_gotoxy}}(0, 1);}
+\DoxyCodeLine{14     \mbox{\hyperlink{oled_8c_a8daec8fb691af3b411501856f9291683}{oled\_puts}}(\textcolor{stringliteral}{"{}Podminky v kvetinaci"{}});}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \mbox{\hyperlink{oled_8c_a89aa3a9a7daa84a50f00399d32d9dfa2}{oled\_gotoxy}}(0, 2);}
+\DoxyCodeLine{17     \textcolor{comment}{// oled\_drawLine(x1, y1, x2, y2, color)}}
+\DoxyCodeLine{18     \mbox{\hyperlink{oled_8c_a3ad449ff03fa8efc3e2f58c443bbd4ff}{oled\_drawLine}}(0, 25, 120, 25, \mbox{\hyperlink{oled_8h_a87b537f5fa5c109d3c05c13d6b18f382}{WHITE}});}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{comment}{// Copy buffer to display RAM}}
+\DoxyCodeLine{21     \mbox{\hyperlink{oled_8c_aebb4380fed7380f42c7c465430de9012}{oled\_display}}();}
+\DoxyCodeLine{22 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{display_8h_a8d41c12af4f6e6faad84e1f21f99b3e1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{display_8h_af6002a9b15fd411e61bc74a7ace0d457}\label{display_8h_af6002a9b15fd411e61bc74a7ace0d457}} 
+\index{display.h@{display.h}!display\_show\_data@{display\_show\_data}}
+\index{display\_show\_data@{display\_show\_data}!display.h@{display.h}}
+\doxysubsubsection{\texorpdfstring{display\_show\_data()}{display\_show\_data()}}
+{\footnotesize\ttfamily void display\+\_\+show\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdataset__t}{dataset\+\_\+t}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26     \textcolor{keywordtype}{char} tmp\_str[20];}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     itoa(\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>temp, tmp\_str, 10);}
+\DoxyCodeLine{29     \mbox{\hyperlink{oled_8c_a89aa3a9a7daa84a50f00399d32d9dfa2}{oled\_gotoxy}}(0, 4);}
+\DoxyCodeLine{30     \mbox{\hyperlink{oled_8c_a8daec8fb691af3b411501856f9291683}{oled\_puts}}(\textcolor{stringliteral}{"{}Teplota vzduchu\(\backslash\)t"{}});}
+\DoxyCodeLine{31     \mbox{\hyperlink{oled_8c_a8daec8fb691af3b411501856f9291683}{oled\_puts}}(tmp\_str);}
+\DoxyCodeLine{32     \mbox{\hyperlink{oled_8c_a8daec8fb691af3b411501856f9291683}{oled\_puts}}(\textcolor{stringliteral}{"{} °C"{}});}
+\DoxyCodeLine{33     \mbox{\hyperlink{oled_8c_aebb4380fed7380f42c7c465430de9012}{oled\_display}}();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     itoa(\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>hum, tmp\_str, 10);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \mbox{\hyperlink{oled_8c_a89aa3a9a7daa84a50f00399d32d9dfa2}{oled\_gotoxy}}(0, 5);}
+\DoxyCodeLine{38     \mbox{\hyperlink{oled_8c_a8daec8fb691af3b411501856f9291683}{oled\_puts}}(\textcolor{stringliteral}{"{}Vlhkost vzduchu\(\backslash\)t"{}});}
+\DoxyCodeLine{39     \mbox{\hyperlink{oled_8c_a8daec8fb691af3b411501856f9291683}{oled\_puts}}(tmp\_str);}
+\DoxyCodeLine{40     \mbox{\hyperlink{oled_8c_a8daec8fb691af3b411501856f9291683}{oled\_puts}}(\textcolor{stringliteral}{"{} \%"{}});}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{long} i=0; i < 5000; i++) \textcolor{keyword}{asm}(\textcolor{stringliteral}{"{}NOP"{}}); \textcolor{comment}{// around 1ms delay}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \mbox{\hyperlink{oled_8c_aebb4380fed7380f42c7c465430de9012}{oled\_display}}();}
+\DoxyCodeLine{45 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{display_8h_af6002a9b15fd411e61bc74a7ace0d457_cgraph}
+\end{center}
+\end{figure}

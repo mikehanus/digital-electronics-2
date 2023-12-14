@@ -1,0 +1,32 @@
+\hypertarget{cmd_8h_source}{}\doxysection{cmd.\+h}
+\label{cmd_8h_source}\index{lib/cmd/cmd.h@{lib/cmd/cmd.h}}
+\mbox{\hyperlink{cmd_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CMD\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CMD\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <avr/io.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <avr/interrupt.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{uart_8h}{uart.h}}>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{moist__sens_8h}{moist\_sens.h}}>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{dataset_8h}{dataset.h}}>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{watering_8h}{watering.h}}>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{storage_8h}{storage.h}}>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/****************************************************}}
+\DoxyCodeLine{14 \textcolor{comment}{ *  @brief  Enables communication}}
+\DoxyCodeLine{15 \textcolor{comment}{ *          between user and program via command line}}
+\DoxyCodeLine{16 \textcolor{comment}{ *  @param  data Actual measured data}}
+\DoxyCodeLine{17 \textcolor{comment}{ *  @param  watering Watering setup}}
+\DoxyCodeLine{18 \textcolor{comment}{ *  @param  storage Storage setup}}
+\DoxyCodeLine{19 \textcolor{comment}{ *  @return None}}
+\DoxyCodeLine{20 \textcolor{comment}{*****************************************************/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keywordtype}{void} \mbox{\hyperlink{cmd_8h_a851fcc941c3f1d77e581e6f7dce8552d}{cmd\_handler}}(\mbox{\hyperlink{structdataset__t}{dataset\_t}} *\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}, \mbox{\hyperlink{structwatering__t}{watering\_t}} *\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}, \mbox{\hyperlink{structstorage__t}{storage\_t}} *\mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}});}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{26 }
+
+\end{DoxyCode}

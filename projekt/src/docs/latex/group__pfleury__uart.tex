@@ -1,0 +1,585 @@
+\hypertarget{group__pfleury__uart}{}\doxysection{UART Library \texorpdfstring{$<$}{<}uart.\+h\texorpdfstring{$>$}{>}}
+\label{group__pfleury__uart}\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+
+
+Interrupt UART library using the built-\/in UART with transmit and receive circular buffers.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__pfleury__uart_ga367ff7b5de225ed936a63239ad4adb0b}{UART\+\_\+\+BAUD\+\_\+\+SELECT}}(baud\+Rate,  xtal\+Cpu)~(((xtal\+Cpu) + 8UL $\ast$ (baud\+Rate)) / (16UL $\ast$ (baud\+Rate)) -\/1UL)
+\begin{DoxyCompactList}\small\item\em UART Baudrate Expression. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__pfleury__uart_ga1a02d45130520cb651ab313e69039382}{UART\+\_\+\+BAUD\+\_\+\+SELECT\+\_\+\+DOUBLE\+\_\+\+SPEED}}(baud\+Rate,  xtal\+Cpu)~( ((((xtal\+Cpu) + 4UL $\ast$ (baud\+Rate)) / (8UL $\ast$ (baud\+Rate)) -\/1UL)) $\vert$ 0x8000)
+\begin{DoxyCompactList}\small\item\em UART Baudrate Expression for ATmega double speed mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__pfleury__uart_ga5bdd6772c246436bb14377095de79b31}{UART\+\_\+\+RX\+\_\+\+BUFFER\+\_\+\+SIZE}}~32
+\begin{DoxyCompactList}\small\item\em Size of the circular receive buffer, must be power of 2. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__pfleury__uart_ga05f5d709605c6317c97e4974bec3402a}{UART\+\_\+\+TX\+\_\+\+BUFFER\+\_\+\+SIZE}}~256
+\begin{DoxyCompactList}\small\item\em Size of the circular transmit buffer, must be power of 2. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__pfleury__uart_gabcdb1041d763560cd8f8e722370dfd37}{UART\+\_\+\+FRAME\+\_\+\+ERROR}}~0x1000
+\begin{DoxyCompactList}\small\item\em Framing Error by UART ~\newline
+ \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__pfleury__uart_ga3183177e3613d8785d8cc8516931beb6}{UART\+\_\+\+OVERRUN\+\_\+\+ERROR}}~0x0800
+\begin{DoxyCompactList}\small\item\em Overrun condition by UART ~\newline
+ \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__pfleury__uart_ga946e3d317937e003d2057bf19e96dd1d}{UART\+\_\+\+PARITY\+\_\+\+ERROR}}~0x0400
+\begin{DoxyCompactList}\small\item\em Parity Error by UART ~\newline
+ \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__pfleury__uart_ga94758f3dad6864703b7417d3e40f11df}{UART\+\_\+\+BUFFER\+\_\+\+OVERFLOW}}~0x0200
+\begin{DoxyCompactList}\small\item\em receive ringbuffer overflow \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__pfleury__uart_ga77ba544d423ff42d400220a05303f268}{UART\+\_\+\+NO\+\_\+\+DATA}}~0x0100
+\begin{DoxyCompactList}\small\item\em no receive data available ~\newline
+ \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__pfleury__uart_gae9e143569df2285379bc55f9f5595bf9}{uart\+\_\+puts\+\_\+P}}(\+\_\+\+\_\+s)~\mbox{\hyperlink{group__pfleury__uart_ga6d78b6744db6232f52b4616402036c2f}{uart\+\_\+puts\+\_\+p}}(PSTR(\+\_\+\+\_\+s))
+\begin{DoxyCompactList}\small\item\em Macro to automatically put a string constant into program memory. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__pfleury__uart_gaabd7a5b0c15611ee9ecb2873cc9ee87a}{uart1\+\_\+puts\+\_\+P}}(\+\_\+\+\_\+s)~\mbox{\hyperlink{group__pfleury__uart_ga1e8074d0a2d5922601c5db2f9777ba79}{uart1\+\_\+puts\+\_\+p}}(PSTR(\+\_\+\+\_\+s))
+\begin{DoxyCompactList}\small\item\em Macro to automatically put a string constant into program memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__pfleury__uart_gac19a76bb7d446125734a67f9f4b68991}{uart\+\_\+init}} (unsigned int baudrate)
+\begin{DoxyCompactList}\small\item\em Initialize UART and set baudrate. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}{uart\+\_\+getc}} (void)
+\begin{DoxyCompactList}\small\item\em Get received byte from ringbuffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\+\_\+putc}} (unsigned char \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}})
+\begin{DoxyCompactList}\small\item\em Put byte to ringbuffer for transmitting via UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\+\_\+puts}} (const char $\ast$s)
+\begin{DoxyCompactList}\small\item\em Put string to ringbuffer for transmitting via UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__pfleury__uart_ga6d78b6744db6232f52b4616402036c2f}{uart\+\_\+puts\+\_\+p}} (const char $\ast$s)
+\begin{DoxyCompactList}\small\item\em Put string from program memory to ringbuffer for transmitting via UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__pfleury__uart_ga4db697cb5469fd70e794fa7df73a6d6a}{uart1\+\_\+init}} (unsigned int baudrate)
+\begin{DoxyCompactList}\small\item\em Initialize USART1 (only available on selected ATmegas) \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{group__pfleury__uart_gaeb1405c641e5bc9b7224018f5e8d90de}{uart1\+\_\+getc}} (void)
+\begin{DoxyCompactList}\small\item\em Get received byte of USART1 from ringbuffer. (only available on selected ATmega) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__pfleury__uart_gab465f689d197fadfbacc374fc9411154}{uart1\+\_\+putc}} (unsigned char \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}})
+\begin{DoxyCompactList}\small\item\em Put byte to ringbuffer for transmitting via USART1 (only available on selected ATmega) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__pfleury__uart_ga5568f8f3913b218fd4d0346af78831b2}{uart1\+\_\+puts}} (const char $\ast$s)
+\begin{DoxyCompactList}\small\item\em Put string to ringbuffer for transmitting via USART1 (only available on selected ATmega) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__pfleury__uart_ga1e8074d0a2d5922601c5db2f9777ba79}{uart1\+\_\+puts\+\_\+p}} (const char $\ast$s)
+\begin{DoxyCompactList}\small\item\em Put string from program memory to ringbuffer for transmitting via USART1 (only available on selected ATmega) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interrupt UART library using the built-\/in UART with transmit and receive circular buffers. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <\mbox{\hyperlink{uart_8h}{uart.h}}>} }
+
+\end{DoxyCode}
+
+
+This library can be used to transmit and receive data through the built in UART.
+
+An interrupt is generated when the UART has finished transmitting or receiving a byte. The interrupt handling routines use circular buffers for buffering received and transmitted data.
+
+The UART\+\_\+\+RX\+\_\+\+BUFFER\+\_\+\+SIZE and UART\+\_\+\+TX\+\_\+\+BUFFER\+\_\+\+SIZE constants define the size of the circular buffers in bytes. Note that these constants must be a power of 2. You may need to adapt these constants to your target and your application by adding CDEFS += -\/DUART\+\_\+\+RX\+\_\+\+BUFFER\+\_\+\+SIZE=nn -\/DUART\+\_\+\+TX\+\_\+\+BUFFER\+\_\+\+SIZE=nn to your Makefile.
+
+\begin{DoxyNote}{Note}
+Based on Atmel Application Note AVR306 
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+Peter Fleury \href{mailto:pfleury@gmx.ch}{\texttt{ pfleury@gmx.\+ch}} \href{http://tinyurl.com/peterfleury}{\texttt{ http\+://tinyurl.\+com/peterfleury}} 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+(C) 2015 Peter Fleury, GNU General Public License Version 3 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__pfleury__uart_gaabd7a5b0c15611ee9ecb2873cc9ee87a}\label{group__pfleury__uart_gaabd7a5b0c15611ee9ecb2873cc9ee87a}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart1\_puts\_P@{uart1\_puts\_P}}
+\index{uart1\_puts\_P@{uart1\_puts\_P}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{uart1\_puts\_P}{uart1\_puts\_P}}
+{\footnotesize\ttfamily \#define uart1\+\_\+puts\+\_\+P(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+s }\end{DoxyParamCaption})~\mbox{\hyperlink{group__pfleury__uart_ga1e8074d0a2d5922601c5db2f9777ba79}{uart1\+\_\+puts\+\_\+p}}(PSTR(\+\_\+\+\_\+s))}
+
+
+
+Macro to automatically put a string constant into program memory. 
+
+\mbox{\Hypertarget{group__pfleury__uart_ga367ff7b5de225ed936a63239ad4adb0b}\label{group__pfleury__uart_ga367ff7b5de225ed936a63239ad4adb0b}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!UART\_BAUD\_SELECT@{UART\_BAUD\_SELECT}}
+\index{UART\_BAUD\_SELECT@{UART\_BAUD\_SELECT}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{UART\_BAUD\_SELECT}{UART\_BAUD\_SELECT}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+BAUD\+\_\+\+SELECT(\begin{DoxyParamCaption}\item[{}]{baud\+Rate,  }\item[{}]{xtal\+Cpu }\end{DoxyParamCaption})~(((xtal\+Cpu) + 8UL $\ast$ (baud\+Rate)) / (16UL $\ast$ (baud\+Rate)) -\/1UL)}
+
+
+
+UART Baudrate Expression. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xtal\+Cpu} & system clock in Mhz, e.\+g. 4000000UL for 4Mhz ~\newline
+ \\
+\hline
+{\em baud\+Rate} & baudrate in bps, e.\+g. 1200, 2400, 9600 ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__pfleury__uart_ga1a02d45130520cb651ab313e69039382}\label{group__pfleury__uart_ga1a02d45130520cb651ab313e69039382}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!UART\_BAUD\_SELECT\_DOUBLE\_SPEED@{UART\_BAUD\_SELECT\_DOUBLE\_SPEED}}
+\index{UART\_BAUD\_SELECT\_DOUBLE\_SPEED@{UART\_BAUD\_SELECT\_DOUBLE\_SPEED}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{UART\_BAUD\_SELECT\_DOUBLE\_SPEED}{UART\_BAUD\_SELECT\_DOUBLE\_SPEED}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+BAUD\+\_\+\+SELECT\+\_\+\+DOUBLE\+\_\+\+SPEED(\begin{DoxyParamCaption}\item[{}]{baud\+Rate,  }\item[{}]{xtal\+Cpu }\end{DoxyParamCaption})~( ((((xtal\+Cpu) + 4UL $\ast$ (baud\+Rate)) / (8UL $\ast$ (baud\+Rate)) -\/1UL)) $\vert$ 0x8000)}
+
+
+
+UART Baudrate Expression for ATmega double speed mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xtal\+Cpu} & system clock in Mhz, e.\+g. 4000000UL for 4Mhz ~\newline
+ \\
+\hline
+{\em baud\+Rate} & baudrate in bps, e.\+g. 1200, 2400, 9600 ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__pfleury__uart_ga94758f3dad6864703b7417d3e40f11df}\label{group__pfleury__uart_ga94758f3dad6864703b7417d3e40f11df}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!UART\_BUFFER\_OVERFLOW@{UART\_BUFFER\_OVERFLOW}}
+\index{UART\_BUFFER\_OVERFLOW@{UART\_BUFFER\_OVERFLOW}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{UART\_BUFFER\_OVERFLOW}{UART\_BUFFER\_OVERFLOW}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+BUFFER\+\_\+\+OVERFLOW~0x0200}
+
+
+
+receive ringbuffer overflow 
+
+\mbox{\Hypertarget{group__pfleury__uart_gabcdb1041d763560cd8f8e722370dfd37}\label{group__pfleury__uart_gabcdb1041d763560cd8f8e722370dfd37}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!UART\_FRAME\_ERROR@{UART\_FRAME\_ERROR}}
+\index{UART\_FRAME\_ERROR@{UART\_FRAME\_ERROR}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{UART\_FRAME\_ERROR}{UART\_FRAME\_ERROR}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+FRAME\+\_\+\+ERROR~0x1000}
+
+
+
+Framing Error by UART ~\newline
+ 
+
+\mbox{\Hypertarget{group__pfleury__uart_ga77ba544d423ff42d400220a05303f268}\label{group__pfleury__uart_ga77ba544d423ff42d400220a05303f268}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!UART\_NO\_DATA@{UART\_NO\_DATA}}
+\index{UART\_NO\_DATA@{UART\_NO\_DATA}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{UART\_NO\_DATA}{UART\_NO\_DATA}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+NO\+\_\+\+DATA~0x0100}
+
+
+
+no receive data available ~\newline
+ 
+
+\mbox{\Hypertarget{group__pfleury__uart_ga3183177e3613d8785d8cc8516931beb6}\label{group__pfleury__uart_ga3183177e3613d8785d8cc8516931beb6}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!UART\_OVERRUN\_ERROR@{UART\_OVERRUN\_ERROR}}
+\index{UART\_OVERRUN\_ERROR@{UART\_OVERRUN\_ERROR}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{UART\_OVERRUN\_ERROR}{UART\_OVERRUN\_ERROR}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+OVERRUN\+\_\+\+ERROR~0x0800}
+
+
+
+Overrun condition by UART ~\newline
+ 
+
+\mbox{\Hypertarget{group__pfleury__uart_ga946e3d317937e003d2057bf19e96dd1d}\label{group__pfleury__uart_ga946e3d317937e003d2057bf19e96dd1d}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!UART\_PARITY\_ERROR@{UART\_PARITY\_ERROR}}
+\index{UART\_PARITY\_ERROR@{UART\_PARITY\_ERROR}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{UART\_PARITY\_ERROR}{UART\_PARITY\_ERROR}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+PARITY\+\_\+\+ERROR~0x0400}
+
+
+
+Parity Error by UART ~\newline
+ 
+
+\mbox{\Hypertarget{group__pfleury__uart_gae9e143569df2285379bc55f9f5595bf9}\label{group__pfleury__uart_gae9e143569df2285379bc55f9f5595bf9}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart\_puts\_P@{uart\_puts\_P}}
+\index{uart\_puts\_P@{uart\_puts\_P}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{uart\_puts\_P}{uart\_puts\_P}}
+{\footnotesize\ttfamily \#define uart\+\_\+puts\+\_\+P(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+s }\end{DoxyParamCaption})~\mbox{\hyperlink{group__pfleury__uart_ga6d78b6744db6232f52b4616402036c2f}{uart\+\_\+puts\+\_\+p}}(PSTR(\+\_\+\+\_\+s))}
+
+
+
+Macro to automatically put a string constant into program memory. 
+
+\mbox{\Hypertarget{group__pfleury__uart_ga5bdd6772c246436bb14377095de79b31}\label{group__pfleury__uart_ga5bdd6772c246436bb14377095de79b31}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!UART\_RX\_BUFFER\_SIZE@{UART\_RX\_BUFFER\_SIZE}}
+\index{UART\_RX\_BUFFER\_SIZE@{UART\_RX\_BUFFER\_SIZE}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{UART\_RX\_BUFFER\_SIZE}{UART\_RX\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+RX\+\_\+\+BUFFER\+\_\+\+SIZE~32}
+
+
+
+Size of the circular receive buffer, must be power of 2. 
+
+You may need to adapt this constant to your target and your application by adding CDEFS += -\/DUART\+\_\+\+RX\+\_\+\+BUFFER\+\_\+\+SIZE=nn to your Makefile. \mbox{\Hypertarget{group__pfleury__uart_ga05f5d709605c6317c97e4974bec3402a}\label{group__pfleury__uart_ga05f5d709605c6317c97e4974bec3402a}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!UART\_TX\_BUFFER\_SIZE@{UART\_TX\_BUFFER\_SIZE}}
+\index{UART\_TX\_BUFFER\_SIZE@{UART\_TX\_BUFFER\_SIZE}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{UART\_TX\_BUFFER\_SIZE}{UART\_TX\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+TX\+\_\+\+BUFFER\+\_\+\+SIZE~256}
+
+
+
+Size of the circular transmit buffer, must be power of 2. 
+
+You may need to adapt this constant to your target and your application by adding CDEFS += -\/DUART\+\_\+\+TX\+\_\+\+BUFFER\+\_\+\+SIZE=nn to your Makefile. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__pfleury__uart_gaeb1405c641e5bc9b7224018f5e8d90de}\label{group__pfleury__uart_gaeb1405c641e5bc9b7224018f5e8d90de}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart1\_getc@{uart1\_getc}}
+\index{uart1\_getc@{uart1\_getc}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{uart1\_getc()}{uart1\_getc()}}
+{\footnotesize\ttfamily unsigned int uart1\+\_\+getc (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get received byte of USART1 from ringbuffer. (only available on selected ATmega) 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}{uart\+\_\+getc}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group__pfleury__uart_ga4db697cb5469fd70e794fa7df73a6d6a}\label{group__pfleury__uart_ga4db697cb5469fd70e794fa7df73a6d6a}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart1\_init@{uart1\_init}}
+\index{uart1\_init@{uart1\_init}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{uart1\_init()}{uart1\_init()}}
+{\footnotesize\ttfamily void uart1\+\_\+init (\begin{DoxyParamCaption}\item[{unsigned int}]{baudrate }\end{DoxyParamCaption})}
+
+
+
+Initialize USART1 (only available on selected ATmegas) 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__pfleury__uart_gac19a76bb7d446125734a67f9f4b68991}{uart\+\_\+init}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group__pfleury__uart_gab465f689d197fadfbacc374fc9411154}\label{group__pfleury__uart_gab465f689d197fadfbacc374fc9411154}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart1\_putc@{uart1\_putc}}
+\index{uart1\_putc@{uart1\_putc}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{uart1\_putc()}{uart1\_putc()}}
+{\footnotesize\ttfamily void uart1\+\_\+putc (\begin{DoxyParamCaption}\item[{unsigned char}]{data }\end{DoxyParamCaption})}
+
+
+
+Put byte to ringbuffer for transmitting via USART1 (only available on selected ATmega) 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\+\_\+putc}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group__pfleury__uart_ga5568f8f3913b218fd4d0346af78831b2}\label{group__pfleury__uart_ga5568f8f3913b218fd4d0346af78831b2}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart1\_puts@{uart1\_puts}}
+\index{uart1\_puts@{uart1\_puts}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{uart1\_puts()}{uart1\_puts()}}
+{\footnotesize\ttfamily void uart1\+\_\+puts (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Put string to ringbuffer for transmitting via USART1 (only available on selected ATmega) 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\+\_\+puts}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group__pfleury__uart_ga1e8074d0a2d5922601c5db2f9777ba79}\label{group__pfleury__uart_ga1e8074d0a2d5922601c5db2f9777ba79}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart1\_puts\_p@{uart1\_puts\_p}}
+\index{uart1\_puts\_p@{uart1\_puts\_p}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{uart1\_puts\_p()}{uart1\_puts\_p()}}
+{\footnotesize\ttfamily void uart1\+\_\+puts\+\_\+p (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Put string from program memory to ringbuffer for transmitting via USART1 (only available on selected ATmega) 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__pfleury__uart_ga6d78b6744db6232f52b4616402036c2f}{uart\+\_\+puts\+\_\+p}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}\label{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart\_getc@{uart\_getc}}
+\index{uart\_getc@{uart\_getc}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{uart\_getc()}{uart\_getc()}}
+{\footnotesize\ttfamily unsigned int uart\+\_\+getc (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get received byte from ringbuffer. 
+
+Returns in the lower byte the received character and in the higher byte the last receive error. UART\+\_\+\+NO\+\_\+\+DATA is returned when no data is available.
+
+\begin{DoxyReturn}{Returns}
+lower byte\+: received byte from ringbuffer 
+
+higher byte\+: last receive status
+\begin{DoxyItemize}
+\item {\bfseries{0}} successfully received data from UART
+\item {\bfseries{UART\+\_\+\+NO\+\_\+\+DATA}} ~\newline
+ ~\newline
+no receive data available
+\item {\bfseries{UART\+\_\+\+BUFFER\+\_\+\+OVERFLOW}} ~\newline
+ ~\newline
+Receive ringbuffer overflow. We are not reading the receive buffer fast enough, one or more received character have been dropped
+\item {\bfseries{UART\+\_\+\+OVERRUN\+\_\+\+ERROR}} ~\newline
+ ~\newline
+Overrun condition by UART. A character already present in the UART UDR register was not read by the interrupt handler before the next character arrived, one or more received characters have been dropped.
+\item {\bfseries{UART\+\_\+\+FRAME\+\_\+\+ERROR}} ~\newline
+ ~\newline
+Framing Error by UART 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{491 \{    }
+\DoxyCodeLine{492     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} tmptail;}
+\DoxyCodeLine{493     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}};}
+\DoxyCodeLine{494     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{uart_8c_ac3fda17426f97bc7484917e1ed70ea26}{lastRxError}};}
+\DoxyCodeLine{495 }
+\DoxyCodeLine{496 }
+\DoxyCodeLine{497     \textcolor{keywordflow}{if} ( \mbox{\hyperlink{uart_8c_a0b71aeb31b7422b28d2119ee7b2cce7c}{UART\_RxHead}} == \mbox{\hyperlink{uart_8c_a0e16e308fe231941cb52874193e81913}{UART\_RxTail}} ) \{}
+\DoxyCodeLine{498         \textcolor{keywordflow}{return} \mbox{\hyperlink{group__pfleury__uart_ga77ba544d423ff42d400220a05303f268}{UART\_NO\_DATA}};   \textcolor{comment}{/* no data available */}}
+\DoxyCodeLine{499     \}}
+\DoxyCodeLine{500     }
+\DoxyCodeLine{501     \textcolor{comment}{/* calculate buffer index */}}
+\DoxyCodeLine{502     tmptail = (\mbox{\hyperlink{uart_8c_a0e16e308fe231941cb52874193e81913}{UART\_RxTail}} + 1) \& \mbox{\hyperlink{uart_8c_a07b20e76327f35ec90e49111cb13164d}{UART\_RX\_BUFFER\_MASK}};}
+\DoxyCodeLine{503     }
+\DoxyCodeLine{504     \textcolor{comment}{/* get data from receive buffer */}}
+\DoxyCodeLine{505     \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}} = \mbox{\hyperlink{uart_8c_aeca5189c12e9c8dc003b320f329b93b8}{UART\_RxBuf}}[tmptail];}
+\DoxyCodeLine{506     \mbox{\hyperlink{uart_8c_ac3fda17426f97bc7484917e1ed70ea26}{lastRxError}} = \mbox{\hyperlink{uart_8c_aed0a70c1e1f8731a05b2cb472b938493}{UART\_LastRxError}};}
+\DoxyCodeLine{507     }
+\DoxyCodeLine{508     \textcolor{comment}{/* store buffer index */}}
+\DoxyCodeLine{509     \mbox{\hyperlink{uart_8c_a0e16e308fe231941cb52874193e81913}{UART\_RxTail}} = tmptail; }
+\DoxyCodeLine{510     }
+\DoxyCodeLine{511     \mbox{\hyperlink{uart_8c_aed0a70c1e1f8731a05b2cb472b938493}{UART\_LastRxError}} = 0;}
+\DoxyCodeLine{512     \textcolor{keywordflow}{return} (\mbox{\hyperlink{uart_8c_ac3fda17426f97bc7484917e1ed70ea26}{lastRxError}} << 8) + \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}};}
+\DoxyCodeLine{513 }
+\DoxyCodeLine{514 \}\textcolor{comment}{/* uart\_getc */}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{cmd_8c_a851fcc941c3f1d77e581e6f7dce8552d}{cmd\+\_\+handler()}}, and \mbox{\hyperlink{test__uart_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__pfleury__uart_gac19a76bb7d446125734a67f9f4b68991}\label{group__pfleury__uart_gac19a76bb7d446125734a67f9f4b68991}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart\_init@{uart\_init}}
+\index{uart\_init@{uart\_init}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{uart\_init()}{uart\_init()}}
+{\footnotesize\ttfamily void uart\+\_\+init (\begin{DoxyParamCaption}\item[{unsigned int}]{baudrate }\end{DoxyParamCaption})}
+
+
+
+Initialize UART and set baudrate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em baudrate} & Specify baudrate using macro \mbox{\hyperlink{group__pfleury__uart_ga367ff7b5de225ed936a63239ad4adb0b}{UART\+\_\+\+BAUD\+\_\+\+SELECT()}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{434 \{}
+\DoxyCodeLine{435     \mbox{\hyperlink{uart_8c_a259ab6a512dd719d92550d7adf7367bb}{UART\_TxHead}} = 0;}
+\DoxyCodeLine{436     \mbox{\hyperlink{uart_8c_aa71f7d4da7a3780ca6ad1da296f949cf}{UART\_TxTail}} = 0;}
+\DoxyCodeLine{437     \mbox{\hyperlink{uart_8c_a0b71aeb31b7422b28d2119ee7b2cce7c}{UART\_RxHead}} = 0;}
+\DoxyCodeLine{438     \mbox{\hyperlink{uart_8c_a0e16e308fe231941cb52874193e81913}{UART\_RxTail}} = 0;}
+\DoxyCodeLine{439 }
+\DoxyCodeLine{440 \textcolor{preprocessor}{\#ifdef UART\_TEST}}
+\DoxyCodeLine{441 \textcolor{preprocessor}{\#ifndef UART0\_BIT\_U2X}}
+\DoxyCodeLine{442 \textcolor{preprocessor}{\#warning "{}UART0\_BIT\_U2X not defined"{}}}
+\DoxyCodeLine{443 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{444 \textcolor{preprocessor}{\#ifndef UART0\_UBRRH}}
+\DoxyCodeLine{445 \textcolor{preprocessor}{\#warning "{}UART0\_UBRRH not defined"{}}}
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{447 \textcolor{preprocessor}{\#ifndef UART0\_CONTROLC}}
+\DoxyCodeLine{448 \textcolor{preprocessor}{\#warning "{}UART0\_CONTROLC not defined"{}}}
+\DoxyCodeLine{449 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{450 \textcolor{preprocessor}{\#if defined(URSEL) || defined(URSEL0)}}
+\DoxyCodeLine{451 \textcolor{preprocessor}{\#ifndef UART0\_BIT\_URSEL}}
+\DoxyCodeLine{452 \textcolor{preprocessor}{\#warning "{}UART0\_BIT\_URSEL not defined"{}}}
+\DoxyCodeLine{453 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{454 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{455 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{456 }
+\DoxyCodeLine{457     \textcolor{comment}{/* Set baud rate */}}
+\DoxyCodeLine{458     \textcolor{keywordflow}{if} ( baudrate \& 0x8000 )}
+\DoxyCodeLine{459     \{}
+\DoxyCodeLine{460 \textcolor{preprocessor}{        \#if UART0\_BIT\_U2X}}
+\DoxyCodeLine{461         UART0\_STATUS = (1<<UART0\_BIT\_U2X);  \textcolor{comment}{//Enable 2x speed }}
+\DoxyCodeLine{462 \textcolor{preprocessor}{        \#endif}}
+\DoxyCodeLine{463     \} }
+\DoxyCodeLine{464 \textcolor{preprocessor}{    \#if defined(UART0\_UBRRH)}}
+\DoxyCodeLine{465     UART0\_UBRRH = (\textcolor{keywordtype}{unsigned} char)((baudrate>>8)\&0x80) ;}
+\DoxyCodeLine{466 \textcolor{preprocessor}{    \#endif    }}
+\DoxyCodeLine{467     UART0\_UBRRL = (\textcolor{keywordtype}{unsigned} char) (baudrate\&0x00FF);}
+\DoxyCodeLine{468       }
+\DoxyCodeLine{469     \textcolor{comment}{/* Enable USART receiver and transmitter and receive complete interrupt */}}
+\DoxyCodeLine{470     UART0\_CONTROL = \_BV(UART0\_BIT\_RXCIE)|(1<<UART0\_BIT\_RXEN)|(1<<UART0\_BIT\_TXEN);}
+\DoxyCodeLine{471     }
+\DoxyCodeLine{472     \textcolor{comment}{/* Set frame format: asynchronous, 8data, no parity, 1stop bit */}}
+\DoxyCodeLine{473 \textcolor{preprocessor}{    \#ifdef UART0\_CONTROLC}}
+\DoxyCodeLine{474 \textcolor{preprocessor}{    \#ifdef UART0\_BIT\_URSEL}}
+\DoxyCodeLine{475     UART0\_CONTROLC = (1<<UART0\_BIT\_URSEL)|(1<<UART0\_BIT\_UCSZ1)|(1<<UART0\_BIT\_UCSZ0);}
+\DoxyCodeLine{476 \textcolor{preprocessor}{    \#else}}
+\DoxyCodeLine{477     UART0\_CONTROLC = (1<<UART0\_BIT\_UCSZ1)|(1<<UART0\_BIT\_UCSZ0);}
+\DoxyCodeLine{478 \textcolor{preprocessor}{    \#endif }}
+\DoxyCodeLine{479 \textcolor{preprocessor}{    \#endif}}
+\DoxyCodeLine{480 }
+\DoxyCodeLine{481 \}\textcolor{comment}{/* uart\_init */}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{test__uart_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{group__pfleury__uart_gac19a76bb7d446125734a67f9f4b68991_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}\label{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart\_putc@{uart\_putc}}
+\index{uart\_putc@{uart\_putc}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{uart\_putc()}{uart\_putc()}}
+{\footnotesize\ttfamily void uart\+\_\+putc (\begin{DoxyParamCaption}\item[{unsigned char}]{data }\end{DoxyParamCaption})}
+
+
+
+Put byte to ringbuffer for transmitting via UART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & byte to be transmitted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{524 \{}
+\DoxyCodeLine{525     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{uart_8c_ac198387817821eb64a630bb38426ab68}{tmphead}};}
+\DoxyCodeLine{526 }
+\DoxyCodeLine{527     }
+\DoxyCodeLine{528     \mbox{\hyperlink{uart_8c_ac198387817821eb64a630bb38426ab68}{tmphead}}  = (\mbox{\hyperlink{uart_8c_a259ab6a512dd719d92550d7adf7367bb}{UART\_TxHead}} + 1) \& \mbox{\hyperlink{uart_8c_a7ddb8c271caedb7c17167749946b543d}{UART\_TX\_BUFFER\_MASK}};}
+\DoxyCodeLine{529     }
+\DoxyCodeLine{530     \textcolor{keywordflow}{while} ( \mbox{\hyperlink{uart_8c_ac198387817821eb64a630bb38426ab68}{tmphead}} == \mbox{\hyperlink{uart_8c_aa71f7d4da7a3780ca6ad1da296f949cf}{UART\_TxTail}} )\{}
+\DoxyCodeLine{531         ;\textcolor{comment}{/* wait for free space in buffer */}}
+\DoxyCodeLine{532     \}}
+\DoxyCodeLine{533     }
+\DoxyCodeLine{534     \mbox{\hyperlink{uart_8c_afb33f70d937717fbc4ea4b62186b1bd2}{UART\_TxBuf}}[\mbox{\hyperlink{uart_8c_ac198387817821eb64a630bb38426ab68}{tmphead}}] = \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}};}
+\DoxyCodeLine{535     \mbox{\hyperlink{uart_8c_a259ab6a512dd719d92550d7adf7367bb}{UART\_TxHead}} = \mbox{\hyperlink{uart_8c_ac198387817821eb64a630bb38426ab68}{tmphead}};}
+\DoxyCodeLine{536 }
+\DoxyCodeLine{537     \textcolor{comment}{/* enable UDRE interrupt */}}
+\DoxyCodeLine{538     UART0\_CONTROL    |= \_BV(UART0\_UDRIE);}
+\DoxyCodeLine{539 }
+\DoxyCodeLine{540 \}\textcolor{comment}{/* uart\_putc */}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{cmd_8c_a851fcc941c3f1d77e581e6f7dce8552d}{cmd\+\_\+handler()}}, \mbox{\hyperlink{test__uart_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}}, \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\+\_\+puts()}}, and \mbox{\hyperlink{group__pfleury__uart_ga6d78b6744db6232f52b4616402036c2f}{uart\+\_\+puts\+\_\+p()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}\label{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart\_puts@{uart\_puts}}
+\index{uart\_puts@{uart\_puts}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{uart\_puts()}{uart\_puts()}}
+{\footnotesize\ttfamily void uart\+\_\+puts (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Put string to ringbuffer for transmitting via UART. 
+
+The string is buffered by the uart library in a circular buffer and one character at a time is transmitted to the UART using interrupts. Blocks if it can not write the whole string into the circular buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & string to be transmitted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{550 \{}
+\DoxyCodeLine{551     \textcolor{keywordflow}{while} (*s) }
+\DoxyCodeLine{552       \mbox{\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\_putc}}(*s++);}
+\DoxyCodeLine{553 }
+\DoxyCodeLine{554 \}\textcolor{comment}{/* uart\_puts */}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{cmd_8c_a851fcc941c3f1d77e581e6f7dce8552d}{cmd\+\_\+handler()}}, and \mbox{\hyperlink{test__uart_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__pfleury__uart_ga6d78b6744db6232f52b4616402036c2f}\label{group__pfleury__uart_ga6d78b6744db6232f52b4616402036c2f}} 
+\index{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart\_puts\_p@{uart\_puts\_p}}
+\index{uart\_puts\_p@{uart\_puts\_p}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}}
+\doxysubsubsection{\texorpdfstring{uart\_puts\_p()}{uart\_puts\_p()}}
+{\footnotesize\ttfamily void uart\+\_\+puts\+\_\+p (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Put string from program memory to ringbuffer for transmitting via UART. 
+
+The string is buffered by the uart library in a circular buffer and one character at a time is transmitted to the UART using interrupts. Blocks if it can not write the whole string into the circular buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & program memory string to be transmitted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__pfleury__uart_gae9e143569df2285379bc55f9f5595bf9}{uart\+\_\+puts\+\_\+P}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{564 \{}
+\DoxyCodeLine{565     \textcolor{keyword}{register} \textcolor{keywordtype}{char} c;}
+\DoxyCodeLine{566     }
+\DoxyCodeLine{567     \textcolor{keywordflow}{while} ( (c = pgm\_read\_byte(progmem\_s++)) ) }
+\DoxyCodeLine{568       \mbox{\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\_putc}}(c);}
+\DoxyCodeLine{569 }
+\DoxyCodeLine{570 \}\textcolor{comment}{/* uart\_puts\_p */}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{group__pfleury__uart_ga6d78b6744db6232f52b4616402036c2f_cgraph}
+\end{center}
+\end{figure}

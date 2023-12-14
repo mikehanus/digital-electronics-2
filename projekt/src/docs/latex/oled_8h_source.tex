@@ -1,0 +1,153 @@
+\hypertarget{oled_8h_source}{}\doxysection{oled.\+h}
+\label{oled_8h_source}\index{lib/oled/oled.h@{lib/oled/oled.h}}
+\mbox{\hyperlink{oled_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * This file is part of lcd library for ssd1306/ssd1309/sh1106 oled-\/display.}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ * lcd library for ssd1306/ssd1309/sh1106 oled-\/display is free software: you can redistribute it and/or modify}}
+\DoxyCodeLine{5 \textcolor{comment}{ * it under the terms of the GNU General Public License as published by}}
+\DoxyCodeLine{6 \textcolor{comment}{ * the Free Software Foundation, either version 3 of the License, or any later version.}}
+\DoxyCodeLine{7 \textcolor{comment}{ *}}
+\DoxyCodeLine{8 \textcolor{comment}{ * lcd library for ssd1306/ssd1309/sh1106 oled-\/display is distributed in the hope that it will be useful,}}
+\DoxyCodeLine{9 \textcolor{comment}{ * but WITHOUT ANY WARRANTY; without even the implied warranty of}}
+\DoxyCodeLine{10 \textcolor{comment}{ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the}}
+\DoxyCodeLine{11 \textcolor{comment}{ * GNU General Public License for more details.}}
+\DoxyCodeLine{12 \textcolor{comment}{ *}}
+\DoxyCodeLine{13 \textcolor{comment}{ * You should have received a copy of the GNU General Public License}}
+\DoxyCodeLine{14 \textcolor{comment}{ * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{15 \textcolor{comment}{ *}}
+\DoxyCodeLine{16 \textcolor{comment}{ * Diese Datei ist Teil von lcd library for ssd1306/ssd1309/sh1106 oled-\/display.}}
+\DoxyCodeLine{17 \textcolor{comment}{ *}}
+\DoxyCodeLine{18 \textcolor{comment}{ * lcd library for ssd1306/ssd1309/sh1106 oled-\/display ist Freie Software: Sie können es unter den Bedingungen}}
+\DoxyCodeLine{19 \textcolor{comment}{ * der GNU General Public License, wie von der Free Software Foundation,}}
+\DoxyCodeLine{20 \textcolor{comment}{ * Version 3 der Lizenz oder jeder späteren}}
+\DoxyCodeLine{21 \textcolor{comment}{ * veröffentlichten Version, weiterverbreiten und/oder modifizieren.}}
+\DoxyCodeLine{22 \textcolor{comment}{ *}}
+\DoxyCodeLine{23 \textcolor{comment}{ * lcd library for ssd1306/ssd1309/sh1106 oled-\/display wird in der Hoffnung, dass es nützlich sein wird, aber}}
+\DoxyCodeLine{24 \textcolor{comment}{ * OHNE JEDE GEWÄHRLEISTUNG, bereitgestellt; sogar ohne die implizite}}
+\DoxyCodeLine{25 \textcolor{comment}{ * Gewährleistung der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.}}
+\DoxyCodeLine{26 \textcolor{comment}{ * Siehe die GNU General Public License für weitere Details.}}
+\DoxyCodeLine{27 \textcolor{comment}{ *}}
+\DoxyCodeLine{28 \textcolor{comment}{ * Sie sollten eine Kopie der GNU General Public License zusammen mit diesem}}
+\DoxyCodeLine{29 \textcolor{comment}{ * Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{30 \textcolor{comment}{ *}}
+\DoxyCodeLine{31 \textcolor{comment}{ *  lcd.h}}
+\DoxyCodeLine{32 \textcolor{comment}{ *}}
+\DoxyCodeLine{33 \textcolor{comment}{ *  Created by Michael Köhler on 22.12.16.}}
+\DoxyCodeLine{34 \textcolor{comment}{ *  Copyright 2016 Skie-\/Systems. All rights reserved.}}
+\DoxyCodeLine{35 \textcolor{comment}{ *}}
+\DoxyCodeLine{36 \textcolor{comment}{ *  lib for OLED-\/Display with ssd1306/ssd1309/sh1106-\/Controller}}
+\DoxyCodeLine{37 \textcolor{comment}{ *  first dev-\/version only for I2C-\/Connection}}
+\DoxyCodeLine{38 \textcolor{comment}{ *  at ATMega328P like Arduino Uno}}
+\DoxyCodeLine{39 \textcolor{comment}{ *}}
+\DoxyCodeLine{40 \textcolor{comment}{ *  at GRAPHICMODE lib needs SRAM for display}}
+\DoxyCodeLine{41 \textcolor{comment}{ *  DISPLAY-\/WIDTH * DISPLAY-\/HEIGHT + 2 bytes}}
+\DoxyCodeLine{42 \textcolor{comment}{ */}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#ifndef OLED\_H}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define OLED\_H}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{48 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{50     }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#if (\_\_GNUC\_\_ * 100 + \_\_GNUC\_MINOR\_\_) < 303}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\# error "{}This library requires AVR-\/GCC 3.3 or later, update to newer AVR-\/GCC compiler !"{}}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#include <inttypes.h>}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <avr/pgmspace.h>}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{comment}{/* TODO: define bus */}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define I2C  }\textcolor{comment}{// I2C or SPI  }}
+\DoxyCodeLine{60     \textcolor{comment}{/* TODO: define displaycontroller */}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define SH1106  }\textcolor{comment}{// or SSD1306, check datasheet of your display}}
+\DoxyCodeLine{62     \textcolor{comment}{/* TODO: define displaymode */}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define GRAPHICMODE  }\textcolor{comment}{// for text and graphic}}
+\DoxyCodeLine{64     \textcolor{comment}{// TEXTMODE // for only text to display,}}
+\DoxyCodeLine{65     \textcolor{comment}{/* TODO: define font */}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define FONT  ssd1306oled\_font  }\textcolor{comment}{// Refer font-\/name at font.h}}
+\DoxyCodeLine{67     }
+\DoxyCodeLine{68     \textcolor{comment}{// using 7-\/bit-\/adress for lcd-\/library}}
+\DoxyCodeLine{69     \textcolor{comment}{// if you use your own library for twi check I2C-\/adress-\/handle}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define OLED\_I2C\_ADR (0x3c)  }\textcolor{comment}{// 7 bit slave-\/adress without r/w-\/bit}}
+\DoxyCodeLine{71     \textcolor{comment}{// e.g. 8 bit slave-\/adress:}}
+\DoxyCodeLine{72     \textcolor{comment}{// 0x78 = adress 0x3C with cleared r/w-\/bit (write-\/mode)}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#ifdef I2C}}
+\DoxyCodeLine{76 \textcolor{comment}{// \# include "{}i2c.h"{}}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\# include "{}\mbox{\hyperlink{twi_8h}{twi.h}}"{}}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#elif defined SPI}}
+\DoxyCodeLine{79 \textcolor{comment}{// If you want to use your other lib/function for SPI replace SPI-\/commands}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\# define OLED\_PORT PORTB}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\# define OLED\_DDR  DDRB}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\# define RES\_PIN  PB0}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\# define DC\_PIN   PB1}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\# define CS\_PIN   PB2}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#ifndef YES}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\# define YES 1}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define NORMALSIZE 1}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define DOUBLESIZE 2}}
+\DoxyCodeLine{93     }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define OLED\_DISP\_OFF 0xAE}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define OLED\_DISP\_ON 0xAF}}
+\DoxyCodeLine{96     }
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define WHITE 0x01}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define BLACK 0x00}}
+\DoxyCodeLine{99     }
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define DISPLAY\_WIDTH 128}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define DISPLAY\_HEIGHT 64}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{comment}{// Transmit command or data to display}}
+\DoxyCodeLine{104 \textcolor{keywordtype}{void} \mbox{\hyperlink{oled_8h_a91b0721118752b7208388903b69332e4}{oled\_command}}(uint8\_t cmd[], uint8\_t size);}
+\DoxyCodeLine{105 \textcolor{keywordtype}{void} \mbox{\hyperlink{oled_8h_a93bdfec1e1e604f1666485179d769f01}{oled\_data}}(uint8\_t \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}[], uint16\_t size);}
+\DoxyCodeLine{106 \textcolor{keywordtype}{void} \mbox{\hyperlink{oled_8h_adf4cfb5ed444b0ab8cd162456c017934}{oled\_init}}(uint8\_t dispAttr);}
+\DoxyCodeLine{107 \textcolor{keywordtype}{void} \mbox{\hyperlink{oled_8h_ac3d3bd3760c4da609cc310cba9887a55}{oled\_home}}(\textcolor{keywordtype}{void});  \textcolor{comment}{// set cursor to 0,0}}
+\DoxyCodeLine{108 \textcolor{keywordtype}{void} \mbox{\hyperlink{oled_8h_a55064af8d04c97be4ec4751b1e7566eb}{oled\_invert}}(uint8\_t invert);  \textcolor{comment}{// invert display}}
+\DoxyCodeLine{109 \textcolor{keywordtype}{void} \mbox{\hyperlink{oled_8h_a0e010462121972ef0669b30f68d68b7b}{oled\_sleep}}(uint8\_t sleep);    \textcolor{comment}{// display goto sleep (power off)}}
+\DoxyCodeLine{110 \textcolor{keywordtype}{void} \mbox{\hyperlink{oled_8h_a551373c9f50c6edcbf0aff140c98535a}{oled\_set\_contrast}}(uint8\_t contrast);    \textcolor{comment}{// set contrast for display}}
+\DoxyCodeLine{111 \textcolor{keywordtype}{void} \mbox{\hyperlink{oled_8h_a8daec8fb691af3b411501856f9291683}{oled\_puts}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* s);             \textcolor{comment}{// print string, \(\backslash\)n-\/terminated, from ram on screen (TEXTMODE)}}
+\DoxyCodeLine{112                         \textcolor{comment}{// or buffer (GRAPHICMODE)}}
+\DoxyCodeLine{113 \textcolor{keywordtype}{void} \mbox{\hyperlink{oled_8h_a6c489aec7c018385dc95b01400ef1f14}{oled\_puts\_p}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* progmem\_s);  \textcolor{comment}{// print string from flash on screen (TEXTMODE)}}
+\DoxyCodeLine{114 \textcolor{comment}{// or buffer (GRAPHICMODE)}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{keywordtype}{void} \mbox{\hyperlink{oled_8h_a87e32cd0efcfb14bfa3c71e386498df6}{oled\_clrscr}}(\textcolor{keywordtype}{void});  \textcolor{comment}{// clear screen (and buffer at GRFAICMODE)}}
+\DoxyCodeLine{117 \textcolor{keywordtype}{void} \mbox{\hyperlink{oled_8h_a89aa3a9a7daa84a50f00399d32d9dfa2}{oled\_gotoxy}}(uint8\_t \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, uint8\_t \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}});  \textcolor{comment}{// set curser at pos x, y. x means character,}}
+\DoxyCodeLine{118 \textcolor{comment}{// y means line (page, refer lcd manual)}}
+\DoxyCodeLine{119 \textcolor{keywordtype}{void} \mbox{\hyperlink{oled_8h_a869429d91a0e3b943fa70344cea07f52}{oled\_goto\_xpix\_y}}(uint8\_t \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, uint8\_t \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}); \textcolor{comment}{// set curser at pos x, y. x means pixel,}}
+\DoxyCodeLine{120 \textcolor{comment}{// y means line (page, refer lcd manual)}}
+\DoxyCodeLine{121 \textcolor{keywordtype}{void} \mbox{\hyperlink{oled_8h_acbecdceb919c4ca42478f8f8631a588b}{oled\_putc}}(\textcolor{keywordtype}{char} c);  \textcolor{comment}{// print character on screen at TEXTMODE}}
+\DoxyCodeLine{122 \textcolor{comment}{// at GRAPHICMODE print character to buffer}}
+\DoxyCodeLine{123 \textcolor{keywordtype}{void} \mbox{\hyperlink{oled_8h_af5493f2f933481c8ec122f5ba33391aa}{oled\_charMode}}(uint8\_t mode);  \textcolor{comment}{// set size of chars}}
+\DoxyCodeLine{124 \textcolor{keywordtype}{void} \mbox{\hyperlink{oled_8h_afef0e0a3d794e2cd2132e24b65fc55c0}{oled\_flip}}(uint8\_t flipping);  \textcolor{comment}{// flip display, }}
+\DoxyCodeLine{125                     \textcolor{comment}{// flipping == 0: no flip (normal mode) }}
+\DoxyCodeLine{126                         \textcolor{comment}{// == 1: flip horizontal \& vertical}}
+\DoxyCodeLine{127                         \textcolor{comment}{// == 2: flip(mirrored) vertical}}
+\DoxyCodeLine{128                         \textcolor{comment}{// == 3: flip(mirrored) horizontal}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#if defined GRAPHICMODE}}
+\DoxyCodeLine{130     uint8\_t \mbox{\hyperlink{oled_8h_a94caf4251ff58c13fc1e29cd0522fa11}{oled\_drawPixel}}(uint8\_t \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, uint8\_t \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, uint8\_t color);}
+\DoxyCodeLine{131     uint8\_t \mbox{\hyperlink{oled_8h_a3ad449ff03fa8efc3e2f58c443bbd4ff}{oled\_drawLine}}(uint8\_t x1, uint8\_t y1, uint8\_t x2, uint8\_t y2, uint8\_t color);}
+\DoxyCodeLine{132     uint8\_t \mbox{\hyperlink{oled_8h_a4cb9fcfe8899c433ff15a7caa2af2895}{oled\_drawRect}}(uint8\_t px1, uint8\_t py1, uint8\_t px2, uint8\_t py2, uint8\_t color);}
+\DoxyCodeLine{133     uint8\_t \mbox{\hyperlink{oled_8h_a322aeccb6954fa925db21990d5be1a0a}{oled\_fillRect}}(uint8\_t px1, uint8\_t py1, uint8\_t px2, uint8\_t py2, uint8\_t color);}
+\DoxyCodeLine{134     uint8\_t \mbox{\hyperlink{oled_8h_a19369baa889e38d7d6be2a20b57077ff}{oled\_drawCircle}}(uint8\_t center\_x, uint8\_t center\_y, uint8\_t radius, uint8\_t color);}
+\DoxyCodeLine{135     uint8\_t \mbox{\hyperlink{oled_8h_a4f1a48326a20f5b61a1b23e67701476a}{oled\_fillCircle}}(uint8\_t center\_x, uint8\_t center\_y, uint8\_t radius, uint8\_t color);}
+\DoxyCodeLine{136     uint8\_t \mbox{\hyperlink{oled_8h_af22742402ab56126a55f7f40c1383a1f}{oled\_drawBitmap}}(uint8\_t \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, uint8\_t \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, \textcolor{keyword}{const} uint8\_t picture[], uint8\_t width, uint8\_t height, uint8\_t color);}
+\DoxyCodeLine{137     \textcolor{keywordtype}{void} \mbox{\hyperlink{oled_8h_a3bf2956ddac236feefb736af711f88cc}{oled\_display}}(\textcolor{keywordtype}{void});       \textcolor{comment}{// copy buffer to display RAM}}
+\DoxyCodeLine{138     \textcolor{keywordtype}{void} \mbox{\hyperlink{oled_8h_a92958de9f44bb0eec0d23302965c64a8}{oled\_clear\_buffer}}(\textcolor{keywordtype}{void});  \textcolor{comment}{// clear display buffer}}
+\DoxyCodeLine{139     uint8\_t \mbox{\hyperlink{oled_8h_a843f53638f796114412dea413f3ea192}{oled\_check\_buffer}}(uint8\_t \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, uint8\_t \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}); \textcolor{comment}{// read a pixel value from the display buffer}}
+\DoxyCodeLine{140     \textcolor{keywordtype}{void} \mbox{\hyperlink{oled_8h_ad9a1e40ca811bb4c2f095b31e3c3def1}{oled\_display\_block}}(uint8\_t \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, uint8\_t line, uint8\_t width); \textcolor{comment}{// display (part of) a display line}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{144 \}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/*  OLED\_H  */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

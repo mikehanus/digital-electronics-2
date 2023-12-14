@@ -1,0 +1,50 @@
+\hypertarget{gpio_8h_source}{}\doxysection{gpio.\+h}
+\label{gpio_8h_source}\index{lib/gpio/gpio.h@{lib/gpio/gpio.h}}
+\mbox{\hyperlink{gpio_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GPIO\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\# define GPIO\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{/***********************************************************************}}
+\DoxyCodeLine{5 \textcolor{comment}{ * }}
+\DoxyCodeLine{6 \textcolor{comment}{ * GPIO library for AVR-\/GCC.}}
+\DoxyCodeLine{7 \textcolor{comment}{ * }}
+\DoxyCodeLine{8 \textcolor{comment}{ * ATmega328P (Arduino Uno), 16 MHz, PlatformIO}}
+\DoxyCodeLine{9 \textcolor{comment}{ *}}
+\DoxyCodeLine{10 \textcolor{comment}{ * Copyright (c) 2019 Tomas Fryza}}
+\DoxyCodeLine{11 \textcolor{comment}{ * Dept. of Radio Electronics, Brno University of Technology, Czechia}}
+\DoxyCodeLine{12 \textcolor{comment}{ * This work is licensed under the terms of the MIT license.}}
+\DoxyCodeLine{13 \textcolor{comment}{ *}}
+\DoxyCodeLine{14 \textcolor{comment}{ **********************************************************************/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{35 \textcolor{comment}{/* Includes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <avr/io.h>}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{/* Function prototypes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{46 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__fryza__gpio_gae4c211fcf0878fc6617e21dcfe7a4513}{GPIO\_mode\_output}}(\textcolor{keyword}{volatile} uint8\_t *reg, uint8\_t pin);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{55 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__fryza__gpio_ga1ad7cbb1e25a69cd4ec9ecb780a78e88}{GPIO\_mode\_input\_pullup}}(\textcolor{keyword}{volatile} uint8\_t *reg, uint8\_t pin);}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{64 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__fryza__gpio_gacea0f20416113eb2286b6bd730e22daa}{GPIO\_write\_low}}(\textcolor{keyword}{volatile} uint8\_t *reg, uint8\_t pin);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{73 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__fryza__gpio_gabd54283301ad4e85b31c126f2fc316c7}{GPIO\_write\_high}}(\textcolor{keyword}{volatile} uint8\_t *reg, uint8\_t pin);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{82 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__fryza__gpio_ga10bfee7f672388c8c09906bc59e48a90}{GPIO\_write}}(\textcolor{keyword}{volatile} uint8\_t *reg, uint8\_t pin, uint8\_t value);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 }
+\DoxyCodeLine{91 uint8\_t \mbox{\hyperlink{group__fryza__gpio_gacc9e9839904344a3be4549d8622342f5}{GPIO\_read}}(\textcolor{keyword}{volatile} uint8\_t *reg, uint8\_t pin);}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{comment}{/* GPIO\_mode\_input\_nopull */}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{comment}{/* GPIO\_toggle */}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 }
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

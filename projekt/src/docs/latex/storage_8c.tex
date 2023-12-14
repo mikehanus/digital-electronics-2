@@ -1,0 +1,200 @@
+\hypertarget{storage_8c}{}\doxysection{lib/storage/storage.c File Reference}
+\label{storage_8c}\index{lib/storage/storage.c@{lib/storage/storage.c}}
+{\ttfamily \#include \char`\"{}storage.\+h\char`\"{}}\newline
+Include dependency graph for storage.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{storage_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{storage_8c_ab83714869bd0bac0701fe50ec55cb2ca}{EEPROM\+\_\+write}} (uint16\+\_\+t addr, uint8\+\_\+t val)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{storage_8c_a4b030b9d1584db48848201615b096606}{EEPROM\+\_\+read}} (uint16\+\_\+t addr)
+\item 
+void \mbox{\hyperlink{storage_8c_a3c2aca3e3798396df9ddb34244de0ba6}{storage\+\_\+read}} (\mbox{\hyperlink{structstorage__t}{storage\+\_\+t}} $\ast$\mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}}, \mbox{\hyperlink{structdataset__t}{dataset\+\_\+t}} $\ast$\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}, uint8\+\_\+t pos)
+\item 
+void \mbox{\hyperlink{storage_8c_abbf8a4d949d03f1f91a08b610f035fad}{storage\+\_\+write}} (\mbox{\hyperlink{structstorage__t}{storage\+\_\+t}} $\ast$\mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}}, \mbox{\hyperlink{structdataset__t}{dataset\+\_\+t}} $\ast$\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}})
+\item 
+void \mbox{\hyperlink{storage_8c_a954cfff4c51e8e59d9ee27102fadf443}{storage\+\_\+init}} (\mbox{\hyperlink{structstorage__t}{storage\+\_\+t}} $\ast$\mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{storage_8c_a4b030b9d1584db48848201615b096606}\label{storage_8c_a4b030b9d1584db48848201615b096606}} 
+\index{storage.c@{storage.c}!EEPROM\_read@{EEPROM\_read}}
+\index{EEPROM\_read@{EEPROM\_read}!storage.c@{storage.c}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_read()}{EEPROM\_read()}}
+{\footnotesize\ttfamily uint8\+\_\+t EEPROM\+\_\+read (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21     \textcolor{comment}{/* Wait for completion of previous write */}}
+\DoxyCodeLine{22     \textcolor{keywordflow}{while}(EECR \& (1<<EEPE));}
+\DoxyCodeLine{23     \textcolor{comment}{/* Set up address register */}}
+\DoxyCodeLine{24     EEAR = addr;}
+\DoxyCodeLine{25     \textcolor{comment}{/* Start eeprom read by writing EERE */}}
+\DoxyCodeLine{26     EECR |= (1<<EERE);}
+\DoxyCodeLine{27     \textcolor{comment}{/* Return data from Data Register */}}
+\DoxyCodeLine{28     \textcolor{keywordflow}{return} EEDR;}
+\DoxyCodeLine{29 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{storage_8c_a3c2aca3e3798396df9ddb34244de0ba6}{storage\+\_\+read()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{storage_8c_a4b030b9d1584db48848201615b096606_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{storage_8c_ab83714869bd0bac0701fe50ec55cb2ca}\label{storage_8c_ab83714869bd0bac0701fe50ec55cb2ca}} 
+\index{storage.c@{storage.c}!EEPROM\_write@{EEPROM\_write}}
+\index{EEPROM\_write@{EEPROM\_write}!storage.c@{storage.c}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_write()}{EEPROM\_write()}}
+{\footnotesize\ttfamily void EEPROM\+\_\+write (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7     \textcolor{comment}{/* Wait for completion of previous write */}}
+\DoxyCodeLine{8     \textcolor{keywordflow}{while}(EECR \& (1<<EEPE)) ;}
+\DoxyCodeLine{9     \textcolor{comment}{/* Set up address and Data Registers */}}
+\DoxyCodeLine{10     EEAR = addr;}
+\DoxyCodeLine{11     EEDR = val;}
+\DoxyCodeLine{12     \textcolor{comment}{/* Write logical one to EEMPE */}}
+\DoxyCodeLine{13     EECR |= (1<<EEMPE);}
+\DoxyCodeLine{14     \textcolor{comment}{/* Start eeprom write by setting EEPE */}}
+\DoxyCodeLine{15     EECR |= (1<<EEPE);}
+\DoxyCodeLine{16 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{storage_8c_abbf8a4d949d03f1f91a08b610f035fad}{storage\+\_\+write()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{storage_8c_ab83714869bd0bac0701fe50ec55cb2ca_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{storage_8c_a954cfff4c51e8e59d9ee27102fadf443}\label{storage_8c_a954cfff4c51e8e59d9ee27102fadf443}} 
+\index{storage.c@{storage.c}!storage\_init@{storage\_init}}
+\index{storage\_init@{storage\_init}!storage.c@{storage.c}}
+\doxysubsubsection{\texorpdfstring{storage\_init()}{storage\_init()}}
+{\footnotesize\ttfamily void storage\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstorage__t}{storage\+\_\+t}} $\ast$}]{storage }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{60 \{}
+\DoxyCodeLine{61     \mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}}-\/>\mbox{\hyperlink{structstorage__t_aace1f461dd70ad8783ac47ecb3c6a2bf}{buffer\_start}} = 0;}
+\DoxyCodeLine{62 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{storage_8c_a954cfff4c51e8e59d9ee27102fadf443_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{storage_8c_a3c2aca3e3798396df9ddb34244de0ba6}\label{storage_8c_a3c2aca3e3798396df9ddb34244de0ba6}} 
+\index{storage.c@{storage.c}!storage\_read@{storage\_read}}
+\index{storage\_read@{storage\_read}!storage.c@{storage.c}}
+\doxysubsubsection{\texorpdfstring{storage\_read()}{storage\_read()}}
+{\footnotesize\ttfamily void storage\+\_\+read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstorage__t}{storage\+\_\+t}} $\ast$}]{storage,  }\item[{\mbox{\hyperlink{structdataset__t}{dataset\+\_\+t}} $\ast$}]{data,  }\item[{uint8\+\_\+t}]{pos }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34     uint8\_t *iter = ((uint8\_t *)\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}});}
+\DoxyCodeLine{35     \textcolor{keywordflow}{while}(pos > \mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}}-\/>\mbox{\hyperlink{structstorage__t_aace1f461dd70ad8783ac47ecb3c6a2bf}{buffer\_start}})}
+\DoxyCodeLine{36         pos -\/= 1000 / \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structdataset__t}{dataset\_t}});}
+\DoxyCodeLine{37         }
+\DoxyCodeLine{38     \textcolor{keywordflow}{for}(uint8\_t i = 0; i < \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structdataset__t}{dataset\_t}}); i++)}
+\DoxyCodeLine{39     \{}
+\DoxyCodeLine{40         iter[i] = \mbox{\hyperlink{storage_8c_a4b030b9d1584db48848201615b096606}{EEPROM\_read}}(i + \mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}}-\/>\mbox{\hyperlink{structstorage__t_aace1f461dd70ad8783ac47ecb3c6a2bf}{buffer\_start}} -\/ pos*\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structdataset__t}{dataset\_t}}));}
+\DoxyCodeLine{41     \}}
+\DoxyCodeLine{42 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{cmd_8c_a851fcc941c3f1d77e581e6f7dce8552d}{cmd\+\_\+handler()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{storage_8c_a3c2aca3e3798396df9ddb34244de0ba6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{storage_8c_a3c2aca3e3798396df9ddb34244de0ba6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{storage_8c_abbf8a4d949d03f1f91a08b610f035fad}\label{storage_8c_abbf8a4d949d03f1f91a08b610f035fad}} 
+\index{storage.c@{storage.c}!storage\_write@{storage\_write}}
+\index{storage\_write@{storage\_write}!storage.c@{storage.c}}
+\doxysubsubsection{\texorpdfstring{storage\_write()}{storage\_write()}}
+{\footnotesize\ttfamily void storage\+\_\+write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstorage__t}{storage\+\_\+t}} $\ast$}]{storage,  }\item[{\mbox{\hyperlink{structdataset__t}{dataset\+\_\+t}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46     uint8\_t *iter = ((uint8\_t *)\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}});}
+\DoxyCodeLine{47     \textcolor{keywordflow}{for}(uint8\_t i = 0; i < \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structdataset__t}{dataset\_t}}); i++)}
+\DoxyCodeLine{48     \{}
+\DoxyCodeLine{49         \mbox{\hyperlink{storage_8c_ab83714869bd0bac0701fe50ec55cb2ca}{EEPROM\_write}}(i + \mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}}-\/>\mbox{\hyperlink{structstorage__t_aace1f461dd70ad8783ac47ecb3c6a2bf}{buffer\_start}}, iter[i]);}
+\DoxyCodeLine{50     \}}
+\DoxyCodeLine{51     \mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}}-\/>\mbox{\hyperlink{structstorage__t_aace1f461dd70ad8783ac47ecb3c6a2bf}{buffer\_start}} += \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structdataset__t}{dataset\_t}});}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \textcolor{keywordflow}{if}(\mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}}-\/>\mbox{\hyperlink{structstorage__t_aace1f461dd70ad8783ac47ecb3c6a2bf}{buffer\_start}} + \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structdataset__t}{dataset\_t}}) > 1000)}
+\DoxyCodeLine{54     \{}
+\DoxyCodeLine{55         \mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}}-\/>\mbox{\hyperlink{structstorage__t_aace1f461dd70ad8783ac47ecb3c6a2bf}{buffer\_start}} = 0;}
+\DoxyCodeLine{56     \}}
+\DoxyCodeLine{57 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{storage_8c_abbf8a4d949d03f1f91a08b610f035fad_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{storage_8c_abbf8a4d949d03f1f91a08b610f035fad_icgraph}
+\end{center}
+\end{figure}

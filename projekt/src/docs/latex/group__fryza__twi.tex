@@ -1,0 +1,471 @@
+\hypertarget{group__fryza__twi}{}\doxysection{TWI Library \texorpdfstring{$<$}{<}twi.\+h\texorpdfstring{$>$}{>}}
+\label{group__fryza__twi}\index{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}}
+
+
+I2\+C/\+TWI library for AVR-\/\+GCC.  
+
+
+\doxysubsection*{Other definitions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__fryza__twi_ga16f0e6b2fa5a26eadbf4086ab6d54467}{twi\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize TWI unit, enable internal pull-\/ups, and set SCL frequency. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__fryza__twi_gaf37269da7f6b1b22438b78d2f965f274}{twi\+\_\+start}} (void)
+\begin{DoxyCompactList}\small\item\em Start communication on I2\+C/\+TWI bus. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__fryza__twi_ga129b8a79f75189c3801cb7082e6b8340}{twi\+\_\+write}} (uint8\+\_\+t \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}})
+\begin{DoxyCompactList}\small\item\em Send one byte to I2\+C/\+TWI Slave device. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__fryza__twi_gae9f84b771b4acdedd2106e91cb03cc78}{twi\+\_\+read}} (uint8\+\_\+t ack)
+\begin{DoxyCompactList}\small\item\em Read one byte from I2\+C/\+TWI Slave device and acknowledge it by ACK or NACK. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__fryza__twi_gacf52d6c93df110dee6d402b389e5042e}{twi\+\_\+stop}} (void)
+\begin{DoxyCompactList}\small\item\em Generates Stop condition on I2\+C/\+TWI bus. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__fryza__twi_ga4f677656a04639fb33a080f0fa7a1011}{twi\+\_\+test\+\_\+address}} (uint8\+\_\+t adr)
+\begin{DoxyCompactList}\small\item\em Test presence of one I2C device on the bus. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__twi_ga3b68e8e777b71520f9dbfac733774d5f}{TWI\+\_\+\+WRITE}}~0
+\begin{DoxyCompactList}\small\item\em Mode for writing to I2\+C/\+TWI device. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__twi_gaaf9a8abccd811954f9cc316f2b2f87b3}{TWI\+\_\+\+READ}}~1
+\begin{DoxyCompactList}\small\item\em Mode for reading from I2\+C/\+TWI device. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__twi_ga00dcb08e2effea903c22763e0aeeb3cb}{TWI\+\_\+\+ACK}}~0
+\begin{DoxyCompactList}\small\item\em ACK value for writing to I2\+C/\+TWI bus. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__twi_gaaf28e960d6d1c0553791faf52ebd8ef6}{TWI\+\_\+\+NACK}}~1
+\begin{DoxyCompactList}\small\item\em NACK value for writing to I2\+C/\+TWI bus. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__twi_ga6c0346728feb274834cad94daca316ee}{DDR}}(\+\_\+x)~($\ast$(\&\+\_\+x -\/ 1))
+\begin{DoxyCompactList}\small\item\em Address of Data Direction Register of port \+\_\+x. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__twi_ga740f9eb9c9f9e33500ee61ec53945f6a}{PIN}}(\+\_\+x)~($\ast$(\&\+\_\+x -\/ 2))
+\begin{DoxyCompactList}\small\item\em Address of input register of port \+\_\+x. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Definition of frequencies}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__fryza__twi_ga43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+CPU}}~16000000
+\begin{DoxyCompactList}\small\item\em CPU frequency in Hz required TWI\+\_\+\+BIT\+\_\+\+RATE\+\_\+\+REG. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__twi_ga7a1c522bed64982971384489ee477bd3}{F\+\_\+\+SCL}}~100000
+\begin{DoxyCompactList}\small\item\em I2\+C/\+TWI bit rate. Must be greater than 31000. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__twi_ga801c158406ca2334b446e442a2debe37}{TWI\+\_\+\+BIT\+\_\+\+RATE\+\_\+\+REG}}~((\mbox{\hyperlink{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+CPU}}/\mbox{\hyperlink{group__fryza__twi_ga7a1c522bed64982971384489ee477bd3}{F\+\_\+\+SCL}} -\/ 16) / 2)
+\begin{DoxyCompactList}\small\item\em TWI bit rate register value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Definition of ports and pins}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__fryza__twi_ga762c164f4acd04d3ce3627fe73e7c018}{TWI\+\_\+\+PORT}}~PORTC
+\begin{DoxyCompactList}\small\item\em Port of TWI unit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__twi_ga3f14ed8491293d0dda1372cceaa39851}{TWI\+\_\+\+SDA\+\_\+\+PIN}}~4
+\begin{DoxyCompactList}\small\item\em SDA pin of TWI unit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__twi_gac0ad8b33f1be48e211f1eeae2dd65cee}{TWI\+\_\+\+SCL\+\_\+\+PIN}}~5
+\begin{DoxyCompactList}\small\item\em SCL pin of TWI unit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+I2\+C/\+TWI library for AVR-\/\+GCC. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <\mbox{\hyperlink{twi_8h}{twi.h}}>} }
+
+\end{DoxyCode}
+
+
+This library defines functions for the TWI (I2C) communication between AVR and Slave device(s). Functions use internal TWI module of AVR.
+
+\begin{DoxyNote}{Note}
+Only Master transmitting and Master receiving modes are implemented. Based on Microchip Atmel ATmega16 and ATmega328P manuals. 
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+Tomas Fryza, Dept. of Radio Electronics, Brno University of Technology, Czechia 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+(c) 2018 Tomas Fryza, This work is licensed under the terms of the MIT license 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__fryza__twi_ga6c0346728feb274834cad94daca316ee}\label{group__fryza__twi_ga6c0346728feb274834cad94daca316ee}} 
+\index{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!DDR@{DDR}}
+\index{DDR@{DDR}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}}
+\doxysubsubsection{\texorpdfstring{DDR}{DDR}}
+{\footnotesize\ttfamily \#define DDR(\begin{DoxyParamCaption}\item[{}]{\+\_\+x }\end{DoxyParamCaption})~($\ast$(\&\+\_\+x -\/ 1))}
+
+
+
+Address of Data Direction Register of port \+\_\+x. 
+
+\mbox{\Hypertarget{group__fryza__twi_ga43bafb28b29491ec7f871319b5a3b2f8}\label{group__fryza__twi_ga43bafb28b29491ec7f871319b5a3b2f8}} 
+\index{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!F\_CPU@{F\_CPU}}
+\index{F\_CPU@{F\_CPU}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}}
+\doxysubsubsection{\texorpdfstring{F\_CPU}{F\_CPU}}
+{\footnotesize\ttfamily \#define F\+\_\+\+CPU~16000000}
+
+
+
+CPU frequency in Hz required TWI\+\_\+\+BIT\+\_\+\+RATE\+\_\+\+REG. 
+
+\mbox{\Hypertarget{group__fryza__twi_ga7a1c522bed64982971384489ee477bd3}\label{group__fryza__twi_ga7a1c522bed64982971384489ee477bd3}} 
+\index{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!F\_SCL@{F\_SCL}}
+\index{F\_SCL@{F\_SCL}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}}
+\doxysubsubsection{\texorpdfstring{F\_SCL}{F\_SCL}}
+{\footnotesize\ttfamily \#define F\+\_\+\+SCL~100000}
+
+
+
+I2\+C/\+TWI bit rate. Must be greater than 31000. 
+
+\mbox{\Hypertarget{group__fryza__twi_ga740f9eb9c9f9e33500ee61ec53945f6a}\label{group__fryza__twi_ga740f9eb9c9f9e33500ee61ec53945f6a}} 
+\index{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!PIN@{PIN}}
+\index{PIN@{PIN}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}}
+\doxysubsubsection{\texorpdfstring{PIN}{PIN}}
+{\footnotesize\ttfamily \#define PIN(\begin{DoxyParamCaption}\item[{}]{\+\_\+x }\end{DoxyParamCaption})~($\ast$(\&\+\_\+x -\/ 2))}
+
+
+
+Address of input register of port \+\_\+x. 
+
+\mbox{\Hypertarget{group__fryza__twi_ga00dcb08e2effea903c22763e0aeeb3cb}\label{group__fryza__twi_ga00dcb08e2effea903c22763e0aeeb3cb}} 
+\index{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!TWI\_ACK@{TWI\_ACK}}
+\index{TWI\_ACK@{TWI\_ACK}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}}
+\doxysubsubsection{\texorpdfstring{TWI\_ACK}{TWI\_ACK}}
+{\footnotesize\ttfamily \#define TWI\+\_\+\+ACK~0}
+
+
+
+ACK value for writing to I2\+C/\+TWI bus. 
+
+\mbox{\Hypertarget{group__fryza__twi_ga801c158406ca2334b446e442a2debe37}\label{group__fryza__twi_ga801c158406ca2334b446e442a2debe37}} 
+\index{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!TWI\_BIT\_RATE\_REG@{TWI\_BIT\_RATE\_REG}}
+\index{TWI\_BIT\_RATE\_REG@{TWI\_BIT\_RATE\_REG}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}}
+\doxysubsubsection{\texorpdfstring{TWI\_BIT\_RATE\_REG}{TWI\_BIT\_RATE\_REG}}
+{\footnotesize\ttfamily \#define TWI\+\_\+\+BIT\+\_\+\+RATE\+\_\+\+REG~((\mbox{\hyperlink{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+CPU}}/\mbox{\hyperlink{group__fryza__twi_ga7a1c522bed64982971384489ee477bd3}{F\+\_\+\+SCL}} -\/ 16) / 2)}
+
+
+
+TWI bit rate register value. 
+
+\mbox{\Hypertarget{group__fryza__twi_gaaf28e960d6d1c0553791faf52ebd8ef6}\label{group__fryza__twi_gaaf28e960d6d1c0553791faf52ebd8ef6}} 
+\index{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!TWI\_NACK@{TWI\_NACK}}
+\index{TWI\_NACK@{TWI\_NACK}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}}
+\doxysubsubsection{\texorpdfstring{TWI\_NACK}{TWI\_NACK}}
+{\footnotesize\ttfamily \#define TWI\+\_\+\+NACK~1}
+
+
+
+NACK value for writing to I2\+C/\+TWI bus. 
+
+\mbox{\Hypertarget{group__fryza__twi_ga762c164f4acd04d3ce3627fe73e7c018}\label{group__fryza__twi_ga762c164f4acd04d3ce3627fe73e7c018}} 
+\index{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!TWI\_PORT@{TWI\_PORT}}
+\index{TWI\_PORT@{TWI\_PORT}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}}
+\doxysubsubsection{\texorpdfstring{TWI\_PORT}{TWI\_PORT}}
+{\footnotesize\ttfamily \#define TWI\+\_\+\+PORT~PORTC}
+
+
+
+Port of TWI unit. 
+
+\mbox{\Hypertarget{group__fryza__twi_gaaf9a8abccd811954f9cc316f2b2f87b3}\label{group__fryza__twi_gaaf9a8abccd811954f9cc316f2b2f87b3}} 
+\index{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!TWI\_READ@{TWI\_READ}}
+\index{TWI\_READ@{TWI\_READ}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}}
+\doxysubsubsection{\texorpdfstring{TWI\_READ}{TWI\_READ}}
+{\footnotesize\ttfamily \#define TWI\+\_\+\+READ~1}
+
+
+
+Mode for reading from I2\+C/\+TWI device. 
+
+\mbox{\Hypertarget{group__fryza__twi_gac0ad8b33f1be48e211f1eeae2dd65cee}\label{group__fryza__twi_gac0ad8b33f1be48e211f1eeae2dd65cee}} 
+\index{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!TWI\_SCL\_PIN@{TWI\_SCL\_PIN}}
+\index{TWI\_SCL\_PIN@{TWI\_SCL\_PIN}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}}
+\doxysubsubsection{\texorpdfstring{TWI\_SCL\_PIN}{TWI\_SCL\_PIN}}
+{\footnotesize\ttfamily \#define TWI\+\_\+\+SCL\+\_\+\+PIN~5}
+
+
+
+SCL pin of TWI unit. 
+
+\mbox{\Hypertarget{group__fryza__twi_ga3f14ed8491293d0dda1372cceaa39851}\label{group__fryza__twi_ga3f14ed8491293d0dda1372cceaa39851}} 
+\index{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!TWI\_SDA\_PIN@{TWI\_SDA\_PIN}}
+\index{TWI\_SDA\_PIN@{TWI\_SDA\_PIN}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}}
+\doxysubsubsection{\texorpdfstring{TWI\_SDA\_PIN}{TWI\_SDA\_PIN}}
+{\footnotesize\ttfamily \#define TWI\+\_\+\+SDA\+\_\+\+PIN~4}
+
+
+
+SDA pin of TWI unit. 
+
+\mbox{\Hypertarget{group__fryza__twi_ga3b68e8e777b71520f9dbfac733774d5f}\label{group__fryza__twi_ga3b68e8e777b71520f9dbfac733774d5f}} 
+\index{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!TWI\_WRITE@{TWI\_WRITE}}
+\index{TWI\_WRITE@{TWI\_WRITE}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}}
+\doxysubsubsection{\texorpdfstring{TWI\_WRITE}{TWI\_WRITE}}
+{\footnotesize\ttfamily \#define TWI\+\_\+\+WRITE~0}
+
+
+
+Mode for writing to I2\+C/\+TWI device. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__fryza__twi_ga16f0e6b2fa5a26eadbf4086ab6d54467}\label{group__fryza__twi_ga16f0e6b2fa5a26eadbf4086ab6d54467}} 
+\index{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!twi\_init@{twi\_init}}
+\index{twi\_init@{twi\_init}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}}
+\doxysubsubsection{\texorpdfstring{twi\_init()}{twi\_init()}}
+{\footnotesize\ttfamily void twi\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize TWI unit, enable internal pull-\/ups, and set SCL frequency. 
+
+\begin{DoxyParagraph}{Implementation notes\+:}
+
+\begin{DoxyItemize}
+\item AVR internal pull-\/up resistors at pins TWI\+\_\+\+SDA\+\_\+\+PIN and TWI\+\_\+\+SCL\+\_\+\+PIN are enabled
+\item TWI bit rate register value is calculated as follows fscl = fcpu/(16 + 2$\ast$\+TWBR) 
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30     \textcolor{comment}{/* Enable internal pull-\/up resistors */}}
+\DoxyCodeLine{31     \mbox{\hyperlink{group__fryza__twi_ga6c0346728feb274834cad94daca316ee}{DDR}}(\mbox{\hyperlink{group__fryza__twi_ga762c164f4acd04d3ce3627fe73e7c018}{TWI\_PORT}}) \&= \string~((1<<\mbox{\hyperlink{group__fryza__twi_ga3f14ed8491293d0dda1372cceaa39851}{TWI\_SDA\_PIN}}) | (1<<\mbox{\hyperlink{group__fryza__twi_gac0ad8b33f1be48e211f1eeae2dd65cee}{TWI\_SCL\_PIN}}));}
+\DoxyCodeLine{32     \mbox{\hyperlink{group__fryza__twi_ga762c164f4acd04d3ce3627fe73e7c018}{TWI\_PORT}} |= (1<<\mbox{\hyperlink{group__fryza__twi_ga3f14ed8491293d0dda1372cceaa39851}{TWI\_SDA\_PIN}}) | (1<<\mbox{\hyperlink{group__fryza__twi_gac0ad8b33f1be48e211f1eeae2dd65cee}{TWI\_SCL\_PIN}});}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{comment}{/* Set SCL frequency */}}
+\DoxyCodeLine{35     TWSR \&= \string~((1<<TWPS1) | (1<<TWPS0));}
+\DoxyCodeLine{36     TWBR = \mbox{\hyperlink{group__fryza__twi_ga801c158406ca2334b446e442a2debe37}{TWI\_BIT\_RATE\_REG}};}
+\DoxyCodeLine{37 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{oled_8c_adf4cfb5ed444b0ab8cd162456c017934}{oled\+\_\+init()}}, and \mbox{\hyperlink{sensors_8c_a41e7d1dd0cac7bd20fc32a6ebc87a985}{sensors\+\_\+init()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__fryza__twi_ga16f0e6b2fa5a26eadbf4086ab6d54467_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__fryza__twi_gae9f84b771b4acdedd2106e91cb03cc78}\label{group__fryza__twi_gae9f84b771b4acdedd2106e91cb03cc78}} 
+\index{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!twi\_read@{twi\_read}}
+\index{twi\_read@{twi\_read}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}}
+\doxysubsubsection{\texorpdfstring{twi\_read()}{twi\_read()}}
+{\footnotesize\ttfamily uint8\+\_\+t twi\+\_\+read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{ack }\end{DoxyParamCaption})}
+
+
+
+Read one byte from I2\+C/\+TWI Slave device and acknowledge it by ACK or NACK. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ack} & -\/ ACK/\+NACK value to be transmitted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Received data byte 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{91 \{}
+\DoxyCodeLine{92     \textcolor{keywordflow}{if} (ack == \mbox{\hyperlink{group__fryza__twi_ga00dcb08e2effea903c22763e0aeeb3cb}{TWI\_ACK}})}
+\DoxyCodeLine{93         TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWEA);}
+\DoxyCodeLine{94     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{95         TWCR = (1<<TWINT) | (1<<TWEN);}
+\DoxyCodeLine{96     \textcolor{keywordflow}{for}(uint32\_t i = 0; i < \mbox{\hyperlink{twi_8c_aae1d7716ad5fb6be8b904e8a0def77c5}{TWI\_TIMEOUT}} \&\& ((TWCR \& (1<<TWINT)) == 0); i++) \textcolor{keyword}{asm}(\textcolor{stringliteral}{"{}NOP"{}});}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     \textcolor{keywordflow}{return} (TWDR);}
+\DoxyCodeLine{99 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{sensors_8c_a991004aa5afbe5511d9fe87599132693}{sensors\+\_\+update\+\_\+dataset()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{group__fryza__twi_gae9f84b771b4acdedd2106e91cb03cc78_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__fryza__twi_gaf37269da7f6b1b22438b78d2f965f274}\label{group__fryza__twi_gaf37269da7f6b1b22438b78d2f965f274}} 
+\index{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!twi\_start@{twi\_start}}
+\index{twi\_start@{twi\_start}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}}
+\doxysubsubsection{\texorpdfstring{twi\_start()}{twi\_start()}}
+{\footnotesize\ttfamily void twi\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Start communication on I2\+C/\+TWI bus. 
+
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47     \textcolor{comment}{/* Send Start condition */}}
+\DoxyCodeLine{48     TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);}
+\DoxyCodeLine{49     \textcolor{keywordflow}{for}(uint32\_t i = 0; i < \mbox{\hyperlink{twi_8c_aae1d7716ad5fb6be8b904e8a0def77c5}{TWI\_TIMEOUT}} \&\& ((TWCR \& (1<<TWINT)) == 0); i++) \textcolor{keyword}{asm}(\textcolor{stringliteral}{"{}NOP"{}});}
+\DoxyCodeLine{50 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{oled_8c_a91b0721118752b7208388903b69332e4}{oled\+\_\+command()}}, \mbox{\hyperlink{oled_8c_a93bdfec1e1e604f1666485179d769f01}{oled\+\_\+data()}}, \mbox{\hyperlink{sensors_8c_a991004aa5afbe5511d9fe87599132693}{sensors\+\_\+update\+\_\+dataset()}}, and \mbox{\hyperlink{group__fryza__twi_ga4f677656a04639fb33a080f0fa7a1011}{twi\+\_\+test\+\_\+address()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__fryza__twi_gaf37269da7f6b1b22438b78d2f965f274_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__fryza__twi_gacf52d6c93df110dee6d402b389e5042e}\label{group__fryza__twi_gacf52d6c93df110dee6d402b389e5042e}} 
+\index{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!twi\_stop@{twi\_stop}}
+\index{twi\_stop@{twi\_stop}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}}
+\doxysubsubsection{\texorpdfstring{twi\_stop()}{twi\_stop()}}
+{\footnotesize\ttfamily void twi\+\_\+stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Generates Stop condition on I2\+C/\+TWI bus. 
+
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{108 \{}
+\DoxyCodeLine{109     \textcolor{comment}{/* Generate Stop condition on I2C/TWI bus */}}
+\DoxyCodeLine{110     TWCR = (1<<TWINT) | (1<<TWSTO) | (1<<TWEN);}
+\DoxyCodeLine{111 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{oled_8c_a91b0721118752b7208388903b69332e4}{oled\+\_\+command()}}, \mbox{\hyperlink{oled_8c_a93bdfec1e1e604f1666485179d769f01}{oled\+\_\+data()}}, \mbox{\hyperlink{sensors_8c_a991004aa5afbe5511d9fe87599132693}{sensors\+\_\+update\+\_\+dataset()}}, and \mbox{\hyperlink{group__fryza__twi_ga4f677656a04639fb33a080f0fa7a1011}{twi\+\_\+test\+\_\+address()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__fryza__twi_gacf52d6c93df110dee6d402b389e5042e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__fryza__twi_ga4f677656a04639fb33a080f0fa7a1011}\label{group__fryza__twi_ga4f677656a04639fb33a080f0fa7a1011}} 
+\index{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!twi\_test\_address@{twi\_test\_address}}
+\index{twi\_test\_address@{twi\_test\_address}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}}
+\doxysubsubsection{\texorpdfstring{twi\_test\_address()}{twi\_test\_address()}}
+{\footnotesize\ttfamily uint8\+\_\+t twi\+\_\+test\+\_\+address (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{adr }\end{DoxyParamCaption})}
+
+
+
+Test presence of one I2C device on the bus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em adr} & Slave address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ACK/\+NACK received value 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/ ACK has been received \\
+\hline
+{\em 1} & -\/ NACK has been received \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{121 \{}
+\DoxyCodeLine{122     uint8\_t ack;  \textcolor{comment}{// ACK response from Slave}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124     \mbox{\hyperlink{group__fryza__twi_gaf37269da7f6b1b22438b78d2f965f274}{twi\_start}}();}
+\DoxyCodeLine{125     ack = \mbox{\hyperlink{group__fryza__twi_ga129b8a79f75189c3801cb7082e6b8340}{twi\_write}}((adr<<1) | \mbox{\hyperlink{group__fryza__twi_ga3b68e8e777b71520f9dbfac733774d5f}{TWI\_WRITE}});}
+\DoxyCodeLine{126     \mbox{\hyperlink{group__fryza__twi_gacf52d6c93df110dee6d402b389e5042e}{twi\_stop}}();}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128     \textcolor{keywordflow}{return} ack;}
+\DoxyCodeLine{129 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{group__fryza__twi_ga4f677656a04639fb33a080f0fa7a1011_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__fryza__twi_ga129b8a79f75189c3801cb7082e6b8340}\label{group__fryza__twi_ga129b8a79f75189c3801cb7082e6b8340}} 
+\index{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!twi\_write@{twi\_write}}
+\index{twi\_write@{twi\_write}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}}
+\doxysubsubsection{\texorpdfstring{twi\_write()}{twi\_write()}}
+{\footnotesize\ttfamily uint8\+\_\+t twi\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Send one byte to I2\+C/\+TWI Slave device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Byte to be transmitted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ACK/\+NACK received value 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & -\/ ACK has been received \\
+\hline
+{\em 1} & -\/ NACK has been received \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyNote}{Note}
+Function returns 0 if 0x18, 0x28, or 0x40 status code is detected~\newline
+ 0x18\+: SLA+W has been transmitted and ACK has been received~\newline
+ 0x28\+: Data byte has been transmitted and ACK has been received~\newline
+ 0x40\+: SLA+R has been transmitted and ACK has been received~\newline
+
+\end{DoxyNote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{60 \{}
+\DoxyCodeLine{61     uint8\_t twi\_status;}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \textcolor{comment}{/* Send SLA+R, SLA+W, or data byte on I2C/TWI bus */}}
+\DoxyCodeLine{64     TWDR = \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}};}
+\DoxyCodeLine{65     TWCR = (1<<TWINT) | (1<<TWEN);}
+\DoxyCodeLine{66     \textcolor{keywordflow}{for}(uint32\_t i = 0; i < \mbox{\hyperlink{twi_8c_aae1d7716ad5fb6be8b904e8a0def77c5}{TWI\_TIMEOUT}} \&\& ((TWCR \& (1<<TWINT)) == 0); i++) \textcolor{keyword}{asm}(\textcolor{stringliteral}{"{}NOP"{}});}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{comment}{/* Check value of TWI status register */}}
+\DoxyCodeLine{69     twi\_status = TWSR \& 0xf8;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{comment}{/* Status Code: }}
+\DoxyCodeLine{72 \textcolor{comment}{          * 0x18: SLA+W has been transmitted and ACK received }}
+\DoxyCodeLine{73 \textcolor{comment}{          * 0x28: Data byte has been transmitted and ACK has been received }}
+\DoxyCodeLine{74 \textcolor{comment}{          * 0x40: SLA+R has been transmitted and ACK received }}
+\DoxyCodeLine{75 \textcolor{comment}{    */}}
+\DoxyCodeLine{76     \textcolor{keywordflow}{if} (twi\_status == 0x18 || twi\_status == 0x28 || twi\_status == 0x40)}
+\DoxyCodeLine{77         \textcolor{keywordflow}{return} 0;   \textcolor{comment}{/* ACK received */}}
+\DoxyCodeLine{78     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{79         \textcolor{keywordflow}{return} 1;   \textcolor{comment}{/* NACK received */}}
+\DoxyCodeLine{80 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{oled_8c_a91b0721118752b7208388903b69332e4}{oled\+\_\+command()}}, \mbox{\hyperlink{oled_8c_a93bdfec1e1e604f1666485179d769f01}{oled\+\_\+data()}}, \mbox{\hyperlink{sensors_8c_a991004aa5afbe5511d9fe87599132693}{sensors\+\_\+update\+\_\+dataset()}}, and \mbox{\hyperlink{group__fryza__twi_ga4f677656a04639fb33a080f0fa7a1011}{twi\+\_\+test\+\_\+address()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__fryza__twi_ga129b8a79f75189c3801cb7082e6b8340_icgraph}
+\end{center}
+\end{figure}

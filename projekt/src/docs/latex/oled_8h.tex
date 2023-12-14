@@ -1,0 +1,1232 @@
+\hypertarget{oled_8h}{}\doxysection{lib/oled/oled.h File Reference}
+\label{oled_8h}\index{lib/oled/oled.h@{lib/oled/oled.h}}
+{\ttfamily \#include $<$inttypes.\+h$>$}\newline
+{\ttfamily \#include $<$avr/pgmspace.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}twi.\+h\char`\"{}}\newline
+Include dependency graph for oled.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{oled_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{oled_8h_a457a9aa93dbb216459873a30bdb4d84a}{I2C}}
+\item 
+\#define \mbox{\hyperlink{oled_8h_ae3c4e8fccc05094522aeca27d8c5f906}{SH1106}}
+\item 
+\#define \mbox{\hyperlink{oled_8h_af900d303b2b510cf4fa11c0fe541ace1}{GRAPHICMODE}}
+\item 
+\#define \mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}~ssd1306oled\+\_\+font
+\item 
+\#define \mbox{\hyperlink{oled_8h_a6b40243162aa68c742ec4ef54c14f1be}{OLED\+\_\+\+I2\+C\+\_\+\+ADR}}~(0x3c)
+\item 
+\#define \mbox{\hyperlink{oled_8h_a7ebc9a785e5ab85457c98595aac81589}{YES}}~1
+\item 
+\#define \mbox{\hyperlink{oled_8h_a2e939114bcc66ec9bcc8f9b0d17a0d79}{NORMALSIZE}}~1
+\item 
+\#define \mbox{\hyperlink{oled_8h_aac475f984d2fd89965461afbf3cf8dd4}{DOUBLESIZE}}~2
+\item 
+\#define \mbox{\hyperlink{oled_8h_a8430ab6b1ccb5795fe5cdb4ac235c11e}{OLED\+\_\+\+DISP\+\_\+\+OFF}}~0x\+AE
+\item 
+\#define \mbox{\hyperlink{oled_8h_ad0b0c811ef4558ec795f2adc26d00b32}{OLED\+\_\+\+DISP\+\_\+\+ON}}~0x\+AF
+\item 
+\#define \mbox{\hyperlink{oled_8h_a87b537f5fa5c109d3c05c13d6b18f382}{WHITE}}~0x01
+\item 
+\#define \mbox{\hyperlink{oled_8h_a7b3b25cba33b07c303f3060fe41887f6}{BLACK}}~0x00
+\item 
+\#define \mbox{\hyperlink{oled_8h_a46d67d48a7faab308f2e058dc35da83a}{DISPLAY\+\_\+\+WIDTH}}~128
+\item 
+\#define \mbox{\hyperlink{oled_8h_a43b7b2061f733ea1dc0a5a6028e131ff}{DISPLAY\+\_\+\+HEIGHT}}~64
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{oled_8h_a91b0721118752b7208388903b69332e4}{oled\+\_\+command}} (uint8\+\_\+t cmd\mbox{[}$\,$\mbox{]}, uint8\+\_\+t size)
+\item 
+void \mbox{\hyperlink{oled_8h_a93bdfec1e1e604f1666485179d769f01}{oled\+\_\+data}} (uint8\+\_\+t \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}\mbox{[}$\,$\mbox{]}, uint16\+\_\+t size)
+\item 
+void \mbox{\hyperlink{oled_8h_adf4cfb5ed444b0ab8cd162456c017934}{oled\+\_\+init}} (uint8\+\_\+t disp\+Attr)
+\item 
+void \mbox{\hyperlink{oled_8h_ac3d3bd3760c4da609cc310cba9887a55}{oled\+\_\+home}} (void)
+\item 
+void \mbox{\hyperlink{oled_8h_a55064af8d04c97be4ec4751b1e7566eb}{oled\+\_\+invert}} (uint8\+\_\+t invert)
+\item 
+void \mbox{\hyperlink{oled_8h_a0e010462121972ef0669b30f68d68b7b}{oled\+\_\+sleep}} (uint8\+\_\+t sleep)
+\item 
+void \mbox{\hyperlink{oled_8h_a551373c9f50c6edcbf0aff140c98535a}{oled\+\_\+set\+\_\+contrast}} (uint8\+\_\+t contrast)
+\item 
+void \mbox{\hyperlink{oled_8h_a8daec8fb691af3b411501856f9291683}{oled\+\_\+puts}} (const char $\ast$s)
+\item 
+void \mbox{\hyperlink{oled_8h_a6c489aec7c018385dc95b01400ef1f14}{oled\+\_\+puts\+\_\+p}} (const char $\ast$progmem\+\_\+s)
+\item 
+void \mbox{\hyperlink{oled_8h_a87e32cd0efcfb14bfa3c71e386498df6}{oled\+\_\+clrscr}} (void)
+\item 
+void \mbox{\hyperlink{oled_8h_a89aa3a9a7daa84a50f00399d32d9dfa2}{oled\+\_\+gotoxy}} (uint8\+\_\+t \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, uint8\+\_\+t \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}})
+\item 
+void \mbox{\hyperlink{oled_8h_a869429d91a0e3b943fa70344cea07f52}{oled\+\_\+goto\+\_\+xpix\+\_\+y}} (uint8\+\_\+t \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, uint8\+\_\+t \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}})
+\item 
+void \mbox{\hyperlink{oled_8h_acbecdceb919c4ca42478f8f8631a588b}{oled\+\_\+putc}} (char c)
+\item 
+void \mbox{\hyperlink{oled_8h_af5493f2f933481c8ec122f5ba33391aa}{oled\+\_\+char\+Mode}} (uint8\+\_\+t mode)
+\item 
+void \mbox{\hyperlink{oled_8h_afef0e0a3d794e2cd2132e24b65fc55c0}{oled\+\_\+flip}} (uint8\+\_\+t flipping)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{oled_8h_a94caf4251ff58c13fc1e29cd0522fa11}{oled\+\_\+draw\+Pixel}} (uint8\+\_\+t \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, uint8\+\_\+t \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, uint8\+\_\+t color)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{oled_8h_a3ad449ff03fa8efc3e2f58c443bbd4ff}{oled\+\_\+draw\+Line}} (uint8\+\_\+t x1, uint8\+\_\+t y1, uint8\+\_\+t x2, uint8\+\_\+t y2, uint8\+\_\+t color)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{oled_8h_a4cb9fcfe8899c433ff15a7caa2af2895}{oled\+\_\+draw\+Rect}} (uint8\+\_\+t px1, uint8\+\_\+t py1, uint8\+\_\+t px2, uint8\+\_\+t py2, uint8\+\_\+t color)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{oled_8h_a322aeccb6954fa925db21990d5be1a0a}{oled\+\_\+fill\+Rect}} (uint8\+\_\+t px1, uint8\+\_\+t py1, uint8\+\_\+t px2, uint8\+\_\+t py2, uint8\+\_\+t color)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{oled_8h_a19369baa889e38d7d6be2a20b57077ff}{oled\+\_\+draw\+Circle}} (uint8\+\_\+t center\+\_\+x, uint8\+\_\+t center\+\_\+y, uint8\+\_\+t radius, uint8\+\_\+t color)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{oled_8h_a4f1a48326a20f5b61a1b23e67701476a}{oled\+\_\+fill\+Circle}} (uint8\+\_\+t center\+\_\+x, uint8\+\_\+t center\+\_\+y, uint8\+\_\+t radius, uint8\+\_\+t color)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{oled_8h_af22742402ab56126a55f7f40c1383a1f}{oled\+\_\+draw\+Bitmap}} (uint8\+\_\+t \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, uint8\+\_\+t \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, const uint8\+\_\+t picture\mbox{[}$\,$\mbox{]}, uint8\+\_\+t width, uint8\+\_\+t height, uint8\+\_\+t color)
+\item 
+void \mbox{\hyperlink{oled_8h_a3bf2956ddac236feefb736af711f88cc}{oled\+\_\+display}} (void)
+\item 
+void \mbox{\hyperlink{oled_8h_a92958de9f44bb0eec0d23302965c64a8}{oled\+\_\+clear\+\_\+buffer}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{oled_8h_a843f53638f796114412dea413f3ea192}{oled\+\_\+check\+\_\+buffer}} (uint8\+\_\+t \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, uint8\+\_\+t \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}})
+\item 
+void \mbox{\hyperlink{oled_8h_ad9a1e40ca811bb4c2f095b31e3c3def1}{oled\+\_\+display\+\_\+block}} (uint8\+\_\+t \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, uint8\+\_\+t line, uint8\+\_\+t width)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{oled_8h_a7b3b25cba33b07c303f3060fe41887f6}\label{oled_8h_a7b3b25cba33b07c303f3060fe41887f6}} 
+\index{oled.h@{oled.h}!BLACK@{BLACK}}
+\index{BLACK@{BLACK}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{BLACK}{BLACK}}
+{\footnotesize\ttfamily \#define BLACK~0x00}
+
+\mbox{\Hypertarget{oled_8h_a43b7b2061f733ea1dc0a5a6028e131ff}\label{oled_8h_a43b7b2061f733ea1dc0a5a6028e131ff}} 
+\index{oled.h@{oled.h}!DISPLAY\_HEIGHT@{DISPLAY\_HEIGHT}}
+\index{DISPLAY\_HEIGHT@{DISPLAY\_HEIGHT}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{DISPLAY\_HEIGHT}{DISPLAY\_HEIGHT}}
+{\footnotesize\ttfamily \#define DISPLAY\+\_\+\+HEIGHT~64}
+
+\mbox{\Hypertarget{oled_8h_a46d67d48a7faab308f2e058dc35da83a}\label{oled_8h_a46d67d48a7faab308f2e058dc35da83a}} 
+\index{oled.h@{oled.h}!DISPLAY\_WIDTH@{DISPLAY\_WIDTH}}
+\index{DISPLAY\_WIDTH@{DISPLAY\_WIDTH}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{DISPLAY\_WIDTH}{DISPLAY\_WIDTH}}
+{\footnotesize\ttfamily \#define DISPLAY\+\_\+\+WIDTH~128}
+
+\mbox{\Hypertarget{oled_8h_aac475f984d2fd89965461afbf3cf8dd4}\label{oled_8h_aac475f984d2fd89965461afbf3cf8dd4}} 
+\index{oled.h@{oled.h}!DOUBLESIZE@{DOUBLESIZE}}
+\index{DOUBLESIZE@{DOUBLESIZE}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{DOUBLESIZE}{DOUBLESIZE}}
+{\footnotesize\ttfamily \#define DOUBLESIZE~2}
+
+\mbox{\Hypertarget{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}\label{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}} 
+\index{oled.h@{oled.h}!FONT@{FONT}}
+\index{FONT@{FONT}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{FONT}{FONT}}
+{\footnotesize\ttfamily \#define FONT~ssd1306oled\+\_\+font}
+
+\mbox{\Hypertarget{oled_8h_af900d303b2b510cf4fa11c0fe541ace1}\label{oled_8h_af900d303b2b510cf4fa11c0fe541ace1}} 
+\index{oled.h@{oled.h}!GRAPHICMODE@{GRAPHICMODE}}
+\index{GRAPHICMODE@{GRAPHICMODE}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{GRAPHICMODE}{GRAPHICMODE}}
+{\footnotesize\ttfamily \#define GRAPHICMODE}
+
+\mbox{\Hypertarget{oled_8h_a457a9aa93dbb216459873a30bdb4d84a}\label{oled_8h_a457a9aa93dbb216459873a30bdb4d84a}} 
+\index{oled.h@{oled.h}!I2C@{I2C}}
+\index{I2C@{I2C}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{I2C}{I2C}}
+{\footnotesize\ttfamily \#define I2C}
+
+\mbox{\Hypertarget{oled_8h_a2e939114bcc66ec9bcc8f9b0d17a0d79}\label{oled_8h_a2e939114bcc66ec9bcc8f9b0d17a0d79}} 
+\index{oled.h@{oled.h}!NORMALSIZE@{NORMALSIZE}}
+\index{NORMALSIZE@{NORMALSIZE}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{NORMALSIZE}{NORMALSIZE}}
+{\footnotesize\ttfamily \#define NORMALSIZE~1}
+
+\mbox{\Hypertarget{oled_8h_a8430ab6b1ccb5795fe5cdb4ac235c11e}\label{oled_8h_a8430ab6b1ccb5795fe5cdb4ac235c11e}} 
+\index{oled.h@{oled.h}!OLED\_DISP\_OFF@{OLED\_DISP\_OFF}}
+\index{OLED\_DISP\_OFF@{OLED\_DISP\_OFF}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{OLED\_DISP\_OFF}{OLED\_DISP\_OFF}}
+{\footnotesize\ttfamily \#define OLED\+\_\+\+DISP\+\_\+\+OFF~0x\+AE}
+
+\mbox{\Hypertarget{oled_8h_ad0b0c811ef4558ec795f2adc26d00b32}\label{oled_8h_ad0b0c811ef4558ec795f2adc26d00b32}} 
+\index{oled.h@{oled.h}!OLED\_DISP\_ON@{OLED\_DISP\_ON}}
+\index{OLED\_DISP\_ON@{OLED\_DISP\_ON}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{OLED\_DISP\_ON}{OLED\_DISP\_ON}}
+{\footnotesize\ttfamily \#define OLED\+\_\+\+DISP\+\_\+\+ON~0x\+AF}
+
+\mbox{\Hypertarget{oled_8h_a6b40243162aa68c742ec4ef54c14f1be}\label{oled_8h_a6b40243162aa68c742ec4ef54c14f1be}} 
+\index{oled.h@{oled.h}!OLED\_I2C\_ADR@{OLED\_I2C\_ADR}}
+\index{OLED\_I2C\_ADR@{OLED\_I2C\_ADR}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{OLED\_I2C\_ADR}{OLED\_I2C\_ADR}}
+{\footnotesize\ttfamily \#define OLED\+\_\+\+I2\+C\+\_\+\+ADR~(0x3c)}
+
+\mbox{\Hypertarget{oled_8h_ae3c4e8fccc05094522aeca27d8c5f906}\label{oled_8h_ae3c4e8fccc05094522aeca27d8c5f906}} 
+\index{oled.h@{oled.h}!SH1106@{SH1106}}
+\index{SH1106@{SH1106}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{SH1106}{SH1106}}
+{\footnotesize\ttfamily \#define SH1106}
+
+\mbox{\Hypertarget{oled_8h_a87b537f5fa5c109d3c05c13d6b18f382}\label{oled_8h_a87b537f5fa5c109d3c05c13d6b18f382}} 
+\index{oled.h@{oled.h}!WHITE@{WHITE}}
+\index{WHITE@{WHITE}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{WHITE}{WHITE}}
+{\footnotesize\ttfamily \#define WHITE~0x01}
+
+\mbox{\Hypertarget{oled_8h_a7ebc9a785e5ab85457c98595aac81589}\label{oled_8h_a7ebc9a785e5ab85457c98595aac81589}} 
+\index{oled.h@{oled.h}!YES@{YES}}
+\index{YES@{YES}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{YES}{YES}}
+{\footnotesize\ttfamily \#define YES~1}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{oled_8h_af5493f2f933481c8ec122f5ba33391aa}\label{oled_8h_af5493f2f933481c8ec122f5ba33391aa}} 
+\index{oled.h@{oled.h}!oled\_charMode@{oled\_charMode}}
+\index{oled\_charMode@{oled\_charMode}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_charMode()}{oled\_charMode()}}
+{\footnotesize\ttfamily void oled\+\_\+char\+Mode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{378                                 \{}
+\DoxyCodeLine{379     \mbox{\hyperlink{oled_8c_a3da37c05da7fb7b864e5ba3d194c7e5a}{charMode}} = mode;}
+\DoxyCodeLine{380 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{display_8c_a8d41c12af4f6e6faad84e1f21f99b3e1}{display\+\_\+init()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{oled_8h_af5493f2f933481c8ec122f5ba33391aa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_a843f53638f796114412dea413f3ea192}\label{oled_8h_a843f53638f796114412dea413f3ea192}} 
+\index{oled.h@{oled.h}!oled\_check\_buffer@{oled\_check\_buffer}}
+\index{oled\_check\_buffer@{oled\_check\_buffer}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_check\_buffer()}{oled\_check\_buffer()}}
+{\footnotesize\ttfamily uint8\+\_\+t oled\+\_\+check\+\_\+buffer (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x,  }\item[{uint8\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{550                                                 \{}
+\DoxyCodeLine{551     \textcolor{keywordflow}{if}( \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}} > \mbox{\hyperlink{oled_8h_a46d67d48a7faab308f2e058dc35da83a}{DISPLAY\_WIDTH}}-\/1 || \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}} > (\mbox{\hyperlink{oled_8h_a43b7b2061f733ea1dc0a5a6028e131ff}{DISPLAY\_HEIGHT}}-\/1)) \textcolor{keywordflow}{return} 0; \textcolor{comment}{// out of Display}}
+\DoxyCodeLine{552     \textcolor{keywordflow}{return} \mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}[(\mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}} / (\mbox{\hyperlink{oled_8h_a43b7b2061f733ea1dc0a5a6028e131ff}{DISPLAY\_HEIGHT}}/8))][\mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}] \& (1 << (\mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}} \% (\mbox{\hyperlink{oled_8h_a43b7b2061f733ea1dc0a5a6028e131ff}{DISPLAY\_HEIGHT}}/8)));}
+\DoxyCodeLine{553 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{oled_8h_a92958de9f44bb0eec0d23302965c64a8}\label{oled_8h_a92958de9f44bb0eec0d23302965c64a8}} 
+\index{oled.h@{oled.h}!oled\_clear\_buffer@{oled\_clear\_buffer}}
+\index{oled\_clear\_buffer@{oled\_clear\_buffer}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_clear\_buffer()}{oled\_clear\_buffer()}}
+{\footnotesize\ttfamily void oled\+\_\+clear\+\_\+buffer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{545                          \{}
+\DoxyCodeLine{546     \textcolor{keywordflow}{for} (uint8\_t i = 0; i < \mbox{\hyperlink{oled_8h_a43b7b2061f733ea1dc0a5a6028e131ff}{DISPLAY\_HEIGHT}}/8; i++)\{}
+\DoxyCodeLine{547         memset(\mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}[i], 0x00, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}[i]));}
+\DoxyCodeLine{548     \}}
+\DoxyCodeLine{549 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{oled_8h_a87e32cd0efcfb14bfa3c71e386498df6}\label{oled_8h_a87e32cd0efcfb14bfa3c71e386498df6}} 
+\index{oled.h@{oled.h}!oled\_clrscr@{oled\_clrscr}}
+\index{oled\_clrscr@{oled\_clrscr}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_clrscr()}{oled\_clrscr()}}
+{\footnotesize\ttfamily void oled\+\_\+clrscr (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{185                       \{}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#ifdef GRAPHICMODE }}
+\DoxyCodeLine{187     \textcolor{keywordflow}{for} (uint8\_t i = 0; i < \mbox{\hyperlink{oled_8h_a43b7b2061f733ea1dc0a5a6028e131ff}{DISPLAY\_HEIGHT}}/8; i++)\{}
+\DoxyCodeLine{188         memset(\mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}[i], 0x00, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}[i]));}
+\DoxyCodeLine{189         \mbox{\hyperlink{oled_8c_a89aa3a9a7daa84a50f00399d32d9dfa2}{oled\_gotoxy}}(0,i);}
+\DoxyCodeLine{190         \mbox{\hyperlink{oled_8c_a93bdfec1e1e604f1666485179d769f01}{oled\_data}}(\mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}[i], \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}[i]));}
+\DoxyCodeLine{191     \}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#elif defined TEXTMODE }}
+\DoxyCodeLine{193     uint8\_t \mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}[\mbox{\hyperlink{oled_8h_a46d67d48a7faab308f2e058dc35da83a}{DISPLAY\_WIDTH}}];}
+\DoxyCodeLine{194     memset(\mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}, 0x00, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}));}
+\DoxyCodeLine{195     \textcolor{keywordflow}{for} (uint8\_t i = 0; i < \mbox{\hyperlink{oled_8h_a43b7b2061f733ea1dc0a5a6028e131ff}{DISPLAY\_HEIGHT}}/8; i++)\{}
+\DoxyCodeLine{196         \mbox{\hyperlink{oled_8c_a89aa3a9a7daa84a50f00399d32d9dfa2}{oled\_gotoxy}}(0,i);}
+\DoxyCodeLine{197         \mbox{\hyperlink{oled_8c_a93bdfec1e1e604f1666485179d769f01}{oled\_data}}(\mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}));}
+\DoxyCodeLine{198     \}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{200     \mbox{\hyperlink{oled_8c_ac3d3bd3760c4da609cc310cba9887a55}{oled\_home}}();}
+\DoxyCodeLine{201 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{display_8c_a8d41c12af4f6e6faad84e1f21f99b3e1}{display\+\_\+init()}}, and \mbox{\hyperlink{oled_8c_adf4cfb5ed444b0ab8cd162456c017934}{oled\+\_\+init()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_a87e32cd0efcfb14bfa3c71e386498df6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_a87e32cd0efcfb14bfa3c71e386498df6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_a91b0721118752b7208388903b69332e4}\label{oled_8h_a91b0721118752b7208388903b69332e4}} 
+\index{oled.h@{oled.h}!oled\_command@{oled\_command}}
+\index{oled\_command@{oled\_command}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_command()}{oled\_command()}}
+{\footnotesize\ttfamily void oled\+\_\+command (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{101                                                \{}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#if defined I2C }}
+\DoxyCodeLine{103     \mbox{\hyperlink{group__fryza__twi_gaf37269da7f6b1b22438b78d2f965f274}{twi\_start}}();}
+\DoxyCodeLine{104     \mbox{\hyperlink{group__fryza__twi_ga129b8a79f75189c3801cb7082e6b8340}{twi\_write}}((\mbox{\hyperlink{oled_8h_a6b40243162aa68c742ec4ef54c14f1be}{OLED\_I2C\_ADR}}<<1) | \mbox{\hyperlink{group__fryza__twi_ga3b68e8e777b71520f9dbfac733774d5f}{TWI\_WRITE}});}
+\DoxyCodeLine{105     \textcolor{comment}{// i2c\_start((OLED\_I2C\_ADR << 1) | 0);}}
+\DoxyCodeLine{106     \mbox{\hyperlink{group__fryza__twi_ga129b8a79f75189c3801cb7082e6b8340}{twi\_write}}(0x00);}
+\DoxyCodeLine{107     \textcolor{comment}{// i2c\_byte(0x00);    // 0x00 for command, 0x40 for data}}
+\DoxyCodeLine{108     \textcolor{keywordflow}{for} (uint8\_t i=0; i<size; i++) \{}
+\DoxyCodeLine{109         \mbox{\hyperlink{group__fryza__twi_ga129b8a79f75189c3801cb7082e6b8340}{twi\_write}}(cmd[i]);}
+\DoxyCodeLine{110         \textcolor{comment}{// i2c\_byte(cmd[i]);}}
+\DoxyCodeLine{111     \}}
+\DoxyCodeLine{112     \mbox{\hyperlink{group__fryza__twi_gacf52d6c93df110dee6d402b389e5042e}{twi\_stop}}();}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#elif defined SPI }}
+\DoxyCodeLine{114     OLED\_PORT \&= \string~(1 << CS\_PIN);}
+\DoxyCodeLine{115     OLED\_PORT \&= \string~(1 << DC\_PIN);}
+\DoxyCodeLine{116     \textcolor{keywordflow}{for} (uint8\_t i=0; i<size; i++) \{}
+\DoxyCodeLine{117         SPDR = cmd[i];}
+\DoxyCodeLine{118         \textcolor{keywordflow}{while}(!(SPSR \& (1<<SPIF)));}
+\DoxyCodeLine{119     \}}
+\DoxyCodeLine{120     OLED\_PORT |= (1 << CS\_PIN);}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{122 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{oled_8c_afef0e0a3d794e2cd2132e24b65fc55c0}{oled\+\_\+flip()}}, \mbox{\hyperlink{oled_8c_a869429d91a0e3b943fa70344cea07f52}{oled\+\_\+goto\+\_\+xpix\+\_\+y()}}, \mbox{\hyperlink{oled_8c_adf4cfb5ed444b0ab8cd162456c017934}{oled\+\_\+init()}}, \mbox{\hyperlink{oled_8c_a55064af8d04c97be4ec4751b1e7566eb}{oled\+\_\+invert()}}, \mbox{\hyperlink{oled_8c_acbecdceb919c4ca42478f8f8631a588b}{oled\+\_\+putc()}}, \mbox{\hyperlink{oled_8c_a551373c9f50c6edcbf0aff140c98535a}{oled\+\_\+set\+\_\+contrast()}}, and \mbox{\hyperlink{oled_8c_a0e010462121972ef0669b30f68d68b7b}{oled\+\_\+sleep()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{oled_8h_a91b0721118752b7208388903b69332e4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_a91b0721118752b7208388903b69332e4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_a93bdfec1e1e604f1666485179d769f01}\label{oled_8h_a93bdfec1e1e604f1666485179d769f01}} 
+\index{oled.h@{oled.h}!oled\_data@{oled\_data}}
+\index{oled\_data@{oled\_data}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_data()}{oled\_data()}}
+{\footnotesize\ttfamily void oled\+\_\+data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data\mbox{[}$\,$\mbox{]},  }\item[{uint16\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{123                                               \{}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#if defined I2C }}
+\DoxyCodeLine{125     \mbox{\hyperlink{group__fryza__twi_gaf37269da7f6b1b22438b78d2f965f274}{twi\_start}}();}
+\DoxyCodeLine{126     \mbox{\hyperlink{group__fryza__twi_ga129b8a79f75189c3801cb7082e6b8340}{twi\_write}}((\mbox{\hyperlink{oled_8h_a6b40243162aa68c742ec4ef54c14f1be}{OLED\_I2C\_ADR}}<<1) | \mbox{\hyperlink{group__fryza__twi_ga3b68e8e777b71520f9dbfac733774d5f}{TWI\_WRITE}});}
+\DoxyCodeLine{127     \textcolor{comment}{// i2c\_start((OLED\_I2C\_ADR << 1) | 0);}}
+\DoxyCodeLine{128     \mbox{\hyperlink{group__fryza__twi_ga129b8a79f75189c3801cb7082e6b8340}{twi\_write}}(0x40);}
+\DoxyCodeLine{129     \textcolor{comment}{// i2c\_byte(0x40);    // 0x00 for command, 0x40 for data}}
+\DoxyCodeLine{130     \textcolor{keywordflow}{for} (uint16\_t i = 0; i<size; i++) \{}
+\DoxyCodeLine{131         \mbox{\hyperlink{group__fryza__twi_ga129b8a79f75189c3801cb7082e6b8340}{twi\_write}}(\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}[i]);}
+\DoxyCodeLine{132         \textcolor{comment}{// i2c\_byte(data[i]);}}
+\DoxyCodeLine{133     \}}
+\DoxyCodeLine{134     \mbox{\hyperlink{group__fryza__twi_gacf52d6c93df110dee6d402b389e5042e}{twi\_stop}}();}
+\DoxyCodeLine{135     \textcolor{comment}{// i2c\_stop();}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#elif defined SPI }}
+\DoxyCodeLine{137     OLED\_PORT \&= \string~(1 << CS\_PIN);}
+\DoxyCodeLine{138     OLED\_PORT |= (1 << DC\_PIN);}
+\DoxyCodeLine{139     \textcolor{keywordflow}{for} (uint16\_t i = 0; i<size; i++) \{}
+\DoxyCodeLine{140         SPDR = \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}[i];}
+\DoxyCodeLine{141         \textcolor{keywordflow}{while}(!(SPSR \& (1<<SPIF)));}
+\DoxyCodeLine{142     \}}
+\DoxyCodeLine{143     OLED\_PORT |= (1 << CS\_PIN);}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{145 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{oled_8c_a87e32cd0efcfb14bfa3c71e386498df6}{oled\+\_\+clrscr()}}, \mbox{\hyperlink{oled_8c_aebb4380fed7380f42c7c465430de9012}{oled\+\_\+display()}}, \mbox{\hyperlink{oled_8c_ad9a1e40ca811bb4c2f095b31e3c3def1}{oled\+\_\+display\+\_\+block()}}, and \mbox{\hyperlink{oled_8c_acbecdceb919c4ca42478f8f8631a588b}{oled\+\_\+putc()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{oled_8h_a93bdfec1e1e604f1666485179d769f01_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_a93bdfec1e1e604f1666485179d769f01_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_a3bf2956ddac236feefb736af711f88cc}\label{oled_8h_a3bf2956ddac236feefb736af711f88cc}} 
+\index{oled.h@{oled.h}!oled\_display@{oled\_display}}
+\index{oled\_display@{oled\_display}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_display()}{oled\_display()}}
+{\footnotesize\ttfamily void oled\+\_\+display (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{534                     \{}
+\DoxyCodeLine{535 \textcolor{preprocessor}{\#if defined (SSD1306) || defined (SSD1309) }}
+\DoxyCodeLine{536     \mbox{\hyperlink{oled_8c_a89aa3a9a7daa84a50f00399d32d9dfa2}{oled\_gotoxy}}(0,0);}
+\DoxyCodeLine{537     \mbox{\hyperlink{oled_8c_a93bdfec1e1e604f1666485179d769f01}{oled\_data}}(\&\mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}[0][0], \mbox{\hyperlink{oled_8h_a46d67d48a7faab308f2e058dc35da83a}{DISPLAY\_WIDTH}}*\mbox{\hyperlink{oled_8h_a43b7b2061f733ea1dc0a5a6028e131ff}{DISPLAY\_HEIGHT}}/8);}
+\DoxyCodeLine{538 \textcolor{preprocessor}{\#elif defined SH1106 }}
+\DoxyCodeLine{539     \textcolor{keywordflow}{for} (uint8\_t i = 0; i < \mbox{\hyperlink{oled_8h_a43b7b2061f733ea1dc0a5a6028e131ff}{DISPLAY\_HEIGHT}}/8; i++)\{}
+\DoxyCodeLine{540         \mbox{\hyperlink{oled_8c_a89aa3a9a7daa84a50f00399d32d9dfa2}{oled\_gotoxy}}(0,i);}
+\DoxyCodeLine{541         \mbox{\hyperlink{oled_8c_a93bdfec1e1e604f1666485179d769f01}{oled\_data}}(\mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}[i], \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}[i]));}
+\DoxyCodeLine{542     \}}
+\DoxyCodeLine{543 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{544 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{display_8c_a8d41c12af4f6e6faad84e1f21f99b3e1}{display\+\_\+init()}}, and \mbox{\hyperlink{display_8c_af6002a9b15fd411e61bc74a7ace0d457}{display\+\_\+show\+\_\+data()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_a3bf2956ddac236feefb736af711f88cc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{oled_8h_a3bf2956ddac236feefb736af711f88cc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_ad9a1e40ca811bb4c2f095b31e3c3def1}\label{oled_8h_ad9a1e40ca811bb4c2f095b31e3c3def1}} 
+\index{oled.h@{oled.h}!oled\_display\_block@{oled\_display\_block}}
+\index{oled\_display\_block@{oled\_display\_block}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_display\_block()}{oled\_display\_block()}}
+{\footnotesize\ttfamily void oled\+\_\+display\+\_\+block (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x,  }\item[{uint8\+\_\+t}]{line,  }\item[{uint8\+\_\+t}]{width }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{554                                                                 \{}
+\DoxyCodeLine{555     \textcolor{keywordflow}{if} (line > (\mbox{\hyperlink{oled_8h_a43b7b2061f733ea1dc0a5a6028e131ff}{DISPLAY\_HEIGHT}}/8-\/1) || \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}} > \mbox{\hyperlink{oled_8h_a46d67d48a7faab308f2e058dc35da83a}{DISPLAY\_WIDTH}} -\/ 1)\{\textcolor{keywordflow}{return};\}}
+\DoxyCodeLine{556     \textcolor{keywordflow}{if} (\mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}} + width > \mbox{\hyperlink{oled_8h_a46d67d48a7faab308f2e058dc35da83a}{DISPLAY\_WIDTH}}) \{ \textcolor{comment}{// no -\/1 here, x alone is width 1}}
+\DoxyCodeLine{557         width = \mbox{\hyperlink{oled_8h_a46d67d48a7faab308f2e058dc35da83a}{DISPLAY\_WIDTH}} -\/ \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}};}
+\DoxyCodeLine{558     \}}
+\DoxyCodeLine{559     \mbox{\hyperlink{oled_8c_a869429d91a0e3b943fa70344cea07f52}{oled\_goto\_xpix\_y}}(\mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}},line);}
+\DoxyCodeLine{560     \mbox{\hyperlink{oled_8c_a93bdfec1e1e604f1666485179d769f01}{oled\_data}}(\&\mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}[line][\mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}], width);}
+\DoxyCodeLine{561 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_ad9a1e40ca811bb4c2f095b31e3c3def1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_af22742402ab56126a55f7f40c1383a1f}\label{oled_8h_af22742402ab56126a55f7f40c1383a1f}} 
+\index{oled.h@{oled.h}!oled\_drawBitmap@{oled\_drawBitmap}}
+\index{oled\_drawBitmap@{oled\_drawBitmap}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_drawBitmap()}{oled\_drawBitmap()}}
+{\footnotesize\ttfamily uint8\+\_\+t oled\+\_\+draw\+Bitmap (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x,  }\item[{uint8\+\_\+t}]{y,  }\item[{const uint8\+\_\+t}]{picture\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t}]{width,  }\item[{uint8\+\_\+t}]{height,  }\item[{uint8\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{oled_8h_a19369baa889e38d7d6be2a20b57077ff}\label{oled_8h_a19369baa889e38d7d6be2a20b57077ff}} 
+\index{oled.h@{oled.h}!oled\_drawCircle@{oled\_drawCircle}}
+\index{oled\_drawCircle@{oled\_drawCircle}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_drawCircle()}{oled\_drawCircle()}}
+{\footnotesize\ttfamily uint8\+\_\+t oled\+\_\+draw\+Circle (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{center\+\_\+x,  }\item[{uint8\+\_\+t}]{center\+\_\+y,  }\item[{uint8\+\_\+t}]{radius,  }\item[{uint8\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{479                                                                                           \{}
+\DoxyCodeLine{480     uint8\_t result;}
+\DoxyCodeLine{481     }
+\DoxyCodeLine{482     int16\_t f = 1 -\/ radius;}
+\DoxyCodeLine{483     int16\_t ddF\_x = 1;}
+\DoxyCodeLine{484     int16\_t ddF\_y = -\/2 * radius;}
+\DoxyCodeLine{485     int16\_t \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}} = 0;}
+\DoxyCodeLine{486     int16\_t \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}} = radius;}
+\DoxyCodeLine{487     }
+\DoxyCodeLine{488     result = \mbox{\hyperlink{oled_8c_a94caf4251ff58c13fc1e29cd0522fa11}{oled\_drawPixel}}(center\_x  , center\_y+radius, color);}
+\DoxyCodeLine{489     result = \mbox{\hyperlink{oled_8c_a94caf4251ff58c13fc1e29cd0522fa11}{oled\_drawPixel}}(center\_x  , center\_y-\/radius, color);}
+\DoxyCodeLine{490     result = \mbox{\hyperlink{oled_8c_a94caf4251ff58c13fc1e29cd0522fa11}{oled\_drawPixel}}(center\_x+radius, center\_y  , color);}
+\DoxyCodeLine{491     result = \mbox{\hyperlink{oled_8c_a94caf4251ff58c13fc1e29cd0522fa11}{oled\_drawPixel}}(center\_x-\/radius, center\_y  , color);}
+\DoxyCodeLine{492     }
+\DoxyCodeLine{493     \textcolor{keywordflow}{while} (\mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}<\mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}) \{}
+\DoxyCodeLine{494         \textcolor{keywordflow}{if} (f >= 0) \{}
+\DoxyCodeLine{495             \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}-\/-\/;}
+\DoxyCodeLine{496             ddF\_y += 2;}
+\DoxyCodeLine{497             f += ddF\_y;}
+\DoxyCodeLine{498         \}}
+\DoxyCodeLine{499         \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}++;}
+\DoxyCodeLine{500         ddF\_x += 2;}
+\DoxyCodeLine{501         f += ddF\_x;}
+\DoxyCodeLine{502         }
+\DoxyCodeLine{503         result = \mbox{\hyperlink{oled_8c_a94caf4251ff58c13fc1e29cd0522fa11}{oled\_drawPixel}}(center\_x + \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, center\_y + \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, color);}
+\DoxyCodeLine{504         result = \mbox{\hyperlink{oled_8c_a94caf4251ff58c13fc1e29cd0522fa11}{oled\_drawPixel}}(center\_x -\/ \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, center\_y + \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, color);}
+\DoxyCodeLine{505         result = \mbox{\hyperlink{oled_8c_a94caf4251ff58c13fc1e29cd0522fa11}{oled\_drawPixel}}(center\_x + \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, center\_y -\/ \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, color);}
+\DoxyCodeLine{506         result = \mbox{\hyperlink{oled_8c_a94caf4251ff58c13fc1e29cd0522fa11}{oled\_drawPixel}}(center\_x -\/ \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, center\_y -\/ \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, color);}
+\DoxyCodeLine{507         result = \mbox{\hyperlink{oled_8c_a94caf4251ff58c13fc1e29cd0522fa11}{oled\_drawPixel}}(center\_x + \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, center\_y + \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, color);}
+\DoxyCodeLine{508         result = \mbox{\hyperlink{oled_8c_a94caf4251ff58c13fc1e29cd0522fa11}{oled\_drawPixel}}(center\_x -\/ \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, center\_y + \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, color);}
+\DoxyCodeLine{509         result = \mbox{\hyperlink{oled_8c_a94caf4251ff58c13fc1e29cd0522fa11}{oled\_drawPixel}}(center\_x + \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, center\_y -\/ \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, color);}
+\DoxyCodeLine{510         result = \mbox{\hyperlink{oled_8c_a94caf4251ff58c13fc1e29cd0522fa11}{oled\_drawPixel}}(center\_x -\/ \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, center\_y -\/ \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, color);}
+\DoxyCodeLine{511     \}}
+\DoxyCodeLine{512     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{513 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{oled_8c_a4f1a48326a20f5b61a1b23e67701476a}{oled\+\_\+fill\+Circle()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{oled_8h_a19369baa889e38d7d6be2a20b57077ff_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{oled_8h_a19369baa889e38d7d6be2a20b57077ff_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_a3ad449ff03fa8efc3e2f58c443bbd4ff}\label{oled_8h_a3ad449ff03fa8efc3e2f58c443bbd4ff}} 
+\index{oled.h@{oled.h}!oled\_drawLine@{oled\_drawLine}}
+\index{oled\_drawLine@{oled\_drawLine}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_drawLine()}{oled\_drawLine()}}
+{\footnotesize\ttfamily uint8\+\_\+t oled\+\_\+draw\+Line (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x1,  }\item[{uint8\+\_\+t}]{y1,  }\item[{uint8\+\_\+t}]{x2,  }\item[{uint8\+\_\+t}]{y2,  }\item[{uint8\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{435                                                                                     \{}
+\DoxyCodeLine{436     uint8\_t result;}
+\DoxyCodeLine{437     }
+\DoxyCodeLine{438     \textcolor{keywordtype}{int} dx =  abs(x2-\/x1), sx = x1<x2 ? 1 : -\/1;}
+\DoxyCodeLine{439     \textcolor{keywordtype}{int} dy = -\/abs(y2-\/y1), sy = y1<y2 ? 1 : -\/1;}
+\DoxyCodeLine{440     \textcolor{keywordtype}{int} err = dx+dy, e2; \textcolor{comment}{/* error value e\_xy */}}
+\DoxyCodeLine{441     }
+\DoxyCodeLine{442     \textcolor{keywordflow}{while}(1)\{}
+\DoxyCodeLine{443         result = \mbox{\hyperlink{oled_8c_a94caf4251ff58c13fc1e29cd0522fa11}{oled\_drawPixel}}(x1, y1, color);}
+\DoxyCodeLine{444         \textcolor{keywordflow}{if} (x1==x2 \&\& y1==y2) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{445         e2 = 2*err;}
+\DoxyCodeLine{446         \textcolor{keywordflow}{if} (e2 > dy) \{ err += dy; x1 += sx; \} \textcolor{comment}{/* e\_xy+e\_x > 0 */}}
+\DoxyCodeLine{447         \textcolor{keywordflow}{if} (e2 < dx) \{ err += dx; y1 += sy; \} \textcolor{comment}{/* e\_xy+e\_y < 0 */}}
+\DoxyCodeLine{448     \}}
+\DoxyCodeLine{449     }
+\DoxyCodeLine{450     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{451 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{display_8c_a8d41c12af4f6e6faad84e1f21f99b3e1}{display\+\_\+init()}}, \mbox{\hyperlink{oled_8c_a4cb9fcfe8899c433ff15a7caa2af2895}{oled\+\_\+draw\+Rect()}}, and \mbox{\hyperlink{oled_8c_a322aeccb6954fa925db21990d5be1a0a}{oled\+\_\+fill\+Rect()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{oled_8h_a3ad449ff03fa8efc3e2f58c443bbd4ff_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{oled_8h_a3ad449ff03fa8efc3e2f58c443bbd4ff_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_a94caf4251ff58c13fc1e29cd0522fa11}\label{oled_8h_a94caf4251ff58c13fc1e29cd0522fa11}} 
+\index{oled.h@{oled.h}!oled\_drawPixel@{oled\_drawPixel}}
+\index{oled\_drawPixel@{oled\_drawPixel}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_drawPixel()}{oled\_drawPixel()}}
+{\footnotesize\ttfamily uint8\+\_\+t oled\+\_\+draw\+Pixel (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x,  }\item[{uint8\+\_\+t}]{y,  }\item[{uint8\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{424                                                            \{}
+\DoxyCodeLine{425     \textcolor{keywordflow}{if}( \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}} > \mbox{\hyperlink{oled_8h_a46d67d48a7faab308f2e058dc35da83a}{DISPLAY\_WIDTH}}-\/1 || \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}} > (\mbox{\hyperlink{oled_8h_a43b7b2061f733ea1dc0a5a6028e131ff}{DISPLAY\_HEIGHT}}-\/1)) \textcolor{keywordflow}{return} 1; \textcolor{comment}{// out of Display}}
+\DoxyCodeLine{426     }
+\DoxyCodeLine{427     \textcolor{keywordflow}{if}( color == \mbox{\hyperlink{oled_8h_a87b537f5fa5c109d3c05c13d6b18f382}{WHITE}})\{}
+\DoxyCodeLine{428         \mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}[(\mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}} / 8)][\mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}] |= (1 << (\mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}} \% 8));}
+\DoxyCodeLine{429     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{430         \mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}[(\mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}} / 8)][\mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}] \&= \string~(1 << (\mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}} \% 8));}
+\DoxyCodeLine{431     \}}
+\DoxyCodeLine{432     }
+\DoxyCodeLine{433     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{434 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{oled_8c_a36b7085e66632a826f20be72b3f9c13d}{oled\+\_\+draw\+Bitmap()}}, \mbox{\hyperlink{oled_8c_a19369baa889e38d7d6be2a20b57077ff}{oled\+\_\+draw\+Circle()}}, and \mbox{\hyperlink{oled_8c_a3ad449ff03fa8efc3e2f58c443bbd4ff}{oled\+\_\+draw\+Line()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_a94caf4251ff58c13fc1e29cd0522fa11_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_a4cb9fcfe8899c433ff15a7caa2af2895}\label{oled_8h_a4cb9fcfe8899c433ff15a7caa2af2895}} 
+\index{oled.h@{oled.h}!oled\_drawRect@{oled\_drawRect}}
+\index{oled\_drawRect@{oled\_drawRect}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_drawRect()}{oled\_drawRect()}}
+{\footnotesize\ttfamily uint8\+\_\+t oled\+\_\+draw\+Rect (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{px1,  }\item[{uint8\+\_\+t}]{py1,  }\item[{uint8\+\_\+t}]{px2,  }\item[{uint8\+\_\+t}]{py2,  }\item[{uint8\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{452                                                                                         \{}
+\DoxyCodeLine{453     uint8\_t result;}
+\DoxyCodeLine{454     }
+\DoxyCodeLine{455     result = \mbox{\hyperlink{oled_8c_a3ad449ff03fa8efc3e2f58c443bbd4ff}{oled\_drawLine}}(px1, py1, px2, py1, color);}
+\DoxyCodeLine{456     result = \mbox{\hyperlink{oled_8c_a3ad449ff03fa8efc3e2f58c443bbd4ff}{oled\_drawLine}}(px2, py1, px2, py2, color);}
+\DoxyCodeLine{457     result = \mbox{\hyperlink{oled_8c_a3ad449ff03fa8efc3e2f58c443bbd4ff}{oled\_drawLine}}(px2, py2, px1, py2, color);}
+\DoxyCodeLine{458     result = \mbox{\hyperlink{oled_8c_a3ad449ff03fa8efc3e2f58c443bbd4ff}{oled\_drawLine}}(px1, py2, px1, py1, color);}
+\DoxyCodeLine{459     }
+\DoxyCodeLine{460     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{461 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_a4cb9fcfe8899c433ff15a7caa2af2895_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_a4f1a48326a20f5b61a1b23e67701476a}\label{oled_8h_a4f1a48326a20f5b61a1b23e67701476a}} 
+\index{oled.h@{oled.h}!oled\_fillCircle@{oled\_fillCircle}}
+\index{oled\_fillCircle@{oled\_fillCircle}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_fillCircle()}{oled\_fillCircle()}}
+{\footnotesize\ttfamily uint8\+\_\+t oled\+\_\+fill\+Circle (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{center\+\_\+x,  }\item[{uint8\+\_\+t}]{center\+\_\+y,  }\item[{uint8\+\_\+t}]{radius,  }\item[{uint8\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{514                                                                                            \{}
+\DoxyCodeLine{515     uint8\_t result;}
+\DoxyCodeLine{516     \textcolor{keywordflow}{for}(uint8\_t i=0; i<= radius;i++)\{}
+\DoxyCodeLine{517         result = \mbox{\hyperlink{oled_8c_a19369baa889e38d7d6be2a20b57077ff}{oled\_drawCircle}}(center\_x, center\_y, i, color);}
+\DoxyCodeLine{518     \}}
+\DoxyCodeLine{519     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{520 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_a4f1a48326a20f5b61a1b23e67701476a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_a322aeccb6954fa925db21990d5be1a0a}\label{oled_8h_a322aeccb6954fa925db21990d5be1a0a}} 
+\index{oled.h@{oled.h}!oled\_fillRect@{oled\_fillRect}}
+\index{oled\_fillRect@{oled\_fillRect}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_fillRect()}{oled\_fillRect()}}
+{\footnotesize\ttfamily uint8\+\_\+t oled\+\_\+fill\+Rect (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{px1,  }\item[{uint8\+\_\+t}]{py1,  }\item[{uint8\+\_\+t}]{px2,  }\item[{uint8\+\_\+t}]{py2,  }\item[{uint8\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{462                                                                                         \{}
+\DoxyCodeLine{463     uint8\_t result;}
+\DoxyCodeLine{464     }
+\DoxyCodeLine{465     \textcolor{keywordflow}{if}( px1 > px2)\{}
+\DoxyCodeLine{466         uint8\_t temp = px1;}
+\DoxyCodeLine{467         px1 = px2;}
+\DoxyCodeLine{468         px2 = temp;}
+\DoxyCodeLine{469         temp = py1;}
+\DoxyCodeLine{470         py1 = py2;}
+\DoxyCodeLine{471         py2 = temp;}
+\DoxyCodeLine{472     \}}
+\DoxyCodeLine{473     \textcolor{keywordflow}{for} (uint8\_t i=0; i<=(py2-\/py1); i++)\{}
+\DoxyCodeLine{474         result = \mbox{\hyperlink{oled_8c_a3ad449ff03fa8efc3e2f58c443bbd4ff}{oled\_drawLine}}(px1, py1+i, px2, py1+i, color);}
+\DoxyCodeLine{475     \}}
+\DoxyCodeLine{476     }
+\DoxyCodeLine{477     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{478 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_a322aeccb6954fa925db21990d5be1a0a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_afef0e0a3d794e2cd2132e24b65fc55c0}\label{oled_8h_afef0e0a3d794e2cd2132e24b65fc55c0}} 
+\index{oled.h@{oled.h}!oled\_flip@{oled\_flip}}
+\index{oled\_flip@{oled\_flip}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_flip()}{oled\_flip()}}
+{\footnotesize\ttfamily void oled\+\_\+flip (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{flipping }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{381                                 \{}
+\DoxyCodeLine{382     uint8\_t command[2] = \{0xC8, 0xA1\};}
+\DoxyCodeLine{383     \textcolor{keywordflow}{switch}(flipping)\{}
+\DoxyCodeLine{384         \textcolor{keywordflow}{case} 0:}
+\DoxyCodeLine{385             \textcolor{comment}{// normal mode default at init (needs to be reload data to display)}}
+\DoxyCodeLine{386             command[0] = 0xC8;}
+\DoxyCodeLine{387             command[1] = 0xA1;}
+\DoxyCodeLine{388             \mbox{\hyperlink{oled_8c_a91b0721118752b7208388903b69332e4}{oled\_command}}(command, \textcolor{keyword}{sizeof}(command));}
+\DoxyCodeLine{389             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{390         \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{391             \textcolor{comment}{// flip horizontal \&\& vertical (needs to be reload data to display)}}
+\DoxyCodeLine{392             command[0] = 0xC0;}
+\DoxyCodeLine{393             command[1] = 0xA0;}
+\DoxyCodeLine{394             \mbox{\hyperlink{oled_8c_a91b0721118752b7208388903b69332e4}{oled\_command}}(command, \textcolor{keyword}{sizeof}(command));}
+\DoxyCodeLine{395             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{396         \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{397             \textcolor{comment}{// flip vertical (immediate without reload data to display)}}
+\DoxyCodeLine{398             command[0] = 0xC0;}
+\DoxyCodeLine{399             \mbox{\hyperlink{oled_8c_a91b0721118752b7208388903b69332e4}{oled\_command}}(command, \textcolor{keyword}{sizeof}(command));}
+\DoxyCodeLine{400             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{401         \textcolor{keywordflow}{case} 3:}
+\DoxyCodeLine{402             \textcolor{comment}{// flip horizontal (needs to be reload data to display)}}
+\DoxyCodeLine{403             command[1] = 0xA0;}
+\DoxyCodeLine{404             \mbox{\hyperlink{oled_8c_a91b0721118752b7208388903b69332e4}{oled\_command}}(command, \textcolor{keyword}{sizeof}(command));}
+\DoxyCodeLine{405         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{406             \textcolor{comment}{// do nothing}}
+\DoxyCodeLine{407             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{408     \}}
+\DoxyCodeLine{409 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_afef0e0a3d794e2cd2132e24b65fc55c0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_a869429d91a0e3b943fa70344cea07f52}\label{oled_8h_a869429d91a0e3b943fa70344cea07f52}} 
+\index{oled.h@{oled.h}!oled\_goto\_xpix\_y@{oled\_goto\_xpix\_y}}
+\index{oled\_goto\_xpix\_y@{oled\_goto\_xpix\_y}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_goto\_xpix\_y()}{oled\_goto\_xpix\_y()}}
+{\footnotesize\ttfamily void oled\+\_\+goto\+\_\+xpix\+\_\+y (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x,  }\item[{uint8\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{174                                            \{}
+\DoxyCodeLine{175     \textcolor{keywordflow}{if}( \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}} > (\mbox{\hyperlink{oled_8h_a46d67d48a7faab308f2e058dc35da83a}{DISPLAY\_WIDTH}}) || \mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}} > (\mbox{\hyperlink{oled_8h_a43b7b2061f733ea1dc0a5a6028e131ff}{DISPLAY\_HEIGHT}}/8-\/1)) \textcolor{keywordflow}{return};\textcolor{comment}{// out of display}}
+\DoxyCodeLine{176     \mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x=\mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}};}
+\DoxyCodeLine{177     \mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.y=\mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}};}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#if defined (SSD1306) || defined (SSD1309) }}
+\DoxyCodeLine{179     uint8\_t commandSequence[] = \{0xb0+\mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, 0x21, \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, 0x7f\};}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#elif defined SH1106 }}
+\DoxyCodeLine{181     uint8\_t commandSequence[] = \{0xb0+\mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, 0x21, 0x00+((2+\mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}) \& (0x0f)), 0x10+( ((2+\mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}) \& (0xf0)) >> 4 ), 0x7f\};}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{183     \mbox{\hyperlink{oled_8c_a91b0721118752b7208388903b69332e4}{oled\_command}}(commandSequence, \textcolor{keyword}{sizeof}(commandSequence));}
+\DoxyCodeLine{184 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{oled_8c_ad9a1e40ca811bb4c2f095b31e3c3def1}{oled\+\_\+display\+\_\+block()}}, and \mbox{\hyperlink{oled_8c_a89aa3a9a7daa84a50f00399d32d9dfa2}{oled\+\_\+gotoxy()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_a869429d91a0e3b943fa70344cea07f52_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_a869429d91a0e3b943fa70344cea07f52_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_a89aa3a9a7daa84a50f00399d32d9dfa2}\label{oled_8h_a89aa3a9a7daa84a50f00399d32d9dfa2}} 
+\index{oled.h@{oled.h}!oled\_gotoxy@{oled\_gotoxy}}
+\index{oled\_gotoxy@{oled\_gotoxy}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_gotoxy()}{oled\_gotoxy()}}
+{\footnotesize\ttfamily void oled\+\_\+gotoxy (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x,  }\item[{uint8\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{170                                       \{}
+\DoxyCodeLine{171     \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}} = \mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}} * \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0]);}
+\DoxyCodeLine{172     \mbox{\hyperlink{oled_8c_a869429d91a0e3b943fa70344cea07f52}{oled\_goto\_xpix\_y}}(\mbox{\hyperlink{oled_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}},\mbox{\hyperlink{oled_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}});}
+\DoxyCodeLine{173 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{display_8c_a8d41c12af4f6e6faad84e1f21f99b3e1}{display\+\_\+init()}}, \mbox{\hyperlink{display_8c_af6002a9b15fd411e61bc74a7ace0d457}{display\+\_\+show\+\_\+data()}}, \mbox{\hyperlink{oled_8c_a87e32cd0efcfb14bfa3c71e386498df6}{oled\+\_\+clrscr()}}, \mbox{\hyperlink{oled_8c_aebb4380fed7380f42c7c465430de9012}{oled\+\_\+display()}}, \mbox{\hyperlink{oled_8c_ac3d3bd3760c4da609cc310cba9887a55}{oled\+\_\+home()}}, and \mbox{\hyperlink{oled_8c_acbecdceb919c4ca42478f8f8631a588b}{oled\+\_\+putc()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_a89aa3a9a7daa84a50f00399d32d9dfa2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_a89aa3a9a7daa84a50f00399d32d9dfa2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_ac3d3bd3760c4da609cc310cba9887a55}\label{oled_8h_ac3d3bd3760c4da609cc310cba9887a55}} 
+\index{oled.h@{oled.h}!oled\_home@{oled\_home}}
+\index{oled\_home@{oled\_home}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_home()}{oled\_home()}}
+{\footnotesize\ttfamily void oled\+\_\+home (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{202                     \{}
+\DoxyCodeLine{203     \mbox{\hyperlink{oled_8c_a89aa3a9a7daa84a50f00399d32d9dfa2}{oled\_gotoxy}}(0, 0);}
+\DoxyCodeLine{204 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{oled_8c_a87e32cd0efcfb14bfa3c71e386498df6}{oled\+\_\+clrscr()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_ac3d3bd3760c4da609cc310cba9887a55_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_ac3d3bd3760c4da609cc310cba9887a55_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_adf4cfb5ed444b0ab8cd162456c017934}\label{oled_8h_adf4cfb5ed444b0ab8cd162456c017934}} 
+\index{oled.h@{oled.h}!oled\_init@{oled\_init}}
+\index{oled\_init@{oled\_init}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_init()}{oled\_init()}}
+{\footnotesize\ttfamily void oled\+\_\+init (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{disp\+Attr }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{148                                 \{}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#if defined I2C }}
+\DoxyCodeLine{150     \textcolor{comment}{// i2c\_init();}}
+\DoxyCodeLine{151     \mbox{\hyperlink{group__fryza__twi_ga16f0e6b2fa5a26eadbf4086ab6d54467}{twi\_init}}();}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#elif defined SPI }}
+\DoxyCodeLine{153     DDRB |= (1 << PB2)|(1 << PB3)|(1 << PB5);}
+\DoxyCodeLine{154     SPCR = (1 << SPE)|(1<<MSTR)|(1<<SPR0);}
+\DoxyCodeLine{155     OLED\_DDR |= (1 << CS\_PIN)|(1 << DC\_PIN)|(1 << RES\_PIN);}
+\DoxyCodeLine{156     OLED\_PORT |= (1 << CS\_PIN)|(1 << DC\_PIN)|(1 << RES\_PIN);}
+\DoxyCodeLine{157     OLED\_PORT \&= \string~(1 << RES\_PIN);}
+\DoxyCodeLine{158     \_delay\_ms(10);}
+\DoxyCodeLine{159     OLED\_PORT |= (1 << RES\_PIN);}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162     uint8\_t commandSequence[\textcolor{keyword}{sizeof}(init\_sequence)+1];}
+\DoxyCodeLine{163     \textcolor{keywordflow}{for} (uint8\_t i = 0; i < \textcolor{keyword}{sizeof} (init\_sequence); i++) \{}
+\DoxyCodeLine{164         commandSequence[i] = (pgm\_read\_byte(\&init\_sequence[i]));}
+\DoxyCodeLine{165     \}}
+\DoxyCodeLine{166     commandSequence[\textcolor{keyword}{sizeof}(init\_sequence)]=(dispAttr);}
+\DoxyCodeLine{167     \mbox{\hyperlink{oled_8c_a91b0721118752b7208388903b69332e4}{oled\_command}}(commandSequence, \textcolor{keyword}{sizeof}(commandSequence));}
+\DoxyCodeLine{168     \mbox{\hyperlink{oled_8c_a87e32cd0efcfb14bfa3c71e386498df6}{oled\_clrscr}}();}
+\DoxyCodeLine{169 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{display_8c_a8d41c12af4f6e6faad84e1f21f99b3e1}{display\+\_\+init()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_adf4cfb5ed444b0ab8cd162456c017934_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{oled_8h_adf4cfb5ed444b0ab8cd162456c017934_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_a55064af8d04c97be4ec4751b1e7566eb}\label{oled_8h_a55064af8d04c97be4ec4751b1e7566eb}} 
+\index{oled.h@{oled.h}!oled\_invert@{oled\_invert}}
+\index{oled\_invert@{oled\_invert}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_invert()}{oled\_invert()}}
+{\footnotesize\ttfamily void oled\+\_\+invert (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{invert }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{205                                 \{}
+\DoxyCodeLine{206     uint8\_t commandSequence[1];}
+\DoxyCodeLine{207     \textcolor{keywordflow}{if} (invert != \mbox{\hyperlink{oled_8h_a7ebc9a785e5ab85457c98595aac81589}{YES}}) \{}
+\DoxyCodeLine{208         commandSequence[0] = 0xA6;}
+\DoxyCodeLine{209     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{210         commandSequence[0] = 0xA7;}
+\DoxyCodeLine{211     \}}
+\DoxyCodeLine{212     \mbox{\hyperlink{oled_8c_a91b0721118752b7208388903b69332e4}{oled\_command}}(commandSequence, 1);}
+\DoxyCodeLine{213 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_a55064af8d04c97be4ec4751b1e7566eb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_acbecdceb919c4ca42478f8f8631a588b}\label{oled_8h_acbecdceb919c4ca42478f8f8631a588b}} 
+\index{oled.h@{oled.h}!oled\_putc@{oled\_putc}}
+\index{oled\_putc@{oled\_putc}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_putc()}{oled\_putc()}}
+{\footnotesize\ttfamily void oled\+\_\+putc (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{227                       \{}
+\DoxyCodeLine{228     \textcolor{keywordflow}{switch} (c) \{}
+\DoxyCodeLine{229         \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)b'}:}
+\DoxyCodeLine{230             \textcolor{comment}{// backspace}}
+\DoxyCodeLine{231             \mbox{\hyperlink{oled_8c_a89aa3a9a7daa84a50f00399d32d9dfa2}{oled\_gotoxy}}(\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x-\/\mbox{\hyperlink{oled_8c_a3da37c05da7fb7b864e5ba3d194c7e5a}{charMode}}, \mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.y);}
+\DoxyCodeLine{232             \mbox{\hyperlink{oled_8c_acbecdceb919c4ca42478f8f8631a588b}{oled\_putc}}(\textcolor{charliteral}{' '});}
+\DoxyCodeLine{233             \mbox{\hyperlink{oled_8c_a89aa3a9a7daa84a50f00399d32d9dfa2}{oled\_gotoxy}}(\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x-\/\mbox{\hyperlink{oled_8c_a3da37c05da7fb7b864e5ba3d194c7e5a}{charMode}}, \mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.y);}
+\DoxyCodeLine{234             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{235         \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)t'}:}
+\DoxyCodeLine{236             \textcolor{comment}{// tab}}
+\DoxyCodeLine{237             \textcolor{keywordflow}{if}( (\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x+\mbox{\hyperlink{oled_8c_a3da37c05da7fb7b864e5ba3d194c7e5a}{charMode}}*4) < (\mbox{\hyperlink{oled_8h_a46d67d48a7faab308f2e058dc35da83a}{DISPLAY\_WIDTH}}/ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0])-\/\mbox{\hyperlink{oled_8c_a3da37c05da7fb7b864e5ba3d194c7e5a}{charMode}}*4) )\{}
+\DoxyCodeLine{238                 \mbox{\hyperlink{oled_8c_a89aa3a9a7daa84a50f00399d32d9dfa2}{oled\_gotoxy}}(\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x+\mbox{\hyperlink{oled_8c_a3da37c05da7fb7b864e5ba3d194c7e5a}{charMode}}*4, \mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.y);}
+\DoxyCodeLine{239             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{240                 \mbox{\hyperlink{oled_8c_a89aa3a9a7daa84a50f00399d32d9dfa2}{oled\_gotoxy}}(\mbox{\hyperlink{oled_8h_a46d67d48a7faab308f2e058dc35da83a}{DISPLAY\_WIDTH}}/ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0]), \mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.y);}
+\DoxyCodeLine{241             \}}
+\DoxyCodeLine{242             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{243         \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)n'}:}
+\DoxyCodeLine{244             \textcolor{comment}{// linefeed}}
+\DoxyCodeLine{245             \textcolor{keywordflow}{if}(\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.y < (\mbox{\hyperlink{oled_8h_a43b7b2061f733ea1dc0a5a6028e131ff}{DISPLAY\_HEIGHT}}/8-\/1))\{}
+\DoxyCodeLine{246                 \mbox{\hyperlink{oled_8c_a89aa3a9a7daa84a50f00399d32d9dfa2}{oled\_gotoxy}}(\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x, \mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.y+\mbox{\hyperlink{oled_8c_a3da37c05da7fb7b864e5ba3d194c7e5a}{charMode}});}
+\DoxyCodeLine{247             \}}
+\DoxyCodeLine{248             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{249         \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)r'}:}
+\DoxyCodeLine{250             \textcolor{comment}{// carrige return}}
+\DoxyCodeLine{251             \mbox{\hyperlink{oled_8c_a89aa3a9a7daa84a50f00399d32d9dfa2}{oled\_gotoxy}}(0, \mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.y);}
+\DoxyCodeLine{252             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{253         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{254             \textcolor{comment}{// char doesn't fit in line}}
+\DoxyCodeLine{255             \textcolor{keywordflow}{if}( (\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x >= \mbox{\hyperlink{oled_8h_a46d67d48a7faab308f2e058dc35da83a}{DISPLAY\_WIDTH}}-\/\textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0])) || (c < \textcolor{charliteral}{' '}) ) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{256             \textcolor{comment}{// mapping char}}
+\DoxyCodeLine{257             c -\/= \textcolor{charliteral}{' '};}
+\DoxyCodeLine{258             \textcolor{keywordflow}{if} (c >= pgm\_read\_byte(\&special\_char[0][1]) ) \{}
+\DoxyCodeLine{259                 \textcolor{keywordtype}{char} temp = c;}
+\DoxyCodeLine{260                 c = 0xff;}
+\DoxyCodeLine{261                 \textcolor{keywordflow}{for} (uint8\_t i=0; pgm\_read\_byte(\&special\_char[i][1]) != 0xff; i++) \{}
+\DoxyCodeLine{262                     \textcolor{keywordflow}{if} ( pgm\_read\_byte(\&special\_char[i][0])-\/\textcolor{charliteral}{' '} == temp ) \{}
+\DoxyCodeLine{263                         c = pgm\_read\_byte(\&special\_char[i][1]);}
+\DoxyCodeLine{264                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{265                     \}}
+\DoxyCodeLine{266                 \}}
+\DoxyCodeLine{267                 \textcolor{keywordflow}{if} ( c == 0xff ) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{268             \}}
+\DoxyCodeLine{269             \textcolor{comment}{// print char at display}}
+\DoxyCodeLine{270 \textcolor{preprocessor}{\#ifdef GRAPHICMODE }}
+\DoxyCodeLine{271             \textcolor{keywordflow}{if} (\mbox{\hyperlink{oled_8c_a3da37c05da7fb7b864e5ba3d194c7e5a}{charMode}} == \mbox{\hyperlink{oled_8h_aac475f984d2fd89965461afbf3cf8dd4}{DOUBLESIZE}}) \{}
+\DoxyCodeLine{272                 uint16\_t doubleChar[\textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0])];}
+\DoxyCodeLine{273                 uint8\_t dChar;}
+\DoxyCodeLine{274                 \textcolor{keywordflow}{if} ((\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x+2*\textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0]))>\mbox{\hyperlink{oled_8h_a46d67d48a7faab308f2e058dc35da83a}{DISPLAY\_WIDTH}}) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{275                 }
+\DoxyCodeLine{276                 \textcolor{keywordflow}{for} (uint8\_t i=0; i < \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0]); i++) \{}
+\DoxyCodeLine{277                     doubleChar[i] = 0;}
+\DoxyCodeLine{278                     dChar = pgm\_read\_byte(\&(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[(uint8\_t)c][i]));}
+\DoxyCodeLine{279                     \textcolor{keywordflow}{for} (uint8\_t j=0; j<8; j++) \{}
+\DoxyCodeLine{280                         \textcolor{keywordflow}{if} ((dChar \& (1 << j))) \{}
+\DoxyCodeLine{281                             doubleChar[i] |= (1 << (j*2));}
+\DoxyCodeLine{282                             doubleChar[i] |= (1 << ((j*2)+1));}
+\DoxyCodeLine{283                         \}}
+\DoxyCodeLine{284                     \}}
+\DoxyCodeLine{285                 \}}
+\DoxyCodeLine{286                 \textcolor{keywordflow}{for} (uint8\_t i = 0; i < \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0]); i++)}
+\DoxyCodeLine{287                 \{}
+\DoxyCodeLine{288                     \textcolor{comment}{// load bit-\/pattern from flash}}
+\DoxyCodeLine{289                     \mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}[\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.y+1][\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x+(2*i)] = doubleChar[i] >> 8;}
+\DoxyCodeLine{290                     \mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}[\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.y+1][\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x+(2*i)+1] = doubleChar[i] >> 8;}
+\DoxyCodeLine{291                     \mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}[\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.y][\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x+(2*i)] = doubleChar[i] \& 0xff;}
+\DoxyCodeLine{292                     \mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}[\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.y][\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x+(2*i)+1] = doubleChar[i] \& 0xff;}
+\DoxyCodeLine{293                 \}}
+\DoxyCodeLine{294                 \mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x += \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0])*2;}
+\DoxyCodeLine{295             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{296                 \textcolor{keywordflow}{if} ((\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x+\textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0]))>\mbox{\hyperlink{oled_8h_a46d67d48a7faab308f2e058dc35da83a}{DISPLAY\_WIDTH}}) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{297                 }
+\DoxyCodeLine{298                 \textcolor{keywordflow}{for} (uint8\_t i = 0; i < \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0]); i++)}
+\DoxyCodeLine{299                 \{}
+\DoxyCodeLine{300                     \textcolor{comment}{// load bit-\/pattern from flash}}
+\DoxyCodeLine{301                     \mbox{\hyperlink{oled_8c_ad570d8fd1c327a1e8df351607ecff683}{displayBuffer}}[\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.y][\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x+i] =pgm\_read\_byte(\&(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[(uint8\_t)c][i]));}
+\DoxyCodeLine{302                 \}}
+\DoxyCodeLine{303                 \mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x += \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0]);}
+\DoxyCodeLine{304             \}}
+\DoxyCodeLine{305 \textcolor{preprocessor}{\#elif defined TEXTMODE }}
+\DoxyCodeLine{306             \textcolor{keywordflow}{if} (\mbox{\hyperlink{oled_8c_a3da37c05da7fb7b864e5ba3d194c7e5a}{charMode}} == \mbox{\hyperlink{oled_8h_aac475f984d2fd89965461afbf3cf8dd4}{DOUBLESIZE}}) \{}
+\DoxyCodeLine{307                 uint16\_t doubleChar[\textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0])];}
+\DoxyCodeLine{308                 uint8\_t dChar;}
+\DoxyCodeLine{309                 \textcolor{keywordflow}{if} ((\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x+2*\textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0]))>\mbox{\hyperlink{oled_8h_a46d67d48a7faab308f2e058dc35da83a}{DISPLAY\_WIDTH}}) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{310                 }
+\DoxyCodeLine{311                 \textcolor{keywordflow}{for} (uint8\_t i=0; i < \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0]); i++) \{}
+\DoxyCodeLine{312                     doubleChar[i] = 0;}
+\DoxyCodeLine{313                     dChar = pgm\_read\_byte(\&(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[(uint8\_t)c][i]));}
+\DoxyCodeLine{314                     \textcolor{keywordflow}{for} (uint8\_t j=0; j<8; j++) \{}
+\DoxyCodeLine{315                         \textcolor{keywordflow}{if} ((dChar \& (1 << j))) \{}
+\DoxyCodeLine{316                             doubleChar[i] |= (1 << (j*2));}
+\DoxyCodeLine{317                             doubleChar[i] |= (1 << ((j*2)+1));}
+\DoxyCodeLine{318                         \}}
+\DoxyCodeLine{319                     \}}
+\DoxyCodeLine{320                 \}}
+\DoxyCodeLine{321                 uint8\_t \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}[\textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0])*2];}
+\DoxyCodeLine{322                 \textcolor{keywordflow}{for} (uint8\_t i = 0; i < \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0]); i++)}
+\DoxyCodeLine{323                 \{}
+\DoxyCodeLine{324                     \textcolor{comment}{// print font to ram, print 6 columns}}
+\DoxyCodeLine{325                     \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}[i<<1]=(doubleChar[i] \& 0xff);}
+\DoxyCodeLine{326                     \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}[(i<<1)+1]=(doubleChar[i] \& 0xff);}
+\DoxyCodeLine{327                 \}}
+\DoxyCodeLine{328                 \mbox{\hyperlink{oled_8c_a93bdfec1e1e604f1666485179d769f01}{oled\_data}}(\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0])*2);}
+\DoxyCodeLine{329                 }
+\DoxyCodeLine{330 \textcolor{preprocessor}{\#if defined (SSD1306) || defined (SSD1309) }}
+\DoxyCodeLine{331                 uint8\_t commandSequence[] = \{0xb0+\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.y+1,}
+\DoxyCodeLine{332                     0x21,}
+\DoxyCodeLine{333                     \mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x,}
+\DoxyCodeLine{334                     0x7f\};}
+\DoxyCodeLine{335 \textcolor{preprocessor}{\#elif defined SH1106 }}
+\DoxyCodeLine{336                 uint8\_t commandSequence[] = \{0xb0+\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.y+1,}
+\DoxyCodeLine{337                     0x21,}
+\DoxyCodeLine{338                     0x00+((2+\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x) \& (0x0f)),}
+\DoxyCodeLine{339                     0x10+( ((2+\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x) \& (0xf0)) >> 4 ),}
+\DoxyCodeLine{340                     0x7f\};}
+\DoxyCodeLine{341 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{342                 \mbox{\hyperlink{oled_8c_a91b0721118752b7208388903b69332e4}{oled\_command}}(commandSequence, \textcolor{keyword}{sizeof}(commandSequence));}
+\DoxyCodeLine{343                 }
+\DoxyCodeLine{344                 \textcolor{keywordflow}{for} (uint8\_t i = 0; i < \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0]); i++)}
+\DoxyCodeLine{345                 \{}
+\DoxyCodeLine{346                     \textcolor{comment}{// print font to ram, print 6 columns}}
+\DoxyCodeLine{347                     \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}[i<<1]=(doubleChar[i] >> 8);}
+\DoxyCodeLine{348                     \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}[(i<<1)+1]=(doubleChar[i] >> 8);}
+\DoxyCodeLine{349                 \}}
+\DoxyCodeLine{350                 \mbox{\hyperlink{oled_8c_a93bdfec1e1e604f1666485179d769f01}{oled\_data}}(\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0])*2);}
+\DoxyCodeLine{351                 }
+\DoxyCodeLine{352                 commandSequence[0] = 0xb0+\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.y;}
+\DoxyCodeLine{353 \textcolor{preprocessor}{\#if defined (SSD1306) || defined (SSD1309) }}
+\DoxyCodeLine{354                 commandSequence[2] = \mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x+(2*\textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0]));}
+\DoxyCodeLine{355 \textcolor{preprocessor}{\#elif defined SH1106 }}
+\DoxyCodeLine{356                 commandSequence[2] = 0x00+((2+\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x+(2*\textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0]))) \& (0x0f));}
+\DoxyCodeLine{357                 commandSequence[3] = 0x10+( ((2+\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x+(2*\textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0]))) \& (0xf0)) >> 4 );}
+\DoxyCodeLine{358 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{359                 \mbox{\hyperlink{oled_8c_a91b0721118752b7208388903b69332e4}{oled\_command}}(commandSequence, \textcolor{keyword}{sizeof}(commandSequence));}
+\DoxyCodeLine{360                 \mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x += \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0])*2;}
+\DoxyCodeLine{361             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{362                 uint8\_t \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}[\textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0])];}
+\DoxyCodeLine{363                 \textcolor{keywordflow}{if} ((\mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x+\textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0]))>\mbox{\hyperlink{oled_8h_a46d67d48a7faab308f2e058dc35da83a}{DISPLAY\_WIDTH}}) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{364                 }
+\DoxyCodeLine{365                 \textcolor{keywordflow}{for} (uint8\_t i = 0; i < \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0]); i++)}
+\DoxyCodeLine{366                 \{}
+\DoxyCodeLine{367                     \textcolor{comment}{// print font to ram, print 6 columns}}
+\DoxyCodeLine{368                     \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}[i]=(pgm\_read\_byte(\&(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[(uint8\_t)c][i])));}
+\DoxyCodeLine{369                 \}}
+\DoxyCodeLine{370                 \mbox{\hyperlink{oled_8c_a93bdfec1e1e604f1666485179d769f01}{oled\_data}}(\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0]));}
+\DoxyCodeLine{371                 \mbox{\hyperlink{oled_8c_a11e8052698aaa8334b21c79f39095ea1}{cursorPosition}}.x += \textcolor{keyword}{sizeof}(\mbox{\hyperlink{oled_8h_adda1b1c264e2f9b66d594d98e4ed7ff6}{FONT}}[0]);}
+\DoxyCodeLine{372             \}}
+\DoxyCodeLine{373 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{374             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{375     \}}
+\DoxyCodeLine{376     }
+\DoxyCodeLine{377 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{oled_8c_acbecdceb919c4ca42478f8f8631a588b}{oled\+\_\+putc()}}, \mbox{\hyperlink{oled_8c_a8daec8fb691af3b411501856f9291683}{oled\+\_\+puts()}}, and \mbox{\hyperlink{oled_8c_a6c489aec7c018385dc95b01400ef1f14}{oled\+\_\+puts\+\_\+p()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_acbecdceb919c4ca42478f8f8631a588b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_acbecdceb919c4ca42478f8f8631a588b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_a8daec8fb691af3b411501856f9291683}\label{oled_8h_a8daec8fb691af3b411501856f9291683}} 
+\index{oled.h@{oled.h}!oled\_puts@{oled\_puts}}
+\index{oled\_puts@{oled\_puts}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_puts()}{oled\_puts()}}
+{\footnotesize\ttfamily void oled\+\_\+puts (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{410                              \{}
+\DoxyCodeLine{411     \textcolor{keywordflow}{while} (*s) \{}
+\DoxyCodeLine{412         \mbox{\hyperlink{oled_8c_acbecdceb919c4ca42478f8f8631a588b}{oled\_putc}}(*s++);}
+\DoxyCodeLine{413     \}}
+\DoxyCodeLine{414 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{display_8c_a8d41c12af4f6e6faad84e1f21f99b3e1}{display\+\_\+init()}}, and \mbox{\hyperlink{display_8c_af6002a9b15fd411e61bc74a7ace0d457}{display\+\_\+show\+\_\+data()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_a8daec8fb691af3b411501856f9291683_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{oled_8h_a8daec8fb691af3b411501856f9291683_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_a6c489aec7c018385dc95b01400ef1f14}\label{oled_8h_a6c489aec7c018385dc95b01400ef1f14}} 
+\index{oled.h@{oled.h}!oled\_puts\_p@{oled\_puts\_p}}
+\index{oled\_puts\_p@{oled\_puts\_p}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_puts\_p()}{oled\_puts\_p()}}
+{\footnotesize\ttfamily void oled\+\_\+puts\+\_\+p (\begin{DoxyParamCaption}\item[{const char $\ast$}]{progmem\+\_\+s }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{415                                        \{}
+\DoxyCodeLine{416     \textcolor{keyword}{register} uint8\_t c;}
+\DoxyCodeLine{417     \textcolor{keywordflow}{while} ((c = pgm\_read\_byte(progmem\_s++))) \{}
+\DoxyCodeLine{418         \mbox{\hyperlink{oled_8c_acbecdceb919c4ca42478f8f8631a588b}{oled\_putc}}(c);}
+\DoxyCodeLine{419     \}}
+\DoxyCodeLine{420 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_a6c489aec7c018385dc95b01400ef1f14_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_a551373c9f50c6edcbf0aff140c98535a}\label{oled_8h_a551373c9f50c6edcbf0aff140c98535a}} 
+\index{oled.h@{oled.h}!oled\_set\_contrast@{oled\_set\_contrast}}
+\index{oled\_set\_contrast@{oled\_set\_contrast}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_set\_contrast()}{oled\_set\_contrast()}}
+{\footnotesize\ttfamily void oled\+\_\+set\+\_\+contrast (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{contrast }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{223                                         \{}
+\DoxyCodeLine{224     uint8\_t commandSequence[2] = \{0x81, contrast\};}
+\DoxyCodeLine{225     \mbox{\hyperlink{oled_8c_a91b0721118752b7208388903b69332e4}{oled\_command}}(commandSequence, \textcolor{keyword}{sizeof}(commandSequence));}
+\DoxyCodeLine{226 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_a551373c9f50c6edcbf0aff140c98535a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{oled_8h_a0e010462121972ef0669b30f68d68b7b}\label{oled_8h_a0e010462121972ef0669b30f68d68b7b}} 
+\index{oled.h@{oled.h}!oled\_sleep@{oled\_sleep}}
+\index{oled\_sleep@{oled\_sleep}!oled.h@{oled.h}}
+\doxysubsubsection{\texorpdfstring{oled\_sleep()}{oled\_sleep()}}
+{\footnotesize\ttfamily void oled\+\_\+sleep (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{sleep }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{214                               \{}
+\DoxyCodeLine{215     uint8\_t commandSequence[1];}
+\DoxyCodeLine{216     \textcolor{keywordflow}{if} (sleep != \mbox{\hyperlink{oled_8h_a7ebc9a785e5ab85457c98595aac81589}{YES}}) \{}
+\DoxyCodeLine{217         commandSequence[0] = 0xAF;}
+\DoxyCodeLine{218     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{219         commandSequence[0] = 0xAE;}
+\DoxyCodeLine{220     \}}
+\DoxyCodeLine{221     \mbox{\hyperlink{oled_8c_a91b0721118752b7208388903b69332e4}{oled\_command}}(commandSequence, 1);}
+\DoxyCodeLine{222 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oled_8h_a0e010462121972ef0669b30f68d68b7b_cgraph}
+\end{center}
+\end{figure}

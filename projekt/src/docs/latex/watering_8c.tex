@@ -1,0 +1,98 @@
+\hypertarget{watering_8c}{}\doxysection{lib/watering/watering.c File Reference}
+\label{watering_8c}\index{lib/watering/watering.c@{lib/watering/watering.c}}
+{\ttfamily \#include \char`\"{}watering.\+h\char`\"{}}\newline
+Include dependency graph for watering.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{watering_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{watering_8c_a19f0ee5e2ed5f2b96c770e741a40de54}{watering\+\_\+init}} (\mbox{\hyperlink{structwatering__t}{watering\+\_\+t}} $\ast$\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}, \mbox{\hyperlink{structservo__t}{servo\+\_\+t}} $\ast$servo)
+\item 
+void \mbox{\hyperlink{watering_8c_a0c62a16721b62527d74111250d1e179b}{watering\+\_\+set\+\_\+limit}} (\mbox{\hyperlink{structwatering__t}{watering\+\_\+t}} $\ast$\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}, uint16\+\_\+t min, uint16\+\_\+t max)
+\item 
+void \mbox{\hyperlink{watering_8c_a2771d1fd0080d7ee739c77936b341c03}{watering\+\_\+handler}} (\mbox{\hyperlink{structwatering__t}{watering\+\_\+t}} $\ast$\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}, \mbox{\hyperlink{structdataset__t}{dataset\+\_\+t}} $\ast$\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{watering_8c_a2771d1fd0080d7ee739c77936b341c03}\label{watering_8c_a2771d1fd0080d7ee739c77936b341c03}} 
+\index{watering.c@{watering.c}!watering\_handler@{watering\_handler}}
+\index{watering\_handler@{watering\_handler}!watering.c@{watering.c}}
+\doxysubsubsection{\texorpdfstring{watering\_handler()}{watering\_handler()}}
+{\footnotesize\ttfamily void watering\+\_\+handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structwatering__t}{watering\+\_\+t}} $\ast$}]{watering,  }\item[{\mbox{\hyperlink{structdataset__t}{dataset\+\_\+t}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17     \textcolor{keywordflow}{if}(\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_af4b9e7439c3b899efe40f0162f2c79b6}{servo}}-\/>\mbox{\hyperlink{structservo__t_a8f9429a848536d7b7aa533ca539afa55}{value}} != 90 \&\& \mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_af4b9e7439c3b899efe40f0162f2c79b6}{servo}}-\/>\mbox{\hyperlink{structservo__t_a8f9429a848536d7b7aa533ca539afa55}{value}} != 0)}
+\DoxyCodeLine{18         \mbox{\hyperlink{servo_8c_ab915767fa085801feff281f341eebeec}{servo\_set\_value}}(\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_af4b9e7439c3b899efe40f0162f2c79b6}{servo}}, 0);}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordflow}{if}(\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_af4b9e7439c3b899efe40f0162f2c79b6}{servo}}-\/>\mbox{\hyperlink{structservo__t_a8f9429a848536d7b7aa533ca539afa55}{value}} == 0 \&\& \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>moist < \mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_a72c2c2ddab355cc8d4002fc737b38cc9}{min}})}
+\DoxyCodeLine{21         \mbox{\hyperlink{servo_8c_ab915767fa085801feff281f341eebeec}{servo\_set\_value}}(\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_af4b9e7439c3b899efe40f0162f2c79b6}{servo}}, 90);}
+\DoxyCodeLine{22     \textcolor{keywordflow}{if}(\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_af4b9e7439c3b899efe40f0162f2c79b6}{servo}}-\/>\mbox{\hyperlink{structservo__t_a8f9429a848536d7b7aa533ca539afa55}{value}} != 0 \&\& \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>moist < \mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_a72c2c2ddab355cc8d4002fc737b38cc9}{min}})}
+\DoxyCodeLine{23         \mbox{\hyperlink{servo_8c_ab915767fa085801feff281f341eebeec}{servo\_set\_value}}(\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_af4b9e7439c3b899efe40f0162f2c79b6}{servo}}, 0);}
+\DoxyCodeLine{24 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{watering_8c_a2771d1fd0080d7ee739c77936b341c03_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{watering_8c_a19f0ee5e2ed5f2b96c770e741a40de54}\label{watering_8c_a19f0ee5e2ed5f2b96c770e741a40de54}} 
+\index{watering.c@{watering.c}!watering\_init@{watering\_init}}
+\index{watering\_init@{watering\_init}!watering.c@{watering.c}}
+\doxysubsubsection{\texorpdfstring{watering\_init()}{watering\_init()}}
+{\footnotesize\ttfamily void watering\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structwatering__t}{watering\+\_\+t}} $\ast$}]{watering,  }\item[{\mbox{\hyperlink{structservo__t}{servo\+\_\+t}} $\ast$}]{servo }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_af4b9e7439c3b899efe40f0162f2c79b6}{servo}} = servo;}
+\DoxyCodeLine{6     \mbox{\hyperlink{servo_8c_ab915767fa085801feff281f341eebeec}{servo\_set\_value}}(\mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_af4b9e7439c3b899efe40f0162f2c79b6}{servo}}, 0);}
+\DoxyCodeLine{7 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{watering_8c_a19f0ee5e2ed5f2b96c770e741a40de54_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{watering_8c_a19f0ee5e2ed5f2b96c770e741a40de54_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{watering_8c_a0c62a16721b62527d74111250d1e179b}\label{watering_8c_a0c62a16721b62527d74111250d1e179b}} 
+\index{watering.c@{watering.c}!watering\_set\_limit@{watering\_set\_limit}}
+\index{watering\_set\_limit@{watering\_set\_limit}!watering.c@{watering.c}}
+\doxysubsubsection{\texorpdfstring{watering\_set\_limit()}{watering\_set\_limit()}}
+{\footnotesize\ttfamily void watering\+\_\+set\+\_\+limit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structwatering__t}{watering\+\_\+t}} $\ast$}]{watering,  }\item[{uint16\+\_\+t}]{min,  }\item[{uint16\+\_\+t}]{max }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     \mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_a72c2c2ddab355cc8d4002fc737b38cc9}{min}} = min;}
+\DoxyCodeLine{12     \mbox{\hyperlink{main_8c_a494334356bf3e9e3c123febbf9f2d2e2}{watering}}-\/>\mbox{\hyperlink{structwatering__t_a92daff01df74ea4a107364606d04b190}{max}} = max;}
+\DoxyCodeLine{13 \}}
+
+\end{DoxyCode}

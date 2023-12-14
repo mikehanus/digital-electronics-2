@@ -1,0 +1,40 @@
+\hypertarget{twi_8c}{}\doxysection{lib/twi/twi.c File Reference}
+\label{twi_8c}\index{lib/twi/twi.c@{lib/twi/twi.c}}
+{\ttfamily \#include $<$twi.\+h$>$}\newline
+Include dependency graph for twi.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{twi_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{twi_8c_aae1d7716ad5fb6be8b904e8a0def77c5}{TWI\+\_\+\+TIMEOUT}}~10000
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__fryza__twi_ga16f0e6b2fa5a26eadbf4086ab6d54467}{twi\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize TWI unit, enable internal pull-\/ups, and set SCL frequency. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__fryza__twi_gaf37269da7f6b1b22438b78d2f965f274}{twi\+\_\+start}} (void)
+\begin{DoxyCompactList}\small\item\em Start communication on I2\+C/\+TWI bus. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__fryza__twi_ga129b8a79f75189c3801cb7082e6b8340}{twi\+\_\+write}} (uint8\+\_\+t \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}})
+\begin{DoxyCompactList}\small\item\em Send one byte to I2\+C/\+TWI Slave device. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__fryza__twi_gae9f84b771b4acdedd2106e91cb03cc78}{twi\+\_\+read}} (uint8\+\_\+t ack)
+\begin{DoxyCompactList}\small\item\em Read one byte from I2\+C/\+TWI Slave device and acknowledge it by ACK or NACK. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__fryza__twi_gacf52d6c93df110dee6d402b389e5042e}{twi\+\_\+stop}} (void)
+\begin{DoxyCompactList}\small\item\em Generates Stop condition on I2\+C/\+TWI bus. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__fryza__twi_ga4f677656a04639fb33a080f0fa7a1011}{twi\+\_\+test\+\_\+address}} (uint8\+\_\+t adr)
+\begin{DoxyCompactList}\small\item\em Test presence of one I2C device on the bus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{twi_8c_aae1d7716ad5fb6be8b904e8a0def77c5}\label{twi_8c_aae1d7716ad5fb6be8b904e8a0def77c5}} 
+\index{twi.c@{twi.c}!TWI\_TIMEOUT@{TWI\_TIMEOUT}}
+\index{TWI\_TIMEOUT@{TWI\_TIMEOUT}!twi.c@{twi.c}}
+\doxysubsubsection{\texorpdfstring{TWI\_TIMEOUT}{TWI\_TIMEOUT}}
+{\footnotesize\ttfamily \#define TWI\+\_\+\+TIMEOUT~10000}
+

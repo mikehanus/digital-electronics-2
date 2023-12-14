@@ -1,0 +1,83 @@
+\hypertarget{timer_8h}{}\doxysection{lib/timer/timer.h File Reference}
+\label{timer_8h}\index{lib/timer/timer.h@{lib/timer/timer.h}}
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+Include dependency graph for timer.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{timer_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{timer_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(reg,  val)~reg = (reg \& 0b111) $\vert$ val
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Definitions for 16-\/bit Timer/\+Counter1}\par
+{\em \begin{DoxyNote}{Note}
+t\+\_\+\+OVF = 1/\+F\+\_\+\+CPU $\ast$ prescaler $\ast$ 2$^\wedge$n where n = 16, F\+\_\+\+CPU = 16 MHz 
+\end{DoxyNote}
+}\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__fryza__timer_gabc5cca5ff2b95b49e1262c0a7839ad50}{TIM0\+\_\+\+STOP}}()~\mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(TCCR0B, 0)
+\begin{DoxyCompactList}\small\item\em Stop timer, prescaler 000 -\/-\/\texorpdfstring{$>$}{>} STOP. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_gad4a2ff61154ac7af8c9c2ee5d2b23c06}{TIM0\+\_\+\+OVF\+\_\+16\+US}}()~\mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(TCCR0B, 1)
+\begin{DoxyCompactList}\small\item\em Set overflow 16us, prescaler 001 -\/-\/\texorpdfstring{$>$}{>} 1. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_gac67ef124d63c45e6d3fc57fc758063e2}{TIM0\+\_\+\+OVF\+\_\+128\+US}}()~\mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(TCCR0B, 2)
+\begin{DoxyCompactList}\small\item\em Set overflow ms, prescaler 010 -\/-\/\texorpdfstring{$>$}{>} 8. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_ga54b4b5987dc87eee8178fbe8d4f0a23b}{TIM0\+\_\+\+OVF\+\_\+1\+MS}}()~\mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(TCCR0B, 3)
+\begin{DoxyCompactList}\small\item\em Set overflow 1ms, prescaler 011 -\/-\/\texorpdfstring{$>$}{>} 64. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_ga31f127814087d354c59c34b209d0d25d}{TIM0\+\_\+\+OVF\+\_\+4\+MS}}()~\mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(TCCR0B, 3)
+\begin{DoxyCompactList}\small\item\em Set overflow 4ms, 1024 prescaler 100 -\/-\/\texorpdfstring{$>$}{>} 256. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_gaec6450e9a1d1b1fef3546bfdc3f7e535}{TIM0\+\_\+\+OVF\+\_\+16\+MS}}()~\mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(TCCR0B, 5)
+\begin{DoxyCompactList}\small\item\em Set overflow 16ms, prescaler // 101 -\/-\/\texorpdfstring{$>$}{>} 1024. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_ga3cf6722a1a576c32cb632670804779a2}{TIM1\+\_\+\+STOP}}()~\mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(TCCR1B, 0)
+\begin{DoxyCompactList}\small\item\em Stop timer, prescaler 000 -\/-\/\texorpdfstring{$>$}{>} STOP. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_gab98bebb1e87ca5d70163a6b9a21b593e}{TIM1\+\_\+\+OVF\+\_\+4\+MS}}()~\mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(TCCR1B, 1)
+\begin{DoxyCompactList}\small\item\em Set overflow 4ms, prescaler 001 -\/-\/\texorpdfstring{$>$}{>} 1. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_gaf6d9e3ceb41fa14c13323575c975bc95}{TIM1\+\_\+\+OVF\+\_\+33\+MS}}()~\mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(TCCR1B, 2)
+\begin{DoxyCompactList}\small\item\em Set overflow 33ms, prescaler 010 -\/-\/\texorpdfstring{$>$}{>} 8. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_ga088a43eb8b7c1dca0de8f1e09e7824be}{TIM1\+\_\+\+OVF\+\_\+262\+MS}}()~\mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(TCCR1B, 3)
+\begin{DoxyCompactList}\small\item\em Set overflow 262ms, prescaler 011 -\/-\/\texorpdfstring{$>$}{>} 64. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_ga9adba4b16f5f7202ce116d8cb5a79f40}{TIM1\+\_\+\+OVF\+\_\+1\+SEC}}()~\mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(TCCR1B, 4)
+\begin{DoxyCompactList}\small\item\em Set overflow 1s, prescaler 100 -\/-\/\texorpdfstring{$>$}{>} 256. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_gae311668d5f1157b8111bfeed57939e1b}{TIM1\+\_\+\+OVF\+\_\+4\+SEC}}()~\mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(TCCR1B, 5)
+\begin{DoxyCompactList}\small\item\em Set overflow 4s, prescaler // 101 -\/-\/\texorpdfstring{$>$}{>} 1024. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_ga2930e32ac3f70a23db24b175d61ee02a}{TIM2\+\_\+\+STOP}}()~\mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(TCCR2B, 0)
+\begin{DoxyCompactList}\small\item\em Stop timer, prescaler 000 -\/-\/\texorpdfstring{$>$}{>} STOP. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_ga10b997b436eb8c8689dae598824da6df}{TIM2\+\_\+\+OVF\+\_\+16\+US}}()~\mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(TCCR2B, 1)
+\begin{DoxyCompactList}\small\item\em Set overflow 16us, prescaler 001 -\/-\/\texorpdfstring{$>$}{>} 1. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_ga9694d58299f307678a26eaa63e7c5457}{TIM2\+\_\+\+OVF\+\_\+128\+US}}()~\mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(TCCR2B, 2)
+\begin{DoxyCompactList}\small\item\em Set overflow 128us, prescaler 010 -\/-\/\texorpdfstring{$>$}{>} 8. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_gafa59b654f8ef72fc46f5346daec09e22}{TIM2\+\_\+\+OVF\+\_\+512\+US}}()~\mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(TCCR2B, 3)
+\begin{DoxyCompactList}\small\item\em Set overflow 512, prescaler 011 -\/-\/\texorpdfstring{$>$}{>} 32. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_ga4d261b3f512e86acfda775f0ab7982a7}{TIM2\+\_\+\+OVF\+\_\+1\+MS}}()~\mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(TCCR2B, 4)
+\begin{DoxyCompactList}\small\item\em Set overflow 1ms, 1024 prescaler 100 -\/-\/\texorpdfstring{$>$}{>} 64. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_ga2c8b5e249ecb0f921b4381eab3af728c}{TIM2\+\_\+\+OVF\+\_\+2\+MS}}()~\mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(TCCR2B, 5)
+\begin{DoxyCompactList}\small\item\em Set overflow 2ms, prescaler // 101 -\/-\/\texorpdfstring{$>$}{>} 128. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_ga71939b99a3dacafe476378977fc29dca}{TIM2\+\_\+\+OVF\+\_\+4\+MS}}()~\mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(TCCR2B, 6)
+\begin{DoxyCompactList}\small\item\em Set overflow 4ms, prescaler // 110 -\/-\/\texorpdfstring{$>$}{>} 256. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_ga855e211ebb8725b25b85c870b6f2fdd3}{TIM2\+\_\+\+OVF\+\_\+16\+MS}}()~\mbox{\hyperlink{group__fryza__timer_gaaae82a8e54169467b2c7013d038e27ab}{TCCRXB\+\_\+\+MODIFY\+\_\+\+CS}}(TCCR2B, 7)
+\begin{DoxyCompactList}\small\item\em Set overflow 16ms, prescaler // 111 -\/-\/\texorpdfstring{$>$}{>} 1024. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_ga2e9d1736340c1d735c1a3bd98734e80a}{TIM0\+\_\+\+OVF\+\_\+\+ENABLE}}()~TIMSK0 $\vert$= (1$<$$<$TOIE0)
+\begin{DoxyCompactList}\small\item\em Enable overflow interrupt, 1 -\/-\/\texorpdfstring{$>$}{>} enable. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_gacf3705245dc1a911868f74bf82679de5}{TIM0\+\_\+\+OVF\+\_\+\+DISABLE}}()~TIMSK0 \&= $\sim$(1$<$$<$TOIE0)
+\begin{DoxyCompactList}\small\item\em Disable overflow interrupt, 0 -\/-\/\texorpdfstring{$>$}{>} disable. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_ga30b4af52b710f0dbf4923665221de476}{TIM1\+\_\+\+OVF\+\_\+\+ENABLE}}()~TIMSK1 $\vert$= (1$<$$<$TOIE1)
+\begin{DoxyCompactList}\small\item\em Enable overflow interrupt, 1 -\/-\/\texorpdfstring{$>$}{>} enable. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_ga9469b3862980525c8f6c4c9fd5806c77}{TIM1\+\_\+\+OVF\+\_\+\+DISABLE}}()~TIMSK1 \&= $\sim$(1$<$$<$TOIE1)
+\begin{DoxyCompactList}\small\item\em Disable overflow interrupt, 0 -\/-\/\texorpdfstring{$>$}{>} disable. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_gad34b40e215e890d9e33a11acc0984839}{TIM2\+\_\+\+OVF\+\_\+\+ENABLE}}()~TIMSK2 $\vert$= (1$<$$<$TOIE2)
+\begin{DoxyCompactList}\small\item\em Enable overflow interrupt, 1 -\/-\/\texorpdfstring{$>$}{>} enable. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__fryza__timer_gaa45803adc5d16b8f23c8888994e7b64a}{TIM2\+\_\+\+OVF\+\_\+\+DISABLE}}()~TIMSK2 \&= $\sim$(1$<$$<$TOIE2)
+\begin{DoxyCompactList}\small\item\em Disable overflow interrupt, 0 -\/-\/\texorpdfstring{$>$}{>} disable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}

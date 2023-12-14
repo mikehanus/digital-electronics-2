@@ -1,0 +1,34 @@
+\hypertarget{display_8h_source}{}\doxysection{display.\+h}
+\label{display_8h_source}\index{lib/display/display.h@{lib/display/display.h}}
+\mbox{\hyperlink{display_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef DISPLAY\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define DISPLAY\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{twi_8h}{twi.h}}>}            \textcolor{comment}{// I2C/TWI library for AVR-\/GCC}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{uart_8h}{uart.h}}>}           \textcolor{comment}{// Peter Fleury's UART library}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <stdlib.h>}         \textcolor{comment}{// C library. Needed for number conversions}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{oled_8h}{oled.h}}>}           \textcolor{comment}{// OLED}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{dataset_8h}{dataset.h}}>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{/****************************************************}}
+\DoxyCodeLine{12 \textcolor{comment}{ *  @brief  Inicialization of diplay }}
+\DoxyCodeLine{13 \textcolor{comment}{ *  @return None}}
+\DoxyCodeLine{14 \textcolor{comment}{*****************************************************/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keywordtype}{void} \mbox{\hyperlink{display_8h_a8d41c12af4f6e6faad84e1f21f99b3e1}{display\_init}}();}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{/****************************************************}}
+\DoxyCodeLine{20 \textcolor{comment}{ *  @brief  It dispalys measured data}}
+\DoxyCodeLine{21 \textcolor{comment}{ *  @param  data Actual measured data}}
+\DoxyCodeLine{22 \textcolor{comment}{ *  @return None}}
+\DoxyCodeLine{23 \textcolor{comment}{*****************************************************/}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keywordtype}{void} \mbox{\hyperlink{display_8h_af6002a9b15fd411e61bc74a7ace0d457}{display\_show\_data}}(\mbox{\hyperlink{structdataset__t}{dataset\_t}} *\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}});}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{28 }
+
+\end{DoxyCode}

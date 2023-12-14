@@ -17,10 +17,10 @@
 #include <sensors.h>
 #include <display.h>
 
-servo_t water_servo;
 
 time_t last_measurement_time;
 
+servo_t water_servo;
 dataset_t actual_data;
 watering_t watering;
 storage_t storage;
@@ -32,11 +32,11 @@ int main(void)
 
 	servo_init(&water_servo, &PORTB, 0);
 	servo_set_value(&water_servo, 45);
-	
+
 	storage_init(&storage);
 	watering_init(&watering, &water_servo);
-	//sensors_init();
-	//display_init();
+	sensors_init();
+	display_init();
 
 	TIM1_OVF_1SEC();
 	TIM1_OVF_ENABLE();
@@ -45,7 +45,7 @@ int main(void)
 	actual_data.time = 1701344319 - AVRTIME_TO_UNIXTIME;
 	GPIO_mode_output(&DDRB, 0);
 
-	uart_putc('a');
+	uart_puts("Watering system terminal (pres ? for help):");
 
 	for(uint8_t i = 0; i < 20; i++)
 	{
@@ -58,37 +58,19 @@ int main(void)
 
 	while(1)
 	{
-		//ptr = localtime(&t);
-		//uart_puts(ctime(&t));
-
-		//strftime(str, 100, "Ted je %d.%m.%Y a %H:%M:%D den je %A", &localtime(t));
-		//uart_putc(str);
-		//uart_puts("\n");
 		cmd_handler(&actual_data, &watering, &storage);
-		_delay_ms(100);
+		_delay_ms(1000);
 
-		if(last_measurement_time + 30 < actual_data.time)
+		// Every 10 s make measurement
+		if(last_measurement_time + 10 < actual_data.time)
 		{
 			last_measurement_time = actual_data.time;
 
-			//sensors_update_dataset(&actual_data);
-			//display_show_data(&actual_data);
-			//storage_write(&storage, &actual_data);
+			sensors_update_dataset(&actual_data);
+			display_show_data(&actual_data);
+			storage_write(&storage, &actual_data);
 		}
 	}
-
-
-
-	while(1)
-	{
-		//GPIO_write(&PORTB, 5, 0);
-		servo_set_value(&water_servo, 0);
-		for(long i=0; i < 0x2ffff0; i++) asm("NOP");
-		//GPIO_write(&PORTB, 5, 1);
-		servo_set_value(&water_servo, 90);
-		for(long i=0; i < 0x2ffff0; i++) asm("NOP");
-	}
-
 	return 0;
 }
 
@@ -103,3 +85,4 @@ ISR(TIMER1_OVF_vect)
 {
 	actual_data.time++;
 }
+

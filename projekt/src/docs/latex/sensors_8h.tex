@@ -1,0 +1,128 @@
+\hypertarget{sensors_8h}{}\doxysection{lib/sensors/sensors.h File Reference}
+\label{sensors_8h}\index{lib/sensors/sensors.h@{lib/sensors/sensors.h}}
+{\ttfamily \#include $<$twi.\+h$>$}\newline
+{\ttfamily \#include $<$gpio.\+h$>$}\newline
+{\ttfamily \#include $<$dataset.\+h$>$}\newline
+{\ttfamily \#include $<$moist\+\_\+sens.\+h$>$}\newline
+Include dependency graph for sensors.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sensors_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{sensors_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sensors_8h_aa36bef744ff057de3847f9c71b6d2f47}{DHT22\+\_\+\+ADDR}}~0x5c
+\item 
+\#define \mbox{\hyperlink{sensors_8h_ad5b0d3c1f777f3b31d75fd2b7eea3b64}{SENSOR\+\_\+\+HUM\+\_\+\+MEM}}~0
+\item 
+\#define \mbox{\hyperlink{sensors_8h_acfc60dd49a9f34a570da88f79c6bcc91}{SENSOR\+\_\+\+TEMP\+\_\+\+MEM}}~2
+\item 
+\#define \mbox{\hyperlink{sensors_8h_ab5440c03184b51dde887ff40b06751d5}{SENSOR\+\_\+\+CHECKSUM}}~4
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sensors_8h_a41e7d1dd0cac7bd20fc32a6ebc87a985}{sensors\+\_\+init}} ()
+\item 
+void \mbox{\hyperlink{sensors_8h_a991004aa5afbe5511d9fe87599132693}{sensors\+\_\+update\+\_\+dataset}} (\mbox{\hyperlink{structdataset__t}{dataset\+\_\+t}} $\ast$\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{sensors_8h_aa36bef744ff057de3847f9c71b6d2f47}\label{sensors_8h_aa36bef744ff057de3847f9c71b6d2f47}} 
+\index{sensors.h@{sensors.h}!DHT22\_ADDR@{DHT22\_ADDR}}
+\index{DHT22\_ADDR@{DHT22\_ADDR}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{DHT22\_ADDR}{DHT22\_ADDR}}
+{\footnotesize\ttfamily \#define DHT22\+\_\+\+ADDR~0x5c}
+
+\mbox{\Hypertarget{sensors_8h_ab5440c03184b51dde887ff40b06751d5}\label{sensors_8h_ab5440c03184b51dde887ff40b06751d5}} 
+\index{sensors.h@{sensors.h}!SENSOR\_CHECKSUM@{SENSOR\_CHECKSUM}}
+\index{SENSOR\_CHECKSUM@{SENSOR\_CHECKSUM}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{SENSOR\_CHECKSUM}{SENSOR\_CHECKSUM}}
+{\footnotesize\ttfamily \#define SENSOR\+\_\+\+CHECKSUM~4}
+
+\mbox{\Hypertarget{sensors_8h_ad5b0d3c1f777f3b31d75fd2b7eea3b64}\label{sensors_8h_ad5b0d3c1f777f3b31d75fd2b7eea3b64}} 
+\index{sensors.h@{sensors.h}!SENSOR\_HUM\_MEM@{SENSOR\_HUM\_MEM}}
+\index{SENSOR\_HUM\_MEM@{SENSOR\_HUM\_MEM}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{SENSOR\_HUM\_MEM}{SENSOR\_HUM\_MEM}}
+{\footnotesize\ttfamily \#define SENSOR\+\_\+\+HUM\+\_\+\+MEM~0}
+
+\mbox{\Hypertarget{sensors_8h_acfc60dd49a9f34a570da88f79c6bcc91}\label{sensors_8h_acfc60dd49a9f34a570da88f79c6bcc91}} 
+\index{sensors.h@{sensors.h}!SENSOR\_TEMP\_MEM@{SENSOR\_TEMP\_MEM}}
+\index{SENSOR\_TEMP\_MEM@{SENSOR\_TEMP\_MEM}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{SENSOR\_TEMP\_MEM}{SENSOR\_TEMP\_MEM}}
+{\footnotesize\ttfamily \#define SENSOR\+\_\+\+TEMP\+\_\+\+MEM~2}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sensors_8h_a41e7d1dd0cac7bd20fc32a6ebc87a985}\label{sensors_8h_a41e7d1dd0cac7bd20fc32a6ebc87a985}} 
+\index{sensors.h@{sensors.h}!sensors\_init@{sensors\_init}}
+\index{sensors\_init@{sensors\_init}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{sensors\_init()}{sensors\_init()}}
+{\footnotesize\ttfamily void sensors\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \mbox{\hyperlink{group__fryza__twi_ga16f0e6b2fa5a26eadbf4086ab6d54467}{twi\_init}}();}
+\DoxyCodeLine{6     \mbox{\hyperlink{moist__sens_8c_a2334d6eadb5a595655bf1e153a48621a}{moist\_sens\_init}}();}
+\DoxyCodeLine{7 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{sensors_8h_a41e7d1dd0cac7bd20fc32a6ebc87a985_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sensors_8h_a991004aa5afbe5511d9fe87599132693}\label{sensors_8h_a991004aa5afbe5511d9fe87599132693}} 
+\index{sensors.h@{sensors.h}!sensors\_update\_dataset@{sensors\_update\_dataset}}
+\index{sensors\_update\_dataset@{sensors\_update\_dataset}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{sensors\_update\_dataset()}{sensors\_update\_dataset()}}
+{\footnotesize\ttfamily void sensors\+\_\+update\+\_\+dataset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdataset__t}{dataset\+\_\+t}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     \mbox{\hyperlink{group__fryza__twi_gaf37269da7f6b1b22438b78d2f965f274}{twi\_start}}();}
+\DoxyCodeLine{13     \textcolor{keywordflow}{if} (\mbox{\hyperlink{group__fryza__twi_ga129b8a79f75189c3801cb7082e6b8340}{twi\_write}}((\mbox{\hyperlink{sensors_8h_aa36bef744ff057de3847f9c71b6d2f47}{DHT22\_ADDR}}<<1) | \mbox{\hyperlink{group__fryza__twi_ga3b68e8e777b71520f9dbfac733774d5f}{TWI\_WRITE}}) == 0)}
+\DoxyCodeLine{14     \{}
+\DoxyCodeLine{15         \textcolor{comment}{// Set internal memory location}}
+\DoxyCodeLine{16         \mbox{\hyperlink{group__fryza__twi_ga129b8a79f75189c3801cb7082e6b8340}{twi\_write}}(\mbox{\hyperlink{sensors_8h_acfc60dd49a9f34a570da88f79c6bcc91}{SENSOR\_TEMP\_MEM}});}
+\DoxyCodeLine{17         \mbox{\hyperlink{group__fryza__twi_gacf52d6c93df110dee6d402b389e5042e}{twi\_stop}}();}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19         \textcolor{comment}{// Read data from internal memory}}
+\DoxyCodeLine{20         \mbox{\hyperlink{group__fryza__twi_gaf37269da7f6b1b22438b78d2f965f274}{twi\_start}}();}
+\DoxyCodeLine{21         \mbox{\hyperlink{group__fryza__twi_ga129b8a79f75189c3801cb7082e6b8340}{twi\_write}}((\mbox{\hyperlink{sensors_8h_aa36bef744ff057de3847f9c71b6d2f47}{DHT22\_ADDR}}<<1) | \mbox{\hyperlink{group__fryza__twi_gaaf9a8abccd811954f9cc316f2b2f87b3}{TWI\_READ}});}
+\DoxyCodeLine{22         \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>temp = \mbox{\hyperlink{group__fryza__twi_gae9f84b771b4acdedd2106e91cb03cc78}{twi\_read}}(\mbox{\hyperlink{group__fryza__twi_ga00dcb08e2effea903c22763e0aeeb3cb}{TWI\_ACK}});}
+\DoxyCodeLine{23         \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>hum = \mbox{\hyperlink{group__fryza__twi_gae9f84b771b4acdedd2106e91cb03cc78}{twi\_read}}(\mbox{\hyperlink{group__fryza__twi_ga00dcb08e2effea903c22763e0aeeb3cb}{TWI\_ACK}});}
+\DoxyCodeLine{24     \}}
+\DoxyCodeLine{25     \mbox{\hyperlink{group__fryza__twi_gacf52d6c93df110dee6d402b389e5042e}{twi\_stop}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>moist = \mbox{\hyperlink{moist__sens_8c_aea5ab7057f46b5c93f520c3d82f809c3}{get\_moist}}();}
+\DoxyCodeLine{28 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{sensors_8h_a991004aa5afbe5511d9fe87599132693_cgraph}
+\end{center}
+\end{figure}

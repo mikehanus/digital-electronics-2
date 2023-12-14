@@ -1,0 +1,155 @@
+\hypertarget{test__uart_8c}{}\doxysection{lib/uart/test\+\_\+uart.c File Reference}
+\label{test__uart_8c}\index{lib/uart/test\_uart.c@{lib/uart/test\_uart.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$avr/interrupt.\+h$>$}\newline
+{\ttfamily \#include $<$avr/pgmspace.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}uart.\+h\char`\"{}}\newline
+Include dependency graph for test\+\_\+uart.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test__uart_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{test__uart_8c_a615aed21aa6825462b7c17b0c238ffe2}{UART\+\_\+\+BAUD\+\_\+\+RATE}}~9600
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{test__uart_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{test__uart_8c_a615aed21aa6825462b7c17b0c238ffe2}\label{test__uart_8c_a615aed21aa6825462b7c17b0c238ffe2}} 
+\index{test\_uart.c@{test\_uart.c}!UART\_BAUD\_RATE@{UART\_BAUD\_RATE}}
+\index{UART\_BAUD\_RATE@{UART\_BAUD\_RATE}!test\_uart.c@{test\_uart.c}}
+\doxysubsubsection{\texorpdfstring{UART\_BAUD\_RATE}{UART\_BAUD\_RATE}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+BAUD\+\_\+\+RATE~9600}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{test__uart_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{test__uart_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{test\_uart.c@{test\_uart.c}!main@{main}}
+\index{main@{main}!test\_uart.c@{test\_uart.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} c;}
+\DoxyCodeLine{32     \textcolor{keywordtype}{char} buffer[7];}
+\DoxyCodeLine{33     \textcolor{keywordtype}{int}  num=134;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     }
+\DoxyCodeLine{36     \textcolor{comment}{/*}}
+\DoxyCodeLine{37 \textcolor{comment}{     *  Initialize UART library, pass baudrate and AVR cpu clock}}
+\DoxyCodeLine{38 \textcolor{comment}{     *  with the macro }}
+\DoxyCodeLine{39 \textcolor{comment}{     *  UART\_BAUD\_SELECT() (normal speed mode )}}
+\DoxyCodeLine{40 \textcolor{comment}{     *  or }}
+\DoxyCodeLine{41 \textcolor{comment}{     *  UART\_BAUD\_SELECT\_DOUBLE\_SPEED() ( double speed mode)}}
+\DoxyCodeLine{42 \textcolor{comment}{     */}}
+\DoxyCodeLine{43     \mbox{\hyperlink{group__pfleury__uart_gac19a76bb7d446125734a67f9f4b68991}{uart\_init}}( \mbox{\hyperlink{group__pfleury__uart_ga367ff7b5de225ed936a63239ad4adb0b}{UART\_BAUD\_SELECT}}(\mbox{\hyperlink{test__uart_8c_a615aed21aa6825462b7c17b0c238ffe2}{UART\_BAUD\_RATE}},\mbox{\hyperlink{group__fryza__twi_ga43bafb28b29491ec7f871319b5a3b2f8}{F\_CPU}}) ); }
+\DoxyCodeLine{44     }
+\DoxyCodeLine{45     \textcolor{comment}{/*}}
+\DoxyCodeLine{46 \textcolor{comment}{     * now enable interrupt, since UART library is interrupt controlled}}
+\DoxyCodeLine{47 \textcolor{comment}{     */}}
+\DoxyCodeLine{48     sei();}
+\DoxyCodeLine{49     }
+\DoxyCodeLine{50     \textcolor{comment}{/*}}
+\DoxyCodeLine{51 \textcolor{comment}{     *  Transmit string to UART}}
+\DoxyCodeLine{52 \textcolor{comment}{     *  The string is buffered by the uart library in a circular buffer}}
+\DoxyCodeLine{53 \textcolor{comment}{     *  and one character at a time is transmitted to the UART using interrupts.}}
+\DoxyCodeLine{54 \textcolor{comment}{     *  uart\_puts() blocks if it can not write the whole string to the circular }}
+\DoxyCodeLine{55 \textcolor{comment}{     *  buffer}}
+\DoxyCodeLine{56 \textcolor{comment}{     */}}
+\DoxyCodeLine{57     \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(\textcolor{stringliteral}{"{}String stored in SRAM\(\backslash\)n"{}});}
+\DoxyCodeLine{58     }
+\DoxyCodeLine{59     \textcolor{comment}{/*}}
+\DoxyCodeLine{60 \textcolor{comment}{     * Transmit string from program memory to UART}}
+\DoxyCodeLine{61 \textcolor{comment}{     */}}
+\DoxyCodeLine{62     \mbox{\hyperlink{group__pfleury__uart_gae9e143569df2285379bc55f9f5595bf9}{uart\_puts\_P}}(\textcolor{stringliteral}{"{}String stored in FLASH\(\backslash\)n"{}});}
+\DoxyCodeLine{63     }
+\DoxyCodeLine{64         }
+\DoxyCodeLine{65     \textcolor{comment}{/* }}
+\DoxyCodeLine{66 \textcolor{comment}{     * Use standard avr-\/libc functions to convert numbers into string}}
+\DoxyCodeLine{67 \textcolor{comment}{     * before transmitting via UART}}
+\DoxyCodeLine{68 \textcolor{comment}{     */}     }
+\DoxyCodeLine{69     itoa( num, buffer, 10);   \textcolor{comment}{// convert interger into string (decimal format)         }}
+\DoxyCodeLine{70     \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\_puts}}(buffer);        \textcolor{comment}{// and transmit string to UART}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     }
+\DoxyCodeLine{73     \textcolor{comment}{/*}}
+\DoxyCodeLine{74 \textcolor{comment}{     * Transmit single character to UART}}
+\DoxyCodeLine{75 \textcolor{comment}{     */}}
+\DoxyCodeLine{76     \mbox{\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\_putc}}(\textcolor{charliteral}{'\(\backslash\)r'});}
+\DoxyCodeLine{77     }
+\DoxyCodeLine{78     \textcolor{keywordflow}{for}(;;)}
+\DoxyCodeLine{79     \{}
+\DoxyCodeLine{80         \textcolor{comment}{/*}}
+\DoxyCodeLine{81 \textcolor{comment}{         * Get received character from ringbuffer}}
+\DoxyCodeLine{82 \textcolor{comment}{         * uart\_getc() returns in the lower byte the received character and }}
+\DoxyCodeLine{83 \textcolor{comment}{         * in the higher byte (bitmask) the last receive error}}
+\DoxyCodeLine{84 \textcolor{comment}{         * UART\_NO\_DATA is returned when no data is available.}}
+\DoxyCodeLine{85 \textcolor{comment}{         *}}
+\DoxyCodeLine{86 \textcolor{comment}{         */}}
+\DoxyCodeLine{87         c = \mbox{\hyperlink{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}{uart\_getc}}();}
+\DoxyCodeLine{88         \textcolor{keywordflow}{if} ( c \& \mbox{\hyperlink{group__pfleury__uart_ga77ba544d423ff42d400220a05303f268}{UART\_NO\_DATA}} )}
+\DoxyCodeLine{89         \{}
+\DoxyCodeLine{90             \textcolor{comment}{/* }}
+\DoxyCodeLine{91 \textcolor{comment}{             * no data available from UART }}
+\DoxyCodeLine{92 \textcolor{comment}{             */}}
+\DoxyCodeLine{93         \}}
+\DoxyCodeLine{94         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{95         \{}
+\DoxyCodeLine{96             \textcolor{comment}{/*}}
+\DoxyCodeLine{97 \textcolor{comment}{             * new data available from UART}}
+\DoxyCodeLine{98 \textcolor{comment}{             * check for Frame or Overrun error}}
+\DoxyCodeLine{99 \textcolor{comment}{             */}}
+\DoxyCodeLine{100             \textcolor{keywordflow}{if} ( c \& \mbox{\hyperlink{group__pfleury__uart_gabcdb1041d763560cd8f8e722370dfd37}{UART\_FRAME\_ERROR}} )}
+\DoxyCodeLine{101             \{}
+\DoxyCodeLine{102                 \textcolor{comment}{/* Framing Error detected, i.e no stop bit detected */}}
+\DoxyCodeLine{103                 \mbox{\hyperlink{group__pfleury__uart_gae9e143569df2285379bc55f9f5595bf9}{uart\_puts\_P}}(\textcolor{stringliteral}{"{}UART Frame Error: "{}});}
+\DoxyCodeLine{104             \}}
+\DoxyCodeLine{105             \textcolor{keywordflow}{if} ( c \& \mbox{\hyperlink{group__pfleury__uart_ga3183177e3613d8785d8cc8516931beb6}{UART\_OVERRUN\_ERROR}} )}
+\DoxyCodeLine{106             \{}
+\DoxyCodeLine{107                 \textcolor{comment}{/* }}
+\DoxyCodeLine{108 \textcolor{comment}{                 * Overrun, a character already present in the UART UDR register was }}
+\DoxyCodeLine{109 \textcolor{comment}{                 * not read by the interrupt handler before the next character arrived,}}
+\DoxyCodeLine{110 \textcolor{comment}{                 * one or more received characters have been dropped}}
+\DoxyCodeLine{111 \textcolor{comment}{                 */}}
+\DoxyCodeLine{112                 \mbox{\hyperlink{group__pfleury__uart_gae9e143569df2285379bc55f9f5595bf9}{uart\_puts\_P}}(\textcolor{stringliteral}{"{}UART Overrun Error: "{}});}
+\DoxyCodeLine{113             \}}
+\DoxyCodeLine{114             \textcolor{keywordflow}{if} ( c \& \mbox{\hyperlink{group__pfleury__uart_ga94758f3dad6864703b7417d3e40f11df}{UART\_BUFFER\_OVERFLOW}} )}
+\DoxyCodeLine{115             \{}
+\DoxyCodeLine{116                 \textcolor{comment}{/* }}
+\DoxyCodeLine{117 \textcolor{comment}{                 * We are not reading the receive buffer fast enough,}}
+\DoxyCodeLine{118 \textcolor{comment}{                 * one or more received character have been dropped }}
+\DoxyCodeLine{119 \textcolor{comment}{                 */}}
+\DoxyCodeLine{120                 \mbox{\hyperlink{group__pfleury__uart_gae9e143569df2285379bc55f9f5595bf9}{uart\_puts\_P}}(\textcolor{stringliteral}{"{}Buffer overflow error: "{}});}
+\DoxyCodeLine{121             \}}
+\DoxyCodeLine{122             \textcolor{comment}{/* }}
+\DoxyCodeLine{123 \textcolor{comment}{             * send received character back}}
+\DoxyCodeLine{124 \textcolor{comment}{             */}}
+\DoxyCodeLine{125             \mbox{\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\_putc}}( (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})c );}
+\DoxyCodeLine{126         \}}
+\DoxyCodeLine{127     \}}
+\DoxyCodeLine{128     }
+\DoxyCodeLine{129 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{test__uart_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph}
+\end{center}
+\end{figure}

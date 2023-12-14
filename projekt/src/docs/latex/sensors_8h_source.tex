@@ -1,0 +1,38 @@
+\hypertarget{sensors_8h_source}{}\doxysection{sensors.\+h}
+\label{sensors_8h_source}\index{lib/sensors/sensors.h@{lib/sensors/sensors.h}}
+\mbox{\hyperlink{sensors_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SENSORS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SENSORS\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{twi_8h}{twi.h}}>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{gpio_8h}{gpio.h}}>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{dataset_8h}{dataset.h}}>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{moist__sens_8h}{moist\_sens.h}}>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define DHT22\_ADDR 0x5c}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define SENSOR\_HUM\_MEM 0}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define SENSOR\_TEMP\_MEM 2}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define SENSOR\_CHECKSUM 4}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{16 \textcolor{comment}{ *  @brief  Inicialization of all sensors}}
+\DoxyCodeLine{17 \textcolor{comment}{ *  @param  None}}
+\DoxyCodeLine{18 \textcolor{comment}{ *  @return None}}
+\DoxyCodeLine{19 \textcolor{comment}{****************************************************/}}
+\DoxyCodeLine{20 \textcolor{keywordtype}{void} \mbox{\hyperlink{sensors_8h_a41e7d1dd0cac7bd20fc32a6ebc87a985}{sensors\_init}}();}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{24 \textcolor{comment}{ *  @brief  Updates dataset with current }}
+\DoxyCodeLine{25 \textcolor{comment}{ *          data from sensors}}
+\DoxyCodeLine{26 \textcolor{comment}{ *  @param  dataset Actual measured data}}
+\DoxyCodeLine{27 \textcolor{comment}{ *  @return None}}
+\DoxyCodeLine{28 \textcolor{comment}{****************************************************/}}
+\DoxyCodeLine{29 \textcolor{keywordtype}{void} \mbox{\hyperlink{sensors_8h_a991004aa5afbe5511d9fe87599132693}{sensors\_update\_dataset}}(\mbox{\hyperlink{structdataset__t}{dataset\_t}} *\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}});}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{32 }
+
+\end{DoxyCode}

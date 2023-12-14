@@ -1,0 +1,100 @@
+\hypertarget{moist__sens_8h}{}\doxysection{lib/moist\+\_\+sens/moist\+\_\+sens.h File Reference}
+\label{moist__sens_8h}\index{lib/moist\_sens/moist\_sens.h@{lib/moist\_sens/moist\_sens.h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{moist__sens_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{moist__sens_8h_a2334d6eadb5a595655bf1e153a48621a}{moist\+\_\+sens\+\_\+init}} (void)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{moist__sens_8h_aea5ab7057f46b5c93f520c3d82f809c3}{get\+\_\+moist}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{moist__sens_8h_aea5ab7057f46b5c93f520c3d82f809c3}\label{moist__sens_8h_aea5ab7057f46b5c93f520c3d82f809c3}} 
+\index{moist\_sens.h@{moist\_sens.h}!get\_moist@{get\_moist}}
+\index{get\_moist@{get\_moist}!moist\_sens.h@{moist\_sens.h}}
+\doxysubsubsection{\texorpdfstring{get\_moist()}{get\_moist()}}
+{\footnotesize\ttfamily uint16\+\_\+t get\+\_\+moist (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40     \textcolor{comment}{// Start ADC conversion}}
+\DoxyCodeLine{41     ADCSRA = ADCSRA | (1<<ADSC);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     uint16\_t moisture;}
+\DoxyCodeLine{44     uint16\_t zero\_moist = 800;}
+\DoxyCodeLine{45     uint16\_t max\_moist = 680;}
+\DoxyCodeLine{46     uint16\_t moist\_constant;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{keywordflow}{while}(ADCSRA \& (1<<ADSC));}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     moisture = ADC;}
+\DoxyCodeLine{51     \textcolor{comment}{/*moisture = moisture -\/ max\_moist;}}
+\DoxyCodeLine{52 \textcolor{comment}{    moist\_constant = zero\_moist -\/ max\_moist;}}
+\DoxyCodeLine{53 \textcolor{comment}{    moisture = moisture*100;}}
+\DoxyCodeLine{54 \textcolor{comment}{    moisture = moisture/moist\_constant;}}
+\DoxyCodeLine{55 \textcolor{comment}{    moisture = 100 -\/ moisture;*/}}
+\DoxyCodeLine{56     }
+\DoxyCodeLine{57     \textcolor{keywordflow}{return} 255 -\/ (moisture/4);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{sensors_8c_a991004aa5afbe5511d9fe87599132693}{sensors\+\_\+update\+\_\+dataset()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{moist__sens_8h_aea5ab7057f46b5c93f520c3d82f809c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{moist__sens_8h_a2334d6eadb5a595655bf1e153a48621a}\label{moist__sens_8h_a2334d6eadb5a595655bf1e153a48621a}} 
+\index{moist\_sens.h@{moist\_sens.h}!moist\_sens\_init@{moist\_sens\_init}}
+\index{moist\_sens\_init@{moist\_sens\_init}!moist\_sens.h@{moist\_sens.h}}
+\doxysubsubsection{\texorpdfstring{moist\_sens\_init()}{moist\_sens\_init()}}
+{\footnotesize\ttfamily void moist\+\_\+sens\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14                           \{}
+\DoxyCodeLine{15     }
+\DoxyCodeLine{16     \textcolor{comment}{// Configure Analog-\/to-\/Digital Convertion unit}}
+\DoxyCodeLine{17     \textcolor{comment}{// Select ADC voltage reference to "{}AVcc with external capacitor at AREF pin"{}}}
+\DoxyCodeLine{18     ADMUX = ADMUX | (1<<REFS0);}
+\DoxyCodeLine{19     \textcolor{comment}{// Select input channel ADC0 (voltage divider pin)}}
+\DoxyCodeLine{20     ADMUX = ADMUX \& \string~(1<<MUX3 | 1<<MUX2 | 1<<MUX1 | 1<<MUX0);}
+\DoxyCodeLine{21     \textcolor{comment}{// Enable ADC module}}
+\DoxyCodeLine{22     ADCSRA = ADCSRA | (1<<ADEN);}
+\DoxyCodeLine{23     \textcolor{comment}{// Enable conversion complete interrupt}}
+\DoxyCodeLine{24     ADCSRA = ADCSRA | (1<<ADIE);}
+\DoxyCodeLine{25     \textcolor{comment}{// Set clock prescaler to 128}}
+\DoxyCodeLine{26     ADCSRA = ADCSRA | (1<<ADPS2 | 1<<ADPS1 | 1<<ADPS0);}
+\DoxyCodeLine{27 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{sensors_8c_a41e7d1dd0cac7bd20fc32a6ebc87a985}{sensors\+\_\+init()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{moist__sens_8h_a2334d6eadb5a595655bf1e153a48621a_icgraph}
+\end{center}
+\end{figure}

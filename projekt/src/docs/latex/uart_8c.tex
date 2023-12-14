@@ -1,0 +1,242 @@
+\hypertarget{uart_8c}{}\doxysection{lib/uart/uart.c File Reference}
+\label{uart_8c}\index{lib/uart/uart.c@{lib/uart/uart.c}}
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$avr/interrupt.\+h$>$}\newline
+{\ttfamily \#include $<$avr/pgmspace.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}uart.\+h\char`\"{}}\newline
+Include dependency graph for uart.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{uart_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{uart_8c_a07b20e76327f35ec90e49111cb13164d}{UART\+\_\+\+RX\+\_\+\+BUFFER\+\_\+\+MASK}}~( \mbox{\hyperlink{group__pfleury__uart_ga5bdd6772c246436bb14377095de79b31}{UART\+\_\+\+RX\+\_\+\+BUFFER\+\_\+\+SIZE}} -\/ 1)
+\item 
+\#define \mbox{\hyperlink{uart_8c_a7ddb8c271caedb7c17167749946b543d}{UART\+\_\+\+TX\+\_\+\+BUFFER\+\_\+\+MASK}}~( \mbox{\hyperlink{group__pfleury__uart_ga05f5d709605c6317c97e4974bec3402a}{UART\+\_\+\+TX\+\_\+\+BUFFER\+\_\+\+SIZE}} -\/ 1)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{uart_8c_adc65ebbfbfcddc0c7b9b1bb068361f43}{if}} (\mbox{\hyperlink{uart_8c_ac198387817821eb64a630bb38426ab68}{tmphead}}==\mbox{\hyperlink{uart_8c_a0e16e308fe231941cb52874193e81913}{UART\+\_\+\+Rx\+Tail}})
+\item 
+\mbox{\hyperlink{uart_8c_afe3da97c9064b3fd7641292f8a914c8f}{if}} (\mbox{\hyperlink{uart_8c_a259ab6a512dd719d92550d7adf7367bb}{UART\+\_\+\+Tx\+Head}} !=\mbox{\hyperlink{uart_8c_aa71f7d4da7a3780ca6ad1da296f949cf}{UART\+\_\+\+Tx\+Tail}})
+\item 
+void \mbox{\hyperlink{group__pfleury__uart_gac19a76bb7d446125734a67f9f4b68991}{uart\+\_\+init}} (unsigned int baudrate)
+\begin{DoxyCompactList}\small\item\em Initialize UART and set baudrate. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}{uart\+\_\+getc}} (void)
+\begin{DoxyCompactList}\small\item\em Get received byte from ringbuffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\+\_\+putc}} (unsigned char \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}})
+\begin{DoxyCompactList}\small\item\em Put byte to ringbuffer for transmitting via UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\+\_\+puts}} (const char $\ast$s)
+\begin{DoxyCompactList}\small\item\em Put string to ringbuffer for transmitting via UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__pfleury__uart_ga6d78b6744db6232f52b4616402036c2f}{uart\+\_\+puts\+\_\+p}} (const char $\ast$progmem\+\_\+s)
+\begin{DoxyCompactList}\small\item\em Put string from program memory to ringbuffer for transmitting via UART. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static volatile unsigned char \mbox{\hyperlink{uart_8c_afb33f70d937717fbc4ea4b62186b1bd2}{UART\+\_\+\+Tx\+Buf}} \mbox{[}\mbox{\hyperlink{group__pfleury__uart_ga05f5d709605c6317c97e4974bec3402a}{UART\+\_\+\+TX\+\_\+\+BUFFER\+\_\+\+SIZE}}\mbox{]}
+\item 
+static volatile unsigned char \mbox{\hyperlink{uart_8c_aeca5189c12e9c8dc003b320f329b93b8}{UART\+\_\+\+Rx\+Buf}} \mbox{[}\mbox{\hyperlink{group__pfleury__uart_ga5bdd6772c246436bb14377095de79b31}{UART\+\_\+\+RX\+\_\+\+BUFFER\+\_\+\+SIZE}}\mbox{]} = \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}
+\item 
+static volatile unsigned char \mbox{\hyperlink{uart_8c_a259ab6a512dd719d92550d7adf7367bb}{UART\+\_\+\+Tx\+Head}}
+\item 
+static volatile unsigned char \mbox{\hyperlink{uart_8c_aa71f7d4da7a3780ca6ad1da296f949cf}{UART\+\_\+\+Tx\+Tail}}
+\item 
+static volatile unsigned char \mbox{\hyperlink{uart_8c_a0b71aeb31b7422b28d2119ee7b2cce7c}{UART\+\_\+\+Rx\+Head}}
+\item 
+static volatile unsigned char \mbox{\hyperlink{uart_8c_a0e16e308fe231941cb52874193e81913}{UART\+\_\+\+Rx\+Tail}}
+\item 
+static volatile unsigned char \mbox{\hyperlink{uart_8c_aed0a70c1e1f8731a05b2cb472b938493}{UART\+\_\+\+Last\+Rx\+Error}} = \mbox{\hyperlink{uart_8c_ac3fda17426f97bc7484917e1ed70ea26}{last\+Rx\+Error}}
+\item 
+unsigned char \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}
+\item 
+unsigned char \mbox{\hyperlink{uart_8c_a074adba0d5b54cdd1ba67d1d65f78a72}{usr}} = UART0\+\_\+\+STATUS
+\item 
+unsigned char \mbox{\hyperlink{uart_8c_ac3fda17426f97bc7484917e1ed70ea26}{last\+Rx\+Error}}
+\item 
+\mbox{\hyperlink{uart_8c_ac198387817821eb64a630bb38426ab68}{tmphead}} = ( \mbox{\hyperlink{uart_8c_a0b71aeb31b7422b28d2119ee7b2cce7c}{UART\+\_\+\+Rx\+Head}} + 1) \& \mbox{\hyperlink{uart_8c_a07b20e76327f35ec90e49111cb13164d}{UART\+\_\+\+RX\+\_\+\+BUFFER\+\_\+\+MASK}}
+\item 
+\mbox{\hyperlink{uart_8c_a0544c3fe466e421738dae463968b70ba}{else}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{uart_8c_a07b20e76327f35ec90e49111cb13164d}\label{uart_8c_a07b20e76327f35ec90e49111cb13164d}} 
+\index{uart.c@{uart.c}!UART\_RX\_BUFFER\_MASK@{UART\_RX\_BUFFER\_MASK}}
+\index{UART\_RX\_BUFFER\_MASK@{UART\_RX\_BUFFER\_MASK}!uart.c@{uart.c}}
+\doxysubsubsection{\texorpdfstring{UART\_RX\_BUFFER\_MASK}{UART\_RX\_BUFFER\_MASK}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+RX\+\_\+\+BUFFER\+\_\+\+MASK~( \mbox{\hyperlink{group__pfleury__uart_ga5bdd6772c246436bb14377095de79b31}{UART\+\_\+\+RX\+\_\+\+BUFFER\+\_\+\+SIZE}} -\/ 1)}
+
+\mbox{\Hypertarget{uart_8c_a7ddb8c271caedb7c17167749946b543d}\label{uart_8c_a7ddb8c271caedb7c17167749946b543d}} 
+\index{uart.c@{uart.c}!UART\_TX\_BUFFER\_MASK@{UART\_TX\_BUFFER\_MASK}}
+\index{UART\_TX\_BUFFER\_MASK@{UART\_TX\_BUFFER\_MASK}!uart.c@{uart.c}}
+\doxysubsubsection{\texorpdfstring{UART\_TX\_BUFFER\_MASK}{UART\_TX\_BUFFER\_MASK}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+TX\+\_\+\+BUFFER\+\_\+\+MASK~( \mbox{\hyperlink{group__pfleury__uart_ga05f5d709605c6317c97e4974bec3402a}{UART\+\_\+\+TX\+\_\+\+BUFFER\+\_\+\+SIZE}} -\/ 1)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{uart_8c_adc65ebbfbfcddc0c7b9b1bb068361f43}\label{uart_8c_adc65ebbfbfcddc0c7b9b1bb068361f43}} 
+\index{uart.c@{uart.c}!if@{if}}
+\index{if@{if}!uart.c@{uart.c}}
+\doxysubsubsection{\texorpdfstring{if()}{if()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily if (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{uart_8c_ac198387817821eb64a630bb38426ab68}{tmphead}}}]{ = {\ttfamily =~\mbox{\hyperlink{uart_8c_a0e16e308fe231941cb52874193e81913}{UART\+\_\+\+Rx\+Tail}}} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{392                                   \{}
+\DoxyCodeLine{393         \textcolor{comment}{/* error: receive buffer overflow */}}
+\DoxyCodeLine{394         \mbox{\hyperlink{uart_8c_ac3fda17426f97bc7484917e1ed70ea26}{lastRxError}} = \mbox{\hyperlink{group__pfleury__uart_ga94758f3dad6864703b7417d3e40f11df}{UART\_BUFFER\_OVERFLOW}} >> 8;}
+\DoxyCodeLine{395     \}\textcolor{keywordflow}{else}\{}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{uart_8c_afe3da97c9064b3fd7641292f8a914c8f}\label{uart_8c_afe3da97c9064b3fd7641292f8a914c8f}} 
+\index{uart.c@{uart.c}!if@{if}}
+\index{if@{if}!uart.c@{uart.c}}
+\doxysubsubsection{\texorpdfstring{if()}{if()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily if (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{uart_8c_a259ab6a512dd719d92550d7adf7367bb}{UART\+\_\+\+Tx\+Head}} !}]{ = {\ttfamily \mbox{\hyperlink{uart_8c_aa71f7d4da7a3780ca6ad1da296f949cf}{UART\+\_\+\+Tx\+Tail}}} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{414                                      \{}
+\DoxyCodeLine{415         \textcolor{comment}{/* calculate and store new buffer index */}}
+\DoxyCodeLine{416         tmptail = (\mbox{\hyperlink{uart_8c_aa71f7d4da7a3780ca6ad1da296f949cf}{UART\_TxTail}} + 1) \& \mbox{\hyperlink{uart_8c_a7ddb8c271caedb7c17167749946b543d}{UART\_TX\_BUFFER\_MASK}};}
+\DoxyCodeLine{417         \mbox{\hyperlink{uart_8c_aa71f7d4da7a3780ca6ad1da296f949cf}{UART\_TxTail}} = tmptail;}
+\DoxyCodeLine{418         \textcolor{comment}{/* get one byte from buffer and write it to UART */}}
+\DoxyCodeLine{419         UART0\_DATA = \mbox{\hyperlink{uart_8c_afb33f70d937717fbc4ea4b62186b1bd2}{UART\_TxBuf}}[tmptail];  \textcolor{comment}{/* start transmission */}}
+\DoxyCodeLine{420     \}\textcolor{keywordflow}{else}\{}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}\label{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}} 
+\index{uart.c@{uart.c}!data@{data}}
+\index{data@{data}!uart.c@{uart.c}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily data}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{uart_8c_ac198387817821eb64a630bb38426ab68}{tmphead}}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{cmd_8c_a851fcc941c3f1d77e581e6f7dce8552d}{cmd\+\_\+handler()}}, \mbox{\hyperlink{display_8c_af6002a9b15fd411e61bc74a7ace0d457}{display\+\_\+show\+\_\+data()}}, \mbox{\hyperlink{oled_8c_a93bdfec1e1e604f1666485179d769f01}{oled\+\_\+data()}}, \mbox{\hyperlink{oled_8c_acbecdceb919c4ca42478f8f8631a588b}{oled\+\_\+putc()}}, \mbox{\hyperlink{sensors_8c_a991004aa5afbe5511d9fe87599132693}{sensors\+\_\+update\+\_\+dataset()}}, \mbox{\hyperlink{storage_8c_a3c2aca3e3798396df9ddb34244de0ba6}{storage\+\_\+read()}}, \mbox{\hyperlink{storage_8c_abbf8a4d949d03f1f91a08b610f035fad}{storage\+\_\+write()}}, \mbox{\hyperlink{group__fryza__twi_ga129b8a79f75189c3801cb7082e6b8340}{twi\+\_\+write()}}, \mbox{\hyperlink{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}{uart\+\_\+getc()}}, \mbox{\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\+\_\+putc()}}, and \mbox{\hyperlink{watering_8c_a2771d1fd0080d7ee739c77936b341c03}{watering\+\_\+handler()}}.
+
+\mbox{\Hypertarget{uart_8c_a0544c3fe466e421738dae463968b70ba}\label{uart_8c_a0544c3fe466e421738dae463968b70ba}} 
+\index{uart.c@{uart.c}!else@{else}}
+\index{else@{else}!uart.c@{uart.c}}
+\doxysubsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily else}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        \mbox{\hyperlink{uart_8c_a0b71aeb31b7422b28d2119ee7b2cce7c}{UART\_RxHead}} = \mbox{\hyperlink{uart_8c_ac198387817821eb64a630bb38426ab68}{tmphead}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{uart_8c_ac3fda17426f97bc7484917e1ed70ea26}\label{uart_8c_ac3fda17426f97bc7484917e1ed70ea26}} 
+\index{uart.c@{uart.c}!lastRxError@{lastRxError}}
+\index{lastRxError@{lastRxError}!uart.c@{uart.c}}
+\doxysubsubsection{\texorpdfstring{lastRxError}{lastRxError}}
+{\footnotesize\ttfamily unsigned char last\+Rx\+Error}
+
+
+
+Referenced by \mbox{\hyperlink{uart_8c_adc65ebbfbfcddc0c7b9b1bb068361f43}{if()}}, and \mbox{\hyperlink{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}{uart\+\_\+getc()}}.
+
+\mbox{\Hypertarget{uart_8c_ac198387817821eb64a630bb38426ab68}\label{uart_8c_ac198387817821eb64a630bb38426ab68}} 
+\index{uart.c@{uart.c}!tmphead@{tmphead}}
+\index{tmphead@{tmphead}!uart.c@{uart.c}}
+\doxysubsubsection{\texorpdfstring{tmphead}{tmphead}}
+{\footnotesize\ttfamily tmphead = ( \mbox{\hyperlink{uart_8c_a0b71aeb31b7422b28d2119ee7b2cce7c}{UART\+\_\+\+Rx\+Head}} + 1) \& \mbox{\hyperlink{uart_8c_a07b20e76327f35ec90e49111cb13164d}{UART\+\_\+\+RX\+\_\+\+BUFFER\+\_\+\+MASK}}}
+
+
+
+Referenced by \mbox{\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\+\_\+putc()}}.
+
+\mbox{\Hypertarget{uart_8c_aed0a70c1e1f8731a05b2cb472b938493}\label{uart_8c_aed0a70c1e1f8731a05b2cb472b938493}} 
+\index{uart.c@{uart.c}!UART\_LastRxError@{UART\_LastRxError}}
+\index{UART\_LastRxError@{UART\_LastRxError}!uart.c@{uart.c}}
+\doxysubsubsection{\texorpdfstring{UART\_LastRxError}{UART\_LastRxError}}
+{\footnotesize\ttfamily UART\+\_\+\+Last\+Rx\+Error = \mbox{\hyperlink{uart_8c_ac3fda17426f97bc7484917e1ed70ea26}{last\+Rx\+Error}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}{uart\+\_\+getc()}}.
+
+\mbox{\Hypertarget{uart_8c_aeca5189c12e9c8dc003b320f329b93b8}\label{uart_8c_aeca5189c12e9c8dc003b320f329b93b8}} 
+\index{uart.c@{uart.c}!UART\_RxBuf@{UART\_RxBuf}}
+\index{UART\_RxBuf@{UART\_RxBuf}!uart.c@{uart.c}}
+\doxysubsubsection{\texorpdfstring{UART\_RxBuf}{UART\_RxBuf}}
+{\footnotesize\ttfamily UART\+\_\+\+Rx\+Buf\mbox{[}\mbox{\hyperlink{uart_8c_ac198387817821eb64a630bb38426ab68}{tmphead}}\mbox{]} = \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}{uart\+\_\+getc()}}.
+
+\mbox{\Hypertarget{uart_8c_a0b71aeb31b7422b28d2119ee7b2cce7c}\label{uart_8c_a0b71aeb31b7422b28d2119ee7b2cce7c}} 
+\index{uart.c@{uart.c}!UART\_RxHead@{UART\_RxHead}}
+\index{UART\_RxHead@{UART\_RxHead}!uart.c@{uart.c}}
+\doxysubsubsection{\texorpdfstring{UART\_RxHead}{UART\_RxHead}}
+{\footnotesize\ttfamily volatile unsigned char UART\+\_\+\+Rx\+Head\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}{uart\+\_\+getc()}}, and \mbox{\hyperlink{group__pfleury__uart_gac19a76bb7d446125734a67f9f4b68991}{uart\+\_\+init()}}.
+
+\mbox{\Hypertarget{uart_8c_a0e16e308fe231941cb52874193e81913}\label{uart_8c_a0e16e308fe231941cb52874193e81913}} 
+\index{uart.c@{uart.c}!UART\_RxTail@{UART\_RxTail}}
+\index{UART\_RxTail@{UART\_RxTail}!uart.c@{uart.c}}
+\doxysubsubsection{\texorpdfstring{UART\_RxTail}{UART\_RxTail}}
+{\footnotesize\ttfamily volatile unsigned char UART\+\_\+\+Rx\+Tail\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}{uart\+\_\+getc()}}, and \mbox{\hyperlink{group__pfleury__uart_gac19a76bb7d446125734a67f9f4b68991}{uart\+\_\+init()}}.
+
+\mbox{\Hypertarget{uart_8c_afb33f70d937717fbc4ea4b62186b1bd2}\label{uart_8c_afb33f70d937717fbc4ea4b62186b1bd2}} 
+\index{uart.c@{uart.c}!UART\_TxBuf@{UART\_TxBuf}}
+\index{UART\_TxBuf@{UART\_TxBuf}!uart.c@{uart.c}}
+\doxysubsubsection{\texorpdfstring{UART\_TxBuf}{UART\_TxBuf}}
+{\footnotesize\ttfamily volatile unsigned char UART\+\_\+\+Tx\+Buf\mbox{[}\mbox{\hyperlink{group__pfleury__uart_ga05f5d709605c6317c97e4974bec3402a}{UART\+\_\+\+TX\+\_\+\+BUFFER\+\_\+\+SIZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{uart_8c_afe3da97c9064b3fd7641292f8a914c8f}{if()}}, and \mbox{\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\+\_\+putc()}}.
+
+\mbox{\Hypertarget{uart_8c_a259ab6a512dd719d92550d7adf7367bb}\label{uart_8c_a259ab6a512dd719d92550d7adf7367bb}} 
+\index{uart.c@{uart.c}!UART\_TxHead@{UART\_TxHead}}
+\index{UART\_TxHead@{UART\_TxHead}!uart.c@{uart.c}}
+\doxysubsubsection{\texorpdfstring{UART\_TxHead}{UART\_TxHead}}
+{\footnotesize\ttfamily volatile unsigned char UART\+\_\+\+Tx\+Head\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{group__pfleury__uart_gac19a76bb7d446125734a67f9f4b68991}{uart\+\_\+init()}}, and \mbox{\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\+\_\+putc()}}.
+
+\mbox{\Hypertarget{uart_8c_aa71f7d4da7a3780ca6ad1da296f949cf}\label{uart_8c_aa71f7d4da7a3780ca6ad1da296f949cf}} 
+\index{uart.c@{uart.c}!UART\_TxTail@{UART\_TxTail}}
+\index{UART\_TxTail@{UART\_TxTail}!uart.c@{uart.c}}
+\doxysubsubsection{\texorpdfstring{UART\_TxTail}{UART\_TxTail}}
+{\footnotesize\ttfamily volatile unsigned char UART\+\_\+\+Tx\+Tail\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{uart_8c_afe3da97c9064b3fd7641292f8a914c8f}{if()}}, \mbox{\hyperlink{group__pfleury__uart_gac19a76bb7d446125734a67f9f4b68991}{uart\+\_\+init()}}, and \mbox{\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\+\_\+putc()}}.
+
+\mbox{\Hypertarget{uart_8c_a074adba0d5b54cdd1ba67d1d65f78a72}\label{uart_8c_a074adba0d5b54cdd1ba67d1d65f78a72}} 
+\index{uart.c@{uart.c}!usr@{usr}}
+\index{usr@{usr}!uart.c@{uart.c}}
+\doxysubsubsection{\texorpdfstring{usr}{usr}}
+{\footnotesize\ttfamily usr = UART0\+\_\+\+STATUS}
+

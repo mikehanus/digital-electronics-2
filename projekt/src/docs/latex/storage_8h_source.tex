@@ -1,0 +1,69 @@
+\hypertarget{storage_8h_source}{}\doxysection{storage.\+h}
+\label{storage_8h_source}\index{lib/storage/storage.h@{lib/storage/storage.h}}
+\mbox{\hyperlink{storage_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef STORAGE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define STORAGE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{dataset_8h}{dataset.h}}>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <avr/io.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{9     uint16\_t \mbox{\hyperlink{structstorage__t_aace1f461dd70ad8783ac47ecb3c6a2bf}{buffer\_start}};}
+\DoxyCodeLine{10 \} \mbox{\hyperlink{structstorage__t}{storage\_t}};}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{/****************************************************}}
+\DoxyCodeLine{13 \textcolor{comment}{ *  @brief  Storage inicialization}}
+\DoxyCodeLine{14 \textcolor{comment}{ *  @param  storage Storage setup}}
+\DoxyCodeLine{15 \textcolor{comment}{ *  @return None}}
+\DoxyCodeLine{16 \textcolor{comment}{*****************************************************/}}
+\DoxyCodeLine{17 \textcolor{keywordtype}{void} \mbox{\hyperlink{storage_8h_a954cfff4c51e8e59d9ee27102fadf443}{storage\_init}}(\mbox{\hyperlink{structstorage__t}{storage\_t}} *\mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}});}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{/****************************************************}}
+\DoxyCodeLine{21 \textcolor{comment}{ *  @brief  Writes values into EEPROM}}
+\DoxyCodeLine{22 \textcolor{comment}{ *  @param  addr Address to where data are written}}
+\DoxyCodeLine{23 \textcolor{comment}{ *  @param  val Data that are going to be written}}
+\DoxyCodeLine{24 \textcolor{comment}{}}
+\DoxyCodeLine{25 \textcolor{comment}{ *  @return None}}
+\DoxyCodeLine{26 \textcolor{comment}{*****************************************************/}}
+\DoxyCodeLine{27 \textcolor{keywordtype}{void} \mbox{\hyperlink{storage_8h_ab83714869bd0bac0701fe50ec55cb2ca}{EEPROM\_write}}(uint16\_t addr, uint8\_t val);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{/****************************************************}}
+\DoxyCodeLine{31 \textcolor{comment}{ *  @brief  Reads values from EEPROM}}
+\DoxyCodeLine{32 \textcolor{comment}{ *  @param  addr Address from where dara are read}}
+\DoxyCodeLine{33 \textcolor{comment}{ *  @return Returns value from EEPROM}}
+\DoxyCodeLine{34 \textcolor{comment}{*****************************************************/}}
+\DoxyCodeLine{35 uint8\_t \mbox{\hyperlink{storage_8h_a4b030b9d1584db48848201615b096606}{EEPROM\_read}}(uint16\_t addr);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{comment}{/****************************************************}}
+\DoxyCodeLine{39 \textcolor{comment}{ *  @brief  Writes data into EEPROM via }}
+\DoxyCodeLine{40 \textcolor{comment}{ *          EEPROM\_write function}}
+\DoxyCodeLine{41 \textcolor{comment}{ *  @param  data Actual measured data}}
+\DoxyCodeLine{42 \textcolor{comment}{ *  @param  storage Storage setup}}
+\DoxyCodeLine{43 \textcolor{comment}{ *  @return None}}
+\DoxyCodeLine{44 \textcolor{comment}{*****************************************************/}}
+\DoxyCodeLine{45 \textcolor{keywordtype}{void} \mbox{\hyperlink{storage_8h_abbf8a4d949d03f1f91a08b610f035fad}{storage\_write}}(\mbox{\hyperlink{structstorage__t}{storage\_t}} *\mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}}, \mbox{\hyperlink{structdataset__t}{dataset\_t}} *\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}});}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{comment}{/****************************************************}}
+\DoxyCodeLine{49 \textcolor{comment}{ *  @brief  Reads data into EEPROM via }}
+\DoxyCodeLine{50 \textcolor{comment}{ *          EEPROM\_read function}}
+\DoxyCodeLine{51 \textcolor{comment}{ *  @param  data Saved data}}
+\DoxyCodeLine{52 \textcolor{comment}{ *  @param  storage Storage setup}}
+\DoxyCodeLine{53 \textcolor{comment}{ *  @param  pos Position in EEPROM that says }}
+\DoxyCodeLine{54 \textcolor{comment}{ *          from where to start read}}
+\DoxyCodeLine{55 \textcolor{comment}{ *  @return None}}
+\DoxyCodeLine{56 \textcolor{comment}{*****************************************************/}}
+\DoxyCodeLine{57 \textcolor{keywordtype}{void} \mbox{\hyperlink{storage_8h_a3c2aca3e3798396df9ddb34244de0ba6}{storage\_read}}(\mbox{\hyperlink{structstorage__t}{storage\_t}} *\mbox{\hyperlink{main_8c_a59d4b705843702c7c2d2ad89bed06163}{storage}}, \mbox{\hyperlink{structdataset__t}{dataset\_t}} *\mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}, uint8\_t pos);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{comment}{//size\_t storage\_read\_multiple(storage\_t *storage, dataset\_t **data, uint32\_t n); // needed?}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{63 }
+
+\end{DoxyCode}
