@@ -32,11 +32,23 @@ void \mbox{\hyperlink{sensors_8c_a991004aa5afbe5511d9fe87599132693}{sensors\+\_\
 \DoxyCodeLine{7 \}}
 
 \end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}}.
+
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=284pt]{sensors_8c_a41e7d1dd0cac7bd20fc32a6ebc87a985_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{sensors_8c_a41e7d1dd0cac7bd20fc32a6ebc87a985_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{sensors_8c_a991004aa5afbe5511d9fe87599132693}\label{sensors_8c_a991004aa5afbe5511d9fe87599132693}} 
@@ -52,25 +64,39 @@ Here is the call graph for this function\+:\nopagebreak
 \DoxyCodeLine{13     \textcolor{keywordflow}{if} (\mbox{\hyperlink{group__fryza__twi_ga129b8a79f75189c3801cb7082e6b8340}{twi\_write}}((\mbox{\hyperlink{sensors_8h_aa36bef744ff057de3847f9c71b6d2f47}{DHT22\_ADDR}}<<1) | \mbox{\hyperlink{group__fryza__twi_ga3b68e8e777b71520f9dbfac733774d5f}{TWI\_WRITE}}) == 0)}
 \DoxyCodeLine{14     \{}
 \DoxyCodeLine{15         \textcolor{comment}{// Set internal memory location}}
-\DoxyCodeLine{16         \mbox{\hyperlink{group__fryza__twi_ga129b8a79f75189c3801cb7082e6b8340}{twi\_write}}(\mbox{\hyperlink{sensors_8h_acfc60dd49a9f34a570da88f79c6bcc91}{SENSOR\_TEMP\_MEM}});}
+\DoxyCodeLine{16         \mbox{\hyperlink{group__fryza__twi_ga129b8a79f75189c3801cb7082e6b8340}{twi\_write}}(\mbox{\hyperlink{sensors_8h_ad5b0d3c1f777f3b31d75fd2b7eea3b64}{SENSOR\_HUM\_MEM}});}
 \DoxyCodeLine{17         \mbox{\hyperlink{group__fryza__twi_gacf52d6c93df110dee6d402b389e5042e}{twi\_stop}}();}
 \DoxyCodeLine{18 }
 \DoxyCodeLine{19         \textcolor{comment}{// Read data from internal memory}}
 \DoxyCodeLine{20         \mbox{\hyperlink{group__fryza__twi_gaf37269da7f6b1b22438b78d2f965f274}{twi\_start}}();}
 \DoxyCodeLine{21         \mbox{\hyperlink{group__fryza__twi_ga129b8a79f75189c3801cb7082e6b8340}{twi\_write}}((\mbox{\hyperlink{sensors_8h_aa36bef744ff057de3847f9c71b6d2f47}{DHT22\_ADDR}}<<1) | \mbox{\hyperlink{group__fryza__twi_gaaf9a8abccd811954f9cc316f2b2f87b3}{TWI\_READ}});}
-\DoxyCodeLine{22         \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>temp = \mbox{\hyperlink{group__fryza__twi_gae9f84b771b4acdedd2106e91cb03cc78}{twi\_read}}(\mbox{\hyperlink{group__fryza__twi_ga00dcb08e2effea903c22763e0aeeb3cb}{TWI\_ACK}});}
-\DoxyCodeLine{23         \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>hum = \mbox{\hyperlink{group__fryza__twi_gae9f84b771b4acdedd2106e91cb03cc78}{twi\_read}}(\mbox{\hyperlink{group__fryza__twi_ga00dcb08e2effea903c22763e0aeeb3cb}{TWI\_ACK}});}
-\DoxyCodeLine{24     \}}
-\DoxyCodeLine{25     \mbox{\hyperlink{group__fryza__twi_gacf52d6c93df110dee6d402b389e5042e}{twi\_stop}}();}
-\DoxyCodeLine{26 }
-\DoxyCodeLine{27     \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>moist = \mbox{\hyperlink{moist__sens_8c_aea5ab7057f46b5c93f520c3d82f809c3}{get\_moist}}();}
-\DoxyCodeLine{28 \}}
+\DoxyCodeLine{22         \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>hum = \mbox{\hyperlink{group__fryza__twi_gae9f84b771b4acdedd2106e91cb03cc78}{twi\_read}}(\mbox{\hyperlink{group__fryza__twi_ga00dcb08e2effea903c22763e0aeeb3cb}{TWI\_ACK}});}
+\DoxyCodeLine{23         \mbox{\hyperlink{group__fryza__twi_gae9f84b771b4acdedd2106e91cb03cc78}{twi\_read}}(\mbox{\hyperlink{group__fryza__twi_ga00dcb08e2effea903c22763e0aeeb3cb}{TWI\_ACK}}); \textcolor{comment}{// skip hum decimal}}
+\DoxyCodeLine{24         \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>temp = \mbox{\hyperlink{group__fryza__twi_gae9f84b771b4acdedd2106e91cb03cc78}{twi\_read}}(\mbox{\hyperlink{group__fryza__twi_ga00dcb08e2effea903c22763e0aeeb3cb}{TWI\_ACK}});}
+\DoxyCodeLine{25         \mbox{\hyperlink{group__fryza__twi_gae9f84b771b4acdedd2106e91cb03cc78}{twi\_read}}(\mbox{\hyperlink{group__fryza__twi_ga00dcb08e2effea903c22763e0aeeb3cb}{TWI\_ACK}}); \textcolor{comment}{// skip temp decimal}}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27     \mbox{\hyperlink{group__fryza__twi_gacf52d6c93df110dee6d402b389e5042e}{twi\_stop}}();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \mbox{\hyperlink{uart_8c_a511ae0b1c13f95e5f08f1a0dd3da3d93}{data}}-\/>moist = \mbox{\hyperlink{moist__sens_8c_aea5ab7057f46b5c93f520c3d82f809c3}{get\_moist}}();}
+\DoxyCodeLine{30 \}}
 
 \end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}}.
+
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=316pt]{sensors_8c_a991004aa5afbe5511d9fe87599132693_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{sensors_8c_a991004aa5afbe5511d9fe87599132693_icgraph}
 \end{center}
 \end{figure}

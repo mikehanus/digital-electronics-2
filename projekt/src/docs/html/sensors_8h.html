@@ -199,7 +199,9 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">    7</span>}</div>
 <div class="ttc" id="agroup__fryza__twi_html_ga16f0e6b2fa5a26eadbf4086ab6d54467"><div class="ttname"><a href="group__fryza__twi.html#ga16f0e6b2fa5a26eadbf4086ab6d54467">twi_init</a></div><div class="ttdeci">void twi_init(void)</div><div class="ttdoc">Initialize TWI unit, enable internal pull-ups, and set SCL frequency.</div><div class="ttdef"><b>Definition:</b> twi.c:28</div></div>
 <div class="ttc" id="amoist__sens_8c_html_a2334d6eadb5a595655bf1e153a48621a"><div class="ttname"><a href="moist__sens_8c.html#a2334d6eadb5a595655bf1e153a48621a">moist_sens_init</a></div><div class="ttdeci">void moist_sens_init(void)</div><div class="ttdef"><b>Definition:</b> moist_sens.c:14</div></div>
-</div><!-- fragment --><div class="dynheader">
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main()</a>.</p>
+<div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="sensors_8h_a41e7d1dd0cac7bd20fc32a6ebc87a985_cgraph.png" border="0" usemap="#asensors_8h_a41e7d1dd0cac7bd20fc32a6ebc87a985_cgraph" alt=""/></div>
@@ -207,6 +209,15 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,31,105,57"/>
 <area shape="rect" href="moist__sens_8c.html#a2334d6eadb5a595655bf1e153a48621a" title=" " alt="" coords="153,5,277,32"/>
 <area shape="rect" href="group__fryza__twi.html#ga16f0e6b2fa5a26eadbf4086ab6d54467" title="Initialize TWI unit, enable internal pull&#45;ups, and set SCL frequency." alt="" coords="180,56,251,83"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="sensors_8h_a41e7d1dd0cac7bd20fc32a6ebc87a985_icgraph.png" border="0" usemap="#asensors_8h_a41e7d1dd0cac7bd20fc32a6ebc87a985_icgraph" alt=""/></div>
+<map name="asensors_8h_a41e7d1dd0cac7bd20fc32a6ebc87a985_icgraph" id="asensors_8h_a41e7d1dd0cac7bd20fc32a6ebc87a985_icgraph">
+<area shape="rect" title=" " alt="" coords="108,5,208,32"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -232,19 +243,21 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   13</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="group__fryza__twi.html#ga129b8a79f75189c3801cb7082e6b8340">twi_write</a>((<a class="code hl_define" href="sensors_8h.html#aa36bef744ff057de3847f9c71b6d2f47">DHT22_ADDR</a>&lt;&lt;1) | <a class="code hl_define" href="group__fryza__twi.html#ga3b68e8e777b71520f9dbfac733774d5f">TWI_WRITE</a>) == 0)</div>
 <div class="line"><span class="lineno">   14</span>    {</div>
 <div class="line"><span class="lineno">   15</span>        <span class="comment">// Set internal memory location</span></div>
-<div class="line"><span class="lineno">   16</span>        <a class="code hl_function" href="group__fryza__twi.html#ga129b8a79f75189c3801cb7082e6b8340">twi_write</a>(<a class="code hl_define" href="sensors_8h.html#acfc60dd49a9f34a570da88f79c6bcc91">SENSOR_TEMP_MEM</a>);</div>
+<div class="line"><span class="lineno">   16</span>        <a class="code hl_function" href="group__fryza__twi.html#ga129b8a79f75189c3801cb7082e6b8340">twi_write</a>(<a class="code hl_define" href="sensors_8h.html#ad5b0d3c1f777f3b31d75fd2b7eea3b64">SENSOR_HUM_MEM</a>);</div>
 <div class="line"><span class="lineno">   17</span>        <a class="code hl_function" href="group__fryza__twi.html#gacf52d6c93df110dee6d402b389e5042e">twi_stop</a>();</div>
 <div class="line"><span class="lineno">   18</span> </div>
 <div class="line"><span class="lineno">   19</span>        <span class="comment">// Read data from internal memory</span></div>
 <div class="line"><span class="lineno">   20</span>        <a class="code hl_function" href="group__fryza__twi.html#gaf37269da7f6b1b22438b78d2f965f274">twi_start</a>();</div>
 <div class="line"><span class="lineno">   21</span>        <a class="code hl_function" href="group__fryza__twi.html#ga129b8a79f75189c3801cb7082e6b8340">twi_write</a>((<a class="code hl_define" href="sensors_8h.html#aa36bef744ff057de3847f9c71b6d2f47">DHT22_ADDR</a>&lt;&lt;1) | <a class="code hl_define" href="group__fryza__twi.html#gaaf9a8abccd811954f9cc316f2b2f87b3">TWI_READ</a>);</div>
-<div class="line"><span class="lineno">   22</span>        <a class="code hl_variable" href="uart_8c.html#a511ae0b1c13f95e5f08f1a0dd3da3d93">data</a>-&gt;temp = <a class="code hl_function" href="group__fryza__twi.html#gae9f84b771b4acdedd2106e91cb03cc78">twi_read</a>(<a class="code hl_define" href="group__fryza__twi.html#ga00dcb08e2effea903c22763e0aeeb3cb">TWI_ACK</a>);</div>
-<div class="line"><span class="lineno">   23</span>        <a class="code hl_variable" href="uart_8c.html#a511ae0b1c13f95e5f08f1a0dd3da3d93">data</a>-&gt;hum = <a class="code hl_function" href="group__fryza__twi.html#gae9f84b771b4acdedd2106e91cb03cc78">twi_read</a>(<a class="code hl_define" href="group__fryza__twi.html#ga00dcb08e2effea903c22763e0aeeb3cb">TWI_ACK</a>);</div>
-<div class="line"><span class="lineno">   24</span>    }</div>
-<div class="line"><span class="lineno">   25</span>    <a class="code hl_function" href="group__fryza__twi.html#gacf52d6c93df110dee6d402b389e5042e">twi_stop</a>();</div>
-<div class="line"><span class="lineno">   26</span> </div>
-<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="uart_8c.html#a511ae0b1c13f95e5f08f1a0dd3da3d93">data</a>-&gt;moist = <a class="code hl_function" href="moist__sens_8c.html#aea5ab7057f46b5c93f520c3d82f809c3">get_moist</a>();</div>
-<div class="line"><span class="lineno">   28</span>}</div>
+<div class="line"><span class="lineno">   22</span>        <a class="code hl_variable" href="uart_8c.html#a511ae0b1c13f95e5f08f1a0dd3da3d93">data</a>-&gt;hum = <a class="code hl_function" href="group__fryza__twi.html#gae9f84b771b4acdedd2106e91cb03cc78">twi_read</a>(<a class="code hl_define" href="group__fryza__twi.html#ga00dcb08e2effea903c22763e0aeeb3cb">TWI_ACK</a>);</div>
+<div class="line"><span class="lineno">   23</span>        <a class="code hl_function" href="group__fryza__twi.html#gae9f84b771b4acdedd2106e91cb03cc78">twi_read</a>(<a class="code hl_define" href="group__fryza__twi.html#ga00dcb08e2effea903c22763e0aeeb3cb">TWI_ACK</a>); <span class="comment">// skip hum decimal</span></div>
+<div class="line"><span class="lineno">   24</span>        <a class="code hl_variable" href="uart_8c.html#a511ae0b1c13f95e5f08f1a0dd3da3d93">data</a>-&gt;temp = <a class="code hl_function" href="group__fryza__twi.html#gae9f84b771b4acdedd2106e91cb03cc78">twi_read</a>(<a class="code hl_define" href="group__fryza__twi.html#ga00dcb08e2effea903c22763e0aeeb3cb">TWI_ACK</a>);</div>
+<div class="line"><span class="lineno">   25</span>        <a class="code hl_function" href="group__fryza__twi.html#gae9f84b771b4acdedd2106e91cb03cc78">twi_read</a>(<a class="code hl_define" href="group__fryza__twi.html#ga00dcb08e2effea903c22763e0aeeb3cb">TWI_ACK</a>); <span class="comment">// skip temp decimal</span></div>
+<div class="line"><span class="lineno">   26</span>    }</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_function" href="group__fryza__twi.html#gacf52d6c93df110dee6d402b389e5042e">twi_stop</a>();</div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="uart_8c.html#a511ae0b1c13f95e5f08f1a0dd3da3d93">data</a>-&gt;moist = <a class="code hl_function" href="moist__sens_8c.html#aea5ab7057f46b5c93f520c3d82f809c3">get_moist</a>();</div>
+<div class="line"><span class="lineno">   30</span>}</div>
 <div class="ttc" id="agroup__fryza__twi_html_ga00dcb08e2effea903c22763e0aeeb3cb"><div class="ttname"><a href="group__fryza__twi.html#ga00dcb08e2effea903c22763e0aeeb3cb">TWI_ACK</a></div><div class="ttdeci">#define TWI_ACK</div><div class="ttdoc">ACK value for writing to I2C/TWI bus.</div><div class="ttdef"><b>Definition:</b> twi.h:63</div></div>
 <div class="ttc" id="agroup__fryza__twi_html_ga129b8a79f75189c3801cb7082e6b8340"><div class="ttname"><a href="group__fryza__twi.html#ga129b8a79f75189c3801cb7082e6b8340">twi_write</a></div><div class="ttdeci">uint8_t twi_write(uint8_t data)</div><div class="ttdoc">Send one byte to I2C/TWI Slave device.</div><div class="ttdef"><b>Definition:</b> twi.c:59</div></div>
 <div class="ttc" id="agroup__fryza__twi_html_ga3b68e8e777b71520f9dbfac733774d5f"><div class="ttname"><a href="group__fryza__twi.html#ga3b68e8e777b71520f9dbfac733774d5f">TWI_WRITE</a></div><div class="ttdeci">#define TWI_WRITE</div><div class="ttdoc">Mode for writing to I2C/TWI device.</div><div class="ttdef"><b>Definition:</b> twi.h:61</div></div>
@@ -254,9 +267,11 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="agroup__fryza__twi_html_gaf37269da7f6b1b22438b78d2f965f274"><div class="ttname"><a href="group__fryza__twi.html#gaf37269da7f6b1b22438b78d2f965f274">twi_start</a></div><div class="ttdeci">void twi_start(void)</div><div class="ttdoc">Start communication on I2C/TWI bus.</div><div class="ttdef"><b>Definition:</b> twi.c:45</div></div>
 <div class="ttc" id="amoist__sens_8c_html_aea5ab7057f46b5c93f520c3d82f809c3"><div class="ttname"><a href="moist__sens_8c.html#aea5ab7057f46b5c93f520c3d82f809c3">get_moist</a></div><div class="ttdeci">uint16_t get_moist(void)</div><div class="ttdef"><b>Definition:</b> moist_sens.c:38</div></div>
 <div class="ttc" id="asensors_8h_html_aa36bef744ff057de3847f9c71b6d2f47"><div class="ttname"><a href="sensors_8h.html#aa36bef744ff057de3847f9c71b6d2f47">DHT22_ADDR</a></div><div class="ttdeci">#define DHT22_ADDR</div><div class="ttdef"><b>Definition:</b> sensors.h:9</div></div>
-<div class="ttc" id="asensors_8h_html_acfc60dd49a9f34a570da88f79c6bcc91"><div class="ttname"><a href="sensors_8h.html#acfc60dd49a9f34a570da88f79c6bcc91">SENSOR_TEMP_MEM</a></div><div class="ttdeci">#define SENSOR_TEMP_MEM</div><div class="ttdef"><b>Definition:</b> sensors.h:11</div></div>
+<div class="ttc" id="asensors_8h_html_ad5b0d3c1f777f3b31d75fd2b7eea3b64"><div class="ttname"><a href="sensors_8h.html#ad5b0d3c1f777f3b31d75fd2b7eea3b64">SENSOR_HUM_MEM</a></div><div class="ttdeci">#define SENSOR_HUM_MEM</div><div class="ttdef"><b>Definition:</b> sensors.h:10</div></div>
 <div class="ttc" id="auart_8c_html_a511ae0b1c13f95e5f08f1a0dd3da3d93"><div class="ttname"><a href="uart_8c.html#a511ae0b1c13f95e5f08f1a0dd3da3d93">data</a></div><div class="ttdeci">unsigned char data</div><div class="ttdef"><b>Definition:</b> uart.c:369</div></div>
-</div><!-- fragment --><div class="dynheader">
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main()</a>.</p>
+<div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="sensors_8h_a991004aa5afbe5511d9fe87599132693_cgraph.png" border="0" usemap="#asensors_8h_a991004aa5afbe5511d9fe87599132693_cgraph" alt=""/></div>
@@ -267,6 +282,15 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="group__fryza__twi.html#gaf37269da7f6b1b22438b78d2f965f274" title="Start communication on I2C/TWI bus." alt="" coords="237,107,316,133"/>
 <area shape="rect" href="group__fryza__twi.html#gacf52d6c93df110dee6d402b389e5042e" title="Generates Stop condition on I2C/TWI bus." alt="" coords="238,157,315,184"/>
 <area shape="rect" href="group__fryza__twi.html#ga129b8a79f75189c3801cb7082e6b8340" title="Send one byte to I2C/TWI Slave device." alt="" coords="235,208,318,235"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="sensors_8h_a991004aa5afbe5511d9fe87599132693_icgraph.png" border="0" usemap="#asensors_8h_a991004aa5afbe5511d9fe87599132693_icgraph" alt=""/></div>
+<map name="asensors_8h_a991004aa5afbe5511d9fe87599132693_icgraph" id="asensors_8h_a991004aa5afbe5511d9fe87599132693_icgraph">
+<area shape="rect" title=" " alt="" coords="108,5,288,32"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,5,60,32"/>
 </map>
 </div>
 

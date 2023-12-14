@@ -45,10 +45,10 @@ void \mbox{\hyperlink{servo_8h_a6e27a0da014d4197e9b84c628460a5e1}{servo\+\_\+50u
 \begin{DoxyCode}{0}
 \DoxyCodeLine{22 \{}
 \DoxyCodeLine{23     \textcolor{keyword}{static} uint16\_t tick = 0;}
-\DoxyCodeLine{24     \textcolor{keywordflow}{if} (tick == servo-\/>\mbox{\hyperlink{structservo__t_a8f9429a848536d7b7aa533ca539afa55}{value}}/3+14) \mbox{\hyperlink{group__fryza__gpio_gacea0f20416113eb2286b6bd730e22daa}{GPIO\_write\_low}}(servo-\/>\mbox{\hyperlink{structservo__t_a8a450f2ca08066ed18538b1a22011154}{reg}}, servo-\/>\mbox{\hyperlink{structservo__t_ac7cd8ac434e7f7426abe1fed6d686c0e}{pin}});}
+\DoxyCodeLine{24     \textcolor{keywordflow}{if} (tick == servo-\/>\mbox{\hyperlink{structservo__t_a8f9429a848536d7b7aa533ca539afa55}{value}}/6+14) \mbox{\hyperlink{group__fryza__gpio_gacea0f20416113eb2286b6bd730e22daa}{GPIO\_write\_low}}(servo-\/>\mbox{\hyperlink{structservo__t_a8a450f2ca08066ed18538b1a22011154}{reg}}, servo-\/>\mbox{\hyperlink{structservo__t_ac7cd8ac434e7f7426abe1fed6d686c0e}{pin}});}
 \DoxyCodeLine{25     \textcolor{keywordflow}{if} (tick >= 387)}
 \DoxyCodeLine{26     \{}
-\DoxyCodeLine{27         PORTB |= (1 << 0);}
+\DoxyCodeLine{27         \textcolor{comment}{//PORTB |= (1 << 0);}}
 \DoxyCodeLine{28         \mbox{\hyperlink{group__fryza__gpio_gabd54283301ad4e85b31c126f2fc316c7}{GPIO\_write\_high}}(servo-\/>\mbox{\hyperlink{structservo__t_a8a450f2ca08066ed18538b1a22011154}{reg}}, servo-\/>\mbox{\hyperlink{structservo__t_ac7cd8ac434e7f7426abe1fed6d686c0e}{pin}});}
 \DoxyCodeLine{29         tick=0;}
 \DoxyCodeLine{30     \}}
@@ -130,7 +130,8 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Referenced by \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}}, \mbox{\hyperlink{watering_8c_a2771d1fd0080d7ee739c77936b341c03}{watering\+\_\+handler()}}, and \mbox{\hyperlink{watering_8c_a19f0ee5e2ed5f2b96c770e741a40de54}{watering\+\_\+init()}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

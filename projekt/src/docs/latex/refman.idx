@@ -1,0 +1,501 @@
+\indexentry{GPIO Library $<$gpio.h$>$@{GPIO Library $<$gpio.h$>$}|hyperpage}{7}
+\indexentry{GPIO Library $<$gpio.h$>$@{GPIO Library $<$gpio.h$>$}!GPIO\_mode\_input\_pullup@{GPIO\_mode\_input\_pullup}|hyperpage}{8}
+\indexentry{GPIO\_mode\_input\_pullup@{GPIO\_mode\_input\_pullup}!GPIO Library $<$gpio.h$>$@{GPIO Library $<$gpio.h$>$}|hyperpage}{8}
+\indexentry{GPIO Library $<$gpio.h$>$@{GPIO Library $<$gpio.h$>$}!GPIO\_mode\_output@{GPIO\_mode\_output}|hyperpage}{8}
+\indexentry{GPIO\_mode\_output@{GPIO\_mode\_output}!GPIO Library $<$gpio.h$>$@{GPIO Library $<$gpio.h$>$}|hyperpage}{8}
+\indexentry{GPIO Library $<$gpio.h$>$@{GPIO Library $<$gpio.h$>$}!GPIO\_read@{GPIO\_read}|hyperpage}{9}
+\indexentry{GPIO\_read@{GPIO\_read}!GPIO Library $<$gpio.h$>$@{GPIO Library $<$gpio.h$>$}|hyperpage}{9}
+\indexentry{GPIO Library $<$gpio.h$>$@{GPIO Library $<$gpio.h$>$}!GPIO\_write@{GPIO\_write}|hyperpage}{9}
+\indexentry{GPIO\_write@{GPIO\_write}!GPIO Library $<$gpio.h$>$@{GPIO Library $<$gpio.h$>$}|hyperpage}{9}
+\indexentry{GPIO Library $<$gpio.h$>$@{GPIO Library $<$gpio.h$>$}!GPIO\_write\_high@{GPIO\_write\_high}|hyperpage}{10}
+\indexentry{GPIO\_write\_high@{GPIO\_write\_high}!GPIO Library $<$gpio.h$>$@{GPIO Library $<$gpio.h$>$}|hyperpage}{10}
+\indexentry{GPIO Library $<$gpio.h$>$@{GPIO Library $<$gpio.h$>$}!GPIO\_write\_low@{GPIO\_write\_low}|hyperpage}{11}
+\indexentry{GPIO\_write\_low@{GPIO\_write\_low}!GPIO Library $<$gpio.h$>$@{GPIO Library $<$gpio.h$>$}|hyperpage}{11}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{12}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TCCRXB\_MODIFY\_CS@{TCCRXB\_MODIFY\_CS}|hyperpage}{13}
+\indexentry{TCCRXB\_MODIFY\_CS@{TCCRXB\_MODIFY\_CS}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{13}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM0\_OVF\_128US@{TIM0\_OVF\_128US}|hyperpage}{13}
+\indexentry{TIM0\_OVF\_128US@{TIM0\_OVF\_128US}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{13}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM0\_OVF\_16MS@{TIM0\_OVF\_16MS}|hyperpage}{14}
+\indexentry{TIM0\_OVF\_16MS@{TIM0\_OVF\_16MS}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{14}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM0\_OVF\_16US@{TIM0\_OVF\_16US}|hyperpage}{14}
+\indexentry{TIM0\_OVF\_16US@{TIM0\_OVF\_16US}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{14}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM0\_OVF\_1MS@{TIM0\_OVF\_1MS}|hyperpage}{14}
+\indexentry{TIM0\_OVF\_1MS@{TIM0\_OVF\_1MS}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{14}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM0\_OVF\_4MS@{TIM0\_OVF\_4MS}|hyperpage}{14}
+\indexentry{TIM0\_OVF\_4MS@{TIM0\_OVF\_4MS}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{14}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM0\_OVF\_DISABLE@{TIM0\_OVF\_DISABLE}|hyperpage}{14}
+\indexentry{TIM0\_OVF\_DISABLE@{TIM0\_OVF\_DISABLE}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{14}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM0\_OVF\_ENABLE@{TIM0\_OVF\_ENABLE}|hyperpage}{14}
+\indexentry{TIM0\_OVF\_ENABLE@{TIM0\_OVF\_ENABLE}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{14}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM0\_STOP@{TIM0\_STOP}|hyperpage}{15}
+\indexentry{TIM0\_STOP@{TIM0\_STOP}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{15}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM1\_OVF\_1SEC@{TIM1\_OVF\_1SEC}|hyperpage}{15}
+\indexentry{TIM1\_OVF\_1SEC@{TIM1\_OVF\_1SEC}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{15}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM1\_OVF\_262MS@{TIM1\_OVF\_262MS}|hyperpage}{15}
+\indexentry{TIM1\_OVF\_262MS@{TIM1\_OVF\_262MS}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{15}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM1\_OVF\_33MS@{TIM1\_OVF\_33MS}|hyperpage}{15}
+\indexentry{TIM1\_OVF\_33MS@{TIM1\_OVF\_33MS}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{15}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM1\_OVF\_4MS@{TIM1\_OVF\_4MS}|hyperpage}{15}
+\indexentry{TIM1\_OVF\_4MS@{TIM1\_OVF\_4MS}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{15}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM1\_OVF\_4SEC@{TIM1\_OVF\_4SEC}|hyperpage}{15}
+\indexentry{TIM1\_OVF\_4SEC@{TIM1\_OVF\_4SEC}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{15}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM1\_OVF\_DISABLE@{TIM1\_OVF\_DISABLE}|hyperpage}{16}
+\indexentry{TIM1\_OVF\_DISABLE@{TIM1\_OVF\_DISABLE}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{16}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM1\_OVF\_ENABLE@{TIM1\_OVF\_ENABLE}|hyperpage}{16}
+\indexentry{TIM1\_OVF\_ENABLE@{TIM1\_OVF\_ENABLE}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{16}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM1\_STOP@{TIM1\_STOP}|hyperpage}{16}
+\indexentry{TIM1\_STOP@{TIM1\_STOP}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{16}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM2\_OVF\_128US@{TIM2\_OVF\_128US}|hyperpage}{16}
+\indexentry{TIM2\_OVF\_128US@{TIM2\_OVF\_128US}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{16}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM2\_OVF\_16MS@{TIM2\_OVF\_16MS}|hyperpage}{16}
+\indexentry{TIM2\_OVF\_16MS@{TIM2\_OVF\_16MS}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{16}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM2\_OVF\_16US@{TIM2\_OVF\_16US}|hyperpage}{16}
+\indexentry{TIM2\_OVF\_16US@{TIM2\_OVF\_16US}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{16}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM2\_OVF\_1MS@{TIM2\_OVF\_1MS}|hyperpage}{17}
+\indexentry{TIM2\_OVF\_1MS@{TIM2\_OVF\_1MS}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{17}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM2\_OVF\_2MS@{TIM2\_OVF\_2MS}|hyperpage}{17}
+\indexentry{TIM2\_OVF\_2MS@{TIM2\_OVF\_2MS}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{17}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM2\_OVF\_4MS@{TIM2\_OVF\_4MS}|hyperpage}{17}
+\indexentry{TIM2\_OVF\_4MS@{TIM2\_OVF\_4MS}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{17}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM2\_OVF\_512US@{TIM2\_OVF\_512US}|hyperpage}{17}
+\indexentry{TIM2\_OVF\_512US@{TIM2\_OVF\_512US}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{17}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM2\_OVF\_DISABLE@{TIM2\_OVF\_DISABLE}|hyperpage}{17}
+\indexentry{TIM2\_OVF\_DISABLE@{TIM2\_OVF\_DISABLE}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{17}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM2\_OVF\_ENABLE@{TIM2\_OVF\_ENABLE}|hyperpage}{17}
+\indexentry{TIM2\_OVF\_ENABLE@{TIM2\_OVF\_ENABLE}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{17}
+\indexentry{Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}!TIM2\_STOP@{TIM2\_STOP}|hyperpage}{18}
+\indexentry{TIM2\_STOP@{TIM2\_STOP}!Timer Library $<$timer.h$>$@{Timer Library $<$timer.h$>$}|hyperpage}{18}
+\indexentry{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}|hyperpage}{18}
+\indexentry{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!DDR@{DDR}|hyperpage}{19}
+\indexentry{DDR@{DDR}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}|hyperpage}{19}
+\indexentry{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!F\_CPU@{F\_CPU}|hyperpage}{19}
+\indexentry{F\_CPU@{F\_CPU}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}|hyperpage}{19}
+\indexentry{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!F\_SCL@{F\_SCL}|hyperpage}{20}
+\indexentry{F\_SCL@{F\_SCL}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}|hyperpage}{20}
+\indexentry{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!PIN@{PIN}|hyperpage}{20}
+\indexentry{PIN@{PIN}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}|hyperpage}{20}
+\indexentry{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!TWI\_ACK@{TWI\_ACK}|hyperpage}{20}
+\indexentry{TWI\_ACK@{TWI\_ACK}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}|hyperpage}{20}
+\indexentry{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!TWI\_BIT\_RATE\_REG@{TWI\_BIT\_RATE\_REG}|hyperpage}{20}
+\indexentry{TWI\_BIT\_RATE\_REG@{TWI\_BIT\_RATE\_REG}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}|hyperpage}{20}
+\indexentry{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!TWI\_NACK@{TWI\_NACK}|hyperpage}{20}
+\indexentry{TWI\_NACK@{TWI\_NACK}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}|hyperpage}{20}
+\indexentry{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!TWI\_PORT@{TWI\_PORT}|hyperpage}{20}
+\indexentry{TWI\_PORT@{TWI\_PORT}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}|hyperpage}{20}
+\indexentry{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!TWI\_READ@{TWI\_READ}|hyperpage}{21}
+\indexentry{TWI\_READ@{TWI\_READ}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}|hyperpage}{21}
+\indexentry{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!TWI\_SCL\_PIN@{TWI\_SCL\_PIN}|hyperpage}{21}
+\indexentry{TWI\_SCL\_PIN@{TWI\_SCL\_PIN}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}|hyperpage}{21}
+\indexentry{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!TWI\_SDA\_PIN@{TWI\_SDA\_PIN}|hyperpage}{21}
+\indexentry{TWI\_SDA\_PIN@{TWI\_SDA\_PIN}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}|hyperpage}{21}
+\indexentry{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!TWI\_WRITE@{TWI\_WRITE}|hyperpage}{21}
+\indexentry{TWI\_WRITE@{TWI\_WRITE}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}|hyperpage}{21}
+\indexentry{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!twi\_init@{twi\_init}|hyperpage}{21}
+\indexentry{twi\_init@{twi\_init}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}|hyperpage}{21}
+\indexentry{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!twi\_read@{twi\_read}|hyperpage}{22}
+\indexentry{twi\_read@{twi\_read}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}|hyperpage}{22}
+\indexentry{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!twi\_start@{twi\_start}|hyperpage}{23}
+\indexentry{twi\_start@{twi\_start}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}|hyperpage}{23}
+\indexentry{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!twi\_stop@{twi\_stop}|hyperpage}{23}
+\indexentry{twi\_stop@{twi\_stop}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}|hyperpage}{23}
+\indexentry{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!twi\_test\_address@{twi\_test\_address}|hyperpage}{24}
+\indexentry{twi\_test\_address@{twi\_test\_address}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}|hyperpage}{24}
+\indexentry{TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}!twi\_write@{twi\_write}|hyperpage}{25}
+\indexentry{twi\_write@{twi\_write}!TWI Library $<$twi.h$>$@{TWI Library $<$twi.h$>$}|hyperpage}{25}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{26}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart1\_puts\_P@{uart1\_puts\_P}|hyperpage}{28}
+\indexentry{uart1\_puts\_P@{uart1\_puts\_P}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{28}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!UART\_BAUD\_SELECT@{UART\_BAUD\_SELECT}|hyperpage}{28}
+\indexentry{UART\_BAUD\_SELECT@{UART\_BAUD\_SELECT}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{28}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!UART\_BAUD\_SELECT\_DOUBLE\_SPEED@{UART\_BAUD\_SELECT\_DOUBLE\_SPEED}|hyperpage}{29}
+\indexentry{UART\_BAUD\_SELECT\_DOUBLE\_SPEED@{UART\_BAUD\_SELECT\_DOUBLE\_SPEED}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{29}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!UART\_BUFFER\_OVERFLOW@{UART\_BUFFER\_OVERFLOW}|hyperpage}{29}
+\indexentry{UART\_BUFFER\_OVERFLOW@{UART\_BUFFER\_OVERFLOW}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{29}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!UART\_FRAME\_ERROR@{UART\_FRAME\_ERROR}|hyperpage}{29}
+\indexentry{UART\_FRAME\_ERROR@{UART\_FRAME\_ERROR}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{29}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!UART\_NO\_DATA@{UART\_NO\_DATA}|hyperpage}{29}
+\indexentry{UART\_NO\_DATA@{UART\_NO\_DATA}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{29}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!UART\_OVERRUN\_ERROR@{UART\_OVERRUN\_ERROR}|hyperpage}{29}
+\indexentry{UART\_OVERRUN\_ERROR@{UART\_OVERRUN\_ERROR}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{29}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!UART\_PARITY\_ERROR@{UART\_PARITY\_ERROR}|hyperpage}{30}
+\indexentry{UART\_PARITY\_ERROR@{UART\_PARITY\_ERROR}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{30}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart\_puts\_P@{uart\_puts\_P}|hyperpage}{30}
+\indexentry{uart\_puts\_P@{uart\_puts\_P}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{30}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!UART\_RX\_BUFFER\_SIZE@{UART\_RX\_BUFFER\_SIZE}|hyperpage}{30}
+\indexentry{UART\_RX\_BUFFER\_SIZE@{UART\_RX\_BUFFER\_SIZE}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{30}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!UART\_TX\_BUFFER\_SIZE@{UART\_TX\_BUFFER\_SIZE}|hyperpage}{30}
+\indexentry{UART\_TX\_BUFFER\_SIZE@{UART\_TX\_BUFFER\_SIZE}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{30}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart1\_getc@{uart1\_getc}|hyperpage}{30}
+\indexentry{uart1\_getc@{uart1\_getc}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{30}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart1\_init@{uart1\_init}|hyperpage}{31}
+\indexentry{uart1\_init@{uart1\_init}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{31}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart1\_putc@{uart1\_putc}|hyperpage}{31}
+\indexentry{uart1\_putc@{uart1\_putc}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{31}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart1\_puts@{uart1\_puts}|hyperpage}{31}
+\indexentry{uart1\_puts@{uart1\_puts}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{31}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart1\_puts\_p@{uart1\_puts\_p}|hyperpage}{31}
+\indexentry{uart1\_puts\_p@{uart1\_puts\_p}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{31}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart\_getc@{uart\_getc}|hyperpage}{32}
+\indexentry{uart\_getc@{uart\_getc}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{32}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart\_init@{uart\_init}|hyperpage}{33}
+\indexentry{uart\_init@{uart\_init}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{33}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart\_putc@{uart\_putc}|hyperpage}{34}
+\indexentry{uart\_putc@{uart\_putc}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{34}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart\_puts@{uart\_puts}|hyperpage}{35}
+\indexentry{uart\_puts@{uart\_puts}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{35}
+\indexentry{UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}!uart\_puts\_p@{uart\_puts\_p}|hyperpage}{36}
+\indexentry{uart\_puts\_p@{uart\_puts\_p}!UART Library $<$uart.h$>$@{UART Library $<$uart.h$>$}|hyperpage}{36}
+\indexentry{dataset\_t@{dataset\_t}|hyperpage}{39}
+\indexentry{dataset\_t@{dataset\_t}!hum@{hum}|hyperpage}{39}
+\indexentry{hum@{hum}!dataset\_t@{dataset\_t}|hyperpage}{39}
+\indexentry{dataset\_t@{dataset\_t}!moist@{moist}|hyperpage}{39}
+\indexentry{moist@{moist}!dataset\_t@{dataset\_t}|hyperpage}{39}
+\indexentry{dataset\_t@{dataset\_t}!temp@{temp}|hyperpage}{39}
+\indexentry{temp@{temp}!dataset\_t@{dataset\_t}|hyperpage}{39}
+\indexentry{dataset\_t@{dataset\_t}!time@{time}|hyperpage}{40}
+\indexentry{time@{time}!dataset\_t@{dataset\_t}|hyperpage}{40}
+\indexentry{servo\_t@{servo\_t}|hyperpage}{40}
+\indexentry{servo\_t@{servo\_t}!pin@{pin}|hyperpage}{40}
+\indexentry{pin@{pin}!servo\_t@{servo\_t}|hyperpage}{40}
+\indexentry{servo\_t@{servo\_t}!reg@{reg}|hyperpage}{40}
+\indexentry{reg@{reg}!servo\_t@{servo\_t}|hyperpage}{40}
+\indexentry{servo\_t@{servo\_t}!value@{value}|hyperpage}{41}
+\indexentry{value@{value}!servo\_t@{servo\_t}|hyperpage}{41}
+\indexentry{storage\_t@{storage\_t}|hyperpage}{41}
+\indexentry{storage\_t@{storage\_t}!buffer\_start@{buffer\_start}|hyperpage}{41}
+\indexentry{buffer\_start@{buffer\_start}!storage\_t@{storage\_t}|hyperpage}{41}
+\indexentry{watering\_t@{watering\_t}|hyperpage}{42}
+\indexentry{watering\_t@{watering\_t}!max@{max}|hyperpage}{42}
+\indexentry{max@{max}!watering\_t@{watering\_t}|hyperpage}{42}
+\indexentry{watering\_t@{watering\_t}!min@{min}|hyperpage}{42}
+\indexentry{min@{min}!watering\_t@{watering\_t}|hyperpage}{42}
+\indexentry{watering\_t@{watering\_t}!servo@{servo}|hyperpage}{43}
+\indexentry{servo@{servo}!watering\_t@{watering\_t}|hyperpage}{43}
+\indexentry{lib/cmd/cmd.c@{lib/cmd/cmd.c}|hyperpage}{45}
+\indexentry{cmd.c@{cmd.c}!cmd\_handler@{cmd\_handler}|hyperpage}{45}
+\indexentry{cmd\_handler@{cmd\_handler}!cmd.c@{cmd.c}|hyperpage}{45}
+\indexentry{lib/cmd/cmd.h@{lib/cmd/cmd.h}|hyperpage}{48}
+\indexentry{cmd.h@{cmd.h}!cmd\_handler@{cmd\_handler}|hyperpage}{49}
+\indexentry{cmd\_handler@{cmd\_handler}!cmd.h@{cmd.h}|hyperpage}{49}
+\indexentry{lib/cmd/cmd.h@{lib/cmd/cmd.h}|hyperpage}{52}
+\indexentry{lib/dataset/dataset.h@{lib/dataset/dataset.h}|hyperpage}{53}
+\indexentry{dataset.h@{dataset.h}!AVRTIME\_TO\_UNIXTIME@{AVRTIME\_TO\_UNIXTIME}|hyperpage}{53}
+\indexentry{AVRTIME\_TO\_UNIXTIME@{AVRTIME\_TO\_UNIXTIME}!dataset.h@{dataset.h}|hyperpage}{53}
+\indexentry{lib/dataset/dataset.h@{lib/dataset/dataset.h}|hyperpage}{54}
+\indexentry{lib/display/display.c@{lib/display/display.c}|hyperpage}{54}
+\indexentry{display.c@{display.c}!display\_init@{display\_init}|hyperpage}{54}
+\indexentry{display\_init@{display\_init}!display.c@{display.c}|hyperpage}{54}
+\indexentry{display.c@{display.c}!display\_show\_data@{display\_show\_data}|hyperpage}{55}
+\indexentry{display\_show\_data@{display\_show\_data}!display.c@{display.c}|hyperpage}{55}
+\indexentry{lib/display/display.h@{lib/display/display.h}|hyperpage}{56}
+\indexentry{display.h@{display.h}!display\_init@{display\_init}|hyperpage}{57}
+\indexentry{display\_init@{display\_init}!display.h@{display.h}|hyperpage}{57}
+\indexentry{display.h@{display.h}!display\_show\_data@{display\_show\_data}|hyperpage}{57}
+\indexentry{display\_show\_data@{display\_show\_data}!display.h@{display.h}|hyperpage}{57}
+\indexentry{lib/display/display.h@{lib/display/display.h}|hyperpage}{58}
+\indexentry{lib/gpio/gpio.c@{lib/gpio/gpio.c}|hyperpage}{59}
+\indexentry{lib/gpio/gpio.h@{lib/gpio/gpio.h}|hyperpage}{59}
+\indexentry{lib/gpio/gpio.h@{lib/gpio/gpio.h}|hyperpage}{61}
+\indexentry{lib/moist\_sens/moist\_sens.c@{lib/moist\_sens/moist\_sens.c}|hyperpage}{61}
+\indexentry{moist\_sens.c@{moist\_sens.c}!get\_moist@{get\_moist}|hyperpage}{62}
+\indexentry{get\_moist@{get\_moist}!moist\_sens.c@{moist\_sens.c}|hyperpage}{62}
+\indexentry{moist\_sens.c@{moist\_sens.c}!ISR@{ISR}|hyperpage}{62}
+\indexentry{ISR@{ISR}!moist\_sens.c@{moist\_sens.c}|hyperpage}{62}
+\indexentry{moist\_sens.c@{moist\_sens.c}!moist\_sens\_init@{moist\_sens\_init}|hyperpage}{62}
+\indexentry{moist\_sens\_init@{moist\_sens\_init}!moist\_sens.c@{moist\_sens.c}|hyperpage}{62}
+\indexentry{lib/moist\_sens/moist\_sens.h@{lib/moist\_sens/moist\_sens.h}|hyperpage}{63}
+\indexentry{moist\_sens.h@{moist\_sens.h}!get\_moist@{get\_moist}|hyperpage}{64}
+\indexentry{get\_moist@{get\_moist}!moist\_sens.h@{moist\_sens.h}|hyperpage}{64}
+\indexentry{moist\_sens.h@{moist\_sens.h}!moist\_sens\_init@{moist\_sens\_init}|hyperpage}{64}
+\indexentry{moist\_sens\_init@{moist\_sens\_init}!moist\_sens.h@{moist\_sens.h}|hyperpage}{64}
+\indexentry{lib/moist\_sens/moist\_sens.h@{lib/moist\_sens/moist\_sens.h}|hyperpage}{65}
+\indexentry{lib/oled/font.h@{lib/oled/font.h}|hyperpage}{65}
+\indexentry{font.h@{font.h}!PROGMEM@{PROGMEM}|hyperpage}{66}
+\indexentry{PROGMEM@{PROGMEM}!font.h@{font.h}|hyperpage}{66}
+\indexentry{lib/oled/font.h@{lib/oled/font.h}|hyperpage}{66}
+\indexentry{lib/oled/oled.c@{lib/oled/oled.c}|hyperpage}{68}
+\indexentry{oled.c@{oled.c}!oled\_charMode@{oled\_charMode}|hyperpage}{69}
+\indexentry{oled\_charMode@{oled\_charMode}!oled.c@{oled.c}|hyperpage}{69}
+\indexentry{oled.c@{oled.c}!oled\_check\_buffer@{oled\_check\_buffer}|hyperpage}{70}
+\indexentry{oled\_check\_buffer@{oled\_check\_buffer}!oled.c@{oled.c}|hyperpage}{70}
+\indexentry{oled.c@{oled.c}!oled\_clear\_buffer@{oled\_clear\_buffer}|hyperpage}{70}
+\indexentry{oled\_clear\_buffer@{oled\_clear\_buffer}!oled.c@{oled.c}|hyperpage}{70}
+\indexentry{oled.c@{oled.c}!oled\_clrscr@{oled\_clrscr}|hyperpage}{70}
+\indexentry{oled\_clrscr@{oled\_clrscr}!oled.c@{oled.c}|hyperpage}{70}
+\indexentry{oled.c@{oled.c}!oled\_command@{oled\_command}|hyperpage}{71}
+\indexentry{oled\_command@{oled\_command}!oled.c@{oled.c}|hyperpage}{71}
+\indexentry{oled.c@{oled.c}!oled\_data@{oled\_data}|hyperpage}{72}
+\indexentry{oled\_data@{oled\_data}!oled.c@{oled.c}|hyperpage}{72}
+\indexentry{oled.c@{oled.c}!oled\_display@{oled\_display}|hyperpage}{74}
+\indexentry{oled\_display@{oled\_display}!oled.c@{oled.c}|hyperpage}{74}
+\indexentry{oled.c@{oled.c}!oled\_display\_block@{oled\_display\_block}|hyperpage}{74}
+\indexentry{oled\_display\_block@{oled\_display\_block}!oled.c@{oled.c}|hyperpage}{74}
+\indexentry{oled.c@{oled.c}!oled\_drawBitmap@{oled\_drawBitmap}|hyperpage}{75}
+\indexentry{oled\_drawBitmap@{oled\_drawBitmap}!oled.c@{oled.c}|hyperpage}{75}
+\indexentry{oled.c@{oled.c}!oled\_drawCircle@{oled\_drawCircle}|hyperpage}{75}
+\indexentry{oled\_drawCircle@{oled\_drawCircle}!oled.c@{oled.c}|hyperpage}{75}
+\indexentry{oled.c@{oled.c}!oled\_drawLine@{oled\_drawLine}|hyperpage}{76}
+\indexentry{oled\_drawLine@{oled\_drawLine}!oled.c@{oled.c}|hyperpage}{76}
+\indexentry{oled.c@{oled.c}!oled\_drawPixel@{oled\_drawPixel}|hyperpage}{77}
+\indexentry{oled\_drawPixel@{oled\_drawPixel}!oled.c@{oled.c}|hyperpage}{77}
+\indexentry{oled.c@{oled.c}!oled\_drawRect@{oled\_drawRect}|hyperpage}{78}
+\indexentry{oled\_drawRect@{oled\_drawRect}!oled.c@{oled.c}|hyperpage}{78}
+\indexentry{oled.c@{oled.c}!oled\_fillCircle@{oled\_fillCircle}|hyperpage}{79}
+\indexentry{oled\_fillCircle@{oled\_fillCircle}!oled.c@{oled.c}|hyperpage}{79}
+\indexentry{oled.c@{oled.c}!oled\_fillRect@{oled\_fillRect}|hyperpage}{79}
+\indexentry{oled\_fillRect@{oled\_fillRect}!oled.c@{oled.c}|hyperpage}{79}
+\indexentry{oled.c@{oled.c}!oled\_flip@{oled\_flip}|hyperpage}{80}
+\indexentry{oled\_flip@{oled\_flip}!oled.c@{oled.c}|hyperpage}{80}
+\indexentry{oled.c@{oled.c}!oled\_goto\_xpix\_y@{oled\_goto\_xpix\_y}|hyperpage}{81}
+\indexentry{oled\_goto\_xpix\_y@{oled\_goto\_xpix\_y}!oled.c@{oled.c}|hyperpage}{81}
+\indexentry{oled.c@{oled.c}!oled\_gotoxy@{oled\_gotoxy}|hyperpage}{82}
+\indexentry{oled\_gotoxy@{oled\_gotoxy}!oled.c@{oled.c}|hyperpage}{82}
+\indexentry{oled.c@{oled.c}!oled\_home@{oled\_home}|hyperpage}{83}
+\indexentry{oled\_home@{oled\_home}!oled.c@{oled.c}|hyperpage}{83}
+\indexentry{oled.c@{oled.c}!oled\_init@{oled\_init}|hyperpage}{83}
+\indexentry{oled\_init@{oled\_init}!oled.c@{oled.c}|hyperpage}{83}
+\indexentry{oled.c@{oled.c}!oled\_invert@{oled\_invert}|hyperpage}{84}
+\indexentry{oled\_invert@{oled\_invert}!oled.c@{oled.c}|hyperpage}{84}
+\indexentry{oled.c@{oled.c}!oled\_putc@{oled\_putc}|hyperpage}{85}
+\indexentry{oled\_putc@{oled\_putc}!oled.c@{oled.c}|hyperpage}{85}
+\indexentry{oled.c@{oled.c}!oled\_puts@{oled\_puts}|hyperpage}{87}
+\indexentry{oled\_puts@{oled\_puts}!oled.c@{oled.c}|hyperpage}{87}
+\indexentry{oled.c@{oled.c}!oled\_puts\_p@{oled\_puts\_p}|hyperpage}{88}
+\indexentry{oled\_puts\_p@{oled\_puts\_p}!oled.c@{oled.c}|hyperpage}{88}
+\indexentry{oled.c@{oled.c}!oled\_set\_contrast@{oled\_set\_contrast}|hyperpage}{88}
+\indexentry{oled\_set\_contrast@{oled\_set\_contrast}!oled.c@{oled.c}|hyperpage}{88}
+\indexentry{oled.c@{oled.c}!oled\_sleep@{oled\_sleep}|hyperpage}{89}
+\indexentry{oled\_sleep@{oled\_sleep}!oled.c@{oled.c}|hyperpage}{89}
+\indexentry{oled.c@{oled.c}!charMode@{charMode}|hyperpage}{90}
+\indexentry{charMode@{charMode}!oled.c@{oled.c}|hyperpage}{90}
+\indexentry{oled.c@{oled.c}!cursorPosition@{cursorPosition}|hyperpage}{90}
+\indexentry{cursorPosition@{cursorPosition}!oled.c@{oled.c}|hyperpage}{90}
+\indexentry{oled.c@{oled.c}!displayBuffer@{displayBuffer}|hyperpage}{90}
+\indexentry{displayBuffer@{displayBuffer}!oled.c@{oled.c}|hyperpage}{90}
+\indexentry{oled.c@{oled.c}!PROGMEM@{PROGMEM}|hyperpage}{90}
+\indexentry{PROGMEM@{PROGMEM}!oled.c@{oled.c}|hyperpage}{90}
+\indexentry{oled.c@{oled.c}!x@{x}|hyperpage}{90}
+\indexentry{x@{x}!oled.c@{oled.c}|hyperpage}{90}
+\indexentry{oled.c@{oled.c}!y@{y}|hyperpage}{91}
+\indexentry{y@{y}!oled.c@{oled.c}|hyperpage}{91}
+\indexentry{lib/oled/oled.h@{lib/oled/oled.h}|hyperpage}{91}
+\indexentry{oled.h@{oled.h}!BLACK@{BLACK}|hyperpage}{93}
+\indexentry{BLACK@{BLACK}!oled.h@{oled.h}|hyperpage}{93}
+\indexentry{oled.h@{oled.h}!DISPLAY\_HEIGHT@{DISPLAY\_HEIGHT}|hyperpage}{93}
+\indexentry{DISPLAY\_HEIGHT@{DISPLAY\_HEIGHT}!oled.h@{oled.h}|hyperpage}{93}
+\indexentry{oled.h@{oled.h}!DISPLAY\_WIDTH@{DISPLAY\_WIDTH}|hyperpage}{93}
+\indexentry{DISPLAY\_WIDTH@{DISPLAY\_WIDTH}!oled.h@{oled.h}|hyperpage}{93}
+\indexentry{oled.h@{oled.h}!DOUBLESIZE@{DOUBLESIZE}|hyperpage}{93}
+\indexentry{DOUBLESIZE@{DOUBLESIZE}!oled.h@{oled.h}|hyperpage}{93}
+\indexentry{oled.h@{oled.h}!FONT@{FONT}|hyperpage}{93}
+\indexentry{FONT@{FONT}!oled.h@{oled.h}|hyperpage}{93}
+\indexentry{oled.h@{oled.h}!GRAPHICMODE@{GRAPHICMODE}|hyperpage}{93}
+\indexentry{GRAPHICMODE@{GRAPHICMODE}!oled.h@{oled.h}|hyperpage}{93}
+\indexentry{oled.h@{oled.h}!I2C@{I2C}|hyperpage}{94}
+\indexentry{I2C@{I2C}!oled.h@{oled.h}|hyperpage}{94}
+\indexentry{oled.h@{oled.h}!NORMALSIZE@{NORMALSIZE}|hyperpage}{94}
+\indexentry{NORMALSIZE@{NORMALSIZE}!oled.h@{oled.h}|hyperpage}{94}
+\indexentry{oled.h@{oled.h}!OLED\_DISP\_OFF@{OLED\_DISP\_OFF}|hyperpage}{94}
+\indexentry{OLED\_DISP\_OFF@{OLED\_DISP\_OFF}!oled.h@{oled.h}|hyperpage}{94}
+\indexentry{oled.h@{oled.h}!OLED\_DISP\_ON@{OLED\_DISP\_ON}|hyperpage}{94}
+\indexentry{OLED\_DISP\_ON@{OLED\_DISP\_ON}!oled.h@{oled.h}|hyperpage}{94}
+\indexentry{oled.h@{oled.h}!OLED\_I2C\_ADR@{OLED\_I2C\_ADR}|hyperpage}{94}
+\indexentry{OLED\_I2C\_ADR@{OLED\_I2C\_ADR}!oled.h@{oled.h}|hyperpage}{94}
+\indexentry{oled.h@{oled.h}!SH1106@{SH1106}|hyperpage}{94}
+\indexentry{SH1106@{SH1106}!oled.h@{oled.h}|hyperpage}{94}
+\indexentry{oled.h@{oled.h}!WHITE@{WHITE}|hyperpage}{94}
+\indexentry{WHITE@{WHITE}!oled.h@{oled.h}|hyperpage}{94}
+\indexentry{oled.h@{oled.h}!YES@{YES}|hyperpage}{94}
+\indexentry{YES@{YES}!oled.h@{oled.h}|hyperpage}{94}
+\indexentry{oled.h@{oled.h}!oled\_charMode@{oled\_charMode}|hyperpage}{95}
+\indexentry{oled\_charMode@{oled\_charMode}!oled.h@{oled.h}|hyperpage}{95}
+\indexentry{oled.h@{oled.h}!oled\_check\_buffer@{oled\_check\_buffer}|hyperpage}{95}
+\indexentry{oled\_check\_buffer@{oled\_check\_buffer}!oled.h@{oled.h}|hyperpage}{95}
+\indexentry{oled.h@{oled.h}!oled\_clear\_buffer@{oled\_clear\_buffer}|hyperpage}{95}
+\indexentry{oled\_clear\_buffer@{oled\_clear\_buffer}!oled.h@{oled.h}|hyperpage}{95}
+\indexentry{oled.h@{oled.h}!oled\_clrscr@{oled\_clrscr}|hyperpage}{95}
+\indexentry{oled\_clrscr@{oled\_clrscr}!oled.h@{oled.h}|hyperpage}{95}
+\indexentry{oled.h@{oled.h}!oled\_command@{oled\_command}|hyperpage}{96}
+\indexentry{oled\_command@{oled\_command}!oled.h@{oled.h}|hyperpage}{96}
+\indexentry{oled.h@{oled.h}!oled\_data@{oled\_data}|hyperpage}{97}
+\indexentry{oled\_data@{oled\_data}!oled.h@{oled.h}|hyperpage}{97}
+\indexentry{oled.h@{oled.h}!oled\_display@{oled\_display}|hyperpage}{99}
+\indexentry{oled\_display@{oled\_display}!oled.h@{oled.h}|hyperpage}{99}
+\indexentry{oled.h@{oled.h}!oled\_display\_block@{oled\_display\_block}|hyperpage}{99}
+\indexentry{oled\_display\_block@{oled\_display\_block}!oled.h@{oled.h}|hyperpage}{99}
+\indexentry{oled.h@{oled.h}!oled\_drawBitmap@{oled\_drawBitmap}|hyperpage}{100}
+\indexentry{oled\_drawBitmap@{oled\_drawBitmap}!oled.h@{oled.h}|hyperpage}{100}
+\indexentry{oled.h@{oled.h}!oled\_drawCircle@{oled\_drawCircle}|hyperpage}{100}
+\indexentry{oled\_drawCircle@{oled\_drawCircle}!oled.h@{oled.h}|hyperpage}{100}
+\indexentry{oled.h@{oled.h}!oled\_drawLine@{oled\_drawLine}|hyperpage}{101}
+\indexentry{oled\_drawLine@{oled\_drawLine}!oled.h@{oled.h}|hyperpage}{101}
+\indexentry{oled.h@{oled.h}!oled\_drawPixel@{oled\_drawPixel}|hyperpage}{102}
+\indexentry{oled\_drawPixel@{oled\_drawPixel}!oled.h@{oled.h}|hyperpage}{102}
+\indexentry{oled.h@{oled.h}!oled\_drawRect@{oled\_drawRect}|hyperpage}{103}
+\indexentry{oled\_drawRect@{oled\_drawRect}!oled.h@{oled.h}|hyperpage}{103}
+\indexentry{oled.h@{oled.h}!oled\_fillCircle@{oled\_fillCircle}|hyperpage}{103}
+\indexentry{oled\_fillCircle@{oled\_fillCircle}!oled.h@{oled.h}|hyperpage}{103}
+\indexentry{oled.h@{oled.h}!oled\_fillRect@{oled\_fillRect}|hyperpage}{104}
+\indexentry{oled\_fillRect@{oled\_fillRect}!oled.h@{oled.h}|hyperpage}{104}
+\indexentry{oled.h@{oled.h}!oled\_flip@{oled\_flip}|hyperpage}{104}
+\indexentry{oled\_flip@{oled\_flip}!oled.h@{oled.h}|hyperpage}{104}
+\indexentry{oled.h@{oled.h}!oled\_goto\_xpix\_y@{oled\_goto\_xpix\_y}|hyperpage}{105}
+\indexentry{oled\_goto\_xpix\_y@{oled\_goto\_xpix\_y}!oled.h@{oled.h}|hyperpage}{105}
+\indexentry{oled.h@{oled.h}!oled\_gotoxy@{oled\_gotoxy}|hyperpage}{106}
+\indexentry{oled\_gotoxy@{oled\_gotoxy}!oled.h@{oled.h}|hyperpage}{106}
+\indexentry{oled.h@{oled.h}!oled\_home@{oled\_home}|hyperpage}{107}
+\indexentry{oled\_home@{oled\_home}!oled.h@{oled.h}|hyperpage}{107}
+\indexentry{oled.h@{oled.h}!oled\_init@{oled\_init}|hyperpage}{108}
+\indexentry{oled\_init@{oled\_init}!oled.h@{oled.h}|hyperpage}{108}
+\indexentry{oled.h@{oled.h}!oled\_invert@{oled\_invert}|hyperpage}{109}
+\indexentry{oled\_invert@{oled\_invert}!oled.h@{oled.h}|hyperpage}{109}
+\indexentry{oled.h@{oled.h}!oled\_putc@{oled\_putc}|hyperpage}{109}
+\indexentry{oled\_putc@{oled\_putc}!oled.h@{oled.h}|hyperpage}{109}
+\indexentry{oled.h@{oled.h}!oled\_puts@{oled\_puts}|hyperpage}{112}
+\indexentry{oled\_puts@{oled\_puts}!oled.h@{oled.h}|hyperpage}{112}
+\indexentry{oled.h@{oled.h}!oled\_puts\_p@{oled\_puts\_p}|hyperpage}{112}
+\indexentry{oled\_puts\_p@{oled\_puts\_p}!oled.h@{oled.h}|hyperpage}{112}
+\indexentry{oled.h@{oled.h}!oled\_set\_contrast@{oled\_set\_contrast}|hyperpage}{113}
+\indexentry{oled\_set\_contrast@{oled\_set\_contrast}!oled.h@{oled.h}|hyperpage}{113}
+\indexentry{oled.h@{oled.h}!oled\_sleep@{oled\_sleep}|hyperpage}{113}
+\indexentry{oled\_sleep@{oled\_sleep}!oled.h@{oled.h}|hyperpage}{113}
+\indexentry{lib/oled/oled.h@{lib/oled/oled.h}|hyperpage}{114}
+\indexentry{lib/sensors/sensors.c@{lib/sensors/sensors.c}|hyperpage}{116}
+\indexentry{sensors.c@{sensors.c}!sensors\_init@{sensors\_init}|hyperpage}{117}
+\indexentry{sensors\_init@{sensors\_init}!sensors.c@{sensors.c}|hyperpage}{117}
+\indexentry{sensors.c@{sensors.c}!sensors\_update\_dataset@{sensors\_update\_dataset}|hyperpage}{117}
+\indexentry{sensors\_update\_dataset@{sensors\_update\_dataset}!sensors.c@{sensors.c}|hyperpage}{117}
+\indexentry{lib/sensors/sensors.h@{lib/sensors/sensors.h}|hyperpage}{118}
+\indexentry{sensors.h@{sensors.h}!DHT22\_ADDR@{DHT22\_ADDR}|hyperpage}{119}
+\indexentry{DHT22\_ADDR@{DHT22\_ADDR}!sensors.h@{sensors.h}|hyperpage}{119}
+\indexentry{sensors.h@{sensors.h}!SENSOR\_CHECKSUM@{SENSOR\_CHECKSUM}|hyperpage}{120}
+\indexentry{SENSOR\_CHECKSUM@{SENSOR\_CHECKSUM}!sensors.h@{sensors.h}|hyperpage}{120}
+\indexentry{sensors.h@{sensors.h}!SENSOR\_HUM\_MEM@{SENSOR\_HUM\_MEM}|hyperpage}{120}
+\indexentry{SENSOR\_HUM\_MEM@{SENSOR\_HUM\_MEM}!sensors.h@{sensors.h}|hyperpage}{120}
+\indexentry{sensors.h@{sensors.h}!SENSOR\_TEMP\_MEM@{SENSOR\_TEMP\_MEM}|hyperpage}{120}
+\indexentry{SENSOR\_TEMP\_MEM@{SENSOR\_TEMP\_MEM}!sensors.h@{sensors.h}|hyperpage}{120}
+\indexentry{sensors.h@{sensors.h}!sensors\_init@{sensors\_init}|hyperpage}{120}
+\indexentry{sensors\_init@{sensors\_init}!sensors.h@{sensors.h}|hyperpage}{120}
+\indexentry{sensors.h@{sensors.h}!sensors\_update\_dataset@{sensors\_update\_dataset}|hyperpage}{121}
+\indexentry{sensors\_update\_dataset@{sensors\_update\_dataset}!sensors.h@{sensors.h}|hyperpage}{121}
+\indexentry{lib/sensors/sensors.h@{lib/sensors/sensors.h}|hyperpage}{122}
+\indexentry{lib/servo/servo.c@{lib/servo/servo.c}|hyperpage}{123}
+\indexentry{servo.c@{servo.c}!servo\_50us\_interrupt\_handler@{servo\_50us\_interrupt\_handler}|hyperpage}{123}
+\indexentry{servo\_50us\_interrupt\_handler@{servo\_50us\_interrupt\_handler}!servo.c@{servo.c}|hyperpage}{123}
+\indexentry{servo.c@{servo.c}!servo\_init@{servo\_init}|hyperpage}{124}
+\indexentry{servo\_init@{servo\_init}!servo.c@{servo.c}|hyperpage}{124}
+\indexentry{servo.c@{servo.c}!servo\_set\_value@{servo\_set\_value}|hyperpage}{125}
+\indexentry{servo\_set\_value@{servo\_set\_value}!servo.c@{servo.c}|hyperpage}{125}
+\indexentry{lib/servo/servo.h@{lib/servo/servo.h}|hyperpage}{125}
+\indexentry{servo.h@{servo.h}!servo\_50us\_interrupt\_handler@{servo\_50us\_interrupt\_handler}|hyperpage}{127}
+\indexentry{servo\_50us\_interrupt\_handler@{servo\_50us\_interrupt\_handler}!servo.h@{servo.h}|hyperpage}{127}
+\indexentry{servo.h@{servo.h}!servo\_init@{servo\_init}|hyperpage}{127}
+\indexentry{servo\_init@{servo\_init}!servo.h@{servo.h}|hyperpage}{127}
+\indexentry{servo.h@{servo.h}!servo\_set\_value@{servo\_set\_value}|hyperpage}{128}
+\indexentry{servo\_set\_value@{servo\_set\_value}!servo.h@{servo.h}|hyperpage}{128}
+\indexentry{lib/servo/servo.h@{lib/servo/servo.h}|hyperpage}{129}
+\indexentry{lib/storage/storage.c@{lib/storage/storage.c}|hyperpage}{130}
+\indexentry{storage.c@{storage.c}!EEPROM\_read@{EEPROM\_read}|hyperpage}{130}
+\indexentry{EEPROM\_read@{EEPROM\_read}!storage.c@{storage.c}|hyperpage}{130}
+\indexentry{storage.c@{storage.c}!EEPROM\_write@{EEPROM\_write}|hyperpage}{131}
+\indexentry{EEPROM\_write@{EEPROM\_write}!storage.c@{storage.c}|hyperpage}{131}
+\indexentry{storage.c@{storage.c}!storage\_init@{storage\_init}|hyperpage}{131}
+\indexentry{storage\_init@{storage\_init}!storage.c@{storage.c}|hyperpage}{131}
+\indexentry{storage.c@{storage.c}!storage\_read@{storage\_read}|hyperpage}{132}
+\indexentry{storage\_read@{storage\_read}!storage.c@{storage.c}|hyperpage}{132}
+\indexentry{storage.c@{storage.c}!storage\_write@{storage\_write}|hyperpage}{132}
+\indexentry{storage\_write@{storage\_write}!storage.c@{storage.c}|hyperpage}{132}
+\indexentry{lib/storage/storage.h@{lib/storage/storage.h}|hyperpage}{133}
+\indexentry{storage.h@{storage.h}!EEPROM\_read@{EEPROM\_read}|hyperpage}{135}
+\indexentry{EEPROM\_read@{EEPROM\_read}!storage.h@{storage.h}|hyperpage}{135}
+\indexentry{storage.h@{storage.h}!EEPROM\_write@{EEPROM\_write}|hyperpage}{135}
+\indexentry{EEPROM\_write@{EEPROM\_write}!storage.h@{storage.h}|hyperpage}{135}
+\indexentry{storage.h@{storage.h}!storage\_init@{storage\_init}|hyperpage}{135}
+\indexentry{storage\_init@{storage\_init}!storage.h@{storage.h}|hyperpage}{135}
+\indexentry{storage.h@{storage.h}!storage\_read@{storage\_read}|hyperpage}{136}
+\indexentry{storage\_read@{storage\_read}!storage.h@{storage.h}|hyperpage}{136}
+\indexentry{storage.h@{storage.h}!storage\_write@{storage\_write}|hyperpage}{137}
+\indexentry{storage\_write@{storage\_write}!storage.h@{storage.h}|hyperpage}{137}
+\indexentry{lib/storage/storage.h@{lib/storage/storage.h}|hyperpage}{138}
+\indexentry{lib/timer/timer.h@{lib/timer/timer.h}|hyperpage}{139}
+\indexentry{lib/timer/timer.h@{lib/timer/timer.h}|hyperpage}{141}
+\indexentry{lib/twi/twi.c@{lib/twi/twi.c}|hyperpage}{142}
+\indexentry{twi.c@{twi.c}!TWI\_TIMEOUT@{TWI\_TIMEOUT}|hyperpage}{142}
+\indexentry{TWI\_TIMEOUT@{TWI\_TIMEOUT}!twi.c@{twi.c}|hyperpage}{142}
+\indexentry{lib/twi/twi.h@{lib/twi/twi.h}|hyperpage}{143}
+\indexentry{lib/twi/twi.h@{lib/twi/twi.h}|hyperpage}{144}
+\indexentry{lib/uart/test\_uart.c@{lib/uart/test\_uart.c}|hyperpage}{145}
+\indexentry{test\_uart.c@{test\_uart.c}!UART\_BAUD\_RATE@{UART\_BAUD\_RATE}|hyperpage}{145}
+\indexentry{UART\_BAUD\_RATE@{UART\_BAUD\_RATE}!test\_uart.c@{test\_uart.c}|hyperpage}{145}
+\indexentry{test\_uart.c@{test\_uart.c}!main@{main}|hyperpage}{146}
+\indexentry{main@{main}!test\_uart.c@{test\_uart.c}|hyperpage}{146}
+\indexentry{lib/uart/uart.c@{lib/uart/uart.c}|hyperpage}{147}
+\indexentry{uart.c@{uart.c}!UART\_RX\_BUFFER\_MASK@{UART\_RX\_BUFFER\_MASK}|hyperpage}{149}
+\indexentry{UART\_RX\_BUFFER\_MASK@{UART\_RX\_BUFFER\_MASK}!uart.c@{uart.c}|hyperpage}{149}
+\indexentry{uart.c@{uart.c}!UART\_TX\_BUFFER\_MASK@{UART\_TX\_BUFFER\_MASK}|hyperpage}{149}
+\indexentry{UART\_TX\_BUFFER\_MASK@{UART\_TX\_BUFFER\_MASK}!uart.c@{uart.c}|hyperpage}{149}
+\indexentry{uart.c@{uart.c}!if@{if}|hyperpage}{149}
+\indexentry{if@{if}!uart.c@{uart.c}|hyperpage}{149}
+\indexentry{uart.c@{uart.c}!if@{if}|hyperpage}{149}
+\indexentry{if@{if}!uart.c@{uart.c}|hyperpage}{149}
+\indexentry{uart.c@{uart.c}!data@{data}|hyperpage}{149}
+\indexentry{data@{data}!uart.c@{uart.c}|hyperpage}{149}
+\indexentry{uart.c@{uart.c}!else@{else}|hyperpage}{150}
+\indexentry{else@{else}!uart.c@{uart.c}|hyperpage}{150}
+\indexentry{uart.c@{uart.c}!lastRxError@{lastRxError}|hyperpage}{150}
+\indexentry{lastRxError@{lastRxError}!uart.c@{uart.c}|hyperpage}{150}
+\indexentry{uart.c@{uart.c}!tmphead@{tmphead}|hyperpage}{150}
+\indexentry{tmphead@{tmphead}!uart.c@{uart.c}|hyperpage}{150}
+\indexentry{uart.c@{uart.c}!UART\_LastRxError@{UART\_LastRxError}|hyperpage}{150}
+\indexentry{UART\_LastRxError@{UART\_LastRxError}!uart.c@{uart.c}|hyperpage}{150}
+\indexentry{uart.c@{uart.c}!UART\_RxBuf@{UART\_RxBuf}|hyperpage}{150}
+\indexentry{UART\_RxBuf@{UART\_RxBuf}!uart.c@{uart.c}|hyperpage}{150}
+\indexentry{uart.c@{uart.c}!UART\_RxHead@{UART\_RxHead}|hyperpage}{151}
+\indexentry{UART\_RxHead@{UART\_RxHead}!uart.c@{uart.c}|hyperpage}{151}
+\indexentry{uart.c@{uart.c}!UART\_RxTail@{UART\_RxTail}|hyperpage}{151}
+\indexentry{UART\_RxTail@{UART\_RxTail}!uart.c@{uart.c}|hyperpage}{151}
+\indexentry{uart.c@{uart.c}!UART\_TxBuf@{UART\_TxBuf}|hyperpage}{151}
+\indexentry{UART\_TxBuf@{UART\_TxBuf}!uart.c@{uart.c}|hyperpage}{151}
+\indexentry{uart.c@{uart.c}!UART\_TxHead@{UART\_TxHead}|hyperpage}{151}
+\indexentry{UART\_TxHead@{UART\_TxHead}!uart.c@{uart.c}|hyperpage}{151}
+\indexentry{uart.c@{uart.c}!UART\_TxTail@{UART\_TxTail}|hyperpage}{151}
+\indexentry{UART\_TxTail@{UART\_TxTail}!uart.c@{uart.c}|hyperpage}{151}
+\indexentry{uart.c@{uart.c}!usr@{usr}|hyperpage}{151}
+\indexentry{usr@{usr}!uart.c@{uart.c}|hyperpage}{151}
+\indexentry{lib/uart/uart.h@{lib/uart/uart.h}|hyperpage}{152}
+\indexentry{lib/uart/uart.h@{lib/uart/uart.h}|hyperpage}{153}
+\indexentry{lib/watering/watering.c@{lib/watering/watering.c}|hyperpage}{155}
+\indexentry{watering.c@{watering.c}!watering\_handler@{watering\_handler}|hyperpage}{155}
+\indexentry{watering\_handler@{watering\_handler}!watering.c@{watering.c}|hyperpage}{155}
+\indexentry{watering.c@{watering.c}!watering\_init@{watering\_init}|hyperpage}{156}
+\indexentry{watering\_init@{watering\_init}!watering.c@{watering.c}|hyperpage}{156}
+\indexentry{watering.c@{watering.c}!watering\_set\_limit@{watering\_set\_limit}|hyperpage}{157}
+\indexentry{watering\_set\_limit@{watering\_set\_limit}!watering.c@{watering.c}|hyperpage}{157}
+\indexentry{lib/watering/watering.h@{lib/watering/watering.h}|hyperpage}{157}
+\indexentry{watering.h@{watering.h}!watering\_handler@{watering\_handler}|hyperpage}{159}
+\indexentry{watering\_handler@{watering\_handler}!watering.h@{watering.h}|hyperpage}{159}
+\indexentry{watering.h@{watering.h}!watering\_init@{watering\_init}|hyperpage}{159}
+\indexentry{watering\_init@{watering\_init}!watering.h@{watering.h}|hyperpage}{159}
+\indexentry{watering.h@{watering.h}!watering\_set\_limit@{watering\_set\_limit}|hyperpage}{160}
+\indexentry{watering\_set\_limit@{watering\_set\_limit}!watering.h@{watering.h}|hyperpage}{160}
+\indexentry{lib/watering/watering.h@{lib/watering/watering.h}|hyperpage}{161}
+\indexentry{src/main.c@{src/main.c}|hyperpage}{161}
+\indexentry{main.c@{main.c}!F\_CPU@{F\_CPU}|hyperpage}{162}
+\indexentry{F\_CPU@{F\_CPU}!main.c@{main.c}|hyperpage}{162}
+\indexentry{main.c@{main.c}!ISR@{ISR}|hyperpage}{162}
+\indexentry{ISR@{ISR}!main.c@{main.c}|hyperpage}{162}
+\indexentry{main.c@{main.c}!ISR@{ISR}|hyperpage}{163}
+\indexentry{ISR@{ISR}!main.c@{main.c}|hyperpage}{163}
+\indexentry{main.c@{main.c}!main@{main}|hyperpage}{163}
+\indexentry{main@{main}!main.c@{main.c}|hyperpage}{163}
+\indexentry{main.c@{main.c}!actual\_data@{actual\_data}|hyperpage}{164}
+\indexentry{actual\_data@{actual\_data}!main.c@{main.c}|hyperpage}{164}
+\indexentry{main.c@{main.c}!last\_measurement\_time@{last\_measurement\_time}|hyperpage}{165}
+\indexentry{last\_measurement\_time@{last\_measurement\_time}!main.c@{main.c}|hyperpage}{165}
+\indexentry{main.c@{main.c}!storage@{storage}|hyperpage}{165}
+\indexentry{storage@{storage}!main.c@{main.c}|hyperpage}{165}
+\indexentry{main.c@{main.c}!water\_servo@{water\_servo}|hyperpage}{165}
+\indexentry{water\_servo@{water\_servo}!main.c@{main.c}|hyperpage}{165}
+\indexentry{main.c@{main.c}!watering@{watering}|hyperpage}{165}
+\indexentry{watering@{watering}!main.c@{main.c}|hyperpage}{165}

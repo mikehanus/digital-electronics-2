@@ -173,10 +173,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   80</span>{</div>
-<div class="line"><span class="lineno">   81</span>    TCNT0 = 156;</div>
-<div class="line"><span class="lineno">   82</span>    <a class="code hl_function" href="servo_8c.html#a6e27a0da014d4197e9b84c628460a5e1">servo_50us_interrupt_handler</a>(&amp;<a class="code hl_variable" href="main_8c.html#a1511e5db1ccf63e2d4813c5cce6cc8b3">water_servo</a>);</div>
-<div class="line"><span class="lineno">   83</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>{</div>
+<div class="line"><span class="lineno">   74</span>    TCNT0 = 158;</div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_function" href="servo_8c.html#a6e27a0da014d4197e9b84c628460a5e1">servo_50us_interrupt_handler</a>(&amp;<a class="code hl_variable" href="main_8c.html#a1511e5db1ccf63e2d4813c5cce6cc8b3">water_servo</a>);</div>
+<div class="line"><span class="lineno">   76</span>}</div>
 <div class="ttc" id="amain_8c_html_a1511e5db1ccf63e2d4813c5cce6cc8b3"><div class="ttname"><a href="main_8c.html#a1511e5db1ccf63e2d4813c5cce6cc8b3">water_servo</a></div><div class="ttdeci">servo_t water_servo</div><div class="ttdef"><b>Definition:</b> main.c:23</div></div>
 <div class="ttc" id="aservo_8c_html_a6e27a0da014d4197e9b84c628460a5e1"><div class="ttname"><a href="servo_8c.html#a6e27a0da014d4197e9b84c628460a5e1">servo_50us_interrupt_handler</a></div><div class="ttdeci">void servo_50us_interrupt_handler(servo_t *servo)</div><div class="ttdef"><b>Definition:</b> servo.c:21</div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -208,9 +208,9 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   86</span>{</div>
-<div class="line"><span class="lineno">   87</span>    <a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>.<a class="code hl_variable" href="structdataset__t.html#ab683739d9494eb0091f2f17e1707787b">time</a>++;</div>
-<div class="line"><span class="lineno">   88</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>{</div>
+<div class="line"><span class="lineno">   80</span>    <a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>.<a class="code hl_variable" href="structdataset__t.html#ab683739d9494eb0091f2f17e1707787b">time</a>++;</div>
+<div class="line"><span class="lineno">   81</span>}</div>
 <div class="ttc" id="amain_8c_html_abbad3791e16b019dbf1aa5b8878ca1d0"><div class="ttname"><a href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a></div><div class="ttdeci">dataset_t actual_data</div><div class="ttdef"><b>Definition:</b> main.c:24</div></div>
 <div class="ttc" id="astructdataset__t_html_ab683739d9494eb0091f2f17e1707787b"><div class="ttname"><a href="structdataset__t.html#ab683739d9494eb0091f2f17e1707787b">dataset_t::time</a></div><div class="ttdeci">uint32_t time</div><div class="ttdef"><b>Definition:</b> dataset.h:23</div></div>
 </div><!-- fragment -->
@@ -235,52 +235,44 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   30</span>    sei();</div>
 <div class="line"><span class="lineno">   31</span>    <a class="code hl_function" href="group__pfleury__uart.html#gac19a76bb7d446125734a67f9f4b68991">uart_init</a>(<a class="code hl_define" href="group__pfleury__uart.html#ga367ff7b5de225ed936a63239ad4adb0b">UART_BAUD_SELECT</a>(9600, <a class="code hl_define" href="main_8c.html#a43bafb28b29491ec7f871319b5a3b2f8">F_CPU</a>));</div>
 <div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>    <a class="code hl_function" href="group__fryza__gpio.html#gae4c211fcf0878fc6617e21dcfe7a4513">GPIO_mode_output</a>(&amp;DDRB, 0);</div>
-<div class="line"><span class="lineno">   34</span>    <a class="code hl_function" href="servo_8c.html#af2901abc08a7acebca8b6a14fbb0239d">servo_init</a>(&amp;<a class="code hl_variable" href="main_8c.html#a1511e5db1ccf63e2d4813c5cce6cc8b3">water_servo</a>, &amp;PORTB, 0);</div>
-<div class="line"><span class="lineno">   35</span>    <a class="code hl_function" href="servo_8c.html#ab915767fa085801feff281f341eebeec">servo_set_value</a>(&amp;<a class="code hl_variable" href="main_8c.html#a1511e5db1ccf63e2d4813c5cce6cc8b3">water_servo</a>, 45);</div>
-<div class="line"><span class="lineno">   36</span> </div>
-<div class="line"><span class="lineno">   37</span>    <a class="code hl_function" href="storage_8c.html#a954cfff4c51e8e59d9ee27102fadf443">storage_init</a>(&amp;<a class="code hl_variable" href="main_8c.html#a59d4b705843702c7c2d2ad89bed06163">storage</a>);</div>
-<div class="line"><span class="lineno">   38</span>    <a class="code hl_function" href="watering_8c.html#a19f0ee5e2ed5f2b96c770e741a40de54">watering_init</a>(&amp;<a class="code hl_variable" href="main_8c.html#a494334356bf3e9e3c123febbf9f2d2e2">watering</a>, &amp;<a class="code hl_variable" href="main_8c.html#a1511e5db1ccf63e2d4813c5cce6cc8b3">water_servo</a>);</div>
-<div class="line"><span class="lineno">   39</span>    <a class="code hl_function" href="watering_8c.html#a0c62a16721b62527d74111250d1e179b">watering_set_limit</a>(&amp;<a class="code hl_variable" href="main_8c.html#a494334356bf3e9e3c123febbf9f2d2e2">watering</a>, 0, 255);</div>
-<div class="line"><span class="lineno">   40</span>    <span class="comment">//sensors_init();</span></div>
-<div class="line"><span class="lineno">   41</span>    <span class="comment">//display_init();</span></div>
-<div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>    <a class="code hl_define" href="group__fryza__timer.html#ga9adba4b16f5f7202ce116d8cb5a79f40">TIM1_OVF_1SEC</a>();</div>
-<div class="line"><span class="lineno">   44</span>    <a class="code hl_define" href="group__fryza__timer.html#ga30b4af52b710f0dbf4923665221de476">TIM1_OVF_ENABLE</a>();</div>
-<div class="line"><span class="lineno">   45</span> </div>
-<div class="line"><span class="lineno">   46</span>    <span class="comment">//set_zone(+1*ONE_HOUR);</span></div>
-<div class="line"><span class="lineno">   47</span>    <a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>.<a class="code hl_variable" href="structdataset__t.html#ab683739d9494eb0091f2f17e1707787b">time</a> = 1701344319 - <a class="code hl_define" href="dataset_8h.html#a77f98302b0a72bf38287a9308b799514">AVRTIME_TO_UNIXTIME</a>;</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>    <a class="code hl_function" href="group__pfleury__uart.html#gae52facc0a56086a365bb0018160d8d71">uart_puts</a>(<span class="stringliteral">&quot;Watering system terminal (pres ? for help):&quot;</span>);</div>
-<div class="line"><span class="lineno">   50</span> </div>
-<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">for</span>(uint8_t i = 0; i &lt; 20; i++)</div>
-<div class="line"><span class="lineno">   52</span>    {</div>
-<div class="line"><span class="lineno">   53</span>        <a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>.<a class="code hl_variable" href="structdataset__t.html#ab683739d9494eb0091f2f17e1707787b">time</a> += 10;</div>
-<div class="line"><span class="lineno">   54</span>        <a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>.<a class="code hl_variable" href="structdataset__t.html#a04e3f3b9c3ca4ba60557dc955f85c079">temp</a> = 12 + <a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>.<a class="code hl_variable" href="structdataset__t.html#ab683739d9494eb0091f2f17e1707787b">time</a> % 15;</div>
-<div class="line"><span class="lineno">   55</span>        <a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>.<a class="code hl_variable" href="structdataset__t.html#a1d9e3ae15eeb26d8d4080277792e012a">hum</a> = <a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>.<a class="code hl_variable" href="structdataset__t.html#ab683739d9494eb0091f2f17e1707787b">time</a> % 100;</div>
-<div class="line"><span class="lineno">   56</span>        <a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>.<a class="code hl_variable" href="structdataset__t.html#ac5288672cb5db5939847aeee878ebcd0">moist</a> = <a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>.<a class="code hl_variable" href="structdataset__t.html#ab683739d9494eb0091f2f17e1707787b">time</a> % 255;</div>
-<div class="line"><span class="lineno">   57</span>        <a class="code hl_function" href="storage_8c.html#abbf8a4d949d03f1f91a08b610f035fad">storage_write</a>(&amp;<a class="code hl_variable" href="main_8c.html#a59d4b705843702c7c2d2ad89bed06163">storage</a>, &amp;<a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>);</div>
-<div class="line"><span class="lineno">   58</span>    }</div>
+<div class="line"><span class="lineno">   33</span>    <span class="comment">//display_init();</span></div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>    <a class="code hl_function" href="group__fryza__gpio.html#gae4c211fcf0878fc6617e21dcfe7a4513">GPIO_mode_output</a>(&amp;DDRB, 0);</div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_function" href="servo_8c.html#af2901abc08a7acebca8b6a14fbb0239d">servo_init</a>(&amp;<a class="code hl_variable" href="main_8c.html#a1511e5db1ccf63e2d4813c5cce6cc8b3">water_servo</a>, &amp;PORTB, 0);</div>
+<div class="line"><span class="lineno">   37</span>    <a class="code hl_function" href="servo_8c.html#ab915767fa085801feff281f341eebeec">servo_set_value</a>(&amp;<a class="code hl_variable" href="main_8c.html#a1511e5db1ccf63e2d4813c5cce6cc8b3">water_servo</a>, 0);</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_function" href="storage_8c.html#a954cfff4c51e8e59d9ee27102fadf443">storage_init</a>(&amp;<a class="code hl_variable" href="main_8c.html#a59d4b705843702c7c2d2ad89bed06163">storage</a>);</div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_function" href="watering_8c.html#a19f0ee5e2ed5f2b96c770e741a40de54">watering_init</a>(&amp;<a class="code hl_variable" href="main_8c.html#a494334356bf3e9e3c123febbf9f2d2e2">watering</a>, &amp;<a class="code hl_variable" href="main_8c.html#a1511e5db1ccf63e2d4813c5cce6cc8b3">water_servo</a>);</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_function" href="watering_8c.html#a0c62a16721b62527d74111250d1e179b">watering_set_limit</a>(&amp;<a class="code hl_variable" href="main_8c.html#a494334356bf3e9e3c123febbf9f2d2e2">watering</a>, 0, 255);</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_function" href="sensors_8c.html#a41e7d1dd0cac7bd20fc32a6ebc87a985">sensors_init</a>();</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_define" href="group__fryza__timer.html#ga9adba4b16f5f7202ce116d8cb5a79f40">TIM1_OVF_1SEC</a>();</div>
+<div class="line"><span class="lineno">   45</span>    <a class="code hl_define" href="group__fryza__timer.html#ga30b4af52b710f0dbf4923665221de476">TIM1_OVF_ENABLE</a>();</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <span class="comment">//set_zone(+1*ONE_HOUR);</span></div>
+<div class="line"><span class="lineno">   48</span>    <a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>.<a class="code hl_variable" href="structdataset__t.html#ab683739d9494eb0091f2f17e1707787b">time</a> = 0; <span class="comment">//1701344319 - AVRTIME_TO_UNIXTIME;</span></div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>    <a class="code hl_function" href="group__pfleury__uart.html#gae52facc0a56086a365bb0018160d8d71">uart_puts</a>(<span class="stringliteral">&quot;Watering system terminal (pres ? for help):&quot;</span>);</div>
+<div class="line"><span class="lineno">   51</span>    </div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">while</span>(1)</div>
+<div class="line"><span class="lineno">   53</span>    {</div>
+<div class="line"><span class="lineno">   54</span>        <a class="code hl_function" href="cmd_8c.html#a851fcc941c3f1d77e581e6f7dce8552d">cmd_handler</a>(&amp;<a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>, &amp;<a class="code hl_variable" href="main_8c.html#a494334356bf3e9e3c123febbf9f2d2e2">watering</a>, &amp;<a class="code hl_variable" href="main_8c.html#a59d4b705843702c7c2d2ad89bed06163">storage</a>);</div>
+<div class="line"><span class="lineno">   55</span>        _delay_ms(1000);</div>
+<div class="line"><span class="lineno">   56</span>        <a class="code hl_function" href="watering_8c.html#a2771d1fd0080d7ee739c77936b341c03">watering_handler</a>(&amp;<a class="code hl_variable" href="main_8c.html#a494334356bf3e9e3c123febbf9f2d2e2">watering</a>, &amp;<a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>);</div>
+<div class="line"><span class="lineno">   57</span>        <a class="code hl_function" href="sensors_8c.html#a991004aa5afbe5511d9fe87599132693">sensors_update_dataset</a>(&amp;<a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>);</div>
+<div class="line"><span class="lineno">   58</span>        <span class="comment">//servo_set_value(&amp;water_servo, actual_data.time%90);</span></div>
 <div class="line"><span class="lineno">   59</span> </div>
-<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">while</span>(1)</div>
-<div class="line"><span class="lineno">   61</span>    {</div>
-<div class="line"><span class="lineno">   62</span>        <a class="code hl_function" href="cmd_8c.html#a851fcc941c3f1d77e581e6f7dce8552d">cmd_handler</a>(&amp;<a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>, &amp;<a class="code hl_variable" href="main_8c.html#a494334356bf3e9e3c123febbf9f2d2e2">watering</a>, &amp;<a class="code hl_variable" href="main_8c.html#a59d4b705843702c7c2d2ad89bed06163">storage</a>);</div>
-<div class="line"><span class="lineno">   63</span>        _delay_ms(1000);</div>
-<div class="line"><span class="lineno">   64</span> </div>
-<div class="line"><span class="lineno">   65</span>        <span class="comment">// Every 10 s make measurement</span></div>
-<div class="line"><span class="lineno">   66</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="main_8c.html#a1740f7ae289223cfdf6ae61e4a959f8f">last_measurement_time</a> + 10 &lt; <a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>.<a class="code hl_variable" href="structdataset__t.html#ab683739d9494eb0091f2f17e1707787b">time</a>)</div>
-<div class="line"><span class="lineno">   67</span>        {</div>
-<div class="line"><span class="lineno">   68</span>            <a class="code hl_variable" href="main_8c.html#a1740f7ae289223cfdf6ae61e4a959f8f">last_measurement_time</a> = <a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>.<a class="code hl_variable" href="structdataset__t.html#ab683739d9494eb0091f2f17e1707787b">time</a>;</div>
-<div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>            <span class="comment">//sensors_update_dataset(&amp;actual_data);</span></div>
-<div class="line"><span class="lineno">   71</span>            <span class="comment">//display_show_data(&amp;actual_data);</span></div>
-<div class="line"><span class="lineno">   72</span>            <a class="code hl_function" href="storage_8c.html#abbf8a4d949d03f1f91a08b610f035fad">storage_write</a>(&amp;<a class="code hl_variable" href="main_8c.html#a59d4b705843702c7c2d2ad89bed06163">storage</a>, &amp;<a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>);</div>
-<div class="line"><span class="lineno">   73</span>        }</div>
-<div class="line"><span class="lineno">   74</span>    }</div>
-<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   76</span>}</div>
+<div class="line"><span class="lineno">   60</span>        <span class="comment">// Every save and display measurement</span></div>
+<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="main_8c.html#a1740f7ae289223cfdf6ae61e4a959f8f">last_measurement_time</a> + 10 &lt; <a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>.<a class="code hl_variable" href="structdataset__t.html#ab683739d9494eb0091f2f17e1707787b">time</a>)</div>
+<div class="line"><span class="lineno">   62</span>        {</div>
+<div class="line"><span class="lineno">   63</span>            <a class="code hl_variable" href="main_8c.html#a1740f7ae289223cfdf6ae61e4a959f8f">last_measurement_time</a> = <a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>.<a class="code hl_variable" href="structdataset__t.html#ab683739d9494eb0091f2f17e1707787b">time</a>;</div>
+<div class="line"><span class="lineno">   64</span>            <span class="comment">//display_show_data(&amp;actual_data);</span></div>
+<div class="line"><span class="lineno">   65</span>            <a class="code hl_function" href="storage_8c.html#abbf8a4d949d03f1f91a08b610f035fad">storage_write</a>(&amp;<a class="code hl_variable" href="main_8c.html#a59d4b705843702c7c2d2ad89bed06163">storage</a>, &amp;<a class="code hl_variable" href="main_8c.html#abbad3791e16b019dbf1aa5b8878ca1d0">actual_data</a>);</div>
+<div class="line"><span class="lineno">   66</span>        }</div>
+<div class="line"><span class="lineno">   67</span>    }</div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   69</span>}</div>
 <div class="ttc" id="acmd_8c_html_a851fcc941c3f1d77e581e6f7dce8552d"><div class="ttname"><a href="cmd_8c.html#a851fcc941c3f1d77e581e6f7dce8552d">cmd_handler</a></div><div class="ttdeci">void cmd_handler(dataset_t *data, watering_t *watering, storage_t *storage)</div><div class="ttdef"><b>Definition:</b> cmd.c:7</div></div>
-<div class="ttc" id="adataset_8h_html_a77f98302b0a72bf38287a9308b799514"><div class="ttname"><a href="dataset_8h.html#a77f98302b0a72bf38287a9308b799514">AVRTIME_TO_UNIXTIME</a></div><div class="ttdeci">#define AVRTIME_TO_UNIXTIME</div><div class="ttdef"><b>Definition:</b> dataset.h:6</div></div>
 <div class="ttc" id="agroup__fryza__gpio_html_gae4c211fcf0878fc6617e21dcfe7a4513"><div class="ttname"><a href="group__fryza__gpio.html#gae4c211fcf0878fc6617e21dcfe7a4513">GPIO_mode_output</a></div><div class="ttdeci">void GPIO_mode_output(volatile uint8_t *reg, uint8_t pin)</div><div class="ttdoc">Configure one output pin.</div><div class="ttdef"><b>Definition:</b> gpio.c:26</div></div>
 <div class="ttc" id="agroup__fryza__timer_html_ga30b4af52b710f0dbf4923665221de476"><div class="ttname"><a href="group__fryza__timer.html#ga30b4af52b710f0dbf4923665221de476">TIM1_OVF_ENABLE</a></div><div class="ttdeci">#define TIM1_OVF_ENABLE()</div><div class="ttdoc">Enable overflow interrupt, 1 --&gt; enable.</div><div class="ttdef"><b>Definition:</b> timer.h:97</div></div>
 <div class="ttc" id="agroup__fryza__timer_html_ga9adba4b16f5f7202ce116d8cb5a79f40"><div class="ttname"><a href="group__fryza__timer.html#ga9adba4b16f5f7202ce116d8cb5a79f40">TIM1_OVF_1SEC</a></div><div class="ttdeci">#define TIM1_OVF_1SEC()</div><div class="ttdoc">Set overflow 1s, prescaler 100 --&gt; 256.</div><div class="ttdef"><b>Definition:</b> timer.h:68</div></div>
@@ -291,37 +283,47 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="amain_8c_html_a43bafb28b29491ec7f871319b5a3b2f8"><div class="ttname"><a href="main_8c.html#a43bafb28b29491ec7f871319b5a3b2f8">F_CPU</a></div><div class="ttdeci">#define F_CPU</div><div class="ttdef"><b>Definition:</b> main.c:4</div></div>
 <div class="ttc" id="amain_8c_html_a494334356bf3e9e3c123febbf9f2d2e2"><div class="ttname"><a href="main_8c.html#a494334356bf3e9e3c123febbf9f2d2e2">watering</a></div><div class="ttdeci">watering_t watering</div><div class="ttdef"><b>Definition:</b> main.c:25</div></div>
 <div class="ttc" id="amain_8c_html_a59d4b705843702c7c2d2ad89bed06163"><div class="ttname"><a href="main_8c.html#a59d4b705843702c7c2d2ad89bed06163">storage</a></div><div class="ttdeci">storage_t storage</div><div class="ttdef"><b>Definition:</b> main.c:26</div></div>
+<div class="ttc" id="asensors_8c_html_a41e7d1dd0cac7bd20fc32a6ebc87a985"><div class="ttname"><a href="sensors_8c.html#a41e7d1dd0cac7bd20fc32a6ebc87a985">sensors_init</a></div><div class="ttdeci">void sensors_init()</div><div class="ttdef"><b>Definition:</b> sensors.c:3</div></div>
+<div class="ttc" id="asensors_8c_html_a991004aa5afbe5511d9fe87599132693"><div class="ttname"><a href="sensors_8c.html#a991004aa5afbe5511d9fe87599132693">sensors_update_dataset</a></div><div class="ttdeci">void sensors_update_dataset(dataset_t *data)</div><div class="ttdef"><b>Definition:</b> sensors.c:10</div></div>
 <div class="ttc" id="aservo_8c_html_ab915767fa085801feff281f341eebeec"><div class="ttname"><a href="servo_8c.html#ab915767fa085801feff281f341eebeec">servo_set_value</a></div><div class="ttdeci">void servo_set_value(servo_t *servo, uint8_t value)</div><div class="ttdef"><b>Definition:</b> servo.c:16</div></div>
 <div class="ttc" id="aservo_8c_html_af2901abc08a7acebca8b6a14fbb0239d"><div class="ttname"><a href="servo_8c.html#af2901abc08a7acebca8b6a14fbb0239d">servo_init</a></div><div class="ttdeci">void servo_init(servo_t *servo, volatile uint8_t *reg, uint8_t pin)</div><div class="ttdef"><b>Definition:</b> servo.c:3</div></div>
 <div class="ttc" id="astorage_8c_html_a954cfff4c51e8e59d9ee27102fadf443"><div class="ttname"><a href="storage_8c.html#a954cfff4c51e8e59d9ee27102fadf443">storage_init</a></div><div class="ttdeci">void storage_init(storage_t *storage)</div><div class="ttdef"><b>Definition:</b> storage.c:59</div></div>
 <div class="ttc" id="astorage_8c_html_abbf8a4d949d03f1f91a08b610f035fad"><div class="ttname"><a href="storage_8c.html#abbf8a4d949d03f1f91a08b610f035fad">storage_write</a></div><div class="ttdeci">void storage_write(storage_t *storage, dataset_t *data)</div><div class="ttdef"><b>Definition:</b> storage.c:44</div></div>
-<div class="ttc" id="astructdataset__t_html_a04e3f3b9c3ca4ba60557dc955f85c079"><div class="ttname"><a href="structdataset__t.html#a04e3f3b9c3ca4ba60557dc955f85c079">dataset_t::temp</a></div><div class="ttdeci">uint8_t temp</div><div class="ttdef"><b>Definition:</b> dataset.h:24</div></div>
-<div class="ttc" id="astructdataset__t_html_a1d9e3ae15eeb26d8d4080277792e012a"><div class="ttname"><a href="structdataset__t.html#a1d9e3ae15eeb26d8d4080277792e012a">dataset_t::hum</a></div><div class="ttdeci">uint8_t hum</div><div class="ttdef"><b>Definition:</b> dataset.h:25</div></div>
-<div class="ttc" id="astructdataset__t_html_ac5288672cb5db5939847aeee878ebcd0"><div class="ttname"><a href="structdataset__t.html#ac5288672cb5db5939847aeee878ebcd0">dataset_t::moist</a></div><div class="ttdeci">uint8_t moist</div><div class="ttdef"><b>Definition:</b> dataset.h:26</div></div>
 <div class="ttc" id="awatering_8c_html_a0c62a16721b62527d74111250d1e179b"><div class="ttname"><a href="watering_8c.html#a0c62a16721b62527d74111250d1e179b">watering_set_limit</a></div><div class="ttdeci">void watering_set_limit(watering_t *watering, uint16_t min, uint16_t max)</div><div class="ttdef"><b>Definition:</b> watering.c:9</div></div>
 <div class="ttc" id="awatering_8c_html_a19f0ee5e2ed5f2b96c770e741a40de54"><div class="ttname"><a href="watering_8c.html#a19f0ee5e2ed5f2b96c770e741a40de54">watering_init</a></div><div class="ttdeci">void watering_init(watering_t *watering, servo_t *servo)</div><div class="ttdef"><b>Definition:</b> watering.c:3</div></div>
+<div class="ttc" id="awatering_8c_html_a2771d1fd0080d7ee739c77936b341c03"><div class="ttname"><a href="watering_8c.html#a2771d1fd0080d7ee739c77936b341c03">watering_handler</a></div><div class="ttdeci">void watering_handler(watering_t *watering, dataset_t *data)</div><div class="ttdef"><b>Definition:</b> watering.c:15</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph.png" border="0" usemap="#amain_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph" alt=""/></div>
 <map name="amain_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph" id="amain_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph">
-<area shape="rect" title=" " alt="" coords="5,335,60,361"/>
-<area shape="rect" href="cmd_8c.html#a851fcc941c3f1d77e581e6f7dce8552d" title=" " alt="" coords="128,107,235,133"/>
-<area shape="rect" href="group__pfleury__uart.html#gae52facc0a56086a365bb0018160d8d71" title="Put string to ringbuffer for transmitting via UART." alt="" coords="325,157,408,184"/>
-<area shape="rect" href="group__fryza__gpio.html#gae4c211fcf0878fc6617e21dcfe7a4513" title="Configure one output pin." alt="" coords="108,208,255,235"/>
-<area shape="rect" href="servo_8c.html#af2901abc08a7acebca8b6a14fbb0239d" title=" " alt="" coords="138,259,225,285"/>
-<area shape="rect" href="servo_8c.html#ab915767fa085801feff281f341eebeec" title=" " alt="" coords="303,335,431,361"/>
-<area shape="rect" href="storage_8c.html#a954cfff4c51e8e59d9ee27102fadf443" title=" " alt="" coords="132,411,231,437"/>
-<area shape="rect" href="storage_8c.html#abbf8a4d949d03f1f91a08b610f035fad" title=" " alt="" coords="126,461,237,488"/>
-<area shape="rect" href="group__pfleury__uart.html#gac19a76bb7d446125734a67f9f4b68991" title="Initialize UART and set baudrate." alt="" coords="143,512,219,539"/>
-<area shape="rect" href="watering_8c.html#a19f0ee5e2ed5f2b96c770e741a40de54" title=" " alt="" coords="128,360,235,387"/>
-<area shape="rect" href="watering_8c.html#a0c62a16721b62527d74111250d1e179b" title=" " alt="" coords="110,563,253,589"/>
-<area shape="rect" href="storage_8c.html#a3c2aca3e3798396df9ddb34244de0ba6" title=" " alt="" coords="313,5,420,32"/>
-<area shape="rect" href="group__pfleury__uart.html#gaefaab30a8338ec46a6be35b99b1b4f09" title="Get received byte from ringbuffer." alt="" coords="325,56,408,83"/>
-<area shape="rect" href="group__pfleury__uart.html#gad975221bc08b901e4c7ad69f9c9a97e2" title="Put byte to ringbuffer for transmitting via UART." alt="" coords="494,132,577,159"/>
-<area shape="rect" href="storage_8c.html#a4b030b9d1584db48848201615b096606" title=" " alt="" coords="479,5,592,32"/>
-<area shape="rect" href="group__fryza__gpio.html#gacea0f20416113eb2286b6bd730e22daa" title="Write one pin to low value." alt="" coords="305,259,429,285"/>
-<area shape="rect" href="storage_8c.html#ab83714869bd0bac0701fe50ec55cb2ca" title=" " alt="" coords="308,461,425,488"/>
+<area shape="rect" title=" " alt="" coords="5,461,60,488"/>
+<area shape="rect" href="cmd_8c.html#a851fcc941c3f1d77e581e6f7dce8552d" title=" " alt="" coords="145,107,251,133"/>
+<area shape="rect" href="group__pfleury__uart.html#gae52facc0a56086a365bb0018160d8d71" title="Put string to ringbuffer for transmitting via UART." alt="" coords="359,157,441,184"/>
+<area shape="rect" href="group__fryza__gpio.html#gae4c211fcf0878fc6617e21dcfe7a4513" title="Configure one output pin." alt="" coords="125,245,271,272"/>
+<area shape="rect" href="sensors_8c.html#a41e7d1dd0cac7bd20fc32a6ebc87a985" title=" " alt="" coords="148,296,248,323"/>
+<area shape="rect" href="sensors_8c.html#a991004aa5afbe5511d9fe87599132693" title=" " alt="" coords="108,360,288,387"/>
+<area shape="rect" href="servo_8c.html#af2901abc08a7acebca8b6a14fbb0239d" title=" " alt="" coords="155,411,241,437"/>
+<area shape="rect" href="servo_8c.html#ab915767fa085801feff281f341eebeec" title=" " alt="" coords="336,664,464,691"/>
+<area shape="rect" href="storage_8c.html#a954cfff4c51e8e59d9ee27102fadf443" title=" " alt="" coords="149,512,247,539"/>
+<area shape="rect" href="storage_8c.html#abbf8a4d949d03f1f91a08b610f035fad" title=" " alt="" coords="143,461,253,488"/>
+<area shape="rect" href="group__pfleury__uart.html#gac19a76bb7d446125734a67f9f4b68991" title="Initialize UART and set baudrate." alt="" coords="160,613,236,640"/>
+<area shape="rect" href="watering_8c.html#a2771d1fd0080d7ee739c77936b341c03" title=" " alt="" coords="131,715,265,741"/>
+<area shape="rect" href="watering_8c.html#a19f0ee5e2ed5f2b96c770e741a40de54" title=" " alt="" coords="145,664,251,691"/>
+<area shape="rect" href="watering_8c.html#a0c62a16721b62527d74111250d1e179b" title=" " alt="" coords="127,765,269,792"/>
+<area shape="rect" href="storage_8c.html#a3c2aca3e3798396df9ddb34244de0ba6" title=" " alt="" coords="347,56,453,83"/>
+<area shape="rect" href="group__pfleury__uart.html#gaefaab30a8338ec46a6be35b99b1b4f09" title="Get received byte from ringbuffer." alt="" coords="359,5,441,32"/>
+<area shape="rect" href="group__pfleury__uart.html#gad975221bc08b901e4c7ad69f9c9a97e2" title="Put byte to ringbuffer for transmitting via UART." alt="" coords="527,132,610,159"/>
+<area shape="rect" href="storage_8c.html#a4b030b9d1584db48848201615b096606" title=" " alt="" coords="512,56,625,83"/>
+<area shape="rect" href="moist__sens_8c.html#a2334d6eadb5a595655bf1e153a48621a" title=" " alt="" coords="338,208,462,235"/>
+<area shape="rect" href="group__fryza__twi.html#ga16f0e6b2fa5a26eadbf4086ab6d54467" title="Initialize TWI unit, enable internal pull&#45;ups, and set SCL frequency." alt="" coords="365,259,435,285"/>
+<area shape="rect" href="moist__sens_8c.html#aea5ab7057f46b5c93f520c3d82f809c3" title=" " alt="" coords="357,512,443,539"/>
+<area shape="rect" href="group__fryza__twi.html#gae9f84b771b4acdedd2106e91cb03cc78" title="Read one byte from I2C/TWI Slave device and acknowledge it by ACK or NACK." alt="" coords="361,309,439,336"/>
+<area shape="rect" href="group__fryza__twi.html#gaf37269da7f6b1b22438b78d2f965f274" title="Start communication on I2C/TWI bus." alt="" coords="361,360,439,387"/>
+<area shape="rect" href="group__fryza__twi.html#gacf52d6c93df110dee6d402b389e5042e" title="Generates Stop condition on I2C/TWI bus." alt="" coords="361,411,439,437"/>
+<area shape="rect" href="group__fryza__twi.html#ga129b8a79f75189c3801cb7082e6b8340" title="Send one byte to I2C/TWI Slave device." alt="" coords="359,461,441,488"/>
+<area shape="rect" href="group__fryza__gpio.html#gacea0f20416113eb2286b6bd730e22daa" title="Write one pin to low value." alt="" coords="338,563,462,589"/>
+<area shape="rect" href="storage_8c.html#ab83714869bd0bac0701fe50ec55cb2ca" title=" " alt="" coords="341,613,459,640"/>
 </map>
 </div>
 
